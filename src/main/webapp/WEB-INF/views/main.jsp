@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>취미 공유 커뮤니티</title>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<link rel="stylesheet" type="text/css" href="/hobby/resources/css/mainstyle.css">
+	<link href="/hobby/resources/css/mainstyle.css" rel="stylesheet">
 </head>
 <body>
 	<!-- 메인화면 큰 틀 -->

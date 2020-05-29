@@ -22,15 +22,20 @@ import com.daelim.hobby.Vo.VOComment;
 
 
 
-//   ----------------------------------게시판에 대한 컨트롤러입니다 --------------------------------------
+//   ----------------------------------寃뚯떆�뙋�뿉 ���븳 而⑦듃濡ㅻ윭�엯�땲�떎 --------------------------------------
 @Controller
 public class BoardController {
 
 	@Autowired 
-	BoardService boardService;  // BoardService 빈  등록
+	BoardService boardService;  // BoardService 鍮�  �벑濡�
 	
+	@RequestMapping(value = "/", method = RequestMethod.GET)  // main화면 
+	public String main(Locale locale, Model model) {
+		
+		return "main";
+	}
 	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)  // 게시판 전체보기
+	@RequestMapping(value = "/list", method = RequestMethod.GET)  // 寃뚯떆�뙋 �쟾泥대낫湲�
 	public String list(Locale locale, Model model) {
 		System.out.println("list");
 		List<VOBoard> boards = boardService.read();
@@ -38,13 +43,13 @@ public class BoardController {
 		
 		return "list";
 	}
-	@RequestMapping(value = "/detailview", method = RequestMethod.GET) // 게시판 상세보기 
+	@RequestMapping(value = "/detailview", method = RequestMethod.GET) // 寃뚯떆�뙋 �긽�꽭蹂닿린 
 	public String detail(HttpServletResponse response,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");
-		VOBoard board = boardService.detailView(Integer.parseInt(cnt)); // 게시판 상세보기
+		VOBoard board = boardService.detailView(Integer.parseInt(cnt)); // 寃뚯떆�뙋 �긽�꽭蹂닿린
 		List<VOComment> comments = boardService.detailComment(Integer.parseInt(cnt));
-		request.setAttribute("board", board); // 게시판 상세 내용 전달
-		request.setAttribute("comments", comments); // 댓글 내용 전달
+		request.setAttribute("board", board); // 寃뚯떆�뙋 �긽�꽭 �궡�슜 �쟾�떖
+		request.setAttribute("comments", comments); // �뙎湲� �궡�슜 �쟾�떖
 		return "detailview";
 	}
 	

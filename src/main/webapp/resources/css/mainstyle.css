@@ -6,7 +6,6 @@
 
 /* 메인화면 큰틀 설정 */
 #mainLayout {
-	float: none;
 	width: 1402px; /* 넓이 설정 */
 	height: auto;
 	margin: 0 auto; /* 가운데 설정 */
