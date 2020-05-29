@@ -25,4 +25,30 @@
 	
 	
 	
+	<!-- DatoSource Bean --> 
+	<!-- 
+	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<beans:property name="url" value="jdbc:mysql://61.84.24.83:3306/hobby33?useSSL=false&amp;serverTimezone=UTC" />
+		<beans:property name="username" value="hobby33" />
+		<beans:property name="password" value="hobby33!!" />
+	</beans:bean>
+	-->
+	
+	
+	<!-- DatoSource Bean --> 
+	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<beans:property name="username" value="scott2" />
+		<beans:property name="password" value="tiger" />
+	</beans:bean>
+	
+	
+	<!-- JDBCTemplate Bean -->
+	<beans:bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+	
+	
 </beans:beans>

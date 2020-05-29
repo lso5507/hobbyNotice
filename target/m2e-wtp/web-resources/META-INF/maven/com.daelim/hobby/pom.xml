@@ -14,6 +14,25 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+		
+		
+		<!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.5</version>
+        </dependency>
+		
+		
+		<!-- JDBC Template -->
+		<dependency>
+	   		<groupId>org.springframework</groupId>
+	   		<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+	  	</dependency>
+		
+		
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

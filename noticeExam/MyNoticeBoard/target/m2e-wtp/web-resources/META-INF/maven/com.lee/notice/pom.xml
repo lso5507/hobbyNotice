@@ -2,37 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.daelim</groupId>
-	<artifactId>hobby</artifactId>
-	<name>spring_daelim_hobby</name>
+	<groupId>com.lee</groupId>
+	<artifactId>notice</artifactId>
+	<name>MyNoticeBoard</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.6</java-version>
-		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>
+		<org.springframework-version>4.1.0.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
-		
-		
-		<!-- MySQL -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.5</version>
-        </dependency>
-		
-		
-		<!-- JDBC Template -->
-		<dependency>
-	   		<groupId>org.springframework</groupId>
-	   		<artifactId>spring-jdbc</artifactId>
-			<version>${org.springframework-version}</version>
-	  	</dependency>
-		
-		
-		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -132,9 +113,44 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>        
+		<!-- DB -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.18</version>
+		</dependency>
+		<!-- Spring-JDBC 연동 라이브러리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>4.1.6.RELEASE</version>
+		</dependency>	
+		<!-- ComboPoolDataSource -->
+		 <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5</version>
+        </dependency>
+        <!-- jstl dependecy -->
+         <dependency> 
+           <groupId>javax.servlet</groupId>
+       	   <artifactId>jstl</artifactId>
+           <version>1.2</version> 
+           </dependency> 
+           <dependency>
+           <groupId>taglibs</groupId> 
+           <artifactId>standard</artifactId>
+           <version>1.1.2</version>
+         </dependency>
+         <!-- File Upload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.3.3</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>
