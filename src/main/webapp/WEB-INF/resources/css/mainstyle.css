@@ -1,0 +1,415 @@
+/* 전체적 기본 초기화 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 메인화면 큰틀 설정 */
+#mainLayout {
+	float: none;
+	width: 1402px; /* 넓이 설정 */
+	height: auto;
+	margin: 0 auto; /* 가운데 설정 */
+	overflow: hidden;
+}
+
+/* 메인화면 영역설정(배너광고 제외) */
+#main {
+	width: 1092px; 
+	float: left; /* 배너광고때문에 위치 왼쪽 설정 */
+	margin-right: 10px; /* 배너광고와 거리 설정 */
+}
+
+/* 헤더영역 전체 크기 설정(로고라인 및 메뉴바) */
+#header {
+	width: 1092px;
+	height: 200px;
+}
+
+/* 헤더-로고라인 크기 설정 */
+#header-top {
+	width: 1092px;
+	height: 150px;
+	margin-bottom: 5px;
+	
+	/* 확인용 설정 */
+	text-align: center;
+	line-height: 150px; 
+}
+
+/* 헤더-로고 영역 설정 */
+#header-logo {
+	width: 275px;
+	height: 150px;
+	float: left;
+}
+
+/* 헤더-검색 영역 설정 */
+#header-search {
+	width: 500px;
+	height: 150px;
+	margin: 0 10px;
+	float: left;
+}
+
+/* 헤더-로그인 영역 설정 */
+#header-login {
+	width: 275px;
+	height: 150px;
+	float: right;	
+}
+
+#header-login_nav {
+	width:100%;
+	height:150px;
+	line-height:150px;
+	list-style-type: none;
+	
+}
+
+.header-login_nav_li {
+	float: left;
+}
+
+.header-login_nav_a {
+	padding: 0 40px;
+}
+
+/* 메뉴바 영역 크기 설정 */
+#header-navigation {
+	width: 1092px;
+	height: 45px;
+}
+
+/* 메인메뉴 ul 스타일 설정 */
+#header-navigation_main {
+	width: 100%	;
+	height: 45px;
+	line-height: 45px;
+	display: block;
+	list-style-type: none; /* 도형 스타일 없애기 */
+}
+
+/* 메인메뉴 ul > li 스타일 설정 */
+.header-navigation_main_li {
+	position: relative; /* 서브 메뉴때문에 위치를 상대적으로 변경  */
+	float: left; /* 정렬을 left로 해서 가로로 보이도록  */
+	width: 273px;
+	height: 45px;
+}
+
+/* 메뉴를 드롭다운으로 하기 위한 설정
+메인 li위에 마우스를 올려두면 sub ul 보이게 설정 */
+.header-navigation_main_li:hover .header-navigation_sub {
+	opacity: 1; /* 불투명하게 재설정  */
+	visibility: visible; /* 다시 보이도록 재설정 */
+}
+
+/* 메인메뉴 링크태그 위치 설정 */
+.header-navigation_main_a {
+	text-align: center;  /* 텍스트 가운데 정렬  */
+	padding: 0 102px; /* 공간이 많이 남아서 여백 설정 */
+}
+
+/* 서브메뉴 ul 설정 */
+.header-navigation_sub {
+	margin: 0;
+	padding: 0;
+	list-style-type: none; /* 도형 스타일 없애기 */
+	text-align: center;
+	opacity: 0; /* 완전투명 */
+	visibility: hidden; /* 자리는 차지하나 보이지 않도록 */
+}
+
+
+/* 서브메뉴 ul li 설정  */
+.header-navigation_sub_li {
+	float:none;
+	border: 1px solid black;
+}
+
+/* 서브메뉴 링크태그
+현재는 아무것도  설정하지 않음 */
+.header-navigation_sub_a {
+}
+
+/* 중간 영역 */
+#content{
+	width: 1092px;
+	height: auto;
+	margin: 4px 0;
+	overflow: hidden;
+	/* 확인용 */
+	border-bottom: 1px solid black;
+}
+
+/* 왼쪽 사이드바 */
+#aside {
+	width: 235px;
+	float: left;
+	margin-right: 4px;
+	/* 확인용 */
+	border: 1px solid black;
+}
+
+/* 사이드바 로그인 영역 */
+#aside-login {
+	width: 235px;
+	height: 150px;
+	border-bottom: 1px solid black;
+	margin-bottom: 2px;
+}
+
+/* 로그인버튼 영역 설정  */
+#aside-login_buttom {
+	width: 235px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+}
+
+/* 로그인버튼 클릭영역 설정  */
+.aside-login_buttom_a {
+	padding: 20px 40px;
+	border: 2px solid black;
+}
+
+/* 회원가입, id.pw찾기 영역 설정  */
+#aside-login_member {
+	width: 235px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+/* 사이드바 공지사항 바로가기 영역 */
+#aside-notice {
+	width: 235px;
+	height: 100px;
+	border-bottom: 1px solid black;
+	margin-bottom: 2px;
+}
+
+/* 사이드바 e-스포츠 바로가기 영역 */
+#aside-esport {
+	width: 235px;
+	height: 200px;
+	border-bottom: 1px solid black;
+	margin-bottom: 2px;
+}
+
+/* 사이드바 스포츠 바로가기 영역 */
+#aside-sport {
+	width: 235px;
+	height: 200px;
+	border-bottom: 1px solid black;
+	margin-bottom: 2px;
+}
+
+/* 사이드바 문화생활 바로가기 영역 */
+#aside-culture {
+	width: 235px;
+	height: 200px;
+	border-bottom: 1px solid black;
+	margin-bottom: 2px;
+}
+
+/* 중간영역 */
+#section {
+	width: 850px;
+	height: auto;
+	float: left;
+}
+
+/* 중간영역 공지사항 게시판 영역 */
+#section-notice {
+	width: 850px;
+	height: 150px;
+	border: 1px solid;
+}
+
+/* 중간영역 공지사항 제목 영역 */
+#section-notice_title {
+	width: 850px;
+	height: 50px;
+	line-height: 50px;
+}
+
+/* 공지사항 게시글 영역 */
+#section-notice_content {
+	width: 850px;
+	height: 100px;
+}
+
+/* ul 스타일 안쪽으로 배치 */
+.section-notice_content_ul {
+	height: 100px;
+	list-style-position : inside;
+}
+
+/* 공간 배치 */
+.section-notice_content_li {
+	padding: 2px 0;
+}
+
+/* 중간영역 카테고리 게시판 */
+#section-category {
+	width: 850px;
+	height: auto;
+}
+
+/* 중간영역 카테고리 제목 영역 */
+#section-notice_title {
+	width: 850px;
+	height: 50px;
+	line-height: 50px;
+}
+
+/* 탭메뉴 영역 설정*/
+#section-category_tabmenu1 {
+	width: 850px;
+	height:450px;
+	margin: 0 auto;
+}
+
+#section-category_tabmenu2 {
+	width: 850px;
+	height:450px;
+	margin: 0 auto;
+}
+
+#section-category_tabmenu3 {
+	width: 850px;
+	height:450px;
+	margin: 0 auto;
+}
+
+/* 탭메뉴 ul 도형 지우기  */
+.section-category_tabmenu1_ul {
+	list-style-type: none;
+	overflow: hidden;
+}
+.section-category_tabmenu2_ul {
+	list-style-type: none;
+	overflow: hidden;
+}
+.section-category_tabmenu3_ul {
+	list-style-type: none;
+	overflow: hidden;
+}
+
+/* 탭 메뉴 가로 정렬  */
+.section-category_tabmenu1_ul > li {
+	float: left;
+}
+.section-category_tabmenu2_ul > li {
+	float: left;
+}
+.section-category_tabmenu3_ul > li {
+	float: left;
+}
+
+/* 문자 정렬  */
+.section-category_tabmenu1_ul > li > a {
+	display: inline-block;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+}
+.section-category_tabmenu2_ul > li > a {
+	display: inline-block;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+}
+.section-category_tabmenu3_ul > li > a {
+	display: inline-block;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+}
+
+/* 현재 선택된 li(탭메뉴)의 배경 변경 */
+.section-category_tabmenu1_ul > li.current {
+	background : #ccc;	
+} 
+.section-category_tabmenu2_ul > li.current {
+	background : #ccc;	
+} 
+.section-category_tabmenu3_ul > li.current {
+	background : #ccc;	
+}  
+
+/* 탭메뉴 각 내용 */
+.section-category_tabmenu1_tabcon {
+	display: none;
+	height: 300px;
+}
+.section-category_tabmenu2_tabcon {
+	display: none;
+	height: 300px;
+}
+.section-category_tabmenu3_tabcon {
+	display: none;
+	height: 300px;
+}
+
+/* 탭메뉴 선택에 대한 내용 */
+.section-category_tabmenu1_tabcon.current {
+	display: block;
+	height: auto;
+}
+.section-category_tabmenu2_tabcon.current {
+	display: block;
+	height: auto;
+}
+.section-category_tabmenu3_tabcon.current {
+	display: block;
+	height: auto;
+}
+
+.board_content > ul {
+	list-style-type: none;
+}
+
+.board_content > ul > li > a {
+	padding: 5px 10px;
+}
+
+#footer {
+	width: 1092px;
+	height: 150px;
+	text-align: center;
+	
+} 
+
+#footer-logo {
+	width: 300px;;
+	height: 150px;
+	line-height:150px;
+	border-right: 1px solid;
+	margin-right: 1px;
+	float: left;
+	
+} 
+
+#footer-info {
+	width: 500px;
+	height: 50px;
+	float: left;
+	padding: 45px 0 0 130px;
+}
+
+#banner {
+	width: 300px;
+	float: right;
+} 
+
+.block {
+	display: block;
+	padding: 6.5px;
+	margin-bottom: 5px;
+}
