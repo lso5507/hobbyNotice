@@ -4,74 +4,66 @@ import java.sql.Date;
 
 
 
-
-
+// 보드 VO
 public class VOBoard {
-
-	private int count;
-	private String name;
-	private String title;
-	private String content;
-	private int hit;
-	private Date date;
-	private String category;
+	private int bdCno;
+	private String bdName;
+	private String bdTitle;
+	private String bdContent;
+	private int bdHit;
+	private Date bdDate;
+	private String bdCategory;
 	private int dno;
-//	private memberDao member;
+	public int getBdCno() {
+		return bdCno;
+	}
+	public void setBdCno(int bdCno) {
+		this.bdCno = bdCno;
+	}
+	public String getBdName() {
+		return bdName;
+	}
+	public void setBdName(String bdName) {
+		this.bdName = bdName;
+	}
+	public String getBdTitle() {
+		return bdTitle;
+	}
+	public void setBdTitle(String bdTitle) {
+		this.bdTitle = bdTitle;
+	}
+	public String getBdContent() {
+		return bdContent;
+	}
+	public void setBdContent(String bdContent) {
+		this.bdContent = bdContent;
+	}
+	public int getBdHit() {
+		return bdHit;
+	}
+	public void setBdHit(int bdHit) {
+		this.bdHit = bdHit;
+	}
+	public Date getBdDate() {
+		return bdDate;
+	}
+	public void setBdDate(Date bdDate) {
+		this.bdDate = bdDate;
+	}
+	public String getBdCategory() {
+		return bdCategory;
+	}
+	public void setBdCategory(String bdCategory) {
+		this.bdCategory = bdCategory;
+	}
 	public int getDno() {
 		return dno;
 	}
 	public void setDno(int dno) {
 		this.dno = dno;
 	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
-	public VOBoard() {
-		
-	}
-	public int getCount() {
-		return count;
-	}
-	public void setCount(int count) {
-		this.count = count;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public int getHit() {
-		return hit;
-	}
-	public void setHit(int hit) {
-		this.hit = hit;
-	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	@Override
-	public String toString() {
-		return "VOBoard [count=" + count + ", name=" + name + ", title=" + title + ", content=" + content + ", hit="
-				+ hit + ", date=" + date + "]";
-	}
+
+//	private memberDao member;
+	
 
 }

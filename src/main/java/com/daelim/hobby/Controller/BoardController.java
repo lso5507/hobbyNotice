@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.daelim.hobby.Service.BoardService;
-import com.daelim.hobby.Vo.boardService;
+import com.daelim.hobby.Vo.VOBoard;
+import com.daelim.hobby.Vo.VOComment;
+
 
 
 
@@ -37,7 +39,7 @@ public class BoardController {
 		return "list";
 	}
 	@RequestMapping(value = "/detailview", method = RequestMethod.GET) // 게시판 상세보기 
-	public String detail(VOMember member,HttpServletResponse response,HttpServletRequest request) {
+	public String detail(HttpServletResponse response,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");
 		VOBoard board = boardService.detailView(Integer.parseInt(cnt)); // 게시판 상세보기
 		List<VOComment> comments = boardService.detailComment(Integer.parseInt(cnt));

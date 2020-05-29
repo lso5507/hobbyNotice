@@ -11,11 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.daelim.hobby.Dao.BoardDao;
+import com.daelim.hobby.Vo.VOBoard;
+import com.daelim.hobby.Vo.VOComment;
+
+
 
 @Service
 public class BoardService {
 	@Autowired
-	boardDao dao;
+	BoardDao dao;
+	
+	
 	public List<VOBoard> read() {
 		
 		List<VOBoard> boards =dao.boardRead();
