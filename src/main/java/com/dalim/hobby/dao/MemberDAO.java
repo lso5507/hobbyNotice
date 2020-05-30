@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Repository;
 
+import com.dalim.hobby.vo.MemberVO;
 
 
 @Repository
@@ -22,123 +23,141 @@ public class MemberDAO {
 	}
 	
 	
+	
 	// 회원가입
 	public void createAccount(final String memId, final String memPw, final String memName, final String memEmail, 
 			final String memPhone, final String memCity, final String memRegion, final int memPwHint, final String memPwAns) {
-		 
-		String query = "insert into member(memId, memPw, memName, memPhone, memEmail, memCity, memRegion, memPwHint, memPwAns)"
-				+ " values(?,?,?,?,?,?,?,?,?)";
+		
+//		String query = "insert into member(memId, memPw, memName, memPhone, memEmail, memRegion, memCity, memPwHint, memPwAns)"
+//				+ " values(?,?,?,?,?,?,?,?,?)";
+		
+		String query = "insert into member(memId, memPw, memPhone, memEmail, memRegion, memCity, memPwHint, memPwAns)"
+				+ " values(?,?,?,?,?,?,?,?)";
+		
 		template.update(query, new PreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement ps) throws SQLException {
 				ps.setString(1, memId);
 				ps.setString(2, memPw);
-				ps.setString(3, memName);
-				ps.setString(4, memEmail);
-				ps.setString(5, memPhone);
-				ps.setString(6, memCity);
-				ps.setString(7, memRegion);
-				ps.setInt(8, memPwHint);
-				ps.setString(9, memPwAns);
+				//ps.setString(3, memName);
+				ps.setString(3, memEmail);
+				ps.setString(4, memPhone);
+				ps.setString(5, memCity);
+				ps.setString(6, memRegion);
+				ps.setInt(7, memPwHint);
+				ps.setString(8, memPwAns);
 			}
 		});
 	}
-	
-	
-	
-	
-	
-	
-	
-/*	
-	
-	// 로그인
-	public MemberVO login(String mId, String mPwd) {
 		
-		MemberVO dto = null;
-		String query = "select * from m_member where mId='" + mId + "' and mPwd='" + mPwd + "'";
-		try {
-			dto = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
-		}catch(Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-		
-		return dto;
-	}
-	
-	
-	// 리스트
-	public ArrayList<MemberVO> list(){
-		String query = "select * from m_member order by mJoinDate desc";
-		return (ArrayList<MemberVO>) template.query(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));
-	}
-	
 	
 	// 아이디 중복 확인
-	public MemberVO checkId(String mId) {
-		MemberVO dto = null;
-		String query = "select * from m_member where mId='" + mId + "'";
+	public MemberVO checkId(String memId) {
+		MemberVO mVo = null;
+		System.out.println("아이디: " + memId);
+		String query = "select * from member where memId='" + memId + "'";
+		System.out.println(query);
+		
 		try {
-			dto = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
+			
+			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("return null");
+			return null;
+		}
+		
+		return mVo;
+	}
+	
+	
+	
+	// 로그인
+	public MemberVO login(String memId, String memPw) {
+		
+		MemberVO mVo = null;
+		String query = "select * from member where memId='" + memId + "' and memPw='" + memPw + "'";
+		try {
+			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 		
-		return dto;
+		return mVo;
 	}
+	
 	
 	
 	// 아이디 찾기
-	public MemberVO searchId(String mName, String mEmail, String mBirth) {
-		MemberVO dto = null;
-		String query = "select * from m_member where mName='"+mName +"' and "
-				+ "mEmail='"+mEmail+"' and mBirth='"+mBirth+"'";
+	public MemberVO searchId(String memEmail, String memPhone) {
+		MemberVO mVo = null;
+		String query = "select * from member where memEmail='"+ memEmail +"' and memPhone='"+ memPhone +"'";
 		try {
-			dto = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
+			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
 			System.out.println("검색된 아이디가 없습니다.");
 			return null;
 		}
 		
-		return dto;
+		return mVo;
 	}
+	
+	
+	
+	// 비밀번호 찾기
+	public MemberVO searchPw(String memId, int memPwHint, String memPwAns) {
+		MemberVO mVo = null;
+		String query = "select * from member where memId='"+ memId +"' and memPwHint="+ memPwHint +" and memPwAns='"+ memPwAns +"'";
+		try {
+			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("비밀번호가 없습니다.");
+			return null;
+		}
+		
+		return mVo;
+	}
+	
 	
 	
 	// 회원 정보 수정
-	public void memberModify(final String mId, final String mName, final String mMobile, 
-			final String mEmail, final String mRegion, final String mBirth) {
-		String query = "update m_member set mName=?, mMobile=?, mEmail=?, mRegion=?, mBirth=? where mId=?";
+	public void memberModify(final String memId, final String memPhone, final String memEmail, final String memRegion, final String memCity) {
+		String query = "update member set memPhone=?, memEmail=?, memRegion=?, memCity=? where memId=?";
 		template.update(query, new PreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, mName);
-				ps.setString(2, mMobile);
-				ps.setString(3, mEmail);
-				ps.setString(4, mRegion);
-				ps.setString(5, mBirth);
-				ps.setString(6, mId);
+				ps.setString(1, memPhone);
+				ps.setString(2, memEmail);
+				ps.setString(3, memRegion);
+				ps.setString(4, memCity);
+				ps.setString(5, memId);
 			}
 		});
 	}
+	
 	
 	
 	// 회원 탈퇴
-	public void memberDelete(final String mId) {
-		String query = "delete from m_member where mId=?";
+	public void memberDelete(final String memId) {
+		String query = "delete from member where memId=?";
 		template.update(query, new PreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, mId);
+				ps.setString(1, memId);
 			}
 		});
 	}
 	
 	
-
-*/	
+	// 리스트
+	public ArrayList<MemberVO> list(){
+		String query = "select * from member order by memRegDate desc";
+		return (ArrayList<MemberVO>) template.query(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));
+	}
 	
 	
 } // end of MDao

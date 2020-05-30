@@ -1,4 +1,4 @@
-package com.daelim.hobby.vo;
+package com.dalim.hobby.vo;
 
 import java.sql.Timestamp;
 
@@ -12,8 +12,8 @@ public class MemberVO {
 	String memEmail;
 	Timestamp memRegDate;
 	String memPhone;
-	String memCity; // 거주 시
 	String memRegion; // 거주 도
+	String memCity; // 거주 시
 	int memPwHint; // 0:어릴때 별명, 1: 가장 친한 친구
 	String memPwAns; 
 	
@@ -98,8 +98,6 @@ public class MemberVO {
 	public void setMemPwAns(String memPwAns) {
 		this.memPwAns = memPwAns;
 	}
-	
-	
 	
 	
 	

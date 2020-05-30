@@ -1,4 +1,4 @@
-package com.daelim.hobby.Controller;
+package com.dalim.hobby.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -8,47 +8,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.daelim.hobby.Service.MemberService;
-import com.daelim.hobby.vo.MemberVO;
-
-
+import com.dalim.hobby.service.MemberService;
+import com.dalim.hobby.vo.MemberVO;
 
 @Controller
 public class MemberController {
-		
+	
 	@Autowired
 	public MemberService mService;
 
 	
 	// 회원가입
-	@RequestMapping("/Login_SignUp") // create_account_view 
+	@RequestMapping("/create_account_view") 
 	public String create_account_view(Model model) {
-		return "/member/Login_SignUp";
+		return "/member/create_account_view";
 	}
 	@RequestMapping("/create_account")
 	public String create_account(MemberVO mVo) {
 		mService.mCreateAccount(mVo);
-		return "/member/Login"; // /member/login_page
+		return "/member/login_page";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-/*	
 	
 	
 	// 아이디 중복검사
 	@RequestMapping("/idCheck")
 	public String idCheck(HttpServletRequest request, Model model) {
-		model.addAttribute("request", request);
-		mService.mIdCheckCommand(model);
+		mService.mIdCheck(request, model);
 		
-		if(model.containsAttribute("dto")) {
+		if(model.containsAttribute("ok")) { 
 			System.out.println("사용 가능한 아이디 입니다.");
 			model.addAttribute("msg", "사용 가능한 아이디 입니다.");
 		}
@@ -67,23 +54,15 @@ public class MemberController {
 		return "/member/login_page";
 	}
 	@RequestMapping("/login")
-	public String login(MemberVO dto, HttpServletRequest request, Model model) {
-		mService.mLoginCommand(dto, request, model);
+	public String login(MemberVO mVo, HttpServletRequest request, Model model) {
+		mService.mLogin(mVo, request, model);
 		
-		if(!model.containsAttribute("dto")) {
+		if(!model.containsAttribute("ok")) {
 			model.addAttribute("msg", "아이디, 비밀번호가 틀립니다.");
 			model.addAttribute("url", "member/login_page.jsp");
 			return "/member/login_page";
 		}
-		return "/member/login_view";
-	}
-	
-	
-	// 멤버 리스트
-	@RequestMapping("/mList")
-	public String list(Model model) {
-		mService.mListCommand(model);
-		return "/member/list";
+		return "/member/Login_MyInfo";
 	}
 	
 	
@@ -93,39 +72,44 @@ public class MemberController {
 		return "/member/idSearch_page";
 	}
 	@RequestMapping("/idSearch")
-	public String idSearch(MemberVO dto, Model model) {	
-		mService.MIdSearchCommand(dto, model);
+	public String idSearch(MemberVO mVo, Model model) {
+		mService.mIdSearch(mVo, model);
 		return "/member/idSearch_page";
 	}
 	
 	
-	// 회원 정보 수정  (정보수정 하고 Home으로 리다이렉트 시키는데 수정된 정보로 바뀌지 않음)
-	@RequestMapping("/member_modify_page")
+	// 비밀번호 찾기
+	@RequestMapping("/Login_FindPW")
+	public String Login_FindPW() {
+		return "/member/Login_FindPW";
+	}
+	@RequestMapping("/pwSearch")
+	public String pwSearch(MemberVO mVo, Model model) {
+		mService.mPwSearch(mVo, model);
+		return "/member/Login_FindPW";
+	}
+	
+	
+	// 내 정보
+	@RequestMapping("/Login_MyInfo")
+	public String Login_MyInfo() {
+		return "/member/Login_MyInfo";
+	}
+	
+	
+	// 회원 정보 수정
+	@RequestMapping("/Login_MyInfo_MyInfoChange")
 	public String member_modify_page() {	
-		return "/member/member_modify_page";
+		return "/member/Login_MyInfo_MyInfoChange";
 	}
 	@RequestMapping("/member_modify")
-	public String member_modify(MemberVO dto, HttpSession session) {
-		mService.mMemberModifyCommand(dto, session);
-		return "redirect:Home";
+	public String member_modify(MemberVO mVo, HttpSession session) {
+		mService.mMemberModify(mVo, session);
+		return "redirect:Login_MyInfo";
 	}
 	
 	
-	// 홈페이지
-	@RequestMapping("/Home")
-	public String Home(HttpServletRequest request, HttpSession session) {
-		session = request.getSession();
-		if(session.getAttribute("mId") == null) { // 처음 만들어진 세션이면 -> 로그인 상태가 아니면 (세션에 바인딩된 id가 없음) -> 로그인 페이지로 보낸다
-			System.out.println("로그인부터 하세요!");
-			return "member/login_page";
-		}
-		
-		System.out.println("세션 아이디: " + session.getAttribute("mId"));
-		return "member/login_view"; // 로그인이 되어있는 상태이면 로그인뷰를 보여준다
-	}
-	
-	
-	// 로그아웃
+	// 로그아웃 (세션 삭제)
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request, HttpSession session) {
 		System.out.println("logout()");
@@ -146,11 +130,34 @@ public class MemberController {
 	@RequestMapping("/mDelete")
 	public String mDelete(HttpSession session) {
 		mService.mMemberDelete(session);
+		session.invalidate();
 		return "/member/login_page";
 	}
 	
-
+	
+	
+	// 멤버 리스트 (가입한 회원 목록)
+	@RequestMapping("/mList")
+	public String list(Model model) {
+		mService.mList(model);
+		return "/member/list";
+	}
+	
+	
+	
+/*	
+	// 홈페이지
+	@RequestMapping("/Home")
+	public String Home(HttpServletRequest request, HttpSession session) {
+		session = request.getSession();
+		if(session.getAttribute("mId") == null) { // 처음 만들어진 세션이면 -> 로그인 상태가 아니면 (세션에 바인딩된 id가 없음) -> 로그인 페이지로 보낸다
+			System.out.println("로그인부터 하세요!");
+			return "member/login_page";
+		}
+		
+		System.out.println("세션 아이디: " + session.getAttribute("mId"));
+		return "member/login_view"; // 로그인이 되어있는 상태이면 로그인뷰를 보여준다
+	}
 */
-
 	
 } // end of MController
