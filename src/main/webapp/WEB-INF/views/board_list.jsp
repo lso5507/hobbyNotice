@@ -29,11 +29,11 @@
 						<!-- DTO에서  -->
 						<c:forEach items="${list}" var="boardVO">
 						<div class="item">
-							<div class="num"><c:out value="${boardVO.count}"/></div>
-							<div class="tit"><a href="detailview?cnt=${boardVO.count}"><c:out value="${boardVO.title}"/></a>(${boardVO.dno})</div>
-							<div class="date"><c:out value="${boardVO.date}"/></div>
-							<div class="writer"><c:out value="${boardVO.name}"/></div>
-							<div class="HitChk"><c:out value="${boardVO.hit}"/></div>
+							<div class="num"><c:out value="${boardVO.bdCno}"/></div>
+							<div class="tit"><a href="detailview?cnt=${boardVO.bdCno}"><c:out value="${boardVO.bdTitle}"/></a>(${boardVO.dno})</div>
+							<div class="date"><c:out value="${boardVO.bdDate}"/></div>
+							<div class="writer"><c:out value="${boardVO.bdName}"/></div>
+							<div class="HitChk"><c:out value="${boardVO.bdHit}"/></div>
 							<div class="goodview">0</div>
 						</div>
 						</c:forEach>

@@ -30,13 +30,13 @@ public class BoardController {
 	BoardService boardService;  // BoardService 빈  등록
 	
 	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)  // 게시판 전체보기
+	@RequestMapping(value = "/board_list", method = RequestMethod.GET)  // 게시판 전체보기
 	public String list(Locale locale, Model model) {
 		System.out.println("list");
 		List<VOBoard> boards = boardService.read();
 		model.addAttribute("list",boards);
 		
-		return "list";
+		return "board_list";
 	}
 	@RequestMapping(value = "/detailview", method = RequestMethod.GET) // 게시판 상세보기 
 	public String detail(HttpServletResponse response,HttpServletRequest request) {
@@ -68,6 +68,12 @@ public class BoardController {
 		List<VOBoard> boards = boardService.read("FreeBoard");
 		model.addAttribute("lists",boards);
 		return "freeboard";
+	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+
+		return "home";
 	}
 	
 	

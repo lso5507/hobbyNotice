@@ -87,7 +87,7 @@ public class BoardDao {
 				board.setBdContent(rs.getString("bdContent"));
 				board.setBdHit(rs.getInt("bdHit"));
 				board.setBdDate(rs.getDate("bdDate"));
-				board.setBdCno(rs.getInt("bdCnt"));
+				board.setBdCno(rs.getInt("bdCno"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 				
 				return board;
@@ -191,7 +191,7 @@ public class BoardDao {
 		
 	List<VOBoard> boards = null;
 		
-		final String sql = "SELECT * FROM board where bdCnt=?";
+		final String sql = "SELECT * FROM board where bdCno=?";
 		
 		boards = template.query(sql, new Object[]{cnt}, new RowMapper<VOBoard>() {
 

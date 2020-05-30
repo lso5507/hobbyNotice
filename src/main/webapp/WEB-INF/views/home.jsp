@@ -10,5 +10,6 @@
 </h1>
 
 <P> Daelim asdsis  ${serverTime}. </P>
+<a href="board_list">board</a>
 </body>
 </html>
