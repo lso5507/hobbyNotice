@@ -1,4 +1,4 @@
-package com.dalim.hobby.service;
+package com.daelim.hobby.service;
 
 import java.util.ArrayList;
 
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import com.dalim.hobby.dao.MemberDAO;
-import com.dalim.hobby.vo.MemberVO;
+import com.daelim.hobby.dao.MemberDAO;
+import com.daelim.hobby.vo.MemberVO;
 
 @Service
 public class MemberService {

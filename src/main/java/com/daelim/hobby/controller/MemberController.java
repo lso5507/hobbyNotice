@@ -1,4 +1,4 @@
-package com.dalim.hobby.controller;
+package com.daelim.hobby.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dalim.hobby.service.MemberService;
-import com.dalim.hobby.vo.MemberVO;
+import com.daelim.hobby.service.MemberService;
+import com.daelim.hobby.vo.MemberVO;
 
 
 @Controller

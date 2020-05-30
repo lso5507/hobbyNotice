@@ -1,4 +1,4 @@
-package com.dalim.hobby.dao;
+package com.daelim.hobby.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Repository;
 
-import com.dalim.hobby.vo.MemberVO;
+import com.daelim.hobby.vo.MemberVO;
 
 
 @Repository
