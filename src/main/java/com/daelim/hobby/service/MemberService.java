@@ -1,4 +1,4 @@
-package com.dalim.hobby.service;
+package com.daelim.hobby.service;
 
 import java.util.ArrayList;
 
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import com.dalim.hobby.dao.MemberDAO;
-import com.dalim.hobby.vo.MemberVO;
+import com.daelim.hobby.dao.MemberDAO;
+import com.daelim.hobby.vo.MemberVO;
 
 @Service
 public class MemberService {
@@ -20,14 +20,14 @@ public class MemberService {
 	public MemberVO mVo;
 	
 	
-	// È¸¿ø°¡ÀÔ
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void mCreateAccount(MemberVO mVo) {
 		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemName(), mVo.getMemEmail(), mVo.getMemPhone(), 
 				mVo.getMemRegion(), mVo.getMemCity(), mVo.getMemPwHint(), mVo.getMemPwAns());
 	}
 	
 	
-	// ¾ÆÀÌµð Áßº¹°Ë»ç
+	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
 	public void mIdCheck(HttpServletRequest request, Model model) {
 		String memId = request.getParameter("memId");
 		
@@ -40,14 +40,14 @@ public class MemberService {
 	
 	
 	
-	// ·Î±×ÀÎ
+	// ï¿½Î±ï¿½ï¿½ï¿½
 	public void mLogin(MemberVO mVo, HttpServletRequest request, Model model) {
 		mVo = mDao.login(mVo.getMemId(), mVo.getMemPw());
 		
 		if(mVo != null) {
 			model.addAttribute("ok", "ok");
 			
-			HttpSession session = request.getSession(); // ·Î±×ÀÎ -> ¼¼¼Ç ¸¸µë
+			HttpSession session = request.getSession(); // ï¿½Î±ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			session.setAttribute("mVo", mVo); 
 			
 			session.setAttribute("memId", mVo.getMemId());
@@ -55,14 +55,14 @@ public class MemberService {
 			
 			String myid = (String) session.getAttribute("memId");
 			String mypwd = (String) session.getAttribute("memPw");
-			System.out.println("¼¼¼Ç ¾ÆÀÌµð: " + myid);
-			System.out.println("¼¼¼Ç ºñ¹Ð¹øÈ£: " + mypwd);
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½: " + myid);
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£: " + mypwd);
 		}
 	}
 	
 	
 	
-	// ¾ÆÀÌµð Ã£±â
+	// ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½
 	public void mIdSearch(MemberVO mVo, Model model) {
 		String memEmail = mVo.getMemEmail();
 		String memPhone = mVo.getMemPhone();
@@ -70,13 +70,13 @@ public class MemberService {
 		mVo = mDao.searchId(memEmail, memPhone);
 		
 		if(mVo != null) {
-			System.out.println("¾ÆÀÌµð °Ë»ö ¼º°ø : " + mVo.getMemId());
+			System.out.println("ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + mVo.getMemId());
 			model.addAttribute("mVo", mVo);
 		}
 	}
 	
 	
-	// ºñ¹Ð¹øÈ£ Ã£±â
+	// ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½
 	public void mPwSearch(MemberVO mVo, Model model) {
 		String memId = mVo.getMemId();
 		int memPwHint = mVo.getMemPwHint();
@@ -85,7 +85,7 @@ public class MemberService {
 		mVo = mDao.searchPw(memId, memPwHint, memPwAns);
 		
 		if(mVo != null) {
-			System.out.println("ºñ¹Ð¹øÈ£ °Ë»ö ¼º°ø : " + mVo.getMemPw());
+			System.out.println("ï¿½ï¿½Ð¹ï¿½È£ ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + mVo.getMemPw());
 			model.addAttribute("mVo", mVo);
 		}
 		
@@ -93,7 +93,7 @@ public class MemberService {
 	
 	
 	
-	// È¸¿ø Á¤º¸ ¼öÁ¤
+	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void mMemberModify(MemberVO mVo, HttpSession session) {
 		
 		
@@ -102,7 +102,7 @@ public class MemberService {
 		String memRegion = mVo.getMemRegion();
 		String memCity = mVo.getMemCity();
 		
-		// ·Î±×ÀÎÇÒ¶§  ¼¼¼Ç¿¡ mId¸¦ ¼³Á¤ÇßÀ½. getAttribute¸¦ ÇØ¼­ mId¸¦ °¡Á®¿Â´Ù¸é -> ·Î±×ÀÎ µÈ »óÅÂ
+		// ï¿½Î±ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½  ï¿½ï¿½ï¿½Ç¿ï¿½ mIdï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. getAttributeï¿½ï¿½ ï¿½Ø¼ï¿½ mIdï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´Ù¸ï¿½ -> ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		String memId = (String) session.getAttribute("memId");
 		System.out.println("session.getAttribute mId : " + memId);
 		
@@ -110,15 +110,15 @@ public class MemberService {
 	}
 	
 	
-	// È¸¿ø Å»Åð
+	// È¸ï¿½ï¿½ Å»ï¿½ï¿½
 	public void mMemberDelete(HttpSession session) {
 		String memId = (String)session.getAttribute("memId");
-		System.out.println("¼¼¼Ç ¾ÆÀÌµð(»èÁ¦ÇÒ ¾ÆÀÌµð): " + memId);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½): " + memId);
 		mDao.memberDelete(memId);
 	}
 	
 	
-	// ¸â¹ö ¸®½ºÆ®
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	public void mList(Model model) {
 		ArrayList<MemberVO> dtos = mDao.list();
 		model.addAttribute("list", dtos);
