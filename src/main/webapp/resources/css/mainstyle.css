@@ -61,7 +61,7 @@ a {
 
 /* 헤더-로고 이미지 크기 설정 */
 #header-logo > a > img {
-	width: 300px;
+	width: 275px;
 	height: 150px;
 }
 
@@ -518,7 +518,7 @@ a {
 
 /* 푸터 로고 이미지 크기 조정 */
 #footer-logo > a > img {
-	width: 300px;
+	width: 275px;
 	height: 150px;
 }
 
@@ -545,7 +545,6 @@ a {
 	border: 1px solid;
 	box-sizing: border-box;
 }
-
 
 /* 최신 및 인기 게시물 - 제목 스타일 */
 .section-title {
