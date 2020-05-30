@@ -11,12 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dalim.hobby.service.MemberService;
 import com.dalim.hobby.vo.MemberVO;
 
-@Controller
-public class MemberController {
+//@Controller
+public class MemberController { 
 	
 	@Autowired
 	public MemberService mService;
-
+	
+	// => 얘를 컨트롤러로 인식을 못함
+	@RequestMapping("/test2")
+	public String test() {
+		System.out.println("test()");
+		return "/test";
+	}
+	
 	
 	// 회원가입
 	@RequestMapping("/create_account_view") 

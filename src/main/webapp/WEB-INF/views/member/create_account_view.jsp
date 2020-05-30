@@ -11,9 +11,9 @@
 <script>
 
 function CheckId(){
-	alert(document.Create.mId.value);
+	alert(document.Create.memId.value);
 	
-	document.Create.action = "/hobby/idCheck?mId=" + document.Create.mId.value;
+	document.Create.action = "/hobby/idCheck?memId=" + document.Create.memId.value;
 	document.Create.submit();
 }
 
@@ -31,6 +31,13 @@ function CheckId(){
 	
 	비밀번호 : <input type="password" name="memPw"><br>
 	이름 : <input type="text" name="memName"><br>
+	
+	이메일 : <input type="text" name="memEmail"><br>
+	핸드폰 : <input type="text" name="memPhone"><br>
+	도 : <input type="text" name="memRegion"><br>
+	시 : <input type="text" name="memCity"><br>
+	비밀번호 힌트 : <input type="text" name="memPwHint"><br>
+	비밀번호 답변 : <input type="text" name="memPwAns"><br>
 	
 	<input type="submit" value="회원가입">
 	
