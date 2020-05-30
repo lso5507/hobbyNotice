@@ -9,8 +9,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link href="/notice/resources/css/style_list.css" rel="stylesheet" type="text/css">			
+<title>E-Sports 게시판</title>
+<link href="<%=path%>/resources/css/board_liststyle.css" rel="stylesheet" type="text/css">			
 </head>
 <body>
 	<form action="" method="post">
@@ -40,7 +40,7 @@
 					</div>
 					
 					<div class="board_btn_writer">
-						<input type="button" value="글쓰기" class="btn_writer" onclick="location.href='<%=path%>/writeform'"/>
+						<input type="button" value="글쓰기" id="btn_writer" onclick="location.href='<%=path%>/board_write'"/>
 					</div>
 					
 							

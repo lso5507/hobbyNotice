@@ -11,7 +11,7 @@ a { /* a 태그에 대한 색을 없앰 */
 .board_list_wrap {
 	display: block;
 	padding: 50px; /* 전체적인 위치를 패딩으로 조절 */
-	width : 1092px; /* 가로 크기 조절 */
+	width : 742px; /* 가로 크기 조절 */
 	margin: 0 auto;
 }
 
@@ -78,7 +78,7 @@ a { /* a 태그에 대한 색을 없앰 */
 	padding: 5px 0;
 }
 
-.btn_writer {
+#btn_writer {
 	width: 70px;
 	height: 22px;
 }

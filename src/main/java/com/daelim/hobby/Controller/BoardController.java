@@ -38,36 +38,36 @@ public class BoardController {
 		
 		return "board_list";
 	}
-	@RequestMapping(value = "/detailview", method = RequestMethod.GET) // 게시판 상세보기 
+	@RequestMapping(value = "/board_detail", method = RequestMethod.GET) // 게시판 상세보기 
 	public String detail(HttpServletResponse response,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");
 		VOBoard board = boardService.detailView(Integer.parseInt(cnt)); // 게시판 상세보기
 		List<VOComment> comments = boardService.detailComment(Integer.parseInt(cnt));
 		request.setAttribute("board", board); // 게시판 상세 내용 전달
 		request.setAttribute("comments", comments); // 댓글 내용 전달
-		return "detailview";
+		return "board_detail";
 	}
 	
-	@RequestMapping(value = "/team", method = RequestMethod.GET)
+	@RequestMapping(value = "/board_team", method = RequestMethod.GET)
 	public String team(Locale locale, Model model) {
 		boardService.read("Team");
 		List<VOBoard> boards = boardService.read("Team");
 		model.addAttribute("list",boards);
-		return "team";
+		return "board_team";
 	}
-	@RequestMapping(value = "/tip", method = RequestMethod.GET)
+	@RequestMapping(value = "/board_tip", method = RequestMethod.GET)
 	public String tip(Locale locale, Model model) {
 		boardService.read("Tip");
 		List<VOBoard> boards = boardService.read("Tip");
 		model.addAttribute("list",boards);
-		return "tip";
+		return "board_tip";
 	}
-	@RequestMapping(value = "/freeboard", method = RequestMethod.GET)
+	@RequestMapping(value = "/board_free", method = RequestMethod.GET)
 	public String freeboard(Locale locale, Model model) {
 		boardService.read("FreeBoard");
 		List<VOBoard> boards = boardService.read("FreeBoard");
 		model.addAttribute("lists",boards);
-		return "freeboard";
+		return "board_free";
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -75,6 +75,11 @@ public class BoardController {
 
 		return "home";
 	}
-	
+	@RequestMapping(value = "/board_write", method = RequestMethod.GET)
+	public String writeForm(Locale locale, Model model) {
+		
+		
+		return "board_write";
+	}
 	
 }
