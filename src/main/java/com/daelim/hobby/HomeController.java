@@ -6,14 +6,10 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.dalim.hobby.service.MemberService;
-import com.dalim.hobby.vo.MemberVO;
 
 /**
  * Handles requests for the application home page.
@@ -43,19 +39,6 @@ public class HomeController {
 	
 	
 	
-	@Autowired
-	public MemberService mService;
-	
-	// 회원가입
-	@RequestMapping("/create_account_view") 
-	public String create_account_view(Model model) {
-		return "/member/create_account_view";
-	}
-	@RequestMapping("/create_account")
-	public String create_account(MemberVO mVo) {
-		mService.mCreateAccount(mVo);
-		return "/member/login_page";
-	}
 	
 	
 }
