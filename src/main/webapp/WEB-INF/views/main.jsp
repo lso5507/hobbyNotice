@@ -28,6 +28,7 @@
 						<form action="??????" method="get"> <!-- 백엔드필요 -->
 							<select class="input_select">
 								<option value="serarch_title"> 제목 </option>
+								<option value="serarch_content"> 내용 </option>
 								<option value="serarch_name"> 작성자 </option>
 								<option value="serarch_category"> 카테고리 </option>
 							</select>

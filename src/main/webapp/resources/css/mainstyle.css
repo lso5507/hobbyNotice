@@ -50,7 +50,7 @@ a {
 
 /* 헤더-로고 영역 설정 */
 #header-logo {
-	width: 275px;
+	width: 300px;
 	height: 150px;
 	line-height: 150px;
 	text-align: center;
@@ -61,25 +61,26 @@ a {
 
 /* 헤더-로고 이미지 크기 설정 */
 #header-logo > a > img {
-	width: 275px;
+	width: 300px;
 	height: 150px;
 }
 
 /* 헤더-검색 영역 설정 */
 #header-search {
-	width: 500px;
+	width: 480px;
 	height: 150px;
 	line-height: 150px;
 	text-align: center;
-	margin: 0 17px;
+	margin: 0 6px;
 	float: left;
 	border: 1px solid;
 	box-sizing: border-box;
+	position: relative;
 }
 
 /* 헤더-로그인 영역 설정 */
 #header-login {
-	width: 275px;
+	width: 300px;
 	height: 150px;
 	line-height: 150px;
 	text-align: center;
@@ -90,7 +91,7 @@ a {
 
 /* ul 스타일 설정 */
 #header-login > ul {
-	width: 275px;
+	width: 300px;
 	height:150px;
 	line-height:150px;
 	list-style-type: none;
@@ -98,7 +99,7 @@ a {
 
 /* li 가로 정렬 */
 #header-login > ul > li {
-	width:137.5px;
+	width:150px;
 	box-sizing: border-box;
 	float: left;
 }
@@ -518,7 +519,7 @@ a {
 
 /* 푸터 로고 이미지 크기 조정 */
 #footer-logo > a > img {
-	width: 275px;
+	width: 300px;
 	height: 150px;
 }
 
@@ -569,18 +570,35 @@ a {
 
 /* form태그 각 타입 설정 */
 .input_button {
+	position:absolute;
+	left: 390px;
+	top: 55px;
+	width: 50px;
+	height: 40px;
 	background-color: #fff;
 	border: 1px solid #e3e3e3;
-	padding: 10px 20px;
+	padding: 10px 10px;
 	font-size: 15px;
 }
 .input_text {
+	position:absolute;
+	left: 140px;
+	top: 55px;
+	width: 250px;
+	height: 40px;
 	border: 1px solid #e3e3e3;
-	padding: 10px 20px;
+	padding: 5px;
+	box-sizing: border-box;
 	font-size: 15px;
 }
 .input_select {
+	position:absolute;
+	left: 40px;
+	top: 55px;
+	width: 100px;
+	height: 40px;
 	border: 1px solid #e3e3e3;
-	padding: 10px 20px;
+	padding: 10px 5px;
+	box-sizing: border-box;
 	font-size: 15px;
 }
