@@ -12,9 +12,9 @@ public class MemberVO {
 	String memEmail;
 	Timestamp memRegDate;
 	String memPhone;
-	String memRegion; // °ÅÁÖ µµ
-	String memCity; // °ÅÁÖ ½Ã
-	int memPwHint; // 0:¾î¸±¶§ º°¸í, 1: °¡Àå Ä£ÇÑ Ä£±¸
+	String memRegion; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+	String memCity; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+	int memPwHint; // 0:ï¿½î¸±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, 1: ï¿½ï¿½ï¿½ï¿½ Ä£ï¿½ï¿½ Ä£ï¿½ï¿½
 	String memPwAns; 
 	
 	public MemberVO() {}
