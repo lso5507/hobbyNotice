@@ -74,7 +74,7 @@ public class BoardDao {
 		List<VOBoard> boards = null;
 		
 		//각 게시판 마다의 댓글 수를 포함한 정보 select
-		final String sql = "select m.*,count(c.dno) dnoCount from mainboard as m LEFT join `comment` as c  ON  m.count=c.dno group by m.count";	
+		final String sql = "select m.*,count(c.dno) dnoCount from board as m LEFT join `comment` as c  ON  m.bdCno=c.dno group by m.bdCno";	
 		// select * from mainboard
 		//select m.*,count(C.dno) from mainboard as m LEFT join `comment` as c  ON  m.count=c.dno
 		boards = template.query(sql, new Object[]{}, new RowMapper<VOBoard>() {
@@ -82,14 +82,14 @@ public class BoardDao {
 			@Override
 			public VOBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
 				VOBoard board = new VOBoard();
-				board.setBdName(rs.getString("name"));
-				board.setBdTitle(rs.getString("title"));
-				board.setBdContent(rs.getString("content"));
-				board.setBdHit(rs.getInt("hit"));
-				board.setBdDate(rs.getDate("date"));
-				board.setBdCno(rs.getInt("count"));
-				board.setBdCategory(categorys.get(rs.getInt("category")));
-				board.setDno(rs.getInt("dnoCount"));
+				board.setBdName(rs.getString("bdName"));
+				board.setBdTitle(rs.getString("bdTitle"));
+				board.setBdContent(rs.getString("bdContent"));
+				board.setBdHit(rs.getInt("bdHit"));
+				board.setBdDate(rs.getDate("bdDate"));
+				board.setBdCno(rs.getInt("bdCnt"));
+				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
+				
 				return board;
 				
 			}
@@ -107,13 +107,13 @@ public class BoardDao {
 		List<VOBoard> boards = null;
 		String sql="";
 		if(category.equals("Team")) {
-			 sql = "SELECT * FROM mainboard WHERE bdCategory=0";
+			 sql = "SELECT * FROM board WHERE bdCategory=0";
 		}
 		else if(category.equals("Tip")) {
-			sql = "SELECT * FROM mainboard WHERE bdCategory=1";
+			sql = "SELECT * FROM board WHERE bdCategory=1";
 		}
 		else if(category.equals("FreeBoard")) {
-			sql = "SELECT * FROM mainboard WHERE bdCategory=2";
+			sql = "SELECT * FROM board WHERE bdCategory=2";
 		}
 		else {
 			System.out.println("select에러");
@@ -125,12 +125,12 @@ public class BoardDao {
 			@Override
 			public VOBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
 				VOBoard board = new VOBoard();
-				board.setBdName(rs.getString("name"));
-				board.setBdTitle(rs.getString("title"));
-				board.setBdContent(rs.getString("content"));
-				board.setBdHit(rs.getInt("hit"));
-				board.setBdDate(rs.getDate("date"));
-				board.setBdCno(rs.getInt("count"));
+				board.setBdName(rs.getString("bdName"));
+				board.setBdTitle(rs.getString("bdTitle"));
+				board.setBdContent(rs.getString("bdContent"));
+				board.setBdHit(rs.getInt("bdHit"));
+				board.setBdDate(rs.getDate("bdDate"));
+				board.setBdCno(rs.getInt("bdCount"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 				
 				return board;
@@ -166,7 +166,7 @@ public class BoardDao {
 //			System.out.println("Not Found Session");
 //			return 0;
 //		}
-		final String sql = "INSERT INTO mainboard (name, title,content,category) values (?,?,?,?)";
+		final String sql = "INSERT INTO board (bdName, bdTitle,bdContent,bdCategory) values (?,?,?,?)";
 		// 카테고리가 Team이면 0 Tip이면 1 FreeBoard면 3 아니면 null
 		int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
 			(board.getBdCategory().equals("FreeBoard"))?2:null;
@@ -191,7 +191,7 @@ public class BoardDao {
 		
 	List<VOBoard> boards = null;
 		
-		final String sql = "SELECT * FROM mainboard where count=?";
+		final String sql = "SELECT * FROM board where bdCnt=?";
 		
 		boards = template.query(sql, new Object[]{cnt}, new RowMapper<VOBoard>() {
 
@@ -226,9 +226,9 @@ public class BoardDao {
 			public VOComment mapRow(ResultSet rs, int rowNum) throws SQLException {
 				VOComment comment = new VOComment();
 				
-				comment.setComm_name(rs.getString("name"));
-				comment.setComm_content(rs.getString("content"));
-				comment.setComm_regDate(rs.getDate("regDate"));
+				comment.setComm_name(rs.getString("comm_name"));
+				comment.setComm_content(rs.getString("comm_content"));
+				comment.setComm_regDate(rs.getDate("comm_regDate"));
 				
 				
 				return comment;
@@ -264,7 +264,7 @@ public class BoardDao {
 //			System.out.println("Not Found Session");
 //			return 0;
 //		}
-		final String sql = "INSERT INTO comment (name,content,dno) values (?,?,?)";
+		final String sql = "INSERT INTO comment (comm_name,comm_content,dno) values (?,?,?)";
 		// 카테고리가 Team이면 0 Tip이면 1 FreeBoard면 3 아니면 null
 		result = template.update(sql,"testId",comment.getComm_content(),comment.getDno());
 		
