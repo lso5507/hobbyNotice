@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 import com.daelim.hobby.dao.MemberDAO;
 import com.daelim.hobby.vo.MemberVO;
 
-@Service
+@Service	
 public class MemberService {
 	
 	@Autowired
@@ -20,89 +20,73 @@ public class MemberService {
 	public MemberVO mVo;
 	
 	
-	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	public void mCreateAccount(MemberVO mVo) {
-		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemName(), mVo.getMemEmail(), mVo.getMemPhone(), 
+	// È¸¿ø°¡ÀÔ
+	public void mCreateAccount(MemberVO mVo) { // ·Î±×ÀÎ view¿¡¼­ ÀÔ·ÂÇÑ °ªÀ» MemberVo °´Ã¼·Î °¡Á®¿Í »ç¿ëÇÑ´Ù
+		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemEmail(), mVo.getMemPhone(), 
 				mVo.getMemRegion(), mVo.getMemCity(), mVo.getMemPwHint(), mVo.getMemPwAns());
 	}
 	
 	
-	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
-	public void mIdCheck(HttpServletRequest request, Model model) {
-		String memId = request.getParameter("memId");
-		
+	// ¾ÆÀÌµð Áßº¹°Ë»ç
+	public MemberVO mIdCheck(HttpServletRequest request) {
+		String memId = request.getParameter("memId"); // memId : È¸¿ø°¡ÀÔ Ã¢¿¡¼­ ÀÔ·ÂÇÑ ¾ÆÀÌµð
 		mVo = mDao.checkId(memId);
-		if(mVo == null) {
-			model.addAttribute("ok", "ok");
-		}
-		
+		return mVo;
 	}
 	
 	
 	
-	// ï¿½Î±ï¿½ï¿½ï¿½
-	public void mLogin(MemberVO mVo, HttpServletRequest request, Model model) {
+	// ·Î±×ÀÎ
+	public MemberVO mLogin(MemberVO mVo, HttpServletRequest request) {
 		mVo = mDao.login(mVo.getMemId(), mVo.getMemPw());
 		
-		if(mVo != null) {
-			model.addAttribute("ok", "ok");
+		if(mVo != null) { // °Ë»ö ¼º°ø ½Ã
+			HttpSession session = request.getSession(); // ·Î±×ÀÎ -> ¼¼¼Ç ¸¸µë
+			session.setAttribute("mVo", mVo); // ¼¼¼Ç¿¡ mVo Ãß°¡ 
+			session.setAttribute("memId", mVo.getMemId()); // ¼¼¼Ç¿¡ ¾ÆÀÌµð Ãß°¡
+			session.setAttribute("memPw", mVo.getMemPw()); // ¼¼¼Ç¿¡ ºñ¹Ð¹øÈ£ Ãß°¡
 			
-			HttpSession session = request.getSession(); // ï¿½Î±ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-			session.setAttribute("mVo", mVo); 
+			System.out.println("¼¼¼Ç ¾ÆÀÌµð: " + (String) session.getAttribute("memId"));
+			System.out.println("¼¼¼Ç ºñ¹Ð¹øÈ£: " + (String) session.getAttribute("memPw"));
 			
-			session.setAttribute("memId", mVo.getMemId());
-			session.setAttribute("memPw", mVo.getMemPw());
-			
-			String myid = (String) session.getAttribute("memId");
-			String mypwd = (String) session.getAttribute("memPw");
-			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½: " + myid);
-			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£: " + mypwd);
+			return mVo;
 		}
+		
+		return null;
 	}
 	
 	
 	
-	// ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½
-	public void mIdSearch(MemberVO mVo, Model model) {
+	// ¾ÆÀÌµð Ã£±â
+	public MemberVO mIdSearch(MemberVO mVo) {
 		String memEmail = mVo.getMemEmail();
 		String memPhone = mVo.getMemPhone();
 		
 		mVo = mDao.searchId(memEmail, memPhone);
-		
-		if(mVo != null) {
-			System.out.println("ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + mVo.getMemId());
-			model.addAttribute("mVo", mVo);
-		}
+		return mVo;
 	}
 	
 	
-	// ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½
-	public void mPwSearch(MemberVO mVo, Model model) {
+	// ºñ¹Ð¹øÈ£ Ã£±â
+	public MemberVO mPwSearch(MemberVO mVo) {
 		String memId = mVo.getMemId();
 		int memPwHint = mVo.getMemPwHint();
 		String memPwAns = mVo.getMemPwAns();
 		
 		mVo = mDao.searchPw(memId, memPwHint, memPwAns);
-		
-		if(mVo != null) {
-			System.out.println("ï¿½ï¿½Ð¹ï¿½È£ ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + mVo.getMemPw());
-			model.addAttribute("mVo", mVo);
-		}
-		
+		return mVo;
 	}
 	
 	
-	
-	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// È¸¿ø Á¤º¸ ¼öÁ¤
 	public void mMemberModify(MemberVO mVo, HttpSession session) {
-		
 		
 		String memPhone = mVo.getMemPhone();
 		String memEmail = mVo.getMemEmail();
 		String memRegion = mVo.getMemRegion();
 		String memCity = mVo.getMemCity();
 		
-		// ï¿½Î±ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½  ï¿½ï¿½ï¿½Ç¿ï¿½ mIdï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. getAttributeï¿½ï¿½ ï¿½Ø¼ï¿½ mIdï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´Ù¸ï¿½ -> ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// ·Î±×ÀÎÇÒ¶§  ¼¼¼Ç¿¡ mId¸¦ ¼³Á¤ÇßÀ½. getAttribute¸¦ ÇØ¼­ mId¸¦ °¡Á®¿Â´Ù
 		String memId = (String) session.getAttribute("memId");
 		System.out.println("session.getAttribute mId : " + memId);
 		
@@ -110,19 +94,19 @@ public class MemberService {
 	}
 	
 	
-	// È¸ï¿½ï¿½ Å»ï¿½ï¿½
+	// È¸¿ø Å»Åð
 	public void mMemberDelete(HttpSession session) {
 		String memId = (String)session.getAttribute("memId");
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½): " + memId);
+		System.out.println("¼¼¼Ç ¾ÆÀÌµð(»èÁ¦ÇÒ ¾ÆÀÌµð): " + memId);
 		mDao.memberDelete(memId);
 	}
 	
 	
-	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
+	// ¸â¹ö ¸®½ºÆ®
 	public void mList(Model model) {
 		ArrayList<MemberVO> dtos = mDao.list();
 		model.addAttribute("list", dtos);
 	}
-	
+
 }
 

@@ -12,99 +12,104 @@ import com.daelim.hobby.service.MemberService;
 import com.daelim.hobby.vo.MemberVO;
 
 
+
 @Controller
-public class MemberController { 
+public class MemberController {
 	
 	@Autowired
 	public MemberService mService;
-	
-	@RequestMapping("/test2")
-	public String test() {
-		System.out.println("test()");
-		return "/test";
-	}
+	MemberVO mVo;
 	
 	
-	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// È¸¿ø°¡ÀÔ
 	@RequestMapping("/create_account_view") 
 	public String create_account_view(Model model) {
-		return "/member/create_account_view";
+		return "/member/create_account_view"; // È¸¿ø°¡ÀÔ ÆäÀÌÁö(jsp) (ÀÓ½Ã)
+		// view - member - create_account_view.jsp
 	}
 	@RequestMapping("/create_account")
 	public String create_account(MemberVO mVo) {
 		mService.mCreateAccount(mVo);
-		return "/member/login_page";
+		return "/member/login_page"; // ·Î±×ÀÎ ÆäÀÌÁö(jsp) (ÀÓ½Ã) 
 	}
 	
 	
-	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
+	// ¾ÆÀÌµğ Áßº¹°Ë»ç
 	@RequestMapping("/idCheck")
 	public String idCheck(HttpServletRequest request, Model model) {
-		mService.mIdCheck(request, model);
+		mVo = mService.mIdCheck(request);
 		
-		if(model.containsAttribute("ok")) { 
-			System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô´Ï´ï¿½.");
-			model.addAttribute("msg", "ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô´Ï´ï¿½.");
-		}
-		else {
-			System.out.println("ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô´Ï´ï¿½.");
-			model.addAttribute("msg", "ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô´Ï´ï¿½.");
+		if(mVo == null) { 
+			model.addAttribute("msg", "»ç¿ë °¡´ÉÇÑ ¾ÆÀÌµğ ÀÔ´Ï´Ù."); // °Ë»ö °á°ú¸¦ view¿¡¼­ »ç¿ëÇÏ±â À§ÇØ model¿¡ Ãß°¡
+		}else {
+			model.addAttribute("msg", "»ç¿ëÇÒ¼ö ¾ø´Â ¾ÆÀÌµğ ÀÔ´Ï´Ù.");
 		}
 		
 		return "member/create_account_view";
 	}
 	
 	
-	// ï¿½Î±ï¿½ï¿½ï¿½
+	// ·Î±×ÀÎ
 	@RequestMapping("/login_page")
 	public String login_view() {
 		return "/member/login_page";
 	}
 	@RequestMapping("/login")
 	public String login(MemberVO mVo, HttpServletRequest request, Model model) {
-		mService.mLogin(mVo, request, model);
+		mVo = mService.mLogin(mVo, request);
 		
-		if(!model.containsAttribute("ok")) {
-			model.addAttribute("msg", "ï¿½ï¿½ï¿½Ìµï¿½, ï¿½ï¿½Ğ¹ï¿½È£ï¿½ï¿½ Æ²ï¿½ï¿½ï¿½Ï´ï¿½.");
+		if(mVo == null) { // °Ë»ö ½ÇÆĞ½Ã
+			model.addAttribute("msg", "¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù."); // view¿¡ »Ñ·ÁÁÖ±â À§ÇØ model¿¡ Ãß°¡
 			model.addAttribute("url", "member/login_page.jsp");
 			return "/member/login_page";
 		}
+		
 		return "/member/Login_MyInfo";
 	}
 	
 	
-	// ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½
+	// ¾ÆÀÌµğ Ã£±â
 	@RequestMapping("/idSearch_page")
 	public String idSearch_page() {
 		return "/member/idSearch_page";
 	}
 	@RequestMapping("/idSearch")
 	public String idSearch(MemberVO mVo, Model model) {
-		mService.mIdSearch(mVo, model);
+		mVo = mService.mIdSearch(mVo);
+		if(mVo != null) {
+			System.out.println("¾ÆÀÌµğ °Ë»ö ¼º°ø : " + mVo.getMemId());
+			model.addAttribute("mVo", mVo); // view¿¡ °á°ú¸¦ »Ñ·ÁÁÖ±â À§ÇØ model¿¡ Ãß°¡
+		}
 		return "/member/idSearch_page";
 	}
 	
 	
-	// ï¿½ï¿½Ğ¹ï¿½È£ Ã£ï¿½ï¿½
-	@RequestMapping("/Login_FindPW")
-	public String Login_FindPW() {
-		return "/member/Login_FindPW";
+	// ºñ¹Ğ¹øÈ£ Ã£±â
+	@RequestMapping("/pwSearch_page")
+	public String pwSearch_page() {
+		return "/member/pwSearch_page";
 	}
 	@RequestMapping("/pwSearch")
 	public String pwSearch(MemberVO mVo, Model model) {
-		mService.mPwSearch(mVo, model);
+		mVo = mService.mPwSearch(mVo);
+		
+		if(mVo != null) {
+			System.out.println("ºñ¹Ğ¹øÈ£ °Ë»ö ¼º°ø : " + mVo.getMemPw());
+			model.addAttribute("mVo", mVo); // view¿¡ °á°ú¸¦ »Ñ·ÁÁÖ±â À§ÇØ model¿¡ Ãß°¡
+		}
+		
 		return "/member/Login_FindPW";
 	}
 	
 	
-	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ³» Á¤º¸
 	@RequestMapping("/Login_MyInfo")
 	public String Login_MyInfo() {
 		return "/member/Login_MyInfo";
 	}
 	
 	
-	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// È¸¿ø Á¤º¸ ¼öÁ¤
 	@RequestMapping("/Login_MyInfo_MyInfoChange")
 	public String member_modify_page() {	
 		return "/member/Login_MyInfo_MyInfoChange";
@@ -116,34 +121,33 @@ public class MemberController {
 	}
 	
 	
-	// ï¿½Î±×¾Æ¿ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+	// ·Î±×¾Æ¿ô (¼¼¼Ç »èÁ¦)
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request, HttpSession session) {
-		System.out.println("logout()");
-		session = request.getSession();
-		if(session.isNew()) {
-			System.out.println("Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+		session = request.getSession(); // ¼¼¼ÇÀ» °¡Á®¿È. (¾øÀ¸¸é »õ·Î ¸¸µç´Ù)
+		if(session.isNew()) { // Ã³À½ ¸¸µé¾îÁø ¼¼¼ÇÀÌ¸é (·Î±×ÀÎµÈ »óÅÂ°¡ ¾Æ´Ñ°ÅÀÓ)
+			System.out.println("Ã³À½ ¸¸µé¾îÁø ¼¼¼ÇÀÔ´Ï´Ù.");
 		}else {
-			System.out.println("ï¿½Î±ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½Ìµï¿½: " + session.getAttribute("mId"));
-			session.invalidate();
-			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½");
+			System.out.println("·Î±×ÀÎµÈ ¾ÆÀÌµğ: " + session.getAttribute("mId"));
+			session.invalidate(); // ¼¼¼Ç »èÁ¦
+			System.out.println("¼¼¼ÇÀ» »èÁ¦ÇÕ´Ï´Ù");
 		}
 		
 		return "/member/login_page";
 	}
 	
 	
-	// È¸ï¿½ï¿½ Å»ï¿½ï¿½
+	// È¸¿ø Å»Åğ
 	@RequestMapping("/mDelete")
 	public String mDelete(HttpSession session) {
-		mService.mMemberDelete(session);
-		session.invalidate();
+		mService.mMemberDelete(session); 
+		session.invalidate(); // ¼¼¼ÇÀ» »èÁ¦ÇÑ´Ù
 		return "/member/login_page";
 	}
 	
 	
 	
-	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½)
+	// ¸â¹ö ¸®½ºÆ® (°¡ÀÔÇÑ È¸¿ø ¸ñ·Ï)
 	@RequestMapping("/mList")
 	public String list(Model model) {
 		mService.mList(model);
@@ -153,17 +157,17 @@ public class MemberController {
 	
 	
 /*	
-	// È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// È¨ÆäÀÌÁö
 	@RequestMapping("/Home")
 	public String Home(HttpServletRequest request, HttpSession session) {
 		session = request.getSession();
-		if(session.getAttribute("mId") == null) { // Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ -> ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´Ï¸ï¿½ (ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½) -> ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-			System.out.println("ï¿½Î±ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½Ï¼ï¿½ï¿½ï¿½!");
+		if(session.getAttribute("mId") == null) { // Ã³À½ ¸¸µé¾îÁø ¼¼¼ÇÀÌ¸é -> ·Î±×ÀÎ »óÅÂ°¡ ¾Æ´Ï¸é (¼¼¼Ç¿¡ ¹ÙÀÎµùµÈ id°¡ ¾øÀ½) -> ·Î±×ÀÎ ÆäÀÌÁö·Î º¸³½´Ù
+			System.out.println("·Î±×ÀÎºÎÅÍ ÇÏ¼¼¿ä!");
 			return "member/login_page";
 		}
 		
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½: " + session.getAttribute("mId"));
-		return "member/login_view"; // ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Î±ï¿½ï¿½Îºä¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½
+		System.out.println("¼¼¼Ç ¾ÆÀÌµğ: " + session.getAttribute("mId"));
+		return "member/login_view"; // ·Î±×ÀÎÀÌ µÇ¾îÀÖ´Â »óÅÂÀÌ¸é ·Î±×ÀÎºä¸¦ º¸¿©ÁØ´Ù
 	}
 */
 	

@@ -4,18 +4,19 @@ import java.sql.Timestamp;
 
 
 public class MemberVO {
-
-	int mCnt;
-	String memId;
-	String memPw;
-	String memName;
-	String memEmail;
-	Timestamp memRegDate;
-	String memPhone;
-	String memRegion; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
-	String memCity; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
-	int memPwHint; // 0:ï¿½î¸±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, 1: ï¿½ï¿½ï¿½ï¿½ Ä£ï¿½ï¿½ Ä£ï¿½ï¿½
-	String memPwAns; 
+	
+	// ÀÌ¸§, »ý³â¿ùÀÏ Ãß°¡ÇÒ °Å?
+	
+	int mCnt; // È¸¿ø ¹øÈ£
+	String memId; // ¾ÆÀÌµð
+	String memPw; // ºñ¹ø
+	String memEmail; // ÀÌ¸ÞÀÏ
+	Timestamp memRegDate; // °¡ÀÔÀÏ
+	String memPhone; // ¿¬¶ôÃ³
+	String memRegion; // µµ
+	String memCity; // ½Ã
+	int memPwHint; // 0.¾î¸±¶§ º°¸í, 1.°¡Àå Ä£ÇÑÄ£±¸ ÀÌ¸§
+	String memPwAns; // ºñ¹Ð¹øÈ£ ´äº¯
 	
 	public MemberVO() {}
 	public MemberVO(int mCnt, String memId, String memPw, String memEmail, Timestamp memRegDate, String memPhone, 
@@ -50,12 +51,12 @@ public class MemberVO {
 	public void setMemPw(String memPw) {
 		this.memPw = memPw;
 	}
-	public String getMemName() {
-		return memName;
-	}
-	public void setMemName(String memName) {
-		this.memName = memName;
-	}
+//	public String getMemName() {
+//		return memName;
+//	}
+//	public void setMemName(String memName) {
+//		this.memName = memName;
+//	}
 	public String getMemEmail() {
 		return memEmail;
 	}

@@ -18,19 +18,16 @@ public class MemberDAO {
 	
 	JdbcTemplate template;
 	@Autowired
-	public void setTemplate(JdbcTemplate template) {
+	public void setTemplate(JdbcTemplate template) { // JdbcTemplate À» »ç¿ëÇÏ±â À§ÇÑ ¼¼ÆÃ
 		this.template = template;
 	}
 	
+
 	
-	
-	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	public void createAccount(final String memId, final String memPw, final String memName, final String memEmail, 
+	// È¸¿ø°¡ÀÔ
+	public void createAccount(final String memId, final String memPw, final String memEmail, 
 			final String memPhone, final String memCity, final String memRegion, final int memPwHint, final String memPwAns) {
-		
-//		String query = "insert into member(memId, memPw, memName, memPhone, memEmail, memRegion, memCity, memPwHint, memPwAns)"
-//				+ " values(?,?,?,?,?,?,?,?,?)";
-		
+
 		String query = "insert into member(memId, memPw, memPhone, memEmail, memRegion, memCity, memPwHint, memPwAns)"
 				+ " values(?,?,?,?,?,?,?,?)";
 		
@@ -39,7 +36,6 @@ public class MemberDAO {
 			public void setValues(PreparedStatement ps) throws SQLException {
 				ps.setString(1, memId);
 				ps.setString(2, memPw);
-				//ps.setString(3, memName);
 				ps.setString(3, memEmail);
 				ps.setString(4, memPhone);
 				ps.setString(5, memCity);
@@ -51,10 +47,10 @@ public class MemberDAO {
 	}
 		
 	
-	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ È®ï¿½ï¿½
+	// ¾ÆÀÌµð Áßº¹ È®ÀÎ
 	public MemberVO checkId(String memId) {
 		MemberVO mVo = null;
-		System.out.println("ï¿½ï¿½ï¿½Ìµï¿½: " + memId);
+		System.out.println("¾ÆÀÌµð: " + memId);
 		String query = "select * from member where memId='" + memId + "'";
 		System.out.println(query);
 		
@@ -73,7 +69,7 @@ public class MemberDAO {
 	
 	
 	
-	// ï¿½Î±ï¿½ï¿½ï¿½
+	// ·Î±×ÀÎ
 	public MemberVO login(String memId, String memPw) {
 		
 		MemberVO mVo = null;
@@ -90,7 +86,7 @@ public class MemberDAO {
 	
 	
 	
-	// ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½
+	// ¾ÆÀÌµð Ã£±â
 	public MemberVO searchId(String memEmail, String memPhone) {
 		MemberVO mVo = null;
 		String query = "select * from member where memEmail='"+ memEmail +"' and memPhone='"+ memPhone +"'";
@@ -98,7 +94,7 @@ public class MemberDAO {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+			System.out.println("°Ë»öµÈ ¾ÆÀÌµð°¡ ¾ø½À´Ï´Ù.");
 			return null;
 		}
 		
@@ -107,7 +103,7 @@ public class MemberDAO {
 	
 	
 	
-	// ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½
+	// ºñ¹Ð¹øÈ£ Ã£±â
 	public MemberVO searchPw(String memId, int memPwHint, String memPwAns) {
 		MemberVO mVo = null;
 		String query = "select * from member where memId='"+ memId +"' and memPwHint="+ memPwHint +" and memPwAns='"+ memPwAns +"'";
@@ -115,7 +111,7 @@ public class MemberDAO {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+			System.out.println("ºñ¹Ð¹øÈ£°¡ ¾ø½À´Ï´Ù.");
 			return null;
 		}
 		
@@ -124,7 +120,7 @@ public class MemberDAO {
 	
 	
 	
-	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// È¸¿ø Á¤º¸ ¼öÁ¤
 	public void memberModify(final String memId, final String memPhone, final String memEmail, final String memRegion, final String memCity) {
 		String query = "update member set memPhone=?, memEmail=?, memRegion=?, memCity=? where memId=?";
 		template.update(query, new PreparedStatementSetter() {
@@ -141,7 +137,7 @@ public class MemberDAO {
 	
 	
 	
-	// È¸ï¿½ï¿½ Å»ï¿½ï¿½
+	// È¸¿ø Å»Åð
 	public void memberDelete(final String memId) {
 		String query = "delete from member where memId=?";
 		template.update(query, new PreparedStatementSetter() {
@@ -153,7 +149,7 @@ public class MemberDAO {
 	}
 	
 	
-	// ï¿½ï¿½ï¿½ï¿½Æ®
+	// ¸®½ºÆ®
 	public ArrayList<MemberVO> list(){
 		String query = "select * from member order by memRegDate desc";
 		return (ArrayList<MemberVO>) template.query(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));
