@@ -31,9 +31,20 @@ public class BoardController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)  // main화면 
 	public String main(Locale locale, Model model) {
+		String a = "로그인 상태"; //로그인 세션확인용
+	
+		model.addAttribute("test",a);
 		
-		return "main";
+		return "main.page";
 	}
+	
+	// content 변경 테스트용
+	@RequestMapping(value = "/home", method = RequestMethod.GET)  // main화면 
+	public String home(Locale locale, Model model) {
+		
+		return "home.page";
+	}
+	
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)  // 寃뚯떆�뙋 �쟾泥대낫湲�
 	public String list(Locale locale, Model model) {
@@ -64,7 +75,7 @@ public class BoardController {
 	public String tip(Locale locale, Model model) {
 		boardService.read("Tip");
 		List<VOBoard> boards = boardService.read("Tip");
-		model.addAttribute("list",boards);
+		model.addAttribute("list",boards);	
 		return "tip";
 	}
 	@RequestMapping(value = "/freeboard", method = RequestMethod.GET)
