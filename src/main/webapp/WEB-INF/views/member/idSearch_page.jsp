@@ -8,8 +8,14 @@
 
 <script type="text/javascript">
 
-var memEmail = document.idSearchForm.email.value + "@" + document.idSearchForm.email.value.emadress 
-document.idSearchForm.memEmail.value = memEmail;
+function idSearch(){
+	var memEmail = document.idSearchForm.email.value + "@" + document.idSearchForm.emadress.value
+	document.idSearchForm.memEmail.value = memEmail;
+	
+	document.idSearchForm.action="idSearch";
+	document.idSearchForm.submit();
+}
+
 
 </script>
 
@@ -17,7 +23,7 @@ document.idSearchForm.memEmail.value = memEmail;
 <body>
 
 <div class="find">
-    <form id="idSearchForm" method="post" action="idSearch">
+    <form name="idSearchForm" method="post" action="idSearch">
       <h1>회원계정 찾기</h1>
         <fieldset>
         
@@ -29,15 +35,18 @@ document.idSearchForm.memEmail.value = memEmail;
               </tr>
               <tr>
                 <td>이메일</td>
-                <td><input type="text" name="email">@<select name="emadress">
-                <option value="naver.com">naver.com</option>
-                <option value="daum.net">daum.net</option>
-                <option value="gmail.com">gmail.com</option></select></td>
+                <td><input type="text" name="email">@
+	                <select name="emadress">
+	                	<option value="naver.com">naver.com</option>
+	                	<option value="daum.net">daum.net</option>
+	                	<option value="gmail.com">gmail.com</option>
+	               	</select>
+                </td>
               </tr>
             </table>
             
           <input type="hidden" name="memEmail" value="">
-          <input type="submit" value="아이디 찾기" />
+          <input type="button" value="아이디 찾기" onClick="idSearch()" /> ${mVo.memId }
           
       </fieldset>
     </form>

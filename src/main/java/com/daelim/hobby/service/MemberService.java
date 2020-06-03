@@ -22,8 +22,8 @@ public class MemberService {
 	
 	// 회원가입
 	public void mCreateAccount(MemberVO mVo) { // 로그인 view에서 입력한 값을 MemberVo 객체로 가져와 사용한다
-		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemEmail(), mVo.getMemPhone(), 
-				mVo.getMemRegion(), mVo.getMemCity(), mVo.getMemPwHint(), mVo.getMemPwAns());
+		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemName(), mVo.getMemPhone(), mVo.getMemEmail(),  
+				mVo.getMemRegion(), mVo.getMemCity(), mVo.getMemBirth(), mVo.getMemPwHint(), mVo.getMemPwAns());
 	}
 	
 	
@@ -57,12 +57,12 @@ public class MemberService {
 	
 	
 	
-	// 아이디 찾기
+	// 아이디 찾기 (이름, 이메일)
 	public MemberVO mIdSearch(MemberVO mVo) {
+		String memName = mVo.getMemName();
 		String memEmail = mVo.getMemEmail();
-		String memPhone = mVo.getMemPhone();
 		
-		mVo = mDao.searchId(memEmail, memPhone);
+		mVo = mDao.searchId(memName, memEmail);
 		return mVo;
 	}
 	

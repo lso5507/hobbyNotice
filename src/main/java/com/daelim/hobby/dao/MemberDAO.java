@@ -25,23 +25,25 @@ public class MemberDAO {
 
 	
 	// 회원가입
-	public void createAccount(final String memId, final String memPw, final String memEmail, 
-			final String memPhone, final String memCity, final String memRegion, final int memPwHint, final String memPwAns) {
+	public void createAccount(final String memId, final String memPw, final String memName, final String memPhone, final String memEmail, 
+			final String memRegion, final String memCity, final String memBirth, final int memPwHint, final String memPwAns) {
 
-		String query = "insert into member(memId, memPw, memEmail, memPhone, memRegion, memCity, memPwHint, memPwAns)"
-				+ " values(?,?,?,?,?,?,?,?)";
+		String query = "insert into member(memId, memPw, memName, memPhone, memEmail, memRegion, memCity, memBirth, memPwHint, memPwAns)"
+				+ " values(?,?,?,?,?,?,?,?,?,?)";
 		
 		template.update(query, new PreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement ps) throws SQLException {
 				ps.setString(1, memId);
 				ps.setString(2, memPw);
-				ps.setString(3, memEmail);
+				ps.setString(3, memName);
 				ps.setString(4, memPhone);
-				ps.setString(5, memCity);
+				ps.setString(5, memEmail);
 				ps.setString(6, memRegion);
-				ps.setInt(7, memPwHint);
-				ps.setString(8, memPwAns);
+				ps.setString(7, memCity);
+				ps.setString(8, memBirth);
+				ps.setInt(9, memPwHint);
+				ps.setString(10, memPwAns);
 			}
 		});
 	}
@@ -68,7 +70,6 @@ public class MemberDAO {
 	}
 	
 	
-	
 	// 로그인
 	public MemberVO login(String memId, String memPw) {
 		
@@ -86,10 +87,11 @@ public class MemberDAO {
 	
 	
 	
-	// 아이디 찾기
-	public MemberVO searchId(String memEmail, String memPhone) {
+	// 아이디 찾기 (이름, 이메일로 찾기)
+	public MemberVO searchId(String memName, String memEmail) {
 		MemberVO mVo = null;
-		String query = "select * from member where memEmail='"+ memEmail +"' and memPhone='"+ memPhone +"'";
+		String query = "select * from member where memName='"+ memName +"' and memEmail='"+ memEmail +"'";
+		System.out.println(query);
 		try {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {

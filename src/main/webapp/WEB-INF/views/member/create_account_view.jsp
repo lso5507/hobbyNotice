@@ -20,9 +20,11 @@ function idCkeck(){
 function joincheck(){
 	var memEmail = document.inputForm.email1.value + "@" + document.inputForm.email2.value
 	var memPhone = document.inputForm.smartPhone.value+"-"+document.inputForm.smartPhone1.value+"-"+document.inputForm.smartPhone2.value
-	
+	var memBirth = document.inputForm.birth1.value+'년'+document.inputForm.birth2.value+'월'+document.inputForm.birth3.value+'일'
+		
 	document.inputForm.memEmail.value = memEmail;
 	document.inputForm.memPhone.value = memPhone;
+	document.inputForm.memBirth.value = memBirth;
 	
 	document.inputForm.action="create_account";
 	document.inputForm.submit();
@@ -171,6 +173,7 @@ function joincheck(){
         
         <input type="hidden" name="memEmail" value="">
         <input type="hidden" name="memPhone" value="">
+        <input type="hidden" name="memBirth" value="">
         
     </form>
 
