@@ -14,8 +14,9 @@
 </head>
 <body>
 	<form action="" method="post">
-			<div class="board_list_wrap">
-				<div class="board_categori">E-Sports</div>
+		<div class="board_list_wrap">
+			<div class="board_categori">E-Sports</div>
+			
 				<div class="board_list">
 					<div class="board_list_head">
 						<div class="num"></div>
@@ -30,7 +31,7 @@
 						<c:forEach items="${list}" var="boardVO">
 						<div class="item">
 							<div class="num"><c:out value="${boardVO.bdCno}"/></div>
-							<div class="tit"><a href="detailview?cnt=${boardVO.bdCno}"><c:out value="${boardVO.bdTitle}"/></a>(${boardVO.dno})</div>
+							<div class="tit"><a href="detailForm?cnt=${boardVO.bdCno}"><c:out value="${boardVO.bdTitle}"/></a>(${boardVO.dno})</div>
 							<div class="date"><c:out value="${boardVO.bdDate}"/></div>
 							<div class="writer"><c:out value="${boardVO.bdName}"/></div>
 							<div class="HitChk"><c:out value="${boardVO.bdHit}"/></div>
@@ -41,10 +42,10 @@
 					
 					<div class="board_btn_writer">
 						<input type="button" value="글쓰기" id="btn_writer" onclick="location.href='<%=path%>/board_write'"/>
-					</div>
-					
-							
+					</div>		
 				</div>
+				
+				
 				
 			</div>
 		</form>

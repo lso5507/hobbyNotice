@@ -11,5 +11,6 @@
 
 <P> Daelim asdsis  ${serverTime}. </P>
 <a href="board_list">board</a>
+<a href="board_detailview">detail</a>
 </body>
 </html>

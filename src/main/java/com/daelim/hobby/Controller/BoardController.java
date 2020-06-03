@@ -82,4 +82,11 @@ public class BoardController {
 		return "board_write";
 	}
 	
+	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET)
+	public String board_detail(Locale locale, Model model) {
+		
+		
+		return "board_detailview";
+	}
+	
 }
