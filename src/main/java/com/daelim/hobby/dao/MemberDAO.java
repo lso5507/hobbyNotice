@@ -28,7 +28,7 @@ public class MemberDAO {
 	public void createAccount(final String memId, final String memPw, final String memEmail, 
 			final String memPhone, final String memCity, final String memRegion, final int memPwHint, final String memPwAns) {
 
-		String query = "insert into member(memId, memPw, memPhone, memEmail, memRegion, memCity, memPwHint, memPwAns)"
+		String query = "insert into member(memId, memPw, memEmail, memPhone, memRegion, memCity, memPwHint, memPwAns)"
 				+ " values(?,?,?,?,?,?,?,?)";
 		
 		template.update(query, new PreparedStatementSetter() {

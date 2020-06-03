@@ -22,15 +22,14 @@ public class MemberController {
 	
 	
 	// 회원가입
-	@RequestMapping("/create_account_view") 
+	@RequestMapping("/create_account_view")
 	public String create_account_view(Model model) {
-		return "/member/create_account_view"; // 회원가입 페이지(jsp) (임시)
-		// view - member - create_account_view.jsp
+		return "/member/create_account_view"; // 회원가입 페이지(jsp)
 	}
 	@RequestMapping("/create_account")
 	public String create_account(MemberVO mVo) {
 		mService.mCreateAccount(mVo);
-		return "/member/login_page"; // 로그인 페이지(jsp) (임시) 
+		return "/member/login_page"; // 로그인 페이지(jsp)
 	}
 	
 	
@@ -64,7 +63,8 @@ public class MemberController {
 			return "/member/login_page";
 		}
 		
-		return "/member/Login_MyInfo";
+		return "home";
+//		return "/member/Login_MyInfo";
 	}
 	
 	
