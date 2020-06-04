@@ -1,5 +1,6 @@
 package com.daelim.hobby.Dao;
-
+////int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
+//(board.getBdCategory().equals("FreeBoard"))?2:null;  카테고리 DB컬럼에 저장 방식.
 import java.beans.PropertyVetoException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -220,7 +221,7 @@ public class BoardDao {
 	}
 	public List<VOComment> detailComment(int cnt) {  // 게시글마다 댓글 출
 		List<VOComment> comments = null;
-		System.out.println("cnt: "+cnt);
+		
 		final String sql = "SELECT * FROM `comment` where dno=?";
 		comments = template.query(sql, new Object[]{cnt}, new RowMapper<VOComment>() {
 
@@ -229,11 +230,11 @@ public class BoardDao {
 				VOComment comment = new VOComment();
 				
 				comment.setComm_name(rs.getString("comm_name"));
-				System.out.println("nameTest:"+rs.getString("comm_name"));
+				
 				comment.setComm_content(rs.getString("comm_content"));
-				System.out.println("nameTest:"+rs.getString("comm_content"));
+				
 				comment.setComm_regDate(rs.getDate("comm_regDate"));
-				System.out.println("nameTest:"+rs.getDate("comm_regDate"));
+				
 				
 				return comment;
 			}
@@ -271,6 +272,31 @@ public class BoardDao {
 		final String sql = "INSERT INTO comment (comm_name,comm_content,dno) values (?,?,?)";
 		
 		result = template.update(sql,"testId",comment.getComm_content(),comment.getDno());
+		
+		return result;
+	}
+
+
+
+	public int boardUpdate(VOBoard board,int cnt) {
+		int result=0;
+		int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
+			(board.getBdCategory().equals("FreeBoard"))?2:null; // 카테고리 저장
+		final String sql = "UPDATE board SET bdTitle = ? , bdContent = ? , bdCategory = ? WHERE bdCno = ?";
+		System.out.println(sql);
+		result = template.update(sql,board.getBdTitle(),board.getBdContent(),category,cnt);
+		
+		return result;
+	}
+
+
+
+	public int boardDelete(int cnt) {
+		int result = 0;
+		
+		final String sql = "DELETE from board WHERE bdCno=?";
+		result = template.update(sql,cnt);
+		
 		
 		return result;
 	}

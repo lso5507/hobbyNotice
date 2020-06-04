@@ -41,7 +41,10 @@
 						${board.bdContent}
 				</div>
 				<div class="board_detail_tail">
-					<div>수정 삭제</div>
+					<div>
+					<a href="board_modiform?cnt=${board.bdCno}">수정</a>
+					<a href="board_delform?cnt=${board.bdCno}">삭제</a>
+					</div>
 				</div>
 			</div>
 

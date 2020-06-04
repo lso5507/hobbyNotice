@@ -8,11 +8,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>게시글 작성</title>
+		<title>게시글 수정</title>
 		<link href="<%=path%>/resources/css/board_writestyle.css" rel="stylesheet" type="text/css">	
 	</head>
 	<body>
-		<form action="board_write" method="get">
+		<form action="board_modify" method="POST">
 			<div class="board_write">
 				<div class="board_write_headCategory">
 					<div class="select_name">게시판</div>

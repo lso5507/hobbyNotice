@@ -40,6 +40,12 @@ public class BoardService {
 		
 		return result;
 	}
+	public int update(VOBoard board, int cnt) {
+		System.out.println("업데이트 테스트");
+		int result=dao.boardUpdate(board,cnt);
+		
+		return result;
+	}
 	public VOBoard detailView(int cnt) {
 		VOBoard board=dao.detailRead(cnt);
 		
@@ -47,7 +53,7 @@ public class BoardService {
 		
 	}
 	public List<VOComment> detailComment(int cnt) {
-		System.out.println("왜 접근을 안해");
+		
 		List<VOComment> comments = dao.detailComment(cnt);
 		
 		return comments;
@@ -85,6 +91,10 @@ public class BoardService {
 	       dtStr = sdf.format(dt1);
 
 	       return dtStr;
+	}
+	public int delete(int cnt) {
+		int result=dao.boardDelete(cnt);
+		return result;
 	}
 
 }
