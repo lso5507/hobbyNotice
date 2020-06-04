@@ -11,6 +11,7 @@ public class VOBoard {
 	private String bdTitle;
 	private String bdContent;
 	private int bdHit;
+	private int bdLike;
 	private Date bdDate;
 	private String bdCategory;
 	private int dno;
@@ -61,6 +62,12 @@ public class VOBoard {
 	}
 	public void setDno(int dno) {
 		this.dno = dno;
+	}
+	public int getBdLike() {
+		return bdLike;
+	}
+	public void setBdLike(int bdLike) {
+		this.bdLike = bdLike;
 	}
 
 //	private memberDao member;

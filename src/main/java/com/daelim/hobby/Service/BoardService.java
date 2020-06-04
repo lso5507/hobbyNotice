@@ -47,6 +47,7 @@ public class BoardService {
 		
 	}
 	public List<VOComment> detailComment(int cnt) {
+		System.out.println("왜 접근을 안해");
 		List<VOComment> comments = dao.detailComment(cnt);
 		
 		return comments;

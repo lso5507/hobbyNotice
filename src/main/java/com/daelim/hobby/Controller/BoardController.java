@@ -1,10 +1,12 @@
 package com.daelim.hobby.Controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.daelim.hobby.Service.BoardService;
 import com.daelim.hobby.Vo.VOBoard;
 import com.daelim.hobby.Vo.VOComment;
+
 
 
 
@@ -38,14 +41,14 @@ public class BoardController {
 		
 		return "board_list";
 	}
-	@RequestMapping(value = "/board_detail", method = RequestMethod.GET) // 게시판 상세보기 
+	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET) // 게시판 상세보기 
 	public String detail(HttpServletResponse response,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");
 		VOBoard board = boardService.detailView(Integer.parseInt(cnt)); // 게시판 상세보기
 		List<VOComment> comments = boardService.detailComment(Integer.parseInt(cnt));
 		request.setAttribute("board", board); // 게시판 상세 내용 전달
 		request.setAttribute("comments", comments); // 댓글 내용 전달
-		return "board_detail";
+		return "board_detailview";
 	}
 	
 	@RequestMapping(value = "/board_team", method = RequestMethod.GET)
@@ -75,17 +78,51 @@ public class BoardController {
 
 		return "home";
 	}
-	@RequestMapping(value = "/board_write", method = RequestMethod.GET)
+	@RequestMapping(value = "/board_writeform", method = RequestMethod.GET)
 	public String writeForm(Locale locale, Model model) {
 		
 		
-		return "board_write";
+		return "board_writeform";
 	}
-	
-	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET)
-	public String board_detail(Locale locale, Model model) {
+	@RequestMapping(value = "/board_write", method = RequestMethod.GET) // 사용자가 입력한 값 
+	public String write(VOBoard board, Model model) {
+		System.out.println("카테고리 테스트 : "+board.getBdCategory());
 		
+		int result=boardService.insert(board);
+		if(result==0) {
+			System.out.println("Insert Error");
+		}
+		else {
+			System.out.println("Insert Success");
+		}
 		
+		return "board_list";
+	}
+	@RequestMapping(value = "/board_comment", method = RequestMethod.GET)
+	public String board_comment(HttpSession session,HttpServletResponse response,VOComment comment) {
+		PrintWriter outs;
+		
+//		VOMember member = (VOMember)session.getAttribute("member");
+
+		try {
+			outs = response.getWriter();
+//			if(member==null) {
+//				outs.println("<script>alert('NotFoundSession');</script>"); 
+//			}
+//			else {
+			int result=boardService.insertComment(comment);
+			if(result!=0) {
+				outs.println("<script>alert('CommentInsertSuccess');</script>"); 
+			}
+			else {
+				outs.println("<script>alert('CommentInsertFail');</script>"); 
+			}
+			
+//			}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
 		return "board_detailview";
 	}
 	

@@ -31,7 +31,8 @@
 						<c:forEach items="${list}" var="boardVO">
 						<div class="item">
 							<div class="num"><c:out value="${boardVO.bdCno}"/></div>
-							<div class="tit"><a href="detailForm?cnt=${boardVO.bdCno}"><c:out value="${boardVO.bdTitle}"/></a>(${boardVO.dno})</div>
+							<!--  cnt 파라미터를 이용하여 원하는 게시글 상세보기 -->
+							<div class="tit"><a href="board_detailview?cnt=${boardVO.bdCno}"><c:out value="${boardVO.bdTitle}"/></a>(${boardVO.dno})</div>
 							<div class="date"><c:out value="${boardVO.bdDate}"/></div>
 							<div class="writer"><c:out value="${boardVO.bdName}"/></div>
 							<div class="HitChk"><c:out value="${boardVO.bdHit}"/></div>
@@ -41,7 +42,7 @@
 					</div>
 					
 					<div class="board_btn_writer">
-						<input type="button" value="글쓰기" id="btn_writer" onclick="location.href='<%=path%>/board_write'"/>
+						<input type="button" value="글쓰기" id="btn_writer" onclick="location.href='<%=path%>/board_writeform'"/>
 					</div>		
 				</div>
 				

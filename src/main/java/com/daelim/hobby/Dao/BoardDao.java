@@ -204,6 +204,7 @@ public class BoardDao {
 				board.setBdHit(rs.getInt("bdHit"));
 				board.setBdDate(rs.getDate("bdDate"));
 				board.setBdCno(rs.getInt("bdCno"));
+				board.setBdLike(rs.getInt("bdLike"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 				
 				return board;
@@ -219,6 +220,7 @@ public class BoardDao {
 	}
 	public List<VOComment> detailComment(int cnt) {  // 게시글마다 댓글 출
 		List<VOComment> comments = null;
+		System.out.println("cnt: "+cnt);
 		final String sql = "SELECT * FROM `comment` where dno=?";
 		comments = template.query(sql, new Object[]{cnt}, new RowMapper<VOComment>() {
 
@@ -227,9 +229,11 @@ public class BoardDao {
 				VOComment comment = new VOComment();
 				
 				comment.setComm_name(rs.getString("comm_name"));
+				System.out.println("nameTest:"+rs.getString("comm_name"));
 				comment.setComm_content(rs.getString("comm_content"));
+				System.out.println("nameTest:"+rs.getString("comm_content"));
 				comment.setComm_regDate(rs.getDate("comm_regDate"));
-				
+				System.out.println("nameTest:"+rs.getDate("comm_regDate"));
 				
 				return comment;
 			}
@@ -265,7 +269,7 @@ public class BoardDao {
 //			return 0;
 //		}
 		final String sql = "INSERT INTO comment (comm_name,comm_content,dno) values (?,?,?)";
-		// 카테고리가 Team이면 0 Tip이면 1 FreeBoard면 3 아니면 null
+		
 		result = template.update(sql,"testId",comment.getComm_content(),comment.getDno());
 		
 		return result;
