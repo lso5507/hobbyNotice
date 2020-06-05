@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/* 
+설명 
+	1. # 은 id 선택자로서 1개만 적용하는데 사용
+	2. . 은 class 선택자로서 여러개를 동시 적용하는데 사용
+	3. class 선택자는 하나의 태크에 여러개를 적용 가능( jsp에서는 띄어쓰기로 구분, css에서는 붙어야함)
+	4. #abc > ul 같은 경우 id가 'abc'의 자식 ul태그를 지정 하는것
+*/
+
+/* 전체적 기본 초기화 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* 메인화면 큰틀 설정 */
+#mainLayout {
+	width: 1397px; /* 넓이 설정 */
+	height: auto;
+	margin: 0 auto; /* 가운데 설정 */
+}
+
+/* 메인화면 영역설정(배너광고 제외) */
+#main {
+	width: 1092px; 
+	float: left; /* 배너광고때문에 위치 왼쪽 설정 */
+	margin-right: 5px; /* 배너광고와 여백 거리 설정 */
+	overflow: hidden;
+}
+
+/* 중간 영역 */
+#content{
+	width: 1092px;
+	height: 1885px;
+	margin-bottom: 5px;
+}
+
+/* 배너광고 영역 */
+#banner {
+	width: 300px;
+	height: auto;
+	float: right;
+} 
+
+/* 배너광고 각 이미지 영역 */
+.banner_size {
+	width: 300px;
+	height: 200px;
+	margin-bottom: 10px;
+	/* 영역 확인용 */
+	border: 1px solid;
+	box-sizing: border-box;
+}

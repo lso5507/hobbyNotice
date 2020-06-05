@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* 왼쪽 사이드바 */
+#aside {
+	width: 235px;
+	float: left;
+	border: 1px solid black;
+	box-sizing: border-box;
+}
+
+/* 사이드바 로그인 영역 */
+#aside-login {
+	width: 235px;
+	height: 80px;
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
+}
+
+/* 로그인버튼 영역 */
+#aside-login_buttom {
+	width: 235px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+/* 로그인버튼 클릭영역 */
+#aside-login_buttom > a {
+	border: 1px solid;
+	padding: 7px 50px;
+	box-sizing: border-box;
+}
+
+/* 회원가입, id.pw찾기 영역 설정  */
+#aside-login_member {
+	width: 235px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 15px;
+	
+}
+#aside-login_member > a {
+	display: inline-block;
+	width: 33.33%;
+	border-right: 1px solid;
+	margin-right: -5px;
+	box-sizing: border-box;
+	text-align:center;
+}
+#aside-login_member > a:last-child {
+	border-right: 0px; /* 마지막 글자의 border는 안나오게 표시  */
+}
+
+/* 사이드바 공지사항 바로가기 영역 */
+#aside-notice {
+	width: 235px;
+	height: 72px;
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
+}
+
+/* 사이드바 e-스포츠 바로가기 영역 */
+#aside-esport {
+	width: 235px;
+	height: 162px;
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
+}
+
+/* 사이드바 스포츠 바로가기 영역 */
+#aside-sport {
+	width: 235px;
+	height: 162px;
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
+}
+
+/* 사이드바 문화생활 바로가기 영역 */
+#aside-culture {
+	width: 235px;
+	height: 162px;
+}
+
+/* 사이드바 바로가기 제목 스타일 */
+.aside-link_title  {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+
+/* 사이드바 바로가기 메뉴 스타일 */
+.aside-link_menu {
+	display: block;
+	height: 30px;
+	font-size: 15px;
+	padding: 5px 0 5px 10px;
+	box-sizing: border-box;
+}
+
+/* 사이드바 바로가기 메뉴에 마우스를 올렸을 때 설정 */
+.aside-link_menu:hover {
+	background-color: #ccc;
+}

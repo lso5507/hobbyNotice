@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* 푸터 영역 설정 */
+#footer {
+	width: 1092px;
+	height: 151px;
+	border: 1px solid black;
+	box-sizing: border-box;
+	text-align: center;
+	margin-bottom: 2px;
+} 
+
+/* 푸터 로고 영역  */
+#footer-logo {
+	width: 301px;;
+	height: 150px;
+	line-height:150px;
+	border-right: 1px solid;
+	box-sizing:border-box;
+	float: left;
+} 
+
+/* 푸터 로고 이미지 크기 조정 */
+#footer-logo > a > img {
+	width: 300px;
+	height: 150px;
+}
+
+/* 제작자 정보 */
+#footer-info {
+	float: left;
+ 	padding: 53px 0 0 215px;
+ 	box-sizing: border-box;
+}

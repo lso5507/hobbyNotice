@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/* 전체 큰 틀 */
+#srm_main {
+	width: 857px;
+	height: 1885px;
+	padding-left: 6px;
+	box-sizing: border-box;
+	float: left;
+}
+
+/* 더보기 영역 (나중에 검색 넣을 수도 있어서 포함)*/
+#srm_content {
+	width: 100%;
+	height: 1785px;
+}
+
+/* 선택 카테고리 더보기 영역 */
+#srm_list_more {
+	width: 100%;
+	height: 1735px;
+}
+
+/* 카테고리 제목 영역 */
+#srm_list_header {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+
+/* 카테고리 제목 */
+#srm_list_header > h3 {
+	font-size:  20px;
+	font-weight: bold;	
+}
+
+/* 카테고리 내용 영역 */
+.srm_list_content {
+	display: block;
+	width: 100%;
+	height: 120px;
+}
+
+/* 카테고리 제목, 내용 */
+.srm_list_content > span {
+	width:100%;
+	display: block;
+	padding: 5px 5px 5px 20px;
+	box-sizing:border-box;
+	font-size: 15px;
+}
+.srm_list_content > span.srm_span_title {
+	/* 한줄, ...표시 */
+	white-space: nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.srm_list_content > span.srm_span_content {
+	/* 두줄, ...표시 */
+	white-space: normal; 
+	line-height: 1.2;
+	height: 2.4em;
+	overflow: hidden;
+	text-align: left;
+	text-overflow: ellipsis;
+	word-wrap: break-word; 
+	display: -webkit-box; 
+	-webkit-line-clamp: 2; 
+	-webkit-box-orient: vertical;
+}
+
+/* 카테고리 경로, 작성일자 영역*/
+.srm_list_content_ {
+	width:100%;
+	height:30px;
+	line-height:30px;
+	display: block;
+	float: none;
+}
+
+/* 카테고리 경로, 작성일자 */
+.srm_list_content_ > span {
+	display: inline-block;
+	float:left;
+	padding-left: 20px;
+	box-sizing:border-box;
+	font-size: 13px;
+}
+
+/* 페이징 번호 영역 */
+#srm_list_paging {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align:center;
+	float: none;
+}
+
+/* 해당 카테고리 더보기 */
+#srm_list_paging > a {
+	display:inline-block;
+	padding-right:5px; 
+	font-size: 15px;
+}
