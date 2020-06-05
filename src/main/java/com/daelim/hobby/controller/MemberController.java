@@ -65,8 +65,7 @@ public class MemberController {
 			return "/member/login_page";
 		}
 		
-		return "home";
-//		return "/member/Login_MyInfo";
+		return "/member/myInfo_page";
 	}
 	
 	
@@ -105,21 +104,33 @@ public class MemberController {
 	
 	
 	// 내 정보
-	@RequestMapping("/Login_MyInfo")
+	@RequestMapping("/myInfo_page")
 	public String Login_MyInfo() {
-		return "/member/Login_MyInfo";
+		return "/member/myInfo_page";
 	}
 	
 	
 	// 회원 정보 수정
-	@RequestMapping("/Login_MyInfo_MyInfoChange")
+	@RequestMapping("/myInfo_modify_page")
 	public String member_modify_page() {	
-		return "/member/Login_MyInfo_MyInfoChange";
+		return "/member/myInfo_modify_page";
 	}
 	@RequestMapping("/member_modify")
 	public String member_modify(MemberVO mVo, HttpSession session) {
 		mService.mMemberModify(mVo, session);
-		return "redirect:Login_MyInfo";
+		
+		return "redirect:myInfo_page";
+	}
+	
+	// 비밀번호 변경
+	@RequestMapping("myPw_modify_page")
+	public String myPw_modify_page() {
+		return "/member/myPw_modify_page";
+	}
+	@RequestMapping("/memberPw_modify")
+	public String memberPw_modify(MemberVO mVo, HttpSession session) {
+		mService.mMemberPwModify(mVo, session);
+		return "redirect:myInfo_page";
 	}
 	
 	

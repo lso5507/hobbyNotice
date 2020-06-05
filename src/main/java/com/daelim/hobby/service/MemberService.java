@@ -93,7 +93,6 @@ public class MemberService {
 	
 	// 회원 정보 수정
 	public void mMemberModify(MemberVO mVo, HttpSession session) {
-		
 		String memPhone = mVo.getMemPhone();
 		String memEmail = mVo.getMemEmail();
 		String memRegion = mVo.getMemRegion();
@@ -105,6 +104,20 @@ public class MemberService {
 		
 		mDao.memberModify(memId, memPhone, memEmail, memRegion, memCity);
 	}
+	
+	
+	// 비밀번호 변경
+	public void mMemberPwModify(MemberVO mVo, HttpSession session) {
+		String memId = (String) session.getAttribute("memId");
+		System.out.println("session.getAttribute mId : " + memId);
+		
+		String memPw = mVo.getMemPw();
+		System.out.println("변경 비밀번호: " + memPw);
+		
+		mDao.memberPwModify(memId, memPw);
+	}
+	
+	
 	
 	
 	// 회원 탈퇴

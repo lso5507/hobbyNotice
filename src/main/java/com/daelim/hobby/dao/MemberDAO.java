@@ -139,6 +139,20 @@ public class MemberDAO {
 	}
 	
 	
+	// ºñ¹Ð¹øÈ£ º¯°æ
+	public void memberPwModify(final String memId, final String memPw) {
+		String query = "update member set memPw=? where memId=?";
+		template.update(query, new PreparedStatementSetter() {
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				ps.setString(1, memPw);
+				ps.setString(2, memId);
+			}
+		});
+	}
+	
+	
+	
 	
 	// È¸¿ø Å»Åð
 	public void memberDelete(final String memId) {
