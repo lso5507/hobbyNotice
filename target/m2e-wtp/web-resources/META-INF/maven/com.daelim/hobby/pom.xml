@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.daelim</groupId>
 	<artifactId>hobby</artifactId>
-	<name>spring_daelim_hobby</name>
+	<name>spring_daelim</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -14,6 +14,24 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+	
+		<!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
+        </dependency>
+	
+	
+		<!-- JDBC Template -->
+		<dependency>
+	   		<groupId>org.springframework</groupId>
+	   		<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+	  	</dependency>
+	
+	
+	
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
