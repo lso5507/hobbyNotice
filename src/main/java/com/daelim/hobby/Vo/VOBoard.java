@@ -1,6 +1,7 @@
 package com.daelim.hobby.Vo;
 
-import java.sql.Date;
+
+import java.sql.Timestamp;
 
 
 
@@ -12,7 +13,7 @@ public class VOBoard {
 	private String bdContent;
 	private int bdHit;
 	private int bdLike;
-	private Date bdDate;
+	private Timestamp bdDate;
 	private String bdCategory;
 	private int dno;
 	public int getBdCno() {
@@ -45,10 +46,10 @@ public class VOBoard {
 	public void setBdHit(int bdHit) {
 		this.bdHit = bdHit;
 	}
-	public Date getBdDate() {
+	public Timestamp getBdDate() {
 		return bdDate;
 	}
-	public void setBdDate(Date bdDate) {
+	public void setBdDate(Timestamp bdDate) {
 		this.bdDate = bdDate;
 	}
 	public String getBdCategory() {

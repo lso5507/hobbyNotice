@@ -87,7 +87,7 @@ public class BoardDao {
 				board.setBdTitle(rs.getString("bdTitle"));
 				board.setBdContent(rs.getString("bdContent"));
 				board.setBdHit(rs.getInt("bdHit"));
-				board.setBdDate(rs.getDate("bdDate"));
+				board.setBdDate(rs.getTimestamp("bdDate"));
 				board.setBdCno(rs.getInt("bdCno"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 				
@@ -130,7 +130,7 @@ public class BoardDao {
 				board.setBdTitle(rs.getString("bdTitle"));
 				board.setBdContent(rs.getString("bdContent"));
 				board.setBdHit(rs.getInt("bdHit"));
-				board.setBdDate(rs.getDate("bdDate"));
+				board.setBdDate(rs.getTimestamp("bdDate"));
 				board.setBdCno(rs.getInt("bdCount"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 				
@@ -203,7 +203,7 @@ public class BoardDao {
 				board.setBdTitle(rs.getString("bdTitle"));
 				board.setBdContent(rs.getString("bdContent"));
 				board.setBdHit(rs.getInt("bdHit"));
-				board.setBdDate(rs.getDate("bdDate"));
+				board.setBdDate(rs.getTimestamp("bdDate"));
 				board.setBdCno(rs.getInt("bdCno"));
 				board.setBdLike(rs.getInt("bdLike"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
@@ -221,7 +221,7 @@ public class BoardDao {
 	}
 	public List<VOComment> detailComment(int cnt) {  // 게시글마다 댓글 출
 		List<VOComment> comments = null;
-		
+		incrementHit(cnt);
 		final String sql = "SELECT * FROM `comment` where dno=?";
 		comments = template.query(sql, new Object[]{cnt}, new RowMapper<VOComment>() {
 
@@ -233,7 +233,7 @@ public class BoardDao {
 				
 				comment.setComm_content(rs.getString("comm_content"));
 				
-				comment.setComm_regDate(rs.getDate("comm_regDate"));
+				comment.setComm_regDate(rs.getTimestamp("comm_regDate"));
 				
 				
 				return comment;
@@ -299,6 +299,12 @@ public class BoardDao {
 		
 		
 		return result;
+	}
+	public void incrementHit(int cnt) { //조회수 증가 메소드
+		int result=0;
+		final String sql = "UPDATE board SET bdHit = bdHit+1 WHERE bdCno = ?";
+		result = template.update(sql,cnt);
+		
 	}
 	
 }

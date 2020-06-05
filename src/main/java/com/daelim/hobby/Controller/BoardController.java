@@ -84,7 +84,7 @@ public class BoardController {
 		
 		return "board_writeform";
 	}
-	@RequestMapping(value = "/board_write", method = RequestMethod.GET) // 사용자가 입력한 값 
+	@RequestMapping(value = "/board_write", method = RequestMethod.POST) // 사용자가 입력한 값 
 	public String write(VOBoard board, Model model) {
 		System.out.println("카테고리 테스트 : "+board.getBdCategory());
 		
@@ -96,7 +96,7 @@ public class BoardController {
 			System.out.println("Insert Success");
 		}
 		
-		return "board_list";
+		return "redirect:board_list";
 	}
 	@RequestMapping(value = "/board_modiform", method = RequestMethod.GET) // 사용자가 입력한 값 
 	public String modifyForm(VOBoard board, Model model,HttpServletRequest request) {
@@ -115,7 +115,7 @@ public class BoardController {
 		else
 			System.out.println("DeleteFail");
 		
-		return "board_list";
+		return "redirect:board_list";
 	}
 	@RequestMapping(value = "/board_modify", method = RequestMethod.POST) // 사용자가 입력한 값 
 	public String modify(VOBoard board, HttpServletRequest request,HttpServletResponse response) {
@@ -143,14 +143,14 @@ public class BoardController {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		return "board_list";
+		return "redirect:board_list";
 	}
 	@RequestMapping(value = "/board_comment", method = RequestMethod.GET)
-	public String board_comment(HttpSession session,HttpServletResponse response,VOComment comment) {
+	public String board_comment(HttpSession session,HttpServletResponse response,VOComment comment,HttpServletRequest request) {
 		PrintWriter outs;
 		
 //		VOMember member = (VOMember)session.getAttribute("member");
-
+		String dno = request.getParameter("dno");
 		try {
 			outs = response.getWriter();
 //			if(member==null) {
@@ -170,7 +170,7 @@ public class BoardController {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		return "board_detailview";
+		return "redirect:board_detailview?cnt="+dno;
 	}
 	
 }

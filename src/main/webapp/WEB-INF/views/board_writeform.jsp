@@ -12,7 +12,7 @@
 		<link href="<%=path%>/resources/css/board_writestyle.css" rel="stylesheet" type="text/css">	
 	</head>
 	<body>
-		<form action="board_modify" method="POST">
+		<form action="board_write" method="POST">
 			<div class="board_write">
 				<div class="board_write_headCategory">
 					<div class="select_name">게시판</div>

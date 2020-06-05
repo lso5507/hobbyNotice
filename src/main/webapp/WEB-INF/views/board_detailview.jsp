@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.*"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  <!-- Date포맷팅을 위한 import -->
 <%
 	String path = request.getContextPath();
 %>
@@ -51,9 +52,10 @@
 		</div>
 		<c:forEach items="${comments}" var="comment">
 		<tr>
-			<td style="width:300px">이름 :${comment.comm_name}  <br>
-			 날짜 :<fmt:formatDate pattern="yyyy-MM-dd-hh:mm" value="${comment_regDate}"/></td>  <!-- 데이터 방식 포맷   -->
+			<td style="width:300px">이름 :${comment.comm_name} </td>
+			<td> 날짜 :<fmt:formatDate pattern="yyyy-MM-dd-hh:mm" value="${comment.comm_regDate}"/>/</td>  <!-- 데이터 방식 포맷   -->
 			<td style="width:500px">${comment.comm_content}</td>
+			<br>
 		</tr>
 		</c:forEach>
 	
