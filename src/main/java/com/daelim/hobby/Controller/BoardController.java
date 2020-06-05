@@ -45,6 +45,12 @@ public class BoardController {
 		return "home.part";
 	}	
 	// content 변경 테스트용
+	@RequestMapping(value = "/search/more", method = RequestMethod.GET)  //  
+	public String more(Locale locale, Model model) {
+			
+		return "main_search_results_more.page";
+	}
+	// content 변경 테스트용
 	@RequestMapping(value = "/search", method = RequestMethod.GET)  //  
 	public String search(Locale locale, Model model) {
 			

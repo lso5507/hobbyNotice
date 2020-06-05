@@ -23,7 +23,7 @@
 			<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 				<c:forEach var="list" items="${noticeList}" varStatus="status">
-				    <li><a href="${list.link}">${list.title}</a></li>
+				    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 				</c:forEach>
 --%>
 				<li><a href="">첫번째 내용</a></li>
@@ -59,7 +59,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -76,7 +76,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -101,9 +101,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -120,7 +120,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -145,9 +145,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -164,7 +164,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -189,9 +189,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -208,7 +208,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -250,9 +250,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -269,7 +269,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -294,9 +294,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -313,7 +313,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -338,9 +338,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -357,7 +357,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -382,9 +382,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -401,7 +401,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -443,9 +443,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -462,7 +462,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -487,9 +487,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -506,7 +506,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -531,9 +531,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -550,7 +550,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -575,9 +575,9 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함  			
+<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
@@ -594,7 +594,7 @@
 							<ul>
 <%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="${list.link}">${list.title}</a></li>
+								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
 								<li><a href="#">· 게시글1</a></li>
