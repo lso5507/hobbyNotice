@@ -4,32 +4,7 @@
   "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 
 <tiles-definitions>
-    <!-- 메뉴 표시 -->
-    <definition name="base" template="/WEB-INF/tiles/layout.jsp">
-        <put-attribute name="left"   value="/WEB-INF/tiles/left.jsp" />
-        <put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
-        <put-attribute name="body" value="" />
-        <put-attribute name="static" />
-    </definition>
- 
-    <definition name="*.page" extends="base">
-    	<put-attribute name="static" value="{1}" /> <!-- 같은 이름의 css파일 불러옴 -->
-        <put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
-    </definition>
- 
-     <definition name="*/*.page" extends="base">
-        <put-attribute name="static" value="{1}/{2}" /> 
-        <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
-     </definition>
-    
-    <definition name="*/*/*.page" extends="base">
-		<put-attribute name="static" value="{1}/{2}/{3}" /> 
-        <put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
-    </definition>
-    
-    
-    <!-- 메뉴 미표시 -->
+    <!-- 메뉴 미표시  -->
     <definition name="baseEmpty" template="/WEB-INF/tiles/layoutEmpty.jsp">
         <put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
     	<put-attribute name="body" value="" />
@@ -49,6 +24,33 @@
     <definition name="*/*/*.part" extends="baseEmpty">
     	<put-attribute name="static" value="{1}/{2}/{3}" />
         <put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
-    </definition>        
+    </definition>   
+
+    <!-- 메뉴 표시 -->
+    <definition name="base" template="/WEB-INF/tiles/layout.jsp">
+        <put-attribute name="left"   value="/WEB-INF/tiles/left.jsp" />
+        <put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="static" />
+    </definition>
+ 
+    <definition name="*" extends="base">
+    	<put-attribute name="static" value="{1}" /> <!-- 같은 이름의 css파일 불러옴 -->
+        <put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+ 
+     <definition name="*/*" extends="base">
+        <put-attribute name="static" value="{1}/{2}" /> 
+        <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+     </definition>
+    
+    <definition name="*/*/*" extends="base">
+		<put-attribute name="static" value="{1}/{2}/{3}" /> 
+        <put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    
+
     
 </tiles-definitions>

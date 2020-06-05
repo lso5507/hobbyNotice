@@ -22,7 +22,12 @@ public class MemberController {
 	
 	@RequestMapping("/")
 	public String home(Model model) {
-		return "main.page"; // 회원가입 페이지(jsp)
+		return "main"; // 회원가입 페이지(jsp)
+	}
+	// 다른 페이지 올라오는지 확인용 -승채
+	@RequestMapping("/search")
+	public String search(Model model) {
+		return "main_search_results.part"; 
 	}
 	// 회원가입
 	@RequestMapping("/create_account_view")
