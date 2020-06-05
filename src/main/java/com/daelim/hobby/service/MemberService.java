@@ -22,6 +22,19 @@ public class MemberService {
 	
 	// 회원가입
 	public void mCreateAccount(MemberVO mVo) { // 로그인 view에서 입력한 값을 MemberVo 객체로 가져와 사용한다
+		System.out.println(mVo.getMemId());
+		System.out.println(mVo.getMemPw());
+		System.out.println(mVo.getMemPwHint());
+		System.out.println(mVo.getMemPwAns());
+		System.out.println(mVo.getMemName());
+		System.out.println(mVo.getMemBirth());
+		
+		System.out.println(mVo.getMemRegion());
+		System.out.println(mVo.getMemCity());
+		
+		System.out.println(mVo.getMemEmail());
+		System.out.println(mVo.getMemPhone());
+		
 		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemName(), mVo.getMemPhone(), mVo.getMemEmail(),  
 				mVo.getMemRegion(), mVo.getMemCity(), mVo.getMemBirth(), mVo.getMemPwHint(), mVo.getMemPwAns());
 	}

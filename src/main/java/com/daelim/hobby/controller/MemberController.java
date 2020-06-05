@@ -28,6 +28,8 @@ public class MemberController {
 	}
 	@RequestMapping("/create_account")
 	public String create_account(MemberVO mVo) {
+		System.out.println("create_account()");
+		
 		mService.mCreateAccount(mVo);
 		return "/member/login_page"; // 로그인 페이지(jsp)
 	}
@@ -98,7 +100,7 @@ public class MemberController {
 			model.addAttribute("mVo", mVo); // view에 결과를 뿌려주기 위해 model에 추가
 		}
 		
-		return "/member/Login_FindPW";
+		return "/member/pwSearch_page";
 	}
 	
 	

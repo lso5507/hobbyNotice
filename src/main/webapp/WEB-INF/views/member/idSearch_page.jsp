@@ -16,6 +16,11 @@ function idSearch(){
 	document.idSearchForm.submit();
 }
 
+var memId = '${mVo.memId}';
+if(memId.length != 0){
+	alert('아이디 : ' + memId);	
+}
+
 
 </script>
 
@@ -35,7 +40,7 @@ function idSearch(){
               </tr>
               <tr>
                 <td>이메일</td>
-                <td><input type="text" name="email">@
+                <td><input type="text" name="email"> @
 	                <select name="emadress">
 	                	<option value="naver.com">naver.com</option>
 	                	<option value="daum.net">daum.net</option>
@@ -46,27 +51,11 @@ function idSearch(){
             </table>
             
           <input type="hidden" name="memEmail" value="">
-          <input type="button" value="아이디 찾기" onClick="idSearch()" /> ${mVo.memId }
+          <input type="button" value="아이디 찾기" onClick="idSearch()" /> 
+          <a href="login_page"> <input type="button" value="로그인 하기"> </a>
           
       </fieldset>
     </form>
-    
-    
-  </div>
-  <div class="find">
-      <form method="post" action="member_find_pw.php">
-        <fieldset>
-          <legend>비밀번호 찾기</legend>
-            <table>
-              <tr>
-                <td>아이디</td>
-                <td><input type="text" size="35" name="userid" placeholder="아이디"></td>
-              </tr>
-            </table>
-          <input type="submit" value="비밀번호 찾기" />
-      </fieldset>
-    </form>
-  </div>
-
+  
 </body>
 </html>

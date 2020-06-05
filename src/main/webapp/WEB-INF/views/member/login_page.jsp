@@ -37,7 +37,7 @@
 	<div class="footer_container"><center>
 			<a href="/hobby/create_account_view">회원가입</a>
 			<a href="/hobby/idSearch_page">아이디 찾기</a>
-			<a href="/hobby/Login_FindPW">비밀번호 찾기</a>  
+			<a href="/hobby/pwSearch_page">비밀번호 찾기</a>  
 	</center></div>
 </form> 
 
