@@ -1,4 +1,4 @@
-package com.daelim.hobby.controller;
+package com.daelim.hobby.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.daelim.hobby.service.MemberService;
-import com.daelim.hobby.vo.MemberVO;
+import com.daelim.hobby.Service.MemberService;
+import com.daelim.hobby.Vo.MemberVO;
 
 
 
@@ -20,7 +20,10 @@ public class MemberController {
 	public MemberService mService;
 	MemberVO mVo;
 	
-	
+	@RequestMapping("/")
+	public String home(Model model) {
+		return "main.page"; // 회원가입 페이지(jsp)
+	}
 	// 회원가입
 	@RequestMapping("/create_account_view")
 	public String create_account_view(Model model) {

@@ -73,11 +73,7 @@ public class BoardController {
 		return "board_free";
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
 
-		return "home";
-	}
 	@RequestMapping(value = "/board_writeform", method = RequestMethod.GET)
 	public String writeForm(Locale locale, Model model) {
 		

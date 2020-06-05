@@ -46,7 +46,7 @@ public class dbTest {
 					board.setBdTitle(rs.getString("bdTitle"));
 					board.setBdContent(rs.getString("bdContent"));
 					board.setBdHit(rs.getInt("bdHit"));
-					board.setBdDate(rs.getDate("bdDate"));
+					board.setBdDate(rs.getTimestamp("bdDate"));
 					board.setBdCno(rs.getInt("bdCno"));
 					
 					
