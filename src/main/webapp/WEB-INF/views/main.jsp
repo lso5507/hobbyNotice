@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
  <!-- 
 	처음 메인 화면, 이 body 구역은 다른 페이지로 전환이 됨.
 	나머지는 고정.

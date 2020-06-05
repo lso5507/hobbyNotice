@@ -39,7 +39,20 @@ public class BoardController {
 	}
 	
 	// content 변경 테스트용
-	@RequestMapping(value = "/home", method = RequestMethod.GET)  // main화면 
+	@RequestMapping(value = "/test", method = RequestMethod.GET)  //  
+	public String test(Locale locale, Model model) {
+			
+		return "home.part";
+	}	
+	// content 변경 테스트용
+	@RequestMapping(value = "/search", method = RequestMethod.GET)  //  
+	public String search(Locale locale, Model model) {
+			
+		return "main_search_results.page";
+	}
+	
+	// content 변경 테스트용
+	@RequestMapping(value = "/home", method = RequestMethod.GET)  //  
 	public String home(Locale locale, Model model) {
 		
 		return "home.page";

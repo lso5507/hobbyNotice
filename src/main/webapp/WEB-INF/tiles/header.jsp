@@ -7,6 +7,7 @@
 	---- 설명 ----
 	a태그 안의 hraf는 각 페이지가 펼처지는 url을 기입하면됨. 
 	예를 들어 login 페이지를 연다고 한다면 <a href="/hobby/logon>와 같이 하면됨
+	나중에 백엔드 작업 끝나면 주석 삭제
  -->
 
 <!-- 헤더 영역 -->
@@ -24,13 +25,13 @@
 		
 			<!-- form 태그 사용 -->
 			<form action="/hobby/" method=""> <!-- 변경 필요, 컨트롤러와 같은 경로 및 post or get 방식 --> 
-				<select class="input_select" name="serarch_select">
-					<option value="serarch_selTitle"> 제목 </option>
-					<option value="serarch_selContent"> 내용 </option>
-					<option value="serarch_selName"> 작성자 </option>
-					<option value="serarch_selTitleContent"> 제목+내용 </option>
+				<select class="input_select" name="main_select">
+					<option value="main_selTitle"> 제목 </option>
+					<option value="main_selContent"> 내용 </option>
+					<option value="main_selName"> 작성자 </option>
+					<option value="main_selTitleContent"> 제목+내용 </option>
 				</select>
-				<input type="text" class="input_text" maxlength="50" name="serarch_txtContent">
+				<input type="text" class="input_text" maxlength="50" name="main_txtContent">
 				<input type="submit" class="input_button" value="검색">
 			</form><!-- form 태그 끝 -->
 		</div><!-- 검색 영역 끝-->

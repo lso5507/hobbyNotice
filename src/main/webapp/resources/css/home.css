@@ -1,0 +1,10 @@
+@charset="UTF-8";
+
+#test1 {
+	width: 857px;
+	height: 200px;
+	background-color: yellow;
+	padding-left: 6px;
+	box-sizing: border-box; 
+	float: left;
+}

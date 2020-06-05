@@ -5,10 +5,12 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-
-<P> Daelim asdsis  ${serverTime}. </P>
+	<div id="test1">
+		<h1>
+			Hello world!  
+		</h1>
+		
+		<P> Daelim asdsis  ${serverTime}. </P>
+	</div>
 </body>
 </html>
