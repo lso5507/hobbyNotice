@@ -35,7 +35,7 @@ public class BoardController {
 	
 		model.addAttribute("test",a);
 		
-		return "main.page";
+		return "main";
 	}
 	
 	// content 변경 테스트용
@@ -48,20 +48,20 @@ public class BoardController {
 	@RequestMapping(value = "/search/more", method = RequestMethod.GET)  //  
 	public String more(Locale locale, Model model) {
 			
-		return "main_search_results_more.page";
+		return "main_search_results_more";
 	}
 	// content 변경 테스트용
 	@RequestMapping(value = "/search", method = RequestMethod.GET)  //  
 	public String search(Locale locale, Model model) {
 			
-		return "main_search_results.page";
+		return "main_search_results";
 	}
 	
 	// content 변경 테스트용
 	@RequestMapping(value = "/home", method = RequestMethod.GET)  //  
 	public String home(Locale locale, Model model) {
-		
-		return "home.page";
+		 
+		return "home";
 	}
 	
 	
