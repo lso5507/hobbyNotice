@@ -4,15 +4,14 @@
 #aside {
 	width: 235px;
 	float: left;
-	border: 1px solid black;
-	box-sizing: border-box;
 }
 
 /* 사이드바 로그인 영역 */
-#aside-login {
+#aside-login { /* 총크기 140 */
 	width: 235px;
-	height: 80px;
-	border-bottom: 1px solid black;
+	height: 100px;
+	margin-top: 40px;
+	background-color: white;
 	box-sizing: border-box;
 }
 
@@ -20,23 +19,33 @@
 #aside-login_buttom {
 	width: 235px;
 	height: 50px;
-	line-height: 50px;
+	line-height:50px;
+	box-sizing:border-box; 
 	text-align: center;
 }
 
 /* 로그인버튼 클릭영역 */
 #aside-login_buttom > a {
 	border: 1px solid;
-	padding: 7px 50px;
+	border-radius: 30px;
+	padding: 7px 70px;
 	box-sizing: border-box;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* 로그인버튼 마우스 위에 있을 시 */
+#aside-login_buttom > a:hover {
+	background: #e2e2e2; /* 색상 추천좀... */
+	border: 0;
 }
 
 /* 회원가입, id.pw찾기 영역 설정  */
 #aside-login_member {
 	width: 235px;
 	height: 20px;
+	margin-top:10px;
 	line-height: 20px;
-	margin-top: 5px;
 	text-align: center;
 	font-size: 15px;
 	
