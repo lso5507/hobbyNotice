@@ -23,10 +23,7 @@
 <body>
     <div id="emptyLayout">
     	<tiles:insertAttribute name="header" />
-    	<div id="emptyLayout-body">
-    		<tiles:insertAttribute name="body" />
-    	</div>
-    	
+    	<tiles:insertAttribute name="body" />
     </div>
 </body>
 </html>

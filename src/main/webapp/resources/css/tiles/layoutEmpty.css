@@ -14,10 +14,5 @@ a {
 	width: 1092px;
 	height:1000px;
 	margin: 0 auto;
-}
-
-#emptyLayout-body {
-	width: 1092px;
-	height: 800px;
-	overflow: hidden;
+	background-color: pink;
 }
