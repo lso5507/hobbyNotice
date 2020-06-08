@@ -11,9 +11,9 @@ a { /* a 태그에 대한 색을 없앰 */
 
 .board_detail {
 	display: block;
-	padding: 50px; /* 전체적인 위치를 패딩으로 조절 */
+	padding: 0;
 	width : 742px; /* 가로 크기 조절 */
-	margin: 0 auto;
+	margin: 0 280px;
 }
 
 .board_detail .board_detail_title,
@@ -64,7 +64,7 @@ a { /* a 태그에 대한 색을 없앰 */
 .board_detail_content .board_table_content {
 	display: inline-block;
 	width :742px;
-	height: 300px;
+	height: 200px;
 }
 
 .board_detail_content .board_table_content {

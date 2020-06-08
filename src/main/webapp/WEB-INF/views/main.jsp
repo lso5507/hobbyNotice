@@ -43,7 +43,7 @@
 			<!-- e-스포츠 탭 메뉴 구현 -->
 			<div id="section-category-esport">
 				<ul id="esport_ul">
-					<li data-tab="tab1" class="current"><a href=""> 팀원모집 </a></li> 
+					<li data-tab="tab1" class="current"><a href="/hobby/board_list"> 팀원모집 </a></li> 
 					<li data-tab="tab2" ><a href=""> 팁과 노하우 </a></li>
 					<li data-tab="tab3" ><a href=""> 질문과 답변 </a></li>
 					<li data-tab="tab4" ><a href=""> 자유게시판 </a></li>

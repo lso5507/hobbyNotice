@@ -10,20 +10,20 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>게시글 세부사항</title>
-		<link href="<%=path%>/resources/css/board_detailviewstyle.css" rel="stylesheet" type="text/css">	
+		<title>${board.bdTitle}</title>
+		<link href="<%=path%>/resources/css/board_detailview.css" rel="stylesheet" type="text/css">	
 	</head>
 	<body>
 	
 		<div class="board_detail">
 			<div class="board_detail_title">
 				<div id="title"><h2>제목</h2></div>
-				<div>${board.bdTitle};</div>
+				<div>${board.bdTitle}</div>
 			</div>
 			
 			<div class="board_detail_name">
 				<div id="name">작성자</div>	
-				<div>${board.bdName};</div>
+				<div>${board.bdName}</div>
 			</div>
 			
 			<div class="board_detail_head">
@@ -31,9 +31,9 @@
 					<div id="date">작성일: ${board.bdDate}</div>
 					<div id="view">조회수: ${board.bdHit}</div>
 					<div id="detail_null"></div>
-					<div id="declaration">신고</div>
+					<div id="declaration"><a href="#">신고</a></div>
 					<div id="goodnum">${board.bdLike}</div>
-					<div id="good">추천</div>
+					<div id="good"><a href="#">추천</a></div>
 				</div>
 			</div>
 			
@@ -43,8 +43,10 @@
 				</div>
 				<div class="board_detail_tail">
 					<div>
-					<a href="board_modiform?cnt=${board.bdCno}">수정</a>
-					<a href="board_delform?cnt=${board.bdCno}">삭제</a>
+					<c:if test="${board.bdName == member.getMemId()}">
+						<a href="board_modiform?cnt=${board.bdCno}">수정</a> 
+						<a href="board_delform?cnt=${board.bdCno}">삭제</a>
+					</c:if>
 					</div>
 				</div>
 			</div>
@@ -52,7 +54,7 @@
 		</div>
 		<c:forEach items="${comments}" var="comment">
 		<tr>
-			<td style="width:300px">이름 :${comment.comm_name} </td>
+			<td style="width:300px">이름 : ${comment.comm_name} </td>
 			<td> 날짜 :<fmt:formatDate pattern="yyyy-MM-dd-hh:mm" value="${comment.comm_regDate}"/>/</td>  <!-- 데이터 방식 포맷   -->
 			<td style="width:500px">${comment.comm_content}</td>
 			<br>

@@ -27,9 +27,8 @@ select {
 
 .board_write {
 	display: block;
-	padding: 50px; /* 전체적인 위치를 패딩으로 조절 */
 	width : 742px; /* 가로 크기 조절 */
-	margin: 0 auto;
+	margin: 0 280px;
 }
 
 /* 각 div 크기 조절 */

@@ -36,7 +36,7 @@
 							<div class="date"><c:out value="${boardVO.bdDate}"/></div>
 							<div class="writer"><c:out value="${boardVO.bdName}"/></div>
 							<div class="HitChk"><c:out value="${boardVO.bdHit}"/></div>
-							<div class="goodview">0</div>
+							<div class="goodview"><c:out value="${boardVO.bdLike}"/></div>
 						</div>
 						</c:forEach>
 					</div>
@@ -46,7 +46,34 @@
 					</div>		
 				</div>
 				
-				
+				<div class="board_list_pageNum">
+					<c:set var="page" value="${(param.p == null)?1:param.p}" />
+					<c:set var="startNum" value="${page-(page-1)%5}" />
+					<c:set var="lastNum" value="6" /> <!-- 목록의 개수 불러와서 지정해주어야함 -->
+					
+					<c:if test="${startNum != 1}">
+						<div><a href="?p=${(startNum == 1)?1:startNum-5}">이전</div>
+					</c:if>
+					<c:if test="${startNum == 1}">
+						<div></div>
+					</c:if>
+					
+					<c:forEach var="i" begin="0" end="4">
+						<c:if test="${startNum+i <= lastNum}">
+							<div><a href="?p=${startNum+i}">${startNum+i}</a></div>
+						</c:if>
+						
+					</c:forEach>
+					
+					<c:if test="${startNum+5<=lastNum}">
+						<div><a href="?p=${startNum+5}">다음</a></div>
+					</c:if>
+					
+					<c:if test="${startNum+5>lastNum}">
+						<div></div>
+					</c:if>
+					
+				</div>
 				
 			</div>
 		</form>
