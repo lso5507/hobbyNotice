@@ -5,11 +5,12 @@
 <%
 	String path = request.getContextPath();
 %>
+
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>게시글 작성</title>
-		<link href="<%=path%>/resources/css/board_writestyle.css" rel="stylesheet" type="text/css">	
+		<link href="<%=path%>/resources/css/board_writestyletest.css" rel="stylesheet" type="text/css">	
 	</head>
 	<body>
 		<form action="board_modify" method="POST">
@@ -70,7 +71,7 @@
 				</div>
 			
 				<div class="write_submit">
-					<button type="submit" id="btn_write_submit">작성완료</button>	
+					<button type="submit" id="btn_write_submit">수정</button>	
 					<input type="hidden" value=${param.cnt} name="cnt"> <!--파라미터 값을 value로 넘겨줌  -->
 					<button type="button" id="btn_write_cansel" onclick="history.back()">취     소</button>	
 				</div>	

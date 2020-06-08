@@ -7,6 +7,21 @@
 	String path = request.getContextPath();
 %>
 
+<script type="text/javascript">
+<!--
+	
+//-->
+	function del_content() {
+		if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+			location.href = "board_delform?cnt=${board.bdCno}";
+	        return true;
+		 }else{   //취소
+		     return false;
+		 }
+	}
+
+</script>
+
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -39,34 +54,39 @@
 			
 			<div class="board_detail_content">
 				<div class="board_table_content">
-						${board.bdContent}
-				</div>
-				<div class="board_detail_tail">
-					<div>
-					<c:if test="${board.bdName == member.getMemId()}">
-						<a href="board_modiform?cnt=${board.bdCno}">수정</a> 
-						<a href="board_delform?cnt=${board.bdCno}">삭제</a>
-					</c:if>
+					<div class="board_detail_tail">
+						<c:if test="${board.bdName != member.getMemId()}"> <!-- board.bdName == member.getMemId() -->
+							<div id="detail_null"></div>
+						</c:if>
+						<c:if test="${true}"> <!-- board.bdName == member.getMemId() -->
+							<a href="board_modiform?cnt=${board.bdCno}">수정</a>  
+							<a href="#" onclick="del_content()">삭제</a>
+						</c:if>
 					</div>
+					<div id="content_text">${board.bdContent}</div>
 				</div>
+				
 			</div>
-
-		</div>
-		<c:forEach items="${comments}" var="comment">
-		<tr>
-			<td style="width:300px">이름 : ${comment.comm_name} </td>
-			<td> 날짜 :<fmt:formatDate pattern="yyyy-MM-dd-hh:mm" value="${comment.comm_regDate}"/>/</td>  <!-- 데이터 방식 포맷   -->
-			<td style="width:500px">${comment.comm_content}</td>
-			<br>
-		</tr>
-		</c:forEach>
-	
-		<form action="board_comment">
 			
-			댓글 : <input type="text" name="comm_content">
-			<input type="hidden" value=${param.cnt} name="dno"> <!--파라미터 값을 value로 넘겨줌  -->
-			<input type="submit" value="댓글입력">
-		</form>
+			<div class="comment_view">
+				<c:forEach items="${comments}" var="comment">
+					<tr>
+						<td>이름 : ${comment.comm_name} 날짜 :<fmt:formatDate pattern="yyyy-MM-dd-hh:mm" value="${comment.comm_regDate}"/></td>
+						<br><td>${comment.comm_content}</td>
+						<br>
+					</tr>
+				</c:forEach>
+				
+				<form action="board_comment">
+					댓글 : <input type="text" name="comm_content">
+					<input type="hidden" value=${param.cnt} name="dno"> <!--파라미터 값을 value로 넘겨줌  -->
+					<input type="submit" value="댓글입력">
+				</form>
+			</div>
+		</div>
+		
 
 	</body>
 </html>
+
+

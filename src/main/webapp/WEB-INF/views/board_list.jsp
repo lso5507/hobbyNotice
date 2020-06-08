@@ -32,7 +32,7 @@
 						<div class="item">
 							<div class="num"><c:out value="${boardVO.bdCno}"/></div>
 							<!--  cnt 파라미터를 이용하여 원하는 게시글 상세보기 -->
-							<div class="tit"><a href="board_detailview?cnt=${boardVO.bdCno}"><c:out value="${boardVO.bdTitle}"/></a>(${boardVO.dno})</div>
+							<div class="tit"><a href="board_detailview?cnt=${boardVO.bdCno}"><c:out value="${boardVO.bdTitle}"/></a>${boardVO.dno}</div>
 							<div class="date"><c:out value="${boardVO.bdDate}"/></div>
 							<div class="writer"><c:out value="${boardVO.bdName}"/></div>
 							<div class="HitChk"><c:out value="${boardVO.bdHit}"/></div>

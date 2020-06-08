@@ -9,7 +9,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>게시글 수정</title>
-		<link href="<%=path%>/resources/css/board_writestyle.css" rel="stylesheet" type="text/css">	
+		<link href="<%=path%>/resources/css/board_writestyletest.css" rel="stylesheet" type="text/css">	
 	</head>
 	<body>
 		<form action="board_write" method="POST">

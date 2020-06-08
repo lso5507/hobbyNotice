@@ -12,6 +12,7 @@ a { /* a 태그에 대한 색을 없앰 */
 .board_detail {
 	display: block;
 	padding: 0;
+	padding-top: 50px;
 	width : 742px; /* 가로 크기 조절 */
 	margin: 0 280px;
 }
@@ -52,6 +53,7 @@ a { /* a 태그에 대한 색을 없앰 */
 .board_detail_head #detail_null {
 	width: 54%;
 	padding: 0;
+	height: 26px;
 }
 
 .board_detail_title > div,
@@ -64,19 +66,30 @@ a { /* a 태그에 대한 색을 없앰 */
 .board_detail_content .board_table_content {
 	display: inline-block;
 	width :742px;
-	height: 200px;
+	border: 2px;
+	border-color: #ccc;
+	border-style: solid;
+}
+.board_detail_content .board_table_content .board_detail_tail > div {
+	display: inline-block;
+	width :742px;
 }
 
-.board_detail_content .board_table_content {
+.board_detail_content .board_table_content .board_detail_tail{
+	text-align:right;
+}
+
+.board_detail .comment_view {
+	width :742px;
+	margin-top : 10px;
 	border: 2px;
 	border-color: #ccc;
 	border-style: solid;
 }
 
-.board_detail_content .board_detail_tail{
-	text-align: right;
+#content_text {
+	padding: 10px;
 }
-
 
 
 
