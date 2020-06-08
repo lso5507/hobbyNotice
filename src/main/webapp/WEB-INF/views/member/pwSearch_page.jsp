@@ -9,8 +9,8 @@
 <script type="text/javascript">
 
 var memPw = '${mVo.memPw}';
-if(memPw.langth != 0){
-	alert("비밀번호 : " + memPw);
+if(memPw.length != 0){
+	alert('비밀번호 : ' + memPw);	
 }
 
 </script>

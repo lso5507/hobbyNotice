@@ -1,4 +1,4 @@
-package com.daelim.hobby.Controller;
+package com.daelim.hobby.controller;
 
 import java.io.PrintWriter;
 import java.util.List;
@@ -14,26 +14,26 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.daelim.hobby.Service.BoardService;
-import com.daelim.hobby.Vo.VOBoard;
-import com.daelim.hobby.Vo.VOComment;
+import com.daelim.hobby.service.BoardService;
+import com.daelim.hobby.vo.VOBoard;
+import com.daelim.hobby.vo.VOComment;
 
 
 
 
+ 
 
 
 
-
-//   ----------------------------------게시판에 대한 컨트롤러입니다 --------------------------------------
+//   ----------------------------------寃뚯떆�뙋�뿉 ���븳 而⑦듃濡ㅻ윭�엯�땲�떎 --------------------------------------
 @Controller
 public class BoardController {
 
 	@Autowired 
-	BoardService boardService;  // BoardService 빈  등록
+	BoardService boardService;  // BoardService 鍮�  �벑濡�
 	
 	
-	@RequestMapping(value = "/board_list", method = RequestMethod.GET)  // 게시판 전체보기
+	@RequestMapping(value = "/board_list", method = RequestMethod.GET)  // 寃뚯떆�뙋 �쟾泥대낫湲�
 	public String list(Locale locale, Model model) {
 		System.out.println("list");
 		List<VOBoard> boards = boardService.read();
@@ -41,13 +41,13 @@ public class BoardController {
 		
 		return "board_list";
 	}
-	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET) // 게시판 상세보기 
+	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET) // 寃뚯떆�뙋 �긽�꽭蹂닿린 
 	public String detail(HttpServletResponse response,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");
-		VOBoard board = boardService.detailView(Integer.parseInt(cnt)); // 게시판 상세보기
+		VOBoard board = boardService.detailView(Integer.parseInt(cnt)); // 寃뚯떆�뙋 �긽�꽭蹂닿린
 		List<VOComment> comments = boardService.detailComment(Integer.parseInt(cnt));
-		request.setAttribute("board", board); // 게시판 상세 내용 전달
-		request.setAttribute("comments", comments); // 댓글 내용 전달
+		request.setAttribute("board", board); // 寃뚯떆�뙋 �긽�꽭 �궡�슜 �쟾�떖
+		request.setAttribute("comments", comments); // �뙎湲� �궡�슜 �쟾�떖
 		return "board_detailview";
 	}
 	
@@ -80,9 +80,9 @@ public class BoardController {
 		
 		return "board_writeform";
 	}
-	@RequestMapping(value = "/board_write", method = RequestMethod.POST) // 사용자가 입력한 값 
+	@RequestMapping(value = "/board_write", method = RequestMethod.POST) // �궗�슜�옄媛� �엯�젰�븳 媛� 
 	public String write(VOBoard board, Model model) {
-		System.out.println("카테고리 테스트 : "+board.getBdCategory());
+		System.out.println("移댄뀒怨좊━ �뀒�뒪�듃 : "+board.getBdCategory());
 		
 		int result=boardService.insert(board);
 		if(result==0) {
@@ -94,15 +94,15 @@ public class BoardController {
 		
 		return "redirect:board_list";
 	}
-	@RequestMapping(value = "/board_modiform", method = RequestMethod.GET) // 사용자가 입력한 값 
+	@RequestMapping(value = "/board_modiform", method = RequestMethod.GET) // �궗�슜�옄媛� �엯�젰�븳 媛� 
 	public String modifyForm(VOBoard board, Model model,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");
-		VOBoard boardRST = boardService.detailView(Integer.parseInt(cnt)); // 게시판 상세보기
-		request.setAttribute("board", boardRST); // 게시판 상세 내용 전달
+		VOBoard boardRST = boardService.detailView(Integer.parseInt(cnt)); // 寃뚯떆�뙋 �긽�꽭蹂닿린
+		request.setAttribute("board", boardRST); // 寃뚯떆�뙋 �긽�꽭 �궡�슜 �쟾�떖
 		
 		return "board_modiform";
 	}
-	@RequestMapping(value = "/board_delform", method = RequestMethod.GET) // 사용자가 입력한 값 
+	@RequestMapping(value = "/board_delform", method = RequestMethod.GET) // �궗�슜�옄媛� �엯�젰�븳 媛� 
 	public String delete(VOBoard board, Model model,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");
 		int result=boardService.delete(Integer.parseInt(cnt));
@@ -113,7 +113,7 @@ public class BoardController {
 		
 		return "redirect:board_list";
 	}
-	@RequestMapping(value = "/board_modify", method = RequestMethod.POST) // 사용자가 입력한 값 
+	@RequestMapping(value = "/board_modify", method = RequestMethod.POST) // �궗�슜�옄媛� �엯�젰�븳 媛� 
 	public String modify(VOBoard board, HttpServletRequest request,HttpServletResponse response) {
 		String cnt = request.getParameter("cnt");
 		PrintWriter outs;
@@ -128,10 +128,10 @@ public class BoardController {
 //			else {
 			
 			if(result!=0) {
-				outs.println("<script>alert('게시글수정완료');</script>"); 
+				outs.println("<script>alert('寃뚯떆湲��닔�젙�셿猷�');</script>"); 
 			}
 			else {
-				outs.println("<script>alert('게시글수정실패');</script>"); 
+				outs.println("<script>alert('寃뚯떆湲��닔�젙�떎�뙣');</script>"); 
 			}
 			
 //			}

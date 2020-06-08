@@ -1,16 +1,13 @@
-package com.daelim.hobby.Service;
-
-import java.util.ArrayList;
+package com.daelim.hobby.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
-import com.daelim.hobby.Dao.MemberDAO;
-import com.daelim.hobby.Vo.MemberVO;
+import com.daelim.hobby.dao.MemberDAO;
+import com.daelim.hobby.vo.MemberVO;
 
 @Service	
 public class MemberService {
@@ -55,7 +52,10 @@ public class MemberService {
 		
 		if(mVo != null) { // 검색 성공 시
 			HttpSession session = request.getSession(); // 로그인 -> 세션 만듬
-			session.setAttribute("mVo", mVo); // 세션에 mVo 추가 
+//			session.setAttribute("test", "로그인 상태");
+			
+			session.setAttribute("mVo", mVo); // 세션에 mVo 추가
+			
 			session.setAttribute("memId", mVo.getMemId()); // 세션에 아이디 추가
 			session.setAttribute("memPw", mVo.getMemPw()); // 세션에 비밀번호 추가
 			
@@ -97,12 +97,18 @@ public class MemberService {
 		String memEmail = mVo.getMemEmail();
 		String memRegion = mVo.getMemRegion();
 		String memCity = mVo.getMemCity();
+		String memBirth = mVo.getMemBirth();
 		
 		// 로그인할때  세션에 mId를 설정했음. getAttribute를 해서 mId를 가져온다
 		String memId = (String) session.getAttribute("memId");
 		System.out.println("session.getAttribute mId : " + memId);
 		
-		mDao.memberModify(memId, memPhone, memEmail, memRegion, memCity);
+		mDao.memberModify(memId, memPhone, memEmail, memRegion, memCity, memBirth);
+		
+		
+		// 수정된 mVo를 다시 세션에 저장
+		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
+		session.setAttribute("mVo", mVo); // 세션에 mVo 추가
 	}
 	
 	
@@ -115,6 +121,11 @@ public class MemberService {
 		System.out.println("변경 비밀번호: " + memPw);
 		
 		mDao.memberPwModify(memId, memPw);
+		
+		
+		// 수정된 mVo를 다시 세션에 저장
+		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
+		session.setAttribute("mVo", mVo); // 세션에 mVo 추가
 	}
 	
 	
@@ -129,10 +140,10 @@ public class MemberService {
 	
 	
 	// 멤버 리스트
-	public void mList(Model model) {
-		ArrayList<MemberVO> dtos = mDao.list();
-		model.addAttribute("list", dtos);
-	}
+//	public void mList(Model model) {
+//		ArrayList<MemberVO> dtos = mDao.list();
+//		model.addAttribute("list", dtos);
+//	}
 
 }
 
