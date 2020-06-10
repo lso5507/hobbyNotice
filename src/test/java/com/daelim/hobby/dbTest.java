@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import com.daelim.hobby.Vo.VOBoard;
+import com.daelim.hobby.vo.VOBoard;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class dbTest {

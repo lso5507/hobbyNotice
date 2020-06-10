@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.mem_section {
+	width:852px;
+	border:1px solid black;
+	box-sizing: border-box;
+	margin-left: 5px;
+	float: left;
+}
+
+.mem_section_title {
+	padding: 30px 0px;
+	text-align:center;
+}
+
+#memTitle{
+	font-size:50px;	
+}
+
+.mem_section_id {
+	text-align:center;
+}
+
+#memId {
+	width:300px;
+	height:40px;
+	font-size:25px;
+}
+
+.mem_section_pw {
+	text-align:center;
+}
+
+#memPw {
+	width:300px;
+	height:40px;
+	font-size:25px;
+}
+
+.mem_section_submit {
+	padding:30px 0px;
+	text-align:center;
+}
+
+#memSubmit {
+	width:300px;
+	height:40px;
+	font-size:25px;
+}
+
+.mem_section_href {
+	padding-bottom:30px;
+	text-align:center;
+}

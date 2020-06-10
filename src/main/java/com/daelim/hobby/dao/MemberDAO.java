@@ -1,4 +1,4 @@
-package com.daelim.hobby.Dao;
+package com.daelim.hobby.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Repository;
 
-import com.daelim.hobby.Vo.MemberVO;
+import com.daelim.hobby.vo.MemberVO;
 
 
 @Repository
@@ -75,13 +75,15 @@ public class MemberDAO {
 		
 		MemberVO mVo = null;
 		String query = "select * from member where memId='" + memId + "' and memPw='" + memPw + "'";
+		System.out.println(query);
+		System.out.println(query);
 		try {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("로그인 실패");
 			return null;
 		}
-		
 		return mVo;
 	}
 	
@@ -124,8 +126,8 @@ public class MemberDAO {
 	
 	
 	// 회원 정보 수정
-	public void memberModify(final String memId, final String memPhone, final String memEmail, final String memRegion, final String memCity) {
-		String query = "update member set memPhone=?, memEmail=?, memRegion=?, memCity=? where memId=?";
+	public void memberModify(final String memId, final String memPhone, final String memEmail, final String memRegion, final String memCity, final String memBirth) {
+		String query = "update member set memPhone=?, memEmail=?, memRegion=?, memCity=?, memBirth=? where memId=?";
 		template.update(query, new PreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement ps) throws SQLException {
@@ -133,7 +135,8 @@ public class MemberDAO {
 				ps.setString(2, memEmail);
 				ps.setString(3, memRegion);
 				ps.setString(4, memCity);
-				ps.setString(5, memId);
+				ps.setString(5, memBirth);
+				ps.setString(6, memId);
 			}
 		});
 	}

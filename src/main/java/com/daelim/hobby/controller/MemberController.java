@@ -1,4 +1,4 @@
-package com.daelim.hobby.Controller;
+package com.daelim.hobby.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -8,9 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.daelim.hobby.Service.MemberService;
-import com.daelim.hobby.Vo.MemberVO;
-
+import com.daelim.hobby.service.MemberService;
+import com.daelim.hobby.vo.MemberVO;
 
 
 @Controller
@@ -20,45 +19,52 @@ public class MemberController {
 	public MemberService mService;
 	MemberVO mVo;
 	
+	// ë©”ì¸ í˜ì´ì§€
 	@RequestMapping("/")
 	public String home(Model model) {
-		return "main"; // È¸¿ø°¡ÀÔ ÆäÀÌÁö(jsp)
+		return "main"; 
 	}
-	// ´Ù¸¥ ÆäÀÌÁö ¿Ã¶ó¿À´ÂÁö È®ÀÎ¿ë -½ÂÃ¤
+	
 	@RequestMapping("/search")
 	public String search(Model model) {
 		return "main_search_results.part"; 
 	}
-	// È¸¿ø°¡ÀÔ
+	
+	
+	
+	
+	// íšŒì›ê°€ì…
 	@RequestMapping("/create_account_view")
 	public String create_account_view(Model model) {
-		return "/member/create_account_view"; // È¸¿ø°¡ÀÔ ÆäÀÌÁö(jsp)
+		return "/member/create_account_view"; 
 	}
 	@RequestMapping("/create_account")
 	public String create_account(MemberVO mVo) {
 		System.out.println("create_account()");
 		
 		mService.mCreateAccount(mVo);
-		return "/member/login_page"; // ·Î±×ÀÎ ÆäÀÌÁö(jsp)
+		return "/member/login_page"; 
 	}
 	
 	
-	// ¾ÆÀÌµğ Áßº¹°Ë»ç
+	// ì•„ì´ë”” ì¤‘ë³µê²€ì‚¬
 	@RequestMapping("/idCheck")
 	public String idCheck(HttpServletRequest request, Model model) {
 		mVo = mService.mIdCheck(request);
 		
 		if(mVo == null) { 
-			model.addAttribute("msg", "»ç¿ë °¡´ÉÇÑ ¾ÆÀÌµğ ÀÔ´Ï´Ù."); // °Ë»ö °á°ú¸¦ view¿¡¼­ »ç¿ëÇÏ±â À§ÇØ model¿¡ Ãß°¡
+			model.addAttribute("msg", request.getParameter("memId") + " ì‚¬ìš© ê°€ëŠ¥í•œ ì•„ì´ë”” ì…ë‹ˆë‹¤."); // ê²€ìƒ‰ ê²°ê³¼ë¥¼ viewì—ì„œ ì‚¬ìš©í•˜ê¸° ìœ„í•´ modelì— ì¶”ê°€
+			model.addAttribute("result","true");
 		}else {
-			model.addAttribute("msg", "»ç¿ëÇÒ¼ö ¾ø´Â ¾ÆÀÌµğ ÀÔ´Ï´Ù.");
+			model.addAttribute("msg", request.getParameter("memId") + " ì‚¬ìš©í• ìˆ˜ ì—†ëŠ” ì•„ì´ë”” ì…ë‹ˆë‹¤.");
+			model.addAttribute("result","false");
 		}
 		
 		return "member/create_account_view";
 	}
 	
 	
-	// ·Î±×ÀÎ
+	// ë¡œê·¸ì¸
 	@RequestMapping("/login_page")
 	public String login_view() {
 		return "/member/login_page";
@@ -67,8 +73,8 @@ public class MemberController {
 	public String login(MemberVO mVo, HttpServletRequest request, Model model) {
 		mVo = mService.mLogin(mVo, request);
 		
-		if(mVo == null) { // °Ë»ö ½ÇÆĞ½Ã
-			model.addAttribute("msg", "¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù."); // view¿¡ »Ñ·ÁÁÖ±â À§ÇØ model¿¡ Ãß°¡
+		if(mVo == null) { // ê²€ìƒ‰ ì‹¤íŒ¨ì‹œ
+			model.addAttribute("msg", "ì•„ì´ë””, ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤."); // viewì— ë¿Œë ¤ì£¼ê¸° ìœ„í•´ modelì— ì¶”ê°€
 			model.addAttribute("url", "member/login_page.jsp");
 			return "/member/login_page";
 		}
@@ -77,7 +83,7 @@ public class MemberController {
 	}
 	
 	
-	// ¾ÆÀÌµğ Ã£±â
+	// ì•„ì´ë”” ì°¾ê¸°
 	@RequestMapping("/idSearch_page")
 	public String idSearch_page() {
 		return "/member/idSearch_page";
@@ -86,14 +92,14 @@ public class MemberController {
 	public String idSearch(MemberVO mVo, Model model) {
 		mVo = mService.mIdSearch(mVo);
 		if(mVo != null) {
-			System.out.println("¾ÆÀÌµğ °Ë»ö ¼º°ø : " + mVo.getMemId());
-			model.addAttribute("mVo", mVo); // view¿¡ °á°ú¸¦ »Ñ·ÁÁÖ±â À§ÇØ model¿¡ Ãß°¡
+			System.out.println("ì•„ì´ë”” ê²€ìƒ‰ ì„±ê³µ : " + mVo.getMemId());
+			model.addAttribute("mVo", mVo); // viewì— ê²°ê³¼ë¥¼ ë¿Œë ¤ì£¼ê¸° ìœ„í•´ modelì— ì¶”ê°€
 		}
 		return "/member/idSearch_page";
 	}
 	
 	
-	// ºñ¹Ğ¹øÈ£ Ã£±â
+	// ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°
 	@RequestMapping("/pwSearch_page")
 	public String pwSearch_page() {
 		return "/member/pwSearch_page";
@@ -103,22 +109,22 @@ public class MemberController {
 		mVo = mService.mPwSearch(mVo);
 		
 		if(mVo != null) {
-			System.out.println("ºñ¹Ğ¹øÈ£ °Ë»ö ¼º°ø : " + mVo.getMemPw());
-			model.addAttribute("mVo", mVo); // view¿¡ °á°ú¸¦ »Ñ·ÁÁÖ±â À§ÇØ model¿¡ Ãß°¡
+			System.out.println("ë¹„ë°€ë²ˆí˜¸ ê²€ìƒ‰ ì„±ê³µ : " + mVo.getMemPw());
+			model.addAttribute("mVo", mVo); // viewì— ê²°ê³¼ë¥¼ ë¿Œë ¤ì£¼ê¸° ìœ„í•´ modelì— ì¶”ê°€
 		}
 		
 		return "/member/pwSearch_page";
 	}
 	
 	
-	// ³» Á¤º¸
+	// ë‚´ ì •ë³´
 	@RequestMapping("/myInfo_page")
 	public String Login_MyInfo() {
 		return "/member/myInfo_page";
 	}
 	
 	
-	// È¸¿ø Á¤º¸ ¼öÁ¤
+	// íšŒì› ì •ë³´ ìˆ˜ì •
 	@RequestMapping("/myInfo_modify_page")
 	public String member_modify_page() {	
 		return "/member/myInfo_modify_page";
@@ -126,11 +132,10 @@ public class MemberController {
 	@RequestMapping("/member_modify")
 	public String member_modify(MemberVO mVo, HttpSession session) {
 		mService.mMemberModify(mVo, session);
-		
 		return "redirect:myInfo_page";
 	}
 	
-	// ºñ¹Ğ¹øÈ£ º¯°æ
+	// ë¹„ë°€ë²ˆí˜¸ ë³€ê²½
 	@RequestMapping("myPw_modify_page")
 	public String myPw_modify_page() {
 		return "/member/myPw_modify_page";
@@ -142,54 +147,37 @@ public class MemberController {
 	}
 	
 	
-	// ·Î±×¾Æ¿ô (¼¼¼Ç »èÁ¦)
+	// ë¡œê·¸ì•„ì›ƒ (ì„¸ì…˜ ì‚­ì œ)
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request, HttpSession session) {
-		session = request.getSession(); // ¼¼¼ÇÀ» °¡Á®¿È. (¾øÀ¸¸é »õ·Î ¸¸µç´Ù)
-		if(session.isNew()) { // Ã³À½ ¸¸µé¾îÁø ¼¼¼ÇÀÌ¸é (·Î±×ÀÎµÈ »óÅÂ°¡ ¾Æ´Ñ°ÅÀÓ)
-			System.out.println("Ã³À½ ¸¸µé¾îÁø ¼¼¼ÇÀÔ´Ï´Ù.");
+		session = request.getSession(); // ì„¸ì…˜ì„ ê°€ì ¸ì˜´. (ì—†ìœ¼ë©´ ìƒˆë¡œ ë§Œë“ ë‹¤)
+		if(session.isNew()) { // ì²˜ìŒ ë§Œë“¤ì–´ì§„ ì„¸ì…˜ì´ë©´ (ë¡œê·¸ì¸ëœ ìƒíƒœê°€ ì•„ë‹Œê±°ì„)
+			System.out.println("ì²˜ìŒ ë§Œë“¤ì–´ì§„ ì„¸ì…˜ì…ë‹ˆë‹¤.");
 		}else {
-			System.out.println("·Î±×ÀÎµÈ ¾ÆÀÌµğ: " + session.getAttribute("mId"));
-			session.invalidate(); // ¼¼¼Ç »èÁ¦
-			System.out.println("¼¼¼ÇÀ» »èÁ¦ÇÕ´Ï´Ù");
+			System.out.println("ë¡œê·¸ì¸ëœ ì•„ì´ë””: " + session.getAttribute("mId"));
+			session.invalidate(); // ì„¸ì…˜ ì‚­ì œ
+			System.out.println("ì„¸ì…˜ì„ ì‚­ì œí•©ë‹ˆë‹¤");
 		}
-		
-		return "/member/login_page";
+		return "redirect:/"; // í™ˆ í˜ì´ì§€ë¡œ ì´ë™
 	}
 	
 	
-	// È¸¿ø Å»Åğ
+	// íšŒì› íƒˆí‡´
 	@RequestMapping("/mDelete")
 	public String mDelete(HttpSession session) {
 		mService.mMemberDelete(session); 
-		session.invalidate(); // ¼¼¼ÇÀ» »èÁ¦ÇÑ´Ù
+		session.invalidate(); // ì„¸ì…˜ì„ ì‚­ì œí•œë‹¤
 		return "/member/login_page";
 	}
 	
 	
 	
-	// ¸â¹ö ¸®½ºÆ® (°¡ÀÔÇÑ È¸¿ø ¸ñ·Ï)
-	@RequestMapping("/mList")
-	public String list(Model model) {
-		mService.mList(model);
-		return "/member/list";
-	}
+	// ë©¤ë²„ ë¦¬ìŠ¤íŠ¸ (ê°€ì…í•œ íšŒì› ëª©ë¡)
+//	@RequestMapping("/mList")
+//	public String list(Model model) {
+//		mService.mList(model);
+//		return "/member/list";
+//	}
 	
-	
-	
-/*	
-	// È¨ÆäÀÌÁö
-	@RequestMapping("/Home")
-	public String Home(HttpServletRequest request, HttpSession session) {
-		session = request.getSession();
-		if(session.getAttribute("mId") == null) { // Ã³À½ ¸¸µé¾îÁø ¼¼¼ÇÀÌ¸é -> ·Î±×ÀÎ »óÅÂ°¡ ¾Æ´Ï¸é (¼¼¼Ç¿¡ ¹ÙÀÎµùµÈ id°¡ ¾øÀ½) -> ·Î±×ÀÎ ÆäÀÌÁö·Î º¸³½´Ù
-			System.out.println("·Î±×ÀÎºÎÅÍ ÇÏ¼¼¿ä!");
-			return "member/login_page";
-		}
-		
-		System.out.println("¼¼¼Ç ¾ÆÀÌµğ: " + session.getAttribute("mId"));
-		return "member/login_view"; // ·Î±×ÀÎÀÌ µÇ¾îÀÖ´Â »óÅÂÀÌ¸é ·Î±×ÀÎºä¸¦ º¸¿©ÁØ´Ù
-	}
-*/
 	
 } // end of MController
