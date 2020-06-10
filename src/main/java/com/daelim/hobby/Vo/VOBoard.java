@@ -16,6 +16,15 @@ public class VOBoard {
 	private Timestamp bdDate;
 	private String bdCategory;
 	private int dno;
+	private int value; //게시판 종류
+	public int getValue() {
+		return value;
+	}
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
+	
 	public int getBdCno() {
 		return bdCno;
 	}

@@ -26,25 +26,36 @@
 								<option value="Team"  selected="selected">팀원모집</option>
 								<option value="Tip">팁과 노하우</option>
 								<option value="FreeBoard">자유게시판</option>
+								<option value="QA">질문과답변</option>
 							</c:when>
 							
 							<c:when test="${board.bdCategory eq 'Tip'}">
 								<option>게시판 선택</option>
-								<option value="Team"  selected="selected">팀원모집</option>
-								<option value="Tip">팁과 노하우</option>
+								<option value="Team">팀원모집</option>
+								<option value="Tip"  selected="selected">팁과 노하우</option>
 								<option value="FreeBoard">자유게시판</option>
+								<option value="QA">질문과답변</option>
 							</c:when>
 							<c:when test="${board.bdCategory eq 'FreeBoard'}">
+								<option>게시판 선택</option>
+								<option value="Team" >팀원모집</option>
+								<option value="Tip">팁과 노하우</option>
+								<option value="FreeBoard" selected="selected">자유게시판</option>
+								<option value="QA">질문과답변</option>
+							</c:when>
+							<c:when test="${board.bdCategory eq 'QA'}">
 								<option>게시판 선택</option>
 								<option value="Team"  selected="selected">팀원모집</option>
 								<option value="Tip">팁과 노하우</option>
 								<option value="FreeBoard">자유게시판</option>
+								<option value="QA"  selected="selected">질문과답변</option>
 							</c:when>
 							<c:otherwise>  <!-- else -->
 								<option>게시판 선택</option>
 								<option value="Team"  selected="selected">팀원모집</option>
 								<option value="Tip">팁과 노하우</option>
 								<option value="FreeBoard">자유게시판</option>
+								<option value="QA">질문과답변</option>
 							 </c:otherwise>
 							
 							</c:choose>

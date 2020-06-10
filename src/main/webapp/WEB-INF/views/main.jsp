@@ -236,10 +236,10 @@
 			<!-- 스포츠 탭 메뉴 구현 -->
 			<div id="section-category-sport">
 				<ul id="sport_ul">
-					<li data-tab="tab5" class="current"><a href="#"> 팀원모집 </a></li>
-					<li data-tab="tab6" ><a href="#"> 팁과 노하우 </a></li>
-					<li data-tab="tab7" ><a href="#"> 질문과 답변 </a></li>
-					<li data-tab="tab8" ><a href="#"> 자유게시판 </a></li>
+					<li data-tab="tab5" class="current"><a href="board/board_team?val=1"> 팀원모집 </a></li>
+					<li data-tab="tab6" ><a href="board/board_tip?val=1"> 팁과 노하우 </a></li>
+					<li data-tab="tab7" ><a href="board/board_qa?val=1"> 질문과 답변 </a></li>
+					<li data-tab="tab8" ><a href="board/board_free?val=1"> 자유게시판 </a></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
@@ -429,10 +429,10 @@
 			<!-- 스포츠 탭 메뉴 구현 -->
 			<div id=section-category-culture>
 				<ul id="culture_ul">
-					<li data-tab="tab9" class="current"><a href="#"> 팀원모집 </a></li>
-					<li data-tab="tab10" ><a href="#"> 팁과 노하우 </a></li>
-					<li data-tab="tab11" ><a href="#"> 질문과 답변 </a></li>
-					<li data-tab="tab12" ><a href="#"> 자유게시판 </a></li>
+					<li data-tab="tab9" class="current"><a href="board/board_team?val=2"> 팀원모집 </a></li>
+					<li data-tab="tab10" ><a href=""board/board_tip?val=2"> 팁과 노하우 </a></li>
+					<li data-tab="tab11" ><a href=""board/board_qa?val=2"> 질문과 답변 </a></li>
+					<li data-tab="tab12" ><a href=""board/board_free?val=2"> 자유게시판 </a></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
