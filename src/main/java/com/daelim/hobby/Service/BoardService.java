@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import com.daelim.hobby.Dao.BoardDao;
 import com.daelim.hobby.Vo.VOBoard;
 import com.daelim.hobby.Vo.VOComment;
@@ -95,6 +96,20 @@ public class BoardService {
 	public int delete(int cnt) {
 		int result=dao.boardDelete(cnt);
 		return result;
+	}
+	//---------------------------김정태 추가 --------------------
+	// 게시물 목록 + 페이징 + 검색
+	
+	public List<VOBoard> listPageSearch(
+	  int displayPost, int postNum, String searchType, String keyword) throws Exception {
+	 return  dao.listPageSearch(displayPost, postNum, searchType, keyword);
+	}
+	
+	//검색게시물 총 갯수(0605 추가)
+	
+	public int searchCount(String keyword) throws Exception{
+		
+		return dao.searchCount(keyword);
 	}
 
 }

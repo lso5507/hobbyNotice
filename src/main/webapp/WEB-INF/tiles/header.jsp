@@ -24,18 +24,26 @@
 		<div id="header-search">
 		
 			<!-- form 태그 사용 -->
-			<form action="/hobby/" method=""> <!-- 변경 필요, 컨트롤러와 같은 경로 및 post or get 방식 --> 
+			<form action="/hobby/listPageSearch" method="GET"> <!-- 변경 필요, 컨트롤러와 같은 경로 및 post or get 방식 --> 
 				<select class="input_select" name="main_select">
-					<option value="main_selTitle"> 제목 </option>
-					<option value="main_selContent"> 내용 </option>
-					<option value="main_selName"> 작성자 </option>
-					<option value="main_selTitleContent"> 제목+내용 </option>
+					<option value="title"> 제목 </option>
+					<option value="content"> 내용 </option>
+					<option value="writer"> 작성자 </option>
+					<option value="title_content"> 제목+내용 </option>
 				</select>
 				<input type="text" class="input_text" maxlength="50" name="main_txtContent">
-				<input type="submit" class="input_button" value="검색">
+				<input type="submit" id="searchBtn" class="input_button" value="검색">
 			</form><!-- form 태그 끝 -->
 		</div><!-- 검색 영역 끝-->
-		
+		<script>
+		document.getElementById("searchBtn").onclick = function () {
+	    
+			let searchType = document.getElementsByName("main_select")[0].value;
+			let keyword =  document.getElementsByName("main_txtContent")[0].value;
+		  
+			location.href = "/hobby/listPageSearch?num=1" + "&searchType=" + searchType + "&keyword=" +keyword;
+		};
+		</script>		
 		<!-- 헤더 로그인 영역 -->
 		<div id="header-login">
 			<ul>
