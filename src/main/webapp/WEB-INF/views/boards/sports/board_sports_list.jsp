@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sports 게시판</title>
+<title>Sports게시판</title>
 <link href="<%=path%>/resources/css/board_liststyle.css"
 	rel="stylesheet" type="text/css">
 </head>

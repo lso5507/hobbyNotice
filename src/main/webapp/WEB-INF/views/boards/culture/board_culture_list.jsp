@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자유게시판</title>
+<title>문화생활게시판</title>
 <link href="<%=path%>/resources/css/board_liststyle.css"
 	rel="stylesheet" type="text/css">
 </head>
