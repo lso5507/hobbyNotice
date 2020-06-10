@@ -76,10 +76,12 @@ public class MemberDAO {
 		MemberVO mVo = null;
 		String query = "select * from member where memId='" + memId + "' and memPw='" + memPw + "'";
 		System.out.println(query);
+		System.out.println(query);
 		try {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("로그인 실패");
 			return null;
 		}
 		return mVo;

@@ -105,7 +105,6 @@ public class MemberService {
 		
 		mDao.memberModify(memId, memPhone, memEmail, memRegion, memCity, memBirth);
 		
-		
 		// 수정된 mVo를 다시 세션에 저장
 		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
 		session.setAttribute("mVo", mVo); // 세션에 mVo 추가
@@ -122,8 +121,8 @@ public class MemberService {
 		
 		mDao.memberPwModify(memId, memPw);
 		
-		
 		// 수정된 mVo를 다시 세션에 저장
+		session.setAttribute("memPw", mVo.getMemPw()); // 세션에 변경된 비밀번호 갱신
 		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
 		session.setAttribute("mVo", mVo); // 세션에 mVo 추가
 	}
