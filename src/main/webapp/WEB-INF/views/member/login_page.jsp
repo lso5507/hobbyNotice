@@ -8,16 +8,15 @@
 <title>로그인</title>
 
 <script>
-	function login(){
-		
-	}
 
-	var message = '${msg}';
-	var returnUrl = '${url}';
-	if(message.length != 0){
-		alert(message);
-	}
+var message = '${msg}';
+var returnUrl = '${url}';
+if(message.length != 0){
+	alert(message);
 	document.location.href=url;
+}
+
+
 </script>
 
 </head>
