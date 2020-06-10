@@ -25,7 +25,7 @@
     	<div id="main">
     		<tiles:insertAttribute name="header" />
     		<div id="content">
-    			<tiles:insertAttribute name="left" />
+    			<tiles:insertAttribute name="left" /> <!-- side -->
     			<tiles:insertAttribute name="body" />
     		</div>
     		<tiles:insertAttribute name="footer" />
@@ -37,15 +37,6 @@
 			</div>
 			<div class="banner_size">
 				<a href=""><img alt="광고2" src=""></a>
-			</div>
-			<div class="banner_size">
-				<a href=""><img alt="광고3" src=""></a>
-			</div>
-			<div class="banner_size">
-				<a href=""><img alt="광고4" src=""></a>
-			</div>
-			<div class="banner_size">
-				<a href=""><img alt="광고5" src=""></a>
 			</div>
 		</div>
 		<!------------- 배너광고 영역 ------------->
