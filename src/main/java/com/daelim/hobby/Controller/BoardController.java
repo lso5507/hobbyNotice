@@ -77,7 +77,7 @@ public class BoardController {
 	@RequestMapping(value = "/board_qa", method = RequestMethod.GET)
 	public String qa(Locale locale, Model model,HttpServletRequest request) {
 		String value=request.getParameter("val");
-		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"QA"); //"QA"는 게시판 카테고
+		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"QA"); //"QA"는 게시판 카테고리
 		model.addAttribute("lists",boards);
 		return "board/board_list";
 	}
@@ -101,7 +101,7 @@ public class BoardController {
 			System.out.println("Insert Success");
 		}
 		
-		return "redirect:board_list";
+		return "redirect:board/board_list";
 	}
 	@RequestMapping(value = "/board_modiform", method = RequestMethod.GET) // 사용자가 입력한 값 
 	public String modifyForm(VOBoard board, Model model,HttpServletRequest request) {
@@ -120,7 +120,7 @@ public class BoardController {
 		else
 			System.out.println("DeleteFail");
 		
-		return "redirect:board_list";
+		return "redirect:board/board_list";
 	}
 	@RequestMapping(value = "/board_modify", method = RequestMethod.POST) // 사용자가 입력한 값 
 	public String modify(VOBoard board, HttpServletRequest request,HttpServletResponse response) {
@@ -148,7 +148,7 @@ public class BoardController {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		return "redirect:board_list";
+		return "redirect:board/board_list";
 	}
 	@RequestMapping(value = "/board_comment", method = RequestMethod.GET)
 	public String board_comment(HttpSession session,HttpServletResponse response,VOComment comment,HttpServletRequest request) {
@@ -175,7 +175,7 @@ public class BoardController {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		return "redirect:board_detailview?cnt="+dno;
+		return "redirect:board/board_detailview?cnt="+dno;
 	}
 	
 }

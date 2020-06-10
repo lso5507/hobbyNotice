@@ -170,10 +170,10 @@ public class BoardDao {
 //			System.out.println("Not Found Session");
 //			return 0;
 //		}
-		final String sql = "INSERT INTO board (bdName, bdTitle,bdContent,bdCategory,bdValue) values (?,?,?,?,?)";
-		// 카테고리가 Team이면 0 Tip이면 1 FreeBoard면 2 질문이면 3 아니면 null
+		final String sql = "INSERT INTO board (bdName, bdTitle,bdContent,bdCategory) values (?,?,?,?)";
+		// 카테고리가 Team이면 0 Tip이면 1 FreeBoard면 3 아니면 null
 		int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
-			(board.getBdCategory().equals("FreeBoard"))?2:(board.getBdCategory().equals("FreeBoard"))?3:null;
+			(board.getBdCategory().equals("FreeBoard"))?2:null;
 		result = template.update(sql,"testId",board.getBdTitle(),board.getBdContent(),category);
 		
 		
