@@ -58,32 +58,32 @@
 	<div id="header-navigation">
 		<!-- 메인메뉴 영역(일반 보여지는 메뉴) -->
 		<ul id="header-navigation-main">
-			<li><a href="/hobby/">공지사항</a></li> <!-- 공지사항 게시판 페이지 이동 -->
+			<li><a href="board/board_notice?val=9">공지사항</a></li> <!-- 공지사항 게시판 페이지 이동 -->
 			<li><a href="#">e-스포츠</a>
 				<!-- 서브메뉴 영역(메인 메뉴위에 마우스가 올라오면 보여지는 메뉴) -->
 				<ul class="header-navigation-sub">
-					<li><a href="/hobby/">팀원모집</a></li> 	 <!--  e-스포츠 팀원모집 페이지 이동 -->
-					<li><a href="/hobby/">팁과 노하우</a></li> <!--  e-스포츠 팁과노하우 페이지 이동 -->
-					<li><a href="/hobby/">질문과 답변</a></li> <!--  e-스포츠 질문과답변 페이지 이동 -->
-					<li><a href="/hobby/">자유 게시판</a></li> <!--  e-스포츠 자유게시판 페이지 이동 -->
+					<li><a href="board/board_team?val=0">팀원모집</a></li> 	 <!--  e-스포츠 팀원모집 페이지 이동 -->
+					<li><a href="board/board_tip?val=0">팁과 노하우</a></li> <!--  e-스포츠 팁과노하우 페이지 이동 -->
+					<li><a href="board/board_qa?val=0">질문과 답변</a></li> <!--  e-스포츠 질문과답변 페이지 이동 -->
+					<li><a href="board/board_free?val=0">자유 게시판</a></li> <!--  e-스포츠 자유게시판 페이지 이동 -->
 				</ul> <!-- 서브메뉴 끝 -->
 			</li>
 			<li><a href="#">스포츠</a>
 				<!-- 서브메뉴 영역(메인 메뉴위에 마우스가 올라오면 보여지는 메뉴) -->
 				<ul class="header-navigation-sub">
-					<li><a href="/hobby/">팀원모집</a></li>     <!--  스포츠 팀원모집 페이지 이동 --> 
-					<li><a href="/hobby/">팁과 노하우</a></li>  <!--  스포츠 팁과노하우 페이지 이동 --> 
-					<li><a href="/hobby/">질문과 답변</a></li>  <!--  스포츠 질문과답변 페이지 이동 --> 
-					<li><a href="/hobby/">자유 게시판</a></li>  <!--  스포츠 자유게시판 페이지 이동 --> 
+					<li><a href="board/board_team?val=1">팀원모집</a></li> 	 <!--  e-스포츠 팀원모집 페이지 이동 -->
+					<li><a href="board/board_tip?val=1">팁과 노하우</a></li> <!--  e-스포츠 팁과노하우 페이지 이동 -->
+					<li><a href="board/board_qa?val=1">질문과 답변</a></li> <!--  e-스포츠 질문과답변 페이지 이동 -->
+					<li><a href="board/board_free?val=1">자유 게시판</a></li> <!--  e-스포츠 자유게시판 페이지 이동 -->
 				</ul> <!-- 서브메뉴 끝 -->
 			</li>
 			<li><a href="#">문화생활</a>
 				<!-- 서브메뉴 영역(메인 메뉴위에 마우스가 올라오면 보여지는 메뉴) -->
 				<ul class="header-navigation-sub">
-					<li><a href="/hobby/">팀원모집</a></li>    <!--  문화생활 팀원모집 페이지 이동 --> 
-					<li><a href="/hobby/">팁과 노하우</a></li> <!--  문화생활 팁과노하우 페이지 이동 --> 
-					<li><a href="/hobby/">질문과 답변</a></li> <!--  문화생활 질문과답변 페이지 이동 --> 
-					<li><a href="/hobby/">자유 게시판</a></li> <!--  문화생활 자유게시판 페이지 이동 --> 
+					<li><a href="board/board_team?val=2">팀원모집</a></li> 	 <!--  e-스포츠 팀원모집 페이지 이동 -->
+					<li><a href="board/board_tip?val=2">팁과 노하우</a></li> <!--  e-스포츠 팁과노하우 페이지 이동 -->
+					<li><a href="board/board_qa?val=2">질문과 답변</a></li> <!--  e-스포츠 질문과답변 페이지 이동 -->
+					<li><a href="board/board_free?val=2">자유 게시판</a></li> <!--  e-스포츠 자유게시판 페이지 이동 -->
 				</ul> <!-- 서브메뉴 끝 -->
 			</li>
 		</ul> <!-- 메인메뉴 끝 -->

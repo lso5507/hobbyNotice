@@ -430,9 +430,9 @@
 			<div id=section-category-culture>
 				<ul id="culture_ul">
 					<li data-tab="tab9" class="current"><a href="board/board_team?val=2"> 팀원모집 </a></li>
-					<li data-tab="tab10" ><a href=""board/board_tip?val=2"> 팁과 노하우 </a></li>
-					<li data-tab="tab11" ><a href=""board/board_qa?val=2"> 질문과 답변 </a></li>
-					<li data-tab="tab12" ><a href=""board/board_free?val=2"> 자유게시판 </a></li>
+					<li data-tab="tab10" ><a href="board/board_tip?val=2"> 팁과 노하우 </a></li>
+					<li data-tab="tab11" ><a href="board/board_qa?val=2"> 질문과 답변 </a></li>
+					<li data-tab="tab12" ><a href="board/board_free?val=2"> 자유게시판 </a></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->

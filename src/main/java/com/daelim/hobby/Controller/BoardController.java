@@ -42,6 +42,16 @@ public class BoardController {
 		
 		return "board/board_list";
 	}
+	
+	@RequestMapping(value = "/board_notice", method = RequestMethod.GET)
+	public String notice(Locale locale, Model model,HttpServletRequest request) {
+		String value=request.getParameter("val"); //게시판 종ㄿ
+		
+		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"Notice");
+		model.addAttribute("list",boards);
+		return "board/board_notice";
+	}
+	
 	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET) // 게시판 상세보기 
 	public String detail(HttpServletResponse response,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");

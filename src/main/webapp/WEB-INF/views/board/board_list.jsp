@@ -9,13 +9,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>E-Sports 게시판</title>
+<title></title>
 <link href="<%=path%>/resources/css/board_liststyle.css" rel="stylesheet" type="text/css">			
 </head>
 <body>
 	
 		<div class="board_list_wrap">
-			<div class="board_categori">E-Sports</div>
+			<div class="board_categori"></div>
 			
 				<div class="board_list">
 					<div class="board_list_head">

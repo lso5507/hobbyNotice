@@ -9,13 +9,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>E-Sports 게시판</title>
+<title>게시판</title>
 <link href="<%=path%>/resources/css/board_liststyle.css" rel="stylesheet" type="text/css">			
 </head>
 <body>
 	<form action="" method="post">
 		<div class="board_list_wrap">
-			<div class="board_categori">E-Sports</div>
+			<div class="board_categori"></div>
 			
 				<div class="board_list">
 					<div class="board_list_head">
@@ -42,7 +42,7 @@
 					</div>
 					
 					<div class="board_btn_writer">
-						<input type="button" value="글쓰기" id="btn_writer" onclick="location.href='<%=path%>/board_writeform'"/>
+						<input type="button" value="글쓰기" id="btn_writer" onclick="location.href='<%=path%>/board/board_writeform'"/>
 					</div>		
 				</div>
 				
