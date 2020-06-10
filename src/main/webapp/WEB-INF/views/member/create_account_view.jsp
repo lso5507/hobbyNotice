@@ -9,15 +9,41 @@
 
 <script type="text/javascript">
 
+var idOk = '${result}';
+
 //아이디 중복확인
 function idCkeck(){
-	document.inputForm.action = "/hobby/idCheck?memId=" + document.inputForm.memId.value;
+	document.inputForm.action = "idCheck?memId=" + document.inputForm.memId.value;
 	document.inputForm.submit();
 }
+
+
+//이메일 인증번호 전송
+function checkEmail(){
+	var inputForm = document.inputForm;
+	var memEmail = inputForm.email1.value + "@" + inputForm.email2.value;
+	alert(memEmail);
+	
+	document.location.href="/hobby/sendMail.do?memEmail="+memEmail;
+}
+
+var randomNum = ${randomNum}
+//alert('인증번호: ' + randomNum);
+
+// 이메일 인증번호 확인
+function checkEmail2(){
+	if(document.inputForm.checkEmailNumber.value != randomNum){
+		alert("이메일 인증번호가 틀립니다! 인증번호:" + randomNum);
+		return;
+	}	
+}
+
+
 
 // 회원가입 버튼
 function joincheck(){
 	var inputForm = document.inputForm;
+	
 	
 	if(inputForm.memId.value.length == 0){
 		alert("아이디를 입력하세요!");
@@ -40,7 +66,15 @@ function joincheck(){
 		return;
 	}
 	
+	if(idOk != 'true'){
+		alert("아이디 중복확인을 해주세요!");
+		return;
+	}else{
+		alert('사용 가능한 아이디 입니다');
+		return;
+	}
 	
+	/*
 	var memEmail = inputForm.email1.value + "@" + inputForm.email2.value
 	var memPhone = inputForm.smartPhone.value+"-"+ inputForm.smartPhone1.value+"-"+inputForm.smartPhone2.value
 	var memBirth = inputForm.birth1.value+'년'+inputForm.birth2.value+'월'+inputForm.birth3.value+'일'
@@ -52,6 +86,7 @@ function joincheck(){
 	
 	inputForm.action="create_account";
 	inputForm.submit();
+	*/
 }   
 
 
@@ -62,7 +97,7 @@ function joincheck(){
 
 <form method="post" name="inputForm" >
 	<center>
-        <table width=952px;>
+        <table width=850px;>
             <tr>
                 <td>
                     <label for="memId">아이디
@@ -141,8 +176,12 @@ function joincheck(){
                          for (i=1;i<=31;i++) document.write("<option>"+i);
                          document.write("</select>일  </font>");
                     </script>
+                    
+                    	<!-- 
                          <input type="radio" name="gender" value="남" checked>남
                          <input type="radio" name="gender" value="여">여
+                          -->
+                          
                     </td>
                </tr>
             <tr>
@@ -183,7 +222,9 @@ function joincheck(){
                         <option value="naver.com">naver.com</option>
                         <option value="daum.net">daum.net</option>
                     </select>
-                    <input type="button" id="checkEmail" value="중복확인">
+                    <input type="button"  value="이메일 인증" onClick="checkEmail()"> <br>
+                                             인증번호 : <input type="text" name="checkEmailNumber"> 
+                            <input type="button" value="확인" onClick="checkEmail2()"><br> 
                 </td>
             </tr>
             <tr>
@@ -198,9 +239,11 @@ function joincheck(){
                     </select>
                     - <input type="text" name="smartPhone1" size="5">
                     - <input type="text" name="smartPhone2" size="5">
-                    <input type="button" id="checkPhone" value="번호인증">
+                    <!-- <input type="button" id="checkPhone" value="번호인증"> -->
                 </td>
             </tr>
+            
+            <!-- 
             <tr>            
 				<td>
 					<label for="memHobby">취미
@@ -211,6 +254,8 @@ function joincheck(){
 					<input type="checkbox" name="memHobby" value="문화">culture(문화)
 				</td>
 			</tr>
+			 -->
+			 
 			</table></center>
 		<center><input type="button" id="join" value="회원가입" onClick="joincheck()"></center>
 		
