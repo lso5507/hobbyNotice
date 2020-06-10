@@ -10,6 +10,7 @@
 <script type="text/javascript">
 
 var idOk = '${result}';
+var id = '${memId}';
 
 //아이디 중복확인
 function idCkeck(){
@@ -17,7 +18,7 @@ function idCkeck(){
 	document.inputForm.submit();
 }
 
-
+/*
 //이메일 인증번호 전송
 function checkEmail(){
 	var inputForm = document.inputForm;
@@ -37,13 +38,12 @@ function checkEmail2(){
 		return;
 	}	
 }
-
+*/
 
 
 // 회원가입 버튼
 function joincheck(){
 	var inputForm = document.inputForm;
-	
 	
 	if(inputForm.memId.value.length == 0){
 		alert("아이디를 입력하세요!");
@@ -73,6 +73,10 @@ function joincheck(){
 		alert('사용 가능한 아이디 입니다');
 		return;
 	}
+
+	
+
+	
 	
 	/*
 	var memEmail = inputForm.email1.value + "@" + inputForm.email2.value
@@ -103,7 +107,7 @@ function joincheck(){
                     <label for="memId">아이디
                 </td>
                 <td>
-                    <input type="text" name="memId" id="memId" size="20px" placeholder="아이디를 입력하세요">
+                    <input type="text" name="memId" id="memId" size="20px"  value="${memId}"  placeholder="아이디를 입력하세요">
                     <input type="button" id="check" value="중복확인" onClick="idCkeck()">
 					* 영문 소문자,숫자 조합 최대 20자   <br>${msg }
                 </td>
