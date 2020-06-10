@@ -19,19 +19,6 @@ public class MemberService {
 	
 	// 회원가입
 	public void mCreateAccount(MemberVO mVo) { // 로그인 view에서 입력한 값을 MemberVo 객체로 가져와 사용한다
-		System.out.println(mVo.getMemId());
-		System.out.println(mVo.getMemPw());
-		System.out.println(mVo.getMemPwHint());
-		System.out.println(mVo.getMemPwAns());
-		System.out.println(mVo.getMemName());
-		System.out.println(mVo.getMemBirth());
-		
-		System.out.println(mVo.getMemRegion());
-		System.out.println(mVo.getMemCity());
-		
-		System.out.println(mVo.getMemEmail());
-		System.out.println(mVo.getMemPhone());
-		
 		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemName(), mVo.getMemPhone(), mVo.getMemEmail(),  
 				mVo.getMemRegion(), mVo.getMemCity(), mVo.getMemBirth(), mVo.getMemPwHint(), mVo.getMemPwAns());
 	}
@@ -51,14 +38,11 @@ public class MemberService {
 		mVo = mDao.login(mVo.getMemId(), mVo.getMemPw());
 		
 		if(mVo != null) { // 검색 성공 시
-			HttpSession session = request.getSession(); // 로그인 -> 세션 만듬
-//			session.setAttribute("test", "로그인 상태");
-			
+			HttpSession session = request.getSession(); // 로그인 -> 세션 만듬			
 			session.setAttribute("mVo", mVo); // 세션에 mVo 추가
 			
 			session.setAttribute("memId", mVo.getMemId()); // 세션에 아이디 추가
 			session.setAttribute("memPw", mVo.getMemPw()); // 세션에 비밀번호 추가
-			
 			System.out.println("세션 아이디: " + (String) session.getAttribute("memId"));
 			System.out.println("세션 비밀번호: " + (String) session.getAttribute("memPw"));
 			
@@ -67,7 +51,6 @@ public class MemberService {
 		
 		return null;
 	}
-	
 	
 	
 	// 아이디 찾기 (이름, 이메일)
@@ -99,12 +82,11 @@ public class MemberService {
 		String memCity = mVo.getMemCity();
 		String memBirth = mVo.getMemBirth();
 		
-		// 로그인할때  세션에 mId를 설정했음. getAttribute를 해서 mId를 가져온다
+		// 로그인할때  세션에 mId를 설정했음. getAttribute를 해서 mId를 가져온다\
 		String memId = (String) session.getAttribute("memId");
 		System.out.println("session.getAttribute mId : " + memId);
 		
 		mDao.memberModify(memId, memPhone, memEmail, memRegion, memCity, memBirth);
-		
 		
 		// 수정된 mVo를 다시 세션에 저장
 		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
@@ -122,8 +104,8 @@ public class MemberService {
 		
 		mDao.memberPwModify(memId, memPw);
 		
-		
 		// 수정된 mVo를 다시 세션에 저장
+		session.setAttribute("memPw", mVo.getMemPw()); // 세션에 변경된 비밀번호 갱신
 		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
 		session.setAttribute("mVo", mVo); // 세션에 mVo 추가
 	}

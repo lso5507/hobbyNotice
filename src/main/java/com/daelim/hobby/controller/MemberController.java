@@ -54,8 +54,12 @@ public class MemberController {
 		
 		if(mVo == null) { 
 			model.addAttribute("msg", request.getParameter("memId") + " 사용 가능한 아이디 입니다."); // 검색 결과를 view에서 사용하기 위해 model에 추가
+			model.addAttribute("result","true");
+			model.addAttribute("memId", request.getParameter("memId"));
 		}else {
 			model.addAttribute("msg", request.getParameter("memId") + " 사용할수 없는 아이디 입니다.");
+			model.addAttribute("result","false");
+			model.addAttribute("memId", request.getParameter("memId"));
 		}
 		
 		return "member/create_account_view";
