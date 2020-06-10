@@ -7,17 +7,25 @@
 
 <title>로그인</title>
 
-	<script>
-		var message = '${msg}';
-		var returnUrl = '${url}';
-		if(message.length != 0){
-			alert(message);
-		}
-		document.location.href=url;
-	</script>
+<script>
+	function login(){
+		
+	}
+
+	var message = '${msg}';
+	var returnUrl = '${url}';
+	if(message.length != 0){
+		alert(message);
+	}
+	document.location.href=url;
+</script>
 
 </head>
 <body>
+
+
+<form action="login" method="post">
+
 	<div class="mem_section">
 		<div class="mem_section_title">
 			<h1 id="memTitle">Hobby 로그인</h1>
@@ -41,5 +49,9 @@
 			<span><a href="/hobby/pwSearch_page">비밀번호 찾기</a></span>
 		</div>
 	</div>
+	
+</form>
+
+
 </body>
 </html>
