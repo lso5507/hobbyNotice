@@ -27,6 +27,7 @@ import com.daelim.hobby.Vo.VOComment;
 
 //   ----------------------------------게시판에 대한 컨트롤러입니다 --------------------------------------
 @Controller
+@RequestMapping(value="/board/")
 public class BoardController {
 
 	@Autowired 
@@ -39,7 +40,7 @@ public class BoardController {
 		List<VOBoard> boards = boardService.read();
 		model.addAttribute("list",boards);
 		
-		return "board_list";
+		return "board/board_list";
 	}
 	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET) // 게시판 상세보기 
 	public String detail(HttpServletResponse response,HttpServletRequest request) {
@@ -48,29 +49,37 @@ public class BoardController {
 		List<VOComment> comments = boardService.detailComment(Integer.parseInt(cnt));
 		request.setAttribute("board", board); // 게시판 상세 내용 전달
 		request.setAttribute("comments", comments); // 댓글 내용 전달
-		return "board_detailview";
+		return "board/board_detailview";
 	}
 	
 	@RequestMapping(value = "/board_team", method = RequestMethod.GET)
-	public String team(Locale locale, Model model) {
-		boardService.read("Team");
-		List<VOBoard> boards = boardService.read("Team");
+	public String team(Locale locale, Model model,HttpServletRequest request) {
+		String value=request.getParameter("val"); //게시판 종ㄿ
+		
+		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"Team");
 		model.addAttribute("list",boards);
-		return "board_team";
+		return "board/board_list";
 	}
 	@RequestMapping(value = "/board_tip", method = RequestMethod.GET)
-	public String tip(Locale locale, Model model) {
-		boardService.read("Tip");
-		List<VOBoard> boards = boardService.read("Tip");
+	public String tip(Locale locale, Model model,HttpServletRequest request) {
+		String value=request.getParameter("val");// 게시판 종류
+		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"Tip");
 		model.addAttribute("list",boards);
-		return "board_tip";
+		return "board/board_list";
 	}
 	@RequestMapping(value = "/board_free", method = RequestMethod.GET)
-	public String freeboard(Locale locale, Model model) {
-		boardService.read("FreeBoard");
-		List<VOBoard> boards = boardService.read("FreeBoard");
+	public String freeboard(Locale locale, Model model,HttpServletRequest request) {
+		String value=request.getParameter("val");  // 게시판 종류 
+		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"FreeBoard");
 		model.addAttribute("lists",boards);
-		return "board_free";
+		return "board/board_list";
+	}
+	@RequestMapping(value = "/board_qa", method = RequestMethod.GET)
+	public String qa(Locale locale, Model model,HttpServletRequest request) {
+		String value=request.getParameter("val");
+		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"QA"); //"QA"는 게시판 카테고리
+		model.addAttribute("lists",boards);
+		return "board/board_list";
 	}
 	
 
@@ -78,7 +87,7 @@ public class BoardController {
 	public String writeForm(Locale locale, Model model) {
 		
 		
-		return "board_writeform";
+		return "board/board_writeform";
 	}
 	@RequestMapping(value = "/board_write", method = RequestMethod.POST) // 사용자가 입력한 값 
 	public String write(VOBoard board, Model model) {
@@ -92,7 +101,7 @@ public class BoardController {
 			System.out.println("Insert Success");
 		}
 		
-		return "redirect:board_list";
+		return "redirect:board/board_list";
 	}
 	@RequestMapping(value = "/board_modiform", method = RequestMethod.GET) // 사용자가 입력한 값 
 	public String modifyForm(VOBoard board, Model model,HttpServletRequest request) {
@@ -100,7 +109,7 @@ public class BoardController {
 		VOBoard boardRST = boardService.detailView(Integer.parseInt(cnt)); // 게시판 상세보기
 		request.setAttribute("board", boardRST); // 게시판 상세 내용 전달
 		
-		return "board_modiform";
+		return "board/board_modiform";
 	}
 	@RequestMapping(value = "/board_delform", method = RequestMethod.GET) // 사용자가 입력한 값 
 	public String delete(VOBoard board, Model model,HttpServletRequest request) {
@@ -111,7 +120,7 @@ public class BoardController {
 		else
 			System.out.println("DeleteFail");
 		
-		return "redirect:board_list";
+		return "redirect:board/board_list";
 	}
 	@RequestMapping(value = "/board_modify", method = RequestMethod.POST) // 사용자가 입력한 값 
 	public String modify(VOBoard board, HttpServletRequest request,HttpServletResponse response) {
@@ -139,7 +148,7 @@ public class BoardController {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		return "redirect:board_list";
+		return "redirect:board/board_list";
 	}
 	@RequestMapping(value = "/board_comment", method = RequestMethod.GET)
 	public String board_comment(HttpSession session,HttpServletResponse response,VOComment comment,HttpServletRequest request) {
@@ -166,7 +175,7 @@ public class BoardController {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		return "redirect:board_detailview?cnt="+dno;
+		return "redirect:board/board_detailview?cnt="+dno;
 	}
 	
 }

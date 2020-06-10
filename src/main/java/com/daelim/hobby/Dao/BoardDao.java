@@ -30,7 +30,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Repository
 public class BoardDao {
 	private String driver = "com.mysql.cj.jdbc.Driver";
-	private String url = "jdbc:mysql://61.84.24.83:3306/hobby33?useSSL=false&serverTimezone=UTC";
+	private String url = "jdbc:mysql://61.84.24.210:3306/hobby33?useSSL=false&serverTimezone=UTC";
 	private String userid = "hobby33";
 	private String userpw = "hobby33!!";
 	private ComboPooledDataSource dataSource;
@@ -104,17 +104,20 @@ public class BoardDao {
 		return boards;
 		
 	}
-	public List<VOBoard> boardRead(String category) {
+	public List<VOBoard> boardRead(int value,String category) {
 		List<VOBoard> boards = null;
 		String sql="";
 		if(category.equals("Team")) {
-			 sql = "SELECT * FROM board WHERE bdCategory=0";
+			 sql = "SELECT * FROM board WHERE bdCategory=0 AND bdValue=0";  // bdValue=0이면 e스포츠 게시판만 가져옴
 		}
 		else if(category.equals("Tip")) {
-			sql = "SELECT * FROM board WHERE bdCategory=1";
+			sql = "SELECT * FROM board WHERE bdCategory=1 AND bdValue=0";  
 		}
 		else if(category.equals("FreeBoard")) {
-			sql = "SELECT * FROM board WHERE bdCategory=2";
+			sql = "SELECT * FROM board WHERE bdCategory=2 AND bdValue=0";
+		}
+		else if(category.equals("QA")) {
+			sql = "SELECT * FROM board WHERE bdCategory=3 AND bdValue=0";
 		}
 		else {
 			System.out.println("select에러");
@@ -131,7 +134,7 @@ public class BoardDao {
 				board.setBdContent(rs.getString("bdContent"));
 				board.setBdHit(rs.getInt("bdHit"));
 				board.setBdDate(rs.getTimestamp("bdDate"));
-				board.setBdCno(rs.getInt("bdCount"));
+				board.setBdCno(rs.getInt("bdcno"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 				
 				return board;

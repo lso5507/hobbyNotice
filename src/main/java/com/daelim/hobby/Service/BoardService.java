@@ -29,9 +29,9 @@ public class BoardService {
 		return boards;
 		
 	}
-	public List<VOBoard> read(String category) {
+	public List<VOBoard> read(int value, String category) {
 		
-		List<VOBoard> boards =dao.boardRead(category);
+		List<VOBoard> boards =dao.boardRead(value,category);
 		return boards;
 		
 	}
