@@ -1,4 +1,4 @@
-package com.daelim.hobby.dao;
+package com.daelim.hobby.Dao;
 ////int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
 //(board.getBdCategory().equals("FreeBoard"))?2:null;  카테고리 DB컬럼에 저장 방식.
 import java.beans.PropertyVetoException;
@@ -20,8 +20,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.daelim.hobby.vo.VOBoard;
-import com.daelim.hobby.vo.VOComment;
+import com.daelim.hobby.Vo.VOBoard;
+import com.daelim.hobby.Vo.VOComment;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 //  Category Team==0   Tip==1 FreeBoard==2 else Null

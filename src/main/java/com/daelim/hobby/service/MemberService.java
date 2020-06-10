@@ -1,4 +1,4 @@
-package com.daelim.hobby.service;
+package com.daelim.hobby.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -6,45 +6,45 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.daelim.hobby.dao.MemberDAO;
-import com.daelim.hobby.vo.MemberVO;
+import com.daelim.hobby.Dao.MemberDAO;
+import com.daelim.hobby.Vo.MemberVO;
 
 @Service	
 public class MemberService {
 	
-	@Autowired
+	@Autowired 
 	public MemberDAO mDao;
 	public MemberVO mVo;
 	
 	
-	// È¸¿ø°¡ÀÔ
-	public void mCreateAccount(MemberVO mVo) { // ·Î±×ÀÎ view¿¡¼­ ÀÔ·ÂÇÑ °ªÀ» MemberVo °´Ã¼·Î °¡Á®¿Í »ç¿ëÇÑ´Ù
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public void mCreateAccount(MemberVO mVo) { // ï¿½Î±ï¿½ï¿½ï¿½ viewï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ MemberVo ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
 		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemName(), mVo.getMemPhone(), mVo.getMemEmail(),  
 				mVo.getMemRegion(), mVo.getMemCity(), mVo.getMemBirth(), mVo.getMemPwHint(), mVo.getMemPwAns());
 	}
 	
 	
-	// ¾ÆÀÌµð Áßº¹°Ë»ç
+	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
 	public MemberVO mIdCheck(HttpServletRequest request) {
-		String memId = request.getParameter("memId"); // memId : È¸¿ø°¡ÀÔ Ã¢¿¡¼­ ÀÔ·ÂÇÑ ¾ÆÀÌµð
+		String memId = request.getParameter("memId"); // memId : È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½
 		mVo = mDao.checkId(memId);
 		return mVo;
 	}
 	
 	
 	
-	// ·Î±×ÀÎ
+	// ï¿½Î±ï¿½ï¿½ï¿½
 	public MemberVO mLogin(MemberVO mVo, HttpServletRequest request) {
 		mVo = mDao.login(mVo.getMemId(), mVo.getMemPw());
 		
-		if(mVo != null) { // °Ë»ö ¼º°ø ½Ã
-			HttpSession session = request.getSession(); // ·Î±×ÀÎ -> ¼¼¼Ç ¸¸µë			
-			session.setAttribute("mVo", mVo); // ¼¼¼Ç¿¡ mVo Ãß°¡
+		if(mVo != null) { // ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+			HttpSession session = request.getSession(); // ï¿½Î±ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½			
+			session.setAttribute("mVo", mVo); // ï¿½ï¿½ï¿½Ç¿ï¿½ mVo ï¿½ß°ï¿½
 			
-			session.setAttribute("memId", mVo.getMemId()); // ¼¼¼Ç¿¡ ¾ÆÀÌµð Ãß°¡
-			session.setAttribute("memPw", mVo.getMemPw()); // ¼¼¼Ç¿¡ ºñ¹Ð¹øÈ£ Ãß°¡
-			System.out.println("¼¼¼Ç ¾ÆÀÌµð: " + (String) session.getAttribute("memId"));
-			System.out.println("¼¼¼Ç ºñ¹Ð¹øÈ£: " + (String) session.getAttribute("memPw"));
+			session.setAttribute("memId", mVo.getMemId()); // ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ß°ï¿½
+			session.setAttribute("memPw", mVo.getMemPw()); // ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½Ð¹ï¿½È£ ï¿½ß°ï¿½
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½: " + (String) session.getAttribute("memId"));
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£: " + (String) session.getAttribute("memPw"));
 			
 			return mVo;
 		}
@@ -53,7 +53,7 @@ public class MemberService {
 	}
 	
 	
-	// ¾ÆÀÌµð Ã£±â (ÀÌ¸§, ÀÌ¸ÞÀÏ)
+	// ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½ (ï¿½Ì¸ï¿½, ï¿½Ì¸ï¿½ï¿½ï¿½)
 	public MemberVO mIdSearch(MemberVO mVo) {
 		String memName = mVo.getMemName();
 		String memEmail = mVo.getMemEmail();
@@ -63,7 +63,7 @@ public class MemberService {
 	}
 	
 	
-	// ºñ¹Ð¹øÈ£ Ã£±â
+	// ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½
 	public MemberVO mPwSearch(MemberVO mVo) {
 		String memId = mVo.getMemId();
 		int memPwHint = mVo.getMemPwHint();
@@ -74,7 +74,7 @@ public class MemberService {
 	}
 	
 	
-	// È¸¿ø Á¤º¸ ¼öÁ¤
+	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void mMemberModify(MemberVO mVo, HttpSession session) {
 		String memPhone = mVo.getMemPhone();
 		String memEmail = mVo.getMemEmail();
@@ -82,46 +82,46 @@ public class MemberService {
 		String memCity = mVo.getMemCity();
 		String memBirth = mVo.getMemBirth();
 		
-		// ·Î±×ÀÎÇÒ¶§  ¼¼¼Ç¿¡ mId¸¦ ¼³Á¤ÇßÀ½. getAttribute¸¦ ÇØ¼­ mId¸¦ °¡Á®¿Â´Ù\
+		// ï¿½Î±ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½  ï¿½ï¿½ï¿½Ç¿ï¿½ mIdï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. getAttributeï¿½ï¿½ ï¿½Ø¼ï¿½ mIdï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½\
 		String memId = (String) session.getAttribute("memId");
 		System.out.println("session.getAttribute mId : " + memId);
 		
 		mDao.memberModify(memId, memPhone, memEmail, memRegion, memCity, memBirth);
 		
-		// ¼öÁ¤µÈ mVo¸¦ ´Ù½Ã ¼¼¼Ç¿¡ ÀúÀå
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ mVoï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
-		session.setAttribute("mVo", mVo); // ¼¼¼Ç¿¡ mVo Ãß°¡
+		session.setAttribute("mVo", mVo); // ï¿½ï¿½ï¿½Ç¿ï¿½ mVo ï¿½ß°ï¿½
 	}
 	
 	
-	// ºñ¹Ð¹øÈ£ º¯°æ
+	// ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 	public void mMemberPwModify(MemberVO mVo, HttpSession session) {
 		String memId = (String) session.getAttribute("memId");
 		System.out.println("session.getAttribute mId : " + memId);
 		
 		String memPw = mVo.getMemPw();
-		System.out.println("º¯°æ ºñ¹Ð¹øÈ£: " + memPw);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£: " + memPw);
 		
 		mDao.memberPwModify(memId, memPw);
 		
-		// ¼öÁ¤µÈ mVo¸¦ ´Ù½Ã ¼¼¼Ç¿¡ ÀúÀå
-		session.setAttribute("memPw", mVo.getMemPw()); // ¼¼¼Ç¿¡ º¯°æµÈ ºñ¹Ð¹øÈ£ °»½Å
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ mVoï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+		session.setAttribute("memPw", mVo.getMemPw()); // ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
-		session.setAttribute("mVo", mVo); // ¼¼¼Ç¿¡ mVo Ãß°¡
+		session.setAttribute("mVo", mVo); // ï¿½ï¿½ï¿½Ç¿ï¿½ mVo ï¿½ß°ï¿½
 	}
 	
 	
 	
 	
-	// È¸¿ø Å»Åð
+	// È¸ï¿½ï¿½ Å»ï¿½ï¿½
 	public void mMemberDelete(HttpSession session) {
 		String memId = (String)session.getAttribute("memId");
-		System.out.println("¼¼¼Ç ¾ÆÀÌµð(»èÁ¦ÇÒ ¾ÆÀÌµð): " + memId);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½): " + memId);
 		mDao.memberDelete(memId);
 	}
 	
 	
-	// ¸â¹ö ¸®½ºÆ®
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 //	public void mList(Model model) {
 //		ArrayList<MemberVO> dtos = mDao.list();
 //		model.addAttribute("list", dtos);

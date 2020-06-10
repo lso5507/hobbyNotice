@@ -1,4 +1,4 @@
-package com.daelim.hobby.service;
+package com.daelim.hobby.Service;
 
 
 
@@ -11,9 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.daelim.hobby.dao.BoardDao;
-import com.daelim.hobby.vo.VOBoard;
-import com.daelim.hobby.vo.VOComment;
+import com.daelim.hobby.Dao.BoardDao;
+import com.daelim.hobby.Vo.VOBoard;
+import com.daelim.hobby.Vo.VOComment;
 
 
 

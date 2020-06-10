@@ -1,4 +1,4 @@
-package com.daelim.hobby.dao;
+package com.daelim.hobby.Dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Repository;
 
-import com.daelim.hobby.vo.MemberVO;
+import com.daelim.hobby.Vo.MemberVO;
 
 
 @Repository
@@ -18,13 +18,13 @@ public class MemberDAO {
 	
 	JdbcTemplate template;
 	@Autowired
-	public void setTemplate(JdbcTemplate template) { // JdbcTemplate À» »ç¿ëÇÏ±â À§ÇÑ ¼¼ÆÃ
+	public void setTemplate(JdbcTemplate template) { // JdbcTemplate ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		this.template = template;
 	}
 	
 
 	
-	// È¸¿ø°¡ÀÔ
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void createAccount(final String memId, final String memPw, final String memName, final String memPhone, final String memEmail, 
 			final String memRegion, final String memCity, final String memBirth, final int memPwHint, final String memPwAns) {
 
@@ -49,10 +49,10 @@ public class MemberDAO {
 	}
 		
 	
-	// ¾ÆÀÌµð Áßº¹ È®ÀÎ
+	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ È®ï¿½ï¿½
 	public MemberVO checkId(String memId) {
 		MemberVO mVo = null;
-		System.out.println("¾ÆÀÌµð: " + memId);
+		System.out.println("ï¿½ï¿½ï¿½Ìµï¿½: " + memId);
 		String query = "select * from member where memId='" + memId + "'";
 		System.out.println(query);
 		
@@ -70,7 +70,7 @@ public class MemberDAO {
 	}
 	
 	
-	// ·Î±×ÀÎ
+	// ï¿½Î±ï¿½ï¿½ï¿½
 	public MemberVO login(String memId, String memPw) {
 		
 		MemberVO mVo = null;
@@ -81,7 +81,7 @@ public class MemberDAO {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("·Î±×ÀÎ ½ÇÆÐ");
+			System.out.println("ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			return null;
 		}
 		return mVo;
@@ -89,7 +89,7 @@ public class MemberDAO {
 	
 	
 	
-	// ¾ÆÀÌµð Ã£±â (ÀÌ¸§, ÀÌ¸ÞÀÏ·Î Ã£±â)
+	// ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½ (ï¿½Ì¸ï¿½, ï¿½Ì¸ï¿½ï¿½Ï·ï¿½ Ã£ï¿½ï¿½)
 	public MemberVO searchId(String memName, String memEmail) {
 		MemberVO mVo = null;
 		String query = "select * from member where memName='"+ memName +"' and memEmail='"+ memEmail +"'";
@@ -98,7 +98,7 @@ public class MemberDAO {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("°Ë»öµÈ ¾ÆÀÌµð°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			return null;
 		}
 		
@@ -107,7 +107,7 @@ public class MemberDAO {
 	
 	
 	
-	// ºñ¹Ð¹øÈ£ Ã£±â
+	// ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½
 	public MemberVO searchPw(String memId, int memPwHint, String memPwAns) {
 		MemberVO mVo = null;
 		String query = "select * from member where memId='"+ memId +"' and memPwHint="+ memPwHint +" and memPwAns='"+ memPwAns +"'";
@@ -116,7 +116,7 @@ public class MemberDAO {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("ºñ¹Ð¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			return null;
 		}
 		
@@ -125,7 +125,7 @@ public class MemberDAO {
 	
 	
 	
-	// È¸¿ø Á¤º¸ ¼öÁ¤
+	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void memberModify(final String memId, final String memPhone, final String memEmail, final String memRegion, final String memCity, final String memBirth) {
 		String query = "update member set memPhone=?, memEmail=?, memRegion=?, memCity=?, memBirth=? where memId=?";
 		template.update(query, new PreparedStatementSetter() {
@@ -142,7 +142,7 @@ public class MemberDAO {
 	}
 	
 	
-	// ºñ¹Ð¹øÈ£ º¯°æ
+	// ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 	public void memberPwModify(final String memId, final String memPw) {
 		String query = "update member set memPw=? where memId=?";
 		template.update(query, new PreparedStatementSetter() {
@@ -157,7 +157,7 @@ public class MemberDAO {
 	
 	
 	
-	// È¸¿ø Å»Åð
+	// È¸ï¿½ï¿½ Å»ï¿½ï¿½
 	public void memberDelete(final String memId) {
 		String query = "delete from member where memId=?";
 		template.update(query, new PreparedStatementSetter() {
@@ -169,7 +169,7 @@ public class MemberDAO {
 	}
 	
 	
-	// ¸®½ºÆ®
+	// ï¿½ï¿½ï¿½ï¿½Æ®
 	public ArrayList<MemberVO> list(){
 		String query = "select * from member order by memRegDate desc";
 		return (ArrayList<MemberVO>) template.query(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));

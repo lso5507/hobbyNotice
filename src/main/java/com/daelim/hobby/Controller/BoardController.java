@@ -1,4 +1,4 @@
-package com.daelim.hobby.controller;
+package com.daelim.hobby.Controller;
 
 import java.io.PrintWriter;
 import java.util.List;
@@ -14,9 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.daelim.hobby.service.BoardService;
-import com.daelim.hobby.vo.VOBoard;
-import com.daelim.hobby.vo.VOComment;
+import com.daelim.hobby.Service.BoardService;
+import com.daelim.hobby.Vo.VOBoard;
+import com.daelim.hobby.Vo.VOComment;
 
 
 

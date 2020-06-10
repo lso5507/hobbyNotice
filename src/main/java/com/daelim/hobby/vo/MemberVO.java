@@ -1,22 +1,22 @@
-package com.daelim.hobby.vo;
+package com.daelim.hobby.Vo;
 
 import java.sql.Timestamp;
 
 
 public class MemberVO {
 	
-	int mCnt; // È¸¿ø ¹øÈ£
-	String memId; // ¾ÆÀÌµð
-	String memPw; // ºñ¹ø
-	String memName; // ÀÌ¸§
-	String memPhone; // ¿¬¶ôÃ³
-	String memEmail; // ÀÌ¸ÞÀÏ
-	String memRegion; // µµ
-	String memCity; // ½Ã
-	String memBirth; // »ý³â¿ùÀÏ (6ÀÚ¸®)
-	int memPwHint; // 0.¾î¸±¶§ º°¸í, 1.°¡Àå Ä£ÇÑÄ£±¸ ÀÌ¸§
-	String memPwAns; // ºñ¹Ð¹øÈ£ ´äº¯
-	Timestamp memRegDate; // °¡ÀÔÀÏ
+	int mCnt; // È¸ï¿½ï¿½ ï¿½ï¿½È£
+	String memId; // ï¿½ï¿½ï¿½Ìµï¿½
+	String memPw; // ï¿½ï¿½ï¿½
+	String memName; // ï¿½Ì¸ï¿½
+	String memPhone; // ï¿½ï¿½ï¿½ï¿½Ã³
+	String memEmail; // ï¿½Ì¸ï¿½ï¿½ï¿½
+	String memRegion; // ï¿½ï¿½
+	String memCity; // ï¿½ï¿½
+	String memBirth; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (6ï¿½Ú¸ï¿½)
+	int memPwHint; // 0.ï¿½î¸±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, 1.ï¿½ï¿½ï¿½ï¿½ Ä£ï¿½ï¿½Ä£ï¿½ï¿½ ï¿½Ì¸ï¿½
+	String memPwAns; // ï¿½ï¿½Ð¹ï¿½È£ ï¿½äº¯
+	Timestamp memRegDate; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	public MemberVO() {}
 	public MemberVO(int mCnt, String memId, String memPw, String memName, String memPhone, String memEmail,   
