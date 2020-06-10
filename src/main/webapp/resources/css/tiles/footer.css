@@ -8,6 +8,7 @@
 	box-sizing: border-box;
 	text-align: center;
 	margin-bottom: 2px;
+	float: none;
 } 
 
 /* 푸터 로고 영역  */
