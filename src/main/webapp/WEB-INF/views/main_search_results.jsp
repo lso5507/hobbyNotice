@@ -53,7 +53,7 @@
 			</div><!-- 게시물 끝 -->
 			<!-- 더 보기 -->
 			<div class="sr_list_more">
-				<span><a href="">더 보기</a></span>W
+				<span><a href="">더 보기</a></span>
 			</div><!-- 더 보기 -->
 			
 		</div> <!-- e-스포츠 끝-->
@@ -65,9 +65,6 @@
 		 </c:forEach>
 		</div>
 		
-		
-		
-
 		<!-- 스포츠 영역 -->
 		<div id="sr_list_sport">
 			<!-- 제목 -->

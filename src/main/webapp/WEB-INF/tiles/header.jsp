@@ -35,21 +35,13 @@
 				<input type="submit" id="searchBtn" class="input_button" value="검색">
 			</form><!-- form 태그 끝 -->
 		</div><!-- 검색 영역 끝-->
-		<script>
-		document.getElementById("searchBtn").onclick = function () {
-	    
-			let searchType = document.getElementsByName("main_select")[0].value;
-			let keyword =  document.getElementsByName("main_txtContent")[0].value;
-		  
-			location.href = "/hobby/listPageSearch?num=1" + "&searchType=" + searchType + "&keyword=" +keyword;
-		};
-		</script>		
+		
 		<!-- 헤더 로그인 영역 -->
 		<div id="header-login">
 			<ul>
 				<c:choose>
-					<c:when test="${test eq '로그인 상태'}"> <!-- 로그인 세션값이 존재하지 않으면 실행, eq는 같느냐? 물어보는것 -->
-						<!-- 즉, 같으면 실행 -->
+					<c:when test="${test eq null}"> <!-- 로그인 세션값이 존재하지 않으면 실행, eq는 같느냐? 물어보는것 -->
+						<!-- 로그인 세션값이 없으면 실행 -->
 				    	<li><a href="/hobby/">로그인</a></li> <!-- 로그인 페이지 이동 --> 
 						<li><a href="/hobby/">회원가입</a></li> <!-- 회원가입 페이지 이동 -->
 					</c:when>
@@ -60,6 +52,17 @@
 				</c:choose>
 			</ul>
 		</div><!-- 헤더 로그인 영역 끝-->
+		
+		<!-- 검색 스크립트 -->
+		<script>
+			document.getElementById("searchBtn").onclick = function () {
+		    
+				let searchType = document.getElementsByName("main_select")[0].value;
+				let keyword =  document.getElementsByName("main_txtContent")[0].value;
+			  
+				location.href = "/hobby/listPageSearch?num=1" + "&searchType=" + searchType + "&keyword=" +keyword;
+			};
+		</script>
 	</div><!-- 헤더 로고, 검색, 로그인 영역 끝-->
 
 	<!-- 메뉴바 영역 -->

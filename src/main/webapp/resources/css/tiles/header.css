@@ -3,7 +3,7 @@
 /* 헤더영역 전체 크기 설정(로고라인 및 메뉴바) */
 #header {
 	width: 1092px;
-	height: 200px;
+	height: 210px;
 	margin-bottom: 5px;
 }
 
@@ -11,6 +11,7 @@
 #header-top {
 	width: 1092px;
 	height: 150px;
+	margin-bottom: 5px;
 }
 
 /* 헤더-로고 영역 설정 */
@@ -77,7 +78,7 @@
 /* 메뉴바 영역 크기 설정 */
 #header-nav {
 	width: 1092px;
-	height: 45px;
+	height: 53px;
 }
 
 /* 메인메뉴 ul 영역 설정 */
@@ -102,10 +103,10 @@
 	display: block;
   	width: 273px;
   	height: 40px;
-  	padding-top: 4px;
+  	padding-top: 2px;
   	box-sizing:border-box;
-  	background: #9dc852;
-  	color: #ffffff;
+  	background: #0284cf;
+  	color: #fff;
   	font-size: 24px;
   	font-weight: bold;
   	transition: 0.3s background-color;
@@ -116,7 +117,7 @@
   	content: "";
   	display: block;
   	height: 0;
-  	border-top: 5px solid #9dc852;
+  	border-top: 5px solid #0284cf;
   	border-left: 136.5px solid transparent;
   	border-right: 136.5px solid transparent;
   	border-bottom: 0 solid #dddddd;
@@ -157,11 +158,9 @@
 #header-nav-main li:hover .hader-nav-main-title.title4:after { border-bottom: 5px solid #f0dcb9; }
 	
 /* 각 카테고리별 제목 배경색상 */
-.hader-nav-main-title { background: #9dc852; }
 .hader-nav-main-title:hover { background: #8db842; }
 .hader-nav-main-title:after { background: #9dc852; }
 .hader-nav-main-title:hover:after { background: #8db842; }
-.hader-nav-main-title:before { border-top-color: #9dc852; }
 .hader-nav-main-title:hover:before { border-top-color: #8db842; }
 
 .title2 { background: #4e96b3; } /* 기본 제목색상 */

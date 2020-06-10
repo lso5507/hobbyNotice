@@ -41,18 +41,19 @@
 			<h1 class="section-title">e-스포츠</h1>
 			<hr>
 			<!-- e-스포츠 탭 메뉴 구현 -->
-			<div id="section-category-esport">
+			<div class="section-category-tab">
 				<ul id="esport_ul">
-					<li data-tab="tab1" class="current"><a href=""> 팀원모집 </a></li> 
-					<li data-tab="tab2" ><a href=""> 팁과 노하우 </a></li>
-					<li data-tab="tab3" ><a href=""> 질문과 답변 </a></li>
-					<li data-tab="tab4" ><a href=""> 자유게시판 </a></li>
+					<li data-tab="tab1" class="current"><span> 팀원모집 </span></li> 
+					<li data-tab="tab2" ><span> 팁과 노하우 </span></li>
+					<li data-tab="tab3" ><span> 질문과 답변 </span></li>
+					<li data-tab="tab4" ><span> 자유게시판 </span></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
+				
 				<!-- 팀원모집 -->
-				<div id="tab1" class="section-category-esport-context current">
+				<div id="tab1" class="section-category-esport-content current">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">팀원 모집 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -69,7 +70,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -93,10 +94,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 팀원모집 끝 -->
+				
 				<!-- 팁과 노하우 -->
-				<div id="tab2" class="section-category-esport-context ">
+				<div id="tab2" class="section-category-esport-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">팁과 노하우 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -113,7 +115,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -137,10 +139,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 팁과 노하우 끝 -->
+				
 				<!-- 질문과 답변 -->
-				<div id="tab3" class="section-category-esport-context ">
+				<div id="tab3" class="section-category-esport-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">질문과 답변 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -157,7 +160,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -181,10 +184,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 질문과 답변 끝 -->
+				
 				<!-- 자유 게시판 -->
-				<div id="tab4" class="section-category-esport-context ">
+				<div id="tab4" class="section-category-esport-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">자유 게시판 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -201,7 +205,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -234,18 +238,18 @@
 			<h1 class="section-title">스포츠</h1>
 			<hr>
 			<!-- 스포츠 탭 메뉴 구현 -->
-			<div id="section-category-sport">
+			<div class="section-category-tab">
 				<ul id="sport_ul">
-					<li data-tab="tab5" class="current"><a href="#"> 팀원모집 </a></li>
-					<li data-tab="tab6" ><a href="#"> 팁과 노하우 </a></li>
-					<li data-tab="tab7" ><a href="#"> 질문과 답변 </a></li>
-					<li data-tab="tab8" ><a href="#"> 자유게시판 </a></li>
+					<li data-tab="tab5" class="current"><span> 팀원모집 </span></li>
+					<li data-tab="tab6" ><span> 팁과 노하우 </span></li>
+					<li data-tab="tab7" ><span> 질문과 답변 </span></li>
+					<li data-tab="tab8" ><span> 자유게시판 </span></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
-				<div id="tab5" class="section-category-sport-context current">
+				<div id="tab5" class="section-category-sport-content current">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">팀원 모집 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -262,7 +266,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -286,10 +290,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 팀원모집 끝 -->
+				
 				<!-- 팁과 노하우 -->
-				<div id="tab6" class="section-category-sport-context ">
+				<div id="tab6" class="section-category-sport-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">팁과 노하우 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -306,7 +311,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -330,10 +335,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 팁과 노하우 끝 -->
+				
 				<!-- 질문과 답변 -->
-				<div id="tab7" class="section-category-sport-context ">
+				<div id="tab7" class="section-category-sport-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">질문과 답변 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -350,7 +356,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -374,10 +380,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 질문과 답변 끝 -->
+				
 				<!-- 자유 게시판 -->
-				<div id="tab8" class="section-category-sport-context ">
+				<div id="tab8" class="section-category-sport-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">자유 게시판 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -394,7 +401,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -426,19 +433,19 @@
 			<!-- 문화생활 본문 제목 -->
 			<h1 class="section-title">문화생활</h1>
 			<hr>
-			<!-- 스포츠 탭 메뉴 구현 -->
-			<div id=section-category-culture>
+			<!-- 문화생활 탭 메뉴 구현 -->
+			<div class="section-category-tab">
 				<ul id="culture_ul">
-					<li data-tab="tab9" class="current"><a href="#"> 팀원모집 </a></li>
-					<li data-tab="tab10" ><a href="#"> 팁과 노하우 </a></li>
-					<li data-tab="tab11" ><a href="#"> 질문과 답변 </a></li>
-					<li data-tab="tab12" ><a href="#"> 자유게시판 </a></li>
+					<li data-tab="tab9" class="current"><span> 팀원모집 </span></li>
+					<li data-tab="tab10" ><span> 팁과 노하우 </span></li>
+					<li data-tab="tab11" ><span> 질문과 답변 </span></li>
+					<li data-tab="tab12" ><span> 자유게시판 </span></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
-				<div id="tab9" class="section-category-culture-context current">
+				<div id="tab9" class="section-category-culture-content current">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">팀원 모집 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -455,7 +462,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -479,10 +486,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 팀원모집 끝 -->
+				
 				<!-- 팁과 노하우 -->
-				<div id="tab10" class="section-category-culture-context ">
+				<div id="tab10" class="section-category-culture-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">팁과 노하우 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -499,7 +507,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -523,10 +531,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 팁과 노하우 끝 -->
+				
 				<!-- 질문과 답변 -->
-				<div id="tab11" class="section-category-culture-context ">
+				<div id="tab11" class="section-category-culture-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">질문과 답변 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -543,7 +552,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -567,10 +576,11 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
 				</div><!-- 질문과 답변 끝 -->
+				
 				<!-- 자유 게시판 -->
-				<div id="tab12" class="section-category-culture-context ">
+				<div id="tab12" class="section-category-culture-content ">
 					<!-- 인기 게시물 -->
-					<div class="popularity-context">
+					<div class="popularity-content">
 						<h2 class="section-subtitle">자유 게시판 인기 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -587,7 +597,7 @@
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
-					<div class="new-context">
+					<div class="new-content">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
@@ -620,30 +630,30 @@
 <!-- 탭메뉴 스크립트 -->	
 <script>
 	$(function() {
-		$('#esport_ul li').mouseover(function() { // 탭메뉴위에 마우스가 있을때 함수 호출
+		$('#esport_ul li').click(function() { // 탭메뉴위에 마우스가 있을때 함수 호출
 			var activeTab = $(this).attr('data-tab'); //현재 선택한 data-tab의 값을 변수에 저장
-			$('#section-category-esport ul li').removeClass('current'); // 모든 li의 class를 지움
-			$('.section-category-esport-context').removeClass('current'); // 모든 div(내용)의 class를 지움
+			$('#esport_ul li').removeClass('current'); // 모든 li의 class를 지움
+			$('.section-category-esport-content').removeClass('current'); // 모든 div(내용)의 class를 지움
 			$(this).addClass('current'); //선택한 li의 클래스에 current 추가 
 			$('#' + activeTab).addClass('current'); // 변수에 저장된 값(div id)에 따라 내용을 보여줌  
 		})
 	});
 	
 	$(function() {
-		$('#sport_ul li').mouseover(function() { // 탭메뉴위에 마우스가 있을때 함수 호출
+		$('#sport_ul li').click(function() { // 탭메뉴위에 마우스가 있을때 함수 호출
 			var activeTab = $(this).attr('data-tab'); 
-			$('#section-category-sport ul li').removeClass('current'); 
-			$('.section-category-sport-context').removeClass('current'); 
+			$('#sport_ul li').removeClass('current'); 
+			$('.section-category-sport-content').removeClass('current'); 
 			$(this).addClass('current');  
 			$('#' + activeTab).addClass('current');   
 		})
 	});
 	
 	$(function() {
-		$('#culture_ul li').mouseover(function() { // 탭메뉴위에 마우스가 있을때 함수 호출
+		$('#culture_ul li').click(function() { // 탭메뉴위에 마우스가 있을때 함수 호출
 			var activeTab = $(this).attr('data-tab');
-			$('#section-category-culture ul li').removeClass('current'); 
-			$('.section-category-culture-context').removeClass('current'); 
+			$('#culture_ul li').removeClass('current'); 
+			$('.section-category-culture-content').removeClass('current'); 
 			$(this).addClass('current');  
 			$('#' + activeTab).addClass('current');   
 		})
