@@ -6,7 +6,7 @@
 
 a { /* a 태그에 대한 색을 없앰 */
 	text-decoration: none;
-	color: inherit;
+	color:inherit;
 }
 
 textarea {
@@ -21,14 +21,14 @@ select {
 
 #write_title {
 	resize: none;
-	width: 662px;
-	height: 20px;
+	width: 662px;	
+	height : 20px;
 }
 
 .board_write {
 	display: block;
 	padding: 0;
-	width: 742px; /* 가로 크기 조절 */
+	width : 742px; /* 가로 크기 조절 */
 	margin: 0 280px;
 }
 
@@ -52,7 +52,7 @@ select {
 	width: 66%;
 }
 
-.board_write_headCategory>div {
+.board_write_headCategory > div {
 	display: inline-block;
 	padding-bottom: 10px;
 }
@@ -62,7 +62,40 @@ select {
 	padding: 5px 0;
 }
 
-#btn_write_submit, #btn_write_cansel {
+#btn_write_submit,
+#btn_write_cansel{
 	width: 70px;
-	height: 22px;
+	height: 22px;	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

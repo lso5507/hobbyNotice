@@ -28,14 +28,14 @@ a {
 
 /* 메인화면 영역설정(배너광고 제외) */
 #main {
-	width: 1092px;
+	width: 1092px; 
 	float: left; /* 배너광고때문에 위치 왼쪽 설정 */
 	margin-right: 5px; /* 배너광고와 여백 거리 설정 */
 	overflow: hidden;
 }
 
 /* 중간 영역 */
-#content {
+#content{
 	width: 1092px;
 	height: 1885px;
 	margin-bottom: 5px;
@@ -46,7 +46,7 @@ a {
 	width: 300px;
 	height: auto;
 	float: right;
-}
+} 
 
 /* 배너광고 각 이미지 영역 */
 .banner_size {

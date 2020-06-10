@@ -41,7 +41,7 @@ public class BoardService {
 		return result;
 	}
 	public int update(VOBoard board, int cnt) {
-		System.out.println("�뾽�뜲�씠�듃 �뀒�뒪�듃");
+		System.out.println("업데이트 테스트");
 		int result=dao.boardUpdate(board,cnt);
 		
 		return result;
@@ -72,10 +72,10 @@ public class BoardService {
 	    File filePath = new File(path);
 	    
 	    if(!filePath.exists()) {
-	    	filePath.mkdirs();   // 留뚯빟�뿉 path �빐�떦�븯�뒗 寃쎈줈媛� �뾾�쑝硫� �뤃�뜑瑜� 留뚮벉
+	    	filePath.mkdirs();   // 만약에 path 해당하는 경로가 없으면 폴더를 만듬
 	    }
 	    try {
-	    	uploadfile.transferTo(saveFile); // �뙆�씪 ���옣 
+	    	uploadfile.transferTo(saveFile); // 파일 저장 
 	    }
 	    catch(Exception e) {
 	    	System.out.println("Error:"+e);
@@ -83,7 +83,7 @@ public class BoardService {
 
 		return 0;
 	}
-	public static String getCurrentDate(String format) {  // �씠誘몄��뙆�씪�씠由� 以묐났諛⑹�
+	public static String getCurrentDate(String format) {  // 이미지파일이름 중복방지
 	       String dtStr = "";
 	       SimpleDateFormat sdf = new SimpleDateFormat(format);
 	       Date dt1 = new Date();

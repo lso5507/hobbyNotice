@@ -6,27 +6,27 @@
 
 a { /* a 태그에 대한 색을 없앰 */
 	text-decoration: none;
-	color: inherit;
+	color:inherit;
 }
 
 .board_detail {
 	display: block;
 	padding: 0;
 	padding-top: 50px;
-	width: 742px; /* 가로 크기 조절 */
+	width : 742px; /* 가로 크기 조절 */
 	margin: 0 280px;
 }
 
-.board_detail .board_detail_title, .board_detail .board_detail_name,
-	.board_detail .board_detail_head {
+.board_detail .board_detail_title,
+.board_detail .board_detail_name,
+.board_detail .board_detail_head {
 	display: block;
-	width: 742px; /* 가로 크기 조절 */
+	width : 742px; /* 가로 크기 조절 */
 }
 
 .board_detail_title #title {
 	width: 60px;
 }
-
 .board_detail_name #name {
 	width: 60px;
 }
@@ -36,17 +36,17 @@ a { /* a 태그에 대한 색을 없앰 */
 	width: 100px;
 	padding: 0;
 }
-
 .board_detail_head #view {
 	width: 80px;
 	padding: 0;
 }
 
-.board_detail_head #declaration, .board_detail_head #good,
-	.board_detail_head #goodnum {
+.board_detail_head #declaration,
+.board_detail_head #good,
+.board_detail_head #goodnum  {
 	width: 43px;
 	padding: 0;
-	float: right;
+	float : right;
 	text-align: center;
 }
 
@@ -56,32 +56,32 @@ a { /* a 태그에 대한 색을 없앰 */
 	height: 26px;
 }
 
-.board_detail_title>div, .board_detail_head .item>div,
-	.board_detail_name>div {
+.board_detail_title > div,
+.board_detail_head .item > div,
+.board_detail_name > div {
 	display: inline-block;
 	padding-bottom: 5px;
 }
 
 .board_detail_content .board_table_content {
 	display: inline-block;
-	width: 742px;
+	width :742px;
 	border: 2px;
 	border-color: #ccc;
 	border-style: solid;
 }
-
-.board_detail_content .board_table_content .board_detail_tail>div {
+.board_detail_content .board_table_content .board_detail_tail > div {
 	display: inline-block;
-	width: 742px;
+	width :742px;
 }
 
-.board_detail_content .board_table_content .board_detail_tail {
-	text-align: right;
+.board_detail_content .board_table_content .board_detail_tail{
+	text-align:right;
 }
 
 .board_detail .comment_view {
-	width: 742px;
-	margin-top: 10px;
+	width :742px;
+	margin-top : 10px;
 	border: 2px;
 	border-color: #ccc;
 	border-style: solid;
@@ -90,3 +90,34 @@ a { /* a 태그에 대한 색을 없앰 */
 #content_text {
 	padding: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -25,12 +25,11 @@
 }
 
 /*  공지사항 게시글 배치 스타일 */
-#section-notice-content>ul {
+#section-notice-content > ul {
 	height: 90px;
-	list-style-position: inside;
+	list-style-position : inside;
 }
-
-#section-notice-content>ul>li {
+#section-notice-content > ul > li {
 	padding: 3px 0 3px 10px;
 	border-bottom: 1px solid #e9e9e9;
 	box-sizing: border-box;
@@ -44,7 +43,7 @@
 
 /* 최신 및 인기 게시물 - e스포츠 게시판 영역 */
 #section-esport {
-	border: 1px solid;
+	border: 1px solid; 
 	padding: 5px 5px 0 5px;
 	box-sizing: border-box;
 	margin-bottom: 5px;
@@ -52,7 +51,7 @@
 
 /* 최신 및 인기 게시물 - 스포츠 게시판 영역 */
 #section-sport {
-	border: 1px solid;
+	border: 1px solid; 
 	padding: 5px 5px 0 5px;
 	box-sizing: border-box;
 	margin-bottom: 5px;
@@ -60,7 +59,7 @@
 
 /* 최신 및 인기 게시물 - 문화생활 게시판 영역 */
 #section-culture {
-	border: 1px solid;
+	border: 1px solid; 
 	padding: 5px 5px 0 5px;
 	box-sizing: border-box;
 }
@@ -71,13 +70,11 @@
 	height: auto;
 	overflow: hidden;
 }
-
 #section-category-sport { /* 스포츠  */
 	width: 100%;
 	height: auto;
 	overflow: hidden;
 }
-
 #section-category-culture { /* 문화생활 */
 	width: 100%;
 	height: auto;
@@ -85,36 +82,32 @@
 }
 
 /* 탭메뉴 ul 도형 스타일 제거  */
-#section-category-esport>ul {
+#section-category-esport > ul {
 	list-style-type: none;
 	overflow: hidden;
 }
-
-#section-category-sport>ul {
+#section-category-sport > ul {
 	list-style-type: none;
 	overflow: hidden;
 }
-
-#section-category-culture>ul {
+#section-category-culture > ul {
 	list-style-type: none;
 	overflow: hidden;
 }
 
 /* 탭 메뉴 가로 정렬  */
-#section-category-esport>ul>li {
+#section-category-esport > ul > li {
 	float: left;
 }
-
-#section-category-sport>ul>li {
+#section-category-sport > ul > li {
 	float: left;
 }
-
-#section-category-culture>ul>li {
+#section-category-culture > ul > li {
 	float: left;
 }
 
 /* 탭메뉴 문자 스타일  */
-#section-category-esport>ul>li>a {
+#section-category-esport > ul > li > a {
 	display: inline-block;
 	color: #000;
 	text-align: center;
@@ -122,8 +115,7 @@
 	padding: 14px 16px;
 	box-sizing: border-box;
 }
-
-#section-category-sport>ul>li>a {
+#section-category-sport > ul > li > a {
 	display: inline-block;
 	color: #000;
 	text-align: center;
@@ -131,8 +123,7 @@
 	padding: 14px 16px;
 	box-sizing: border-box;
 }
-
-#section-category-culture>ul>li>a {
+#section-category-culture > ul > li > a {
 	display: inline-block;
 	color: #000;
 	text-align: center;
@@ -142,29 +133,25 @@
 }
 
 /* 현재 선택된 li(탭메뉴)의 배경색 변경 */
-#section-category-esport>ul>li.current {
-	background: #ccc;
-}
-
-#section-category-sport>ul>li.current {
-	background: #ccc;
-}
-
-#section-category-culture>ul>li.current {
-	background: #ccc;
-}
+#section-category-esport > ul > li.current {
+	background : #ccc;	
+} 
+#section-category-sport > ul > li.current {
+	background : #ccc;	
+} 
+#section-category-culture > ul > li.current {
+	background : #ccc;	
+}  
 
 /* 게시물 내용 영역*/
 .section-category-esport-context {
 	display: none; /* 기본적으로 보이지 않음, 공간 차지 없음 */
 }
-
 .section-category-sport-context {
-	display: none;
+	display: none; 
 }
-
 .section-category-culture-context {
-	display: none;
+	display: none; 
 }
 
 /* 탭메뉴 선택에 해당하는 게시물 */
@@ -173,13 +160,11 @@
 	height: auto;
 	margin-top: 5px;
 }
-
 .section-category-sport-context.current {
 	display: block;
 	height: auto;
 	margin-top: 5px;
 }
-
 .section-category-culture-context.current {
 	display: block;
 	height: auto;
@@ -197,12 +182,12 @@
 }
 
 /* 게시글 ul 도형 스타일 설정 */
-.board_content>ul {
+.board_content > ul {
 	list-style-type: none;
 }
 
 /* 게시글 제목 여백 설정 */
-.board_content>ul>li {
+.board_content > ul > li {
 	padding: 3px 0 3px 10px;
 	border-bottom: 1px solid #e9e9e9;
 	box-sizing: border-box;
