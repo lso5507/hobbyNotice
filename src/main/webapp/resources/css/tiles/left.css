@@ -25,7 +25,7 @@
 }
 
 /* 로그인버튼 클릭영역 */
-#aside-login_buttom > a {
+#aside-login_buttom>a {
 	border: 1px solid;
 	padding: 7px 50px;
 	box-sizing: border-box;
@@ -39,17 +39,18 @@
 	margin-top: 5px;
 	text-align: center;
 	font-size: 15px;
-	
 }
-#aside-login_member > a {
+
+#aside-login_member>a {
 	display: inline-block;
 	width: 33.33%;
 	border-right: 1px solid;
 	margin-right: -5px;
 	box-sizing: border-box;
-	text-align:center;
+	text-align: center;
 }
-#aside-login_member > a:last-child {
+
+#aside-login_member>a:last-child {
 	border-right: 0px; /* 마지막 글자의 border는 안나오게 표시  */
 }
 
@@ -84,7 +85,7 @@
 }
 
 /* 사이드바 바로가기 제목 스타일 */
-.aside-link_title  {
+.aside-link_title {
 	display: block;
 	height: 40px;
 	line-height: 40px;

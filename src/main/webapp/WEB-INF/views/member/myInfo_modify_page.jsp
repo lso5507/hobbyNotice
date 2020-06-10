@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,24 +34,21 @@ function change(){
 </head>
 <body>
 
-<h2>회원정보 수정</h2>
+	<h2>회원정보 수정</h2>
 
-<form name="changeForm" action="member_modify" method="post">
+	<form name="changeForm" action="member_modify" method="post">
 
-이름 : ${mVo.memName }<br><br>
+		이름 : ${mVo.memName }<br> <br> 휴대폰 : <input type="text"
+			name="memPhone" placeholder="${mVo.memPhone }"><br> <br>
+		이메일 : <input type="text" name="memEmail"
+			placeholder="${mVo.memEmail }"><br> <br> 지역 : <input
+			type="text" name="memRegion" placeholder="${mVo.memRegion }">
+		<input type="text" name="memCity" placeholder="${mVo.memCity }"><br>
+		<br> 생일 : <input type="text" name="memBirth"
+			placeholder="${mVo.memBirth }"><br> <br> <input
+			type="button" value="변경" onClick="change()">
 
-휴대폰 : <input type="text" name="memPhone" placeholder="${mVo.memPhone }"><br><br>
-
-이메일 : <input type="text" name="memEmail" placeholder="${mVo.memEmail }"><br><br>
-
-지역 : <input type="text" name="memRegion" placeholder="${mVo.memRegion }">  
-     <input type="text" name="memCity" placeholder="${mVo.memCity }"><br><br>
-
-생일 : <input type="text" name="memBirth" placeholder="${mVo.memBirth }"><br><br>
-
-<input type="button" value="변경" onClick="change()">
-
-</form>
+	</form>
 
 
 </body>

@@ -5,13 +5,13 @@
 
 a { /* a 태그에 대한 색을 없앰 */
 	text-decoration: none;
-	color:inherit;
+	color: inherit;
 }
 
 .board_list_wrap {
 	display: block;
 	padding: 0;
-	width : 742px; /* 가로 크기 조절 */
+	width: 742px; /* 가로 크기 조절 */
 	margin: 0 280px;
 }
 
@@ -20,10 +20,8 @@ a { /* a 태그에 대한 색을 없앰 */
 	width: 15%;
 }
 
-.board_list .writer,
-.board_list .HitChk,
-.board_list .goodview,
-.board_list .num {
+.board_list .writer, .board_list .HitChk, .board_list .goodview,
+	.board_list .num {
 	width: 10%;
 }
 
@@ -38,7 +36,6 @@ a { /* a 태그에 대한 색을 없앰 */
 	padding-bottom: 10px;
 }
 
-
 .board_list_head {
 	border-top: 2px solid green;
 	border-bottom: 1px solid #ccc;
@@ -48,20 +45,18 @@ a { /* a 태그에 대한 색을 없앰 */
 	border-bottom: 1px solid #ccc
 }
 
-.board_list_head,
-.board_list_body .item {
+.board_list_head, .board_list_body .item {
 	font-size: 0;
 	padding: 10px 0;
 }
 
-.board_list_head > div,
-.board_list_body .item > div {
+.board_list_head>div, .board_list_body .item>div {
 	display: inline-block;
 	font-size: 14px;
 	text-align: center;
 }
 
-.board_list .board_list_head > div {
+.board_list .board_list_head>div {
 	font-weight: 600;
 }
 
@@ -83,7 +78,7 @@ a { /* a 태그에 대한 색을 없앰 */
 	height: 22px;
 }
 
-.board_list_pageNum > div {
+.board_list_pageNum>div {
 	display: inline-block;
 }
 
@@ -95,23 +90,9 @@ a { /* a 태그에 대한 색을 없앰 */
 	text-decoration: underline;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.board_btn_writer > div {
+	height: 26px;
+}
 
 
 

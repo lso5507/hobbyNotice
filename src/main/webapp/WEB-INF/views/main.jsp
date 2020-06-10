@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
- <!-- 
+<!-- 
 	처음 메인 화면, 이 body 구역은 다른 페이지로 전환이 됨.
 	나머지는 고정.
 	
@@ -21,7 +21,7 @@
 		<!-- 공지사항 게시글 -->
 		<div id="section-notice-content">
 			<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+				<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 				<c:forEach var="list" items="${noticeList}" varStatus="status">
 				    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 				</c:forEach>
@@ -30,9 +30,11 @@
 				<li><a href="">두번째 내용</a></li>
 				<li><a href="">세번째 내용</a></li>
 			</ul>
-		</div><!-- 공지사항 게시글 끝 -->
-	</div><!-- 공지사항 영역 끝 -->
-	
+		</div>
+		<!-- 공지사항 게시글 끝 -->
+	</div>
+	<!-- 공지사항 영역 끝 -->
+
 	<!-- 카테고리별 게시판 인기 및 최신 글 영역 -->
 	<div id="section-category">
 		<!-- e-스포츠 영역 -->
@@ -43,10 +45,11 @@
 			<!-- e-스포츠 탭 메뉴 구현 -->
 			<div id="section-category-esport">
 				<ul id="esport_ul">
-					<li data-tab="tab1" class="current"><a href="/hobby/board_list"> 팀원모집 </a></li> 
-					<li data-tab="tab2" ><a href=""> 팁과 노하우 </a></li>
-					<li data-tab="tab3" ><a href=""> 질문과 답변 </a></li>
-					<li data-tab="tab4" ><a href=""> 자유게시판 </a></li>
+					<li data-tab="tab1" class="current"><a
+						href="/hobby/board_list"> 팀원모집 </a></li>
+					<li data-tab="tab2"><a href="/hobby/board_notice_list"> 팁과 노하우 </a></li>
+					<li data-tab="tab3"><a href=""> 질문과 답변 </a></li>
+					<li data-tab="tab4"><a href=""> 자유게시판 </a></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
@@ -57,7 +60,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -66,15 +69,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -90,9 +95,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 팀원모집 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 팀원모집 끝 -->
 				<!-- 팁과 노하우 -->
 				<div id="tab2" class="section-category-esport-context ">
 					<!-- 인기 게시물 -->
@@ -101,7 +109,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -110,15 +118,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -134,9 +144,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 팁과 노하우 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 팁과 노하우 끝 -->
 				<!-- 질문과 답변 -->
 				<div id="tab3" class="section-category-esport-context ">
 					<!-- 인기 게시물 -->
@@ -145,7 +158,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -154,15 +167,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -178,9 +193,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 질문과 답변 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 질문과 답변 끝 -->
 				<!-- 자유 게시판 -->
 				<div id="tab4" class="section-category-esport-context ">
 					<!-- 인기 게시물 -->
@@ -189,7 +207,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -198,15 +216,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -222,12 +242,17 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 자유 게시판 끝 -->
-			</div><!-- e-스포츠 탭 메뉴 끝 -->
-		</div><!-- e-스포츠 영역 끝 -->
-		
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 자유 게시판 끝 -->
+			</div>
+			<!-- e-스포츠 탭 메뉴 끝 -->
+		</div>
+		<!-- e-스포츠 영역 끝 -->
+
 		<!-- 스포츠 영역 -->
 		<div id="section-sport">
 			<!-- 스포츠 본문 제목 -->
@@ -237,9 +262,9 @@
 			<div id="section-category-sport">
 				<ul id="sport_ul">
 					<li data-tab="tab5" class="current"><a href="#"> 팀원모집 </a></li>
-					<li data-tab="tab6" ><a href="#"> 팁과 노하우 </a></li>
-					<li data-tab="tab7" ><a href="#"> 질문과 답변 </a></li>
-					<li data-tab="tab8" ><a href="#"> 자유게시판 </a></li>
+					<li data-tab="tab6"><a href="#"> 팁과 노하우 </a></li>
+					<li data-tab="tab7"><a href="#"> 질문과 답변 </a></li>
+					<li data-tab="tab8"><a href="#"> 자유게시판 </a></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
@@ -250,7 +275,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -259,15 +284,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -283,9 +310,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 팀원모집 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 팀원모집 끝 -->
 				<!-- 팁과 노하우 -->
 				<div id="tab6" class="section-category-sport-context ">
 					<!-- 인기 게시물 -->
@@ -294,7 +324,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -303,15 +333,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -327,9 +359,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 팁과 노하우 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 팁과 노하우 끝 -->
 				<!-- 질문과 답변 -->
 				<div id="tab7" class="section-category-sport-context ">
 					<!-- 인기 게시물 -->
@@ -338,7 +373,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -347,15 +382,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -371,9 +408,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 질문과 답변 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 질문과 답변 끝 -->
 				<!-- 자유 게시판 -->
 				<div id="tab8" class="section-category-sport-context ">
 					<!-- 인기 게시물 -->
@@ -382,7 +422,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -391,15 +431,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -415,12 +457,17 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 자유 게시판 끝 -->
-			</div><!-- 스포츠 탭 메뉴 끝 -->
-		</div><!-- 스포츠 영역 끝 -->
-		
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 자유 게시판 끝 -->
+			</div>
+			<!-- 스포츠 탭 메뉴 끝 -->
+		</div>
+		<!-- 스포츠 영역 끝 -->
+
 		<!-- 문화생활 영역 -->
 		<div id="section-culture">
 			<!-- 문화생활 본문 제목 -->
@@ -430,9 +477,9 @@
 			<div id=section-category-culture>
 				<ul id="culture_ul">
 					<li data-tab="tab9" class="current"><a href="#"> 팀원모집 </a></li>
-					<li data-tab="tab10" ><a href="#"> 팁과 노하우 </a></li>
-					<li data-tab="tab11" ><a href="#"> 질문과 답변 </a></li>
-					<li data-tab="tab12" ><a href="#"> 자유게시판 </a></li>
+					<li data-tab="tab10"><a href="#"> 팁과 노하우 </a></li>
+					<li data-tab="tab11"><a href="#"> 질문과 답변 </a></li>
+					<li data-tab="tab12"><a href="#"> 자유게시판 </a></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
@@ -443,7 +490,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -452,15 +499,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -476,9 +525,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 팀원모집 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 팀원모집 끝 -->
 				<!-- 팁과 노하우 -->
 				<div id="tab10" class="section-category-culture-context ">
 					<!-- 인기 게시물 -->
@@ -487,7 +539,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -496,15 +548,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -520,9 +574,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 팁과 노하우 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 팁과 노하우 끝 -->
 				<!-- 질문과 답변 -->
 				<div id="tab11" class="section-category-culture-context ">
 					<!-- 인기 게시물 -->
@@ -531,7 +588,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -540,15 +597,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -564,9 +623,12 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 질문과 답변 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 질문과 답변 끝 -->
 				<!-- 자유 게시판 -->
 				<div id="tab12" class="section-category-culture-context ">
 					<!-- 인기 게시물 -->
@@ -575,7 +637,7 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -584,15 +646,17 @@
 								<li><a href="#">· 게시글2</a></li>
 								<li><a href="#">· 게시글3</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 인기 게시물 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
 					<div class="new-context">
 						<h2 class="section-subtitle">최근 게시물</h2>
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
+								<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함 			
 								<c:forEach var="list" items="${noticeList}" varStatus="status">
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
@@ -608,16 +672,23 @@
 								<li><a href="#">· 게시글9</a></li>
 								<li><a href="#">· 게시글10</a></li>
 							</ul>
-						</div><!-- 게시글 끝 -->
-					</div><!-- 최근 게시물 끝 -->
-				</div><!-- 자유 게시판 끝 -->
-			</div><!-- 문화생활 탭 메뉴 끝 -->
-		</div><!-- 문화생활 끝 -->
-	</div><!-- 카테고리별 게시판 인기 및 최신 글 영역 끝 -->
-</div><!-- section 끝 -->
+						</div>
+						<!-- 게시글 끝 -->
+					</div>
+					<!-- 최근 게시물 끝 -->
+				</div>
+				<!-- 자유 게시판 끝 -->
+			</div>
+			<!-- 문화생활 탭 메뉴 끝 -->
+		</div>
+		<!-- 문화생활 끝 -->
+	</div>
+	<!-- 카테고리별 게시판 인기 및 최신 글 영역 끝 -->
+</div>
+<!-- section 끝 -->
 
 
-<!-- 탭메뉴 스크립트 -->	
+<!-- 탭메뉴 스크립트 -->
 <script>
 	$(function() {
 		$('#esport_ul li').mouseover(function() { // 탭메뉴위에 마우스가 있을때 함수 호출
