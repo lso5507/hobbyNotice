@@ -3,21 +3,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="login_ui.css">
+<link rel="stylesheet" type="text/css" href="login_page.css">
 
 <title>로그인</title>
 
-	<script>
-		var message = '${msg}';
-		var returnUrl = '${url}';
-		if(message.length != 0){
-			alert(message);
-		}
-		document.location.href=url;
-	</script>
+<script type="text/javascript">
+
+var message = '${msg}';
+var returnUrl = '${url}';
+if(message.length != 0){
+	alert(message);
+	document.location.href=url;
+}
+
+</script>
 
 </head>
 <body>
+
+<form action="login" method="post">
+
 	<div class="mem_login">
 		<div class="mem_login_title">
 			<h1 id="memTitle">Hobby 로그인</h1>
@@ -41,5 +46,8 @@
 			<span><a href="/hobby/pwSearch_page">비밀번호 찾기</a></span>
 		</div>
 	</div>
+	
+</form>	
+	
 </body>
 </html>

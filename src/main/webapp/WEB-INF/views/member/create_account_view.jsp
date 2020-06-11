@@ -10,11 +10,48 @@
 
 <script type="text/javascript">
 
+
+var idOk = '${result}';
+var id = '${memId}';
+
 //아이디 중복확인
 function idCkeck(){
-	document.inputForm.action = "/hobby/idCheck?memId=" + document.inputForm.memId.value;
+	if(inputForm.memId.value.length == 0){
+		alert("아이디를 입력하세요!");
+		inputForm.memId.focus();
+		return;
+	}
+	
+	document.inputForm.action = "idCheck?memId=" + document.inputForm.memId.value;
 	document.inputForm.submit();
 }
+
+/*
+//이메일 인증번호 전송
+function checkEmail(){
+	
+	var inputForm = document.inputForm;
+	var memEmail = inputForm.email1.value + "@" + inputForm.email2.value;
+	alert(memEmail);
+	
+	document.location.href="/hobby/sendMail.do?memEmail="+memEmail;
+	
+}
+
+var randomNum = ${randomNum}
+//alert('인증번호: ' + randomNum);
+
+// 이메일 인증번호 확인
+function checkEmail2(){
+	
+	if(document.inputForm.checkEmailNumber.value != randomNum){
+		alert("이메일 인증번호가 틀립니다! 인증번호:" + randomNum);
+		return;
+	}
+	
+}
+*/
+
 
 // 회원가입 버튼
 function joincheck(){
@@ -40,6 +77,12 @@ function joincheck(){
 		alert("이름을 입력하세요!");
 		return;
 	}
+	if(idOk != 'true'){
+		alert("아이디 중복확인을 해주세요!");
+		return;
+	}
+
+	
 	
 	
 	var memEmail = inputForm.email1.value + "@" + inputForm.email2.value
@@ -53,13 +96,16 @@ function joincheck(){
 	
 	inputForm.action="create_account";
 	inputForm.submit();
-}   
+	
+}      
 
 
 </script>
 
 </head>
 <body>
+
+<form method="post" name="inputForm" >
 
 <div class="mem_create_account_view">
 	<div>
@@ -68,9 +114,9 @@ function joincheck(){
 	
 	<div class="mem_create_id">
 		<span class="mem_create_span">아이디</span>
-        <input type="text" name="memId" id="memId" placeholder="아이디를 입력하세요">
+        <input type="text" name="memId" id="memId" placeholder="영문 소문자/숫자 조합 최대 20자" value="${memId}">
         <input type="button" value="중복확인" id="idcheck" onClick="idCkeck()">
-		<span class="memEx"> * 영문 소문자/숫자 조합 최대 20자 <br> ${msg}</span>
+		<span class="memEx"> ${msg}</span>
 	</div>
 	
 	<div class="mem_create_pw">
@@ -122,8 +168,10 @@ function joincheck(){
             for (i=1;i<=31;i++) document.write("<option>"+i);
             document.write("</select> 일  </font>");
         </script>
+        <!-- 
         <input type="radio" name="gender" value="남" checked> 남
         <input type="radio" name="gender" value="여"> 여
+         -->
 	</div>
 	
 	<div class="mem_create_city">
@@ -158,7 +206,13 @@ function joincheck(){
 			<option value="naver.com">naver.com</option>
             <option value="daum.net">daum.net</option>
         </select>
-        <input type="button" id="checkEmail" value="중복확인">
+        <input type="button"  value="이메일 인증" onClick="checkEmail()"> <br>
+                  
+    </div>
+
+    <div>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 인증번호 : <input type="text" name="checkEmailNumber"> 
+		<input type="button" value="확인" onClick="checkEmail2()"><br>
     </div>
     
 	<div class="mem_create_phone">	
@@ -170,16 +224,16 @@ function joincheck(){
         </select>
         - <input type="text" name="smartPhone1" id="smartPhone1">
         - <input type="text" name="smartPhone2" id="smartPhone2">
-        <input type="button" id="checkPhone" value="번호인증">
  	</div>
  	
+ 	<!-- 
 	<div class="mem_create_hobby">
 		<span class="mem_create_span">취미</span>
 		<input type="checkbox" name="memHobby" value="게임"> e-sport(게임)
 		<input type="checkbox" name="memHobby" value="운동"> sport(운동)
 		<input type="checkbox" name="memHobby" value="문화"> culture(문화)
 	</div>
-	
+	 -->
 	<div class="mem_create_btnjoin">
 		<input type="button" id="join" value="회원가입" onClick="joincheck()">
 	</div>
@@ -190,5 +244,8 @@ function joincheck(){
         <input type="hidden" name="memBirth" value="">
     </div>
 </div>
+
+</form>
+
 </body>
 </html>

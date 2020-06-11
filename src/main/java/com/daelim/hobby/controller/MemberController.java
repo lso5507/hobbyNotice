@@ -54,7 +54,7 @@ public class MemberController {
 		
 		if(mVo == null) { 
 			model.addAttribute("msg", request.getParameter("memId") + " 사용 가능한 아이디 입니다."); // 검색 결과를 view에서 사용하기 위해 model에 추가
-			model.addAttribute("result","true");
+			model.addAttribute("result","true"); // result : 뷰에서 아이디 중복인지 확인할 때 사용
 			model.addAttribute("memId", request.getParameter("memId"));
 		}else {
 			model.addAttribute("msg", request.getParameter("memId") + " 사용할수 없는 아이디 입니다.");
