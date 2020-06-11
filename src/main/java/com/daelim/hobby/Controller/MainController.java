@@ -35,7 +35,9 @@ public class MainController {
 
 		List<VOBoard> listPageSearch = null;    //seachPaging = 寃��깋�맂 寃뚯떆臾� 由ъ뒪�듃
 		listPageSearch = service.listPageSearch(keyword);
-
+		for (VOBoard s : listPageSearch ) {
+			System.out.println(s.getValue());
+		}
 		model.addAttribute("list", listPageSearch);
 
 		return "main_search_results";

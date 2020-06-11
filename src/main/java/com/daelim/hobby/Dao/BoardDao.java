@@ -134,7 +134,7 @@ public class BoardDao {
 			sql = "SELECT * FROM board WHERE bdCategory=9 AND bdValue="+value;
 		}
 		else {
-			System.out.println("select�뿉�윭");
+			System.out.println("select�뿉�윭"); 
 			return null;
 		}
 
