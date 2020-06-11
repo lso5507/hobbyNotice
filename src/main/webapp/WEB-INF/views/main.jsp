@@ -42,10 +42,10 @@
 			<!-- e-스포츠 탭 메뉴 구현 -->
 			<div class="section-category-tab">
 				<ul id="esport_ul">
-					<li data-tab="tab1" class="current"><a href="board/board_team?val=0"> 팀원모집 </a></li>
-					<li data-tab="tab2" ><a href="board_tip?val=0"> 팁과 노하우 </a></li>
-					<li data-tab="tab3" ><a href="board_qa?val=0"> 질문과 답변 </a></li>
-					<li data-tab="tab4" ><a href="board_free?val=0"> 자유게시판 </a></li>
+					<li data-tab="tab1" class="current"><span> 팀원모집 </span></li> 
+					<li data-tab="tab2" ><span> 팁과 노하우 </span></li>
+					<li data-tab="tab3" ><span> 질문과 답변 </span></li>
+					<li data-tab="tab4" ><span> 자유게시판 </span></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 
@@ -210,10 +210,10 @@
 			<!-- 스포츠 탭 메뉴 구현 -->
 			<div class="section-category-tab">
 				<ul id="sport_ul">
-					<li data-tab="tab5" class="current"><a href="board_team?val=1"> 팀원모집 </a></li>
-					<li data-tab="tab6" ><a href="board_tip?val=1"> 팁과 노하우 </a></li>
-					<li data-tab="tab7" ><a href="board_qa?val=1"> 질문과 답변 </a></li>
-					<li data-tab="tab8" ><a href="board_free?val=1"> 자유게시판 </a></li>
+					<li data-tab="tab5" class="current"><span> 팀원모집 </span></li>
+					<li data-tab="tab6" ><span> 팁과 노하우 </span></li>
+					<li data-tab="tab7" ><span> 질문과 답변 </span></li>
+					<li data-tab="tab8" ><span> 자유게시판 </span></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
@@ -377,10 +377,10 @@
 			<!-- 문화생활 탭 메뉴 구현 -->
 			<div class="section-category-tab">
 				<ul id="culture_ul">
-					<li data-tab="tab9" class="current"><a href="board/board_team?val=2"> 팀원모집 </a></li>
-					<li data-tab="tab10" ><a href="board_tip?val=2"> 팁과 노하우 </a></li>
-					<li data-tab="tab11" ><a href="board_qa?val=2"> 질문과 답변 </a></li>
-					<li data-tab="tab12" ><a href="board_free?val=2"> 자유게시판 </a></li>
+					<li data-tab="tab9" class="current"><span> 팀원모집 </span></li>
+					<li data-tab="tab10" ><span> 팁과 노하우 </span></li>
+					<li data-tab="tab11" ><span> 질문과 답변 </span></li>
+					<li data-tab="tab12" ><span> 자유게시판 </span></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->

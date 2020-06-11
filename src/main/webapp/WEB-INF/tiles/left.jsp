@@ -28,7 +28,7 @@
 		<!-- 제목 -->
 		<h2 class="aside-link_title">공지사항</h2>
 		<!-- 바로가기 링크 -->
-		<a href="/hobby/" class="aside-link_menu">┗ 공지사항</a> <!-- 공지사항 게시판 이동 -->
+		<a href="board_notice?val=9" class="aside-link_menu">┗ 공지사항</a> <!-- 공지사항 게시판 이동 -->
 	</div>
 	<!-- 카테고리별 영역 -->
 		<!-- e-스포츠 영역 -->
