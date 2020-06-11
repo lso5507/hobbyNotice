@@ -10,9 +10,11 @@
 
 <script type="text/javascript">
 
-
-var idOk = '${result}';
-var id = '${memId}';
+var idOk = '${result}'; // 아이디가 중복인지 확인할 변수 (true / false)
+var id = '${memId}'; // 텍스트박스에 입력한 아이디 값
+var randomNum = '${randomNum}'; // 이메일 인증번호
+var emailOk = false; // 이메일 인증을 하면 true로 바꿔줌
+//alert('인증번호: ' + randomNum); 
 
 //아이디 중복확인
 function idCkeck(){
@@ -26,37 +28,43 @@ function idCkeck(){
 	document.inputForm.submit();
 }
 
-/*
-//이메일 인증번호 전송
+
+//이메일 인증번호 전송 (이메일 인증 버튼 클릭)
 function checkEmail(){
-	
 	var inputForm = document.inputForm;
+	if(inputForm.email1.value.length == 0){
+		alert("이메일을 입력해 주세요!");
+		return;
+	}
+	
 	var memEmail = inputForm.email1.value + "@" + inputForm.email2.value;
-	alert(memEmail);
+	alert('입력한 이메일: ' + memEmail);	
 	
 	document.location.href="/hobby/sendMail.do?memEmail="+memEmail;
-	
 }
 
-var randomNum = ${randomNum}
-//alert('인증번호: ' + randomNum);
-
-// 이메일 인증번호 확인
+// 이메일 인증번호 확인 (확인 버튼 클릭))
 function checkEmail2(){
+	if(document.inputForm.checkEmailNumber.value.length == 0){
+		alert("인증번호를 입력해 주세요!");
+		return;
+	}
 	
 	if(document.inputForm.checkEmailNumber.value != randomNum){
 		alert("이메일 인증번호가 틀립니다! 인증번호:" + randomNum);
 		return;
+	}else{
+		alert("이메일 인증 완료!");
+		emailOk = true;
 	}
 	
 }
-*/
+
 
 
 // 회원가입 버튼
 function joincheck(){
 	var inputForm = document.inputForm;
-	
 	if(inputForm.memId.value.length == 0){
 		alert("아이디를 입력하세요!");
 		return;
@@ -81,7 +89,10 @@ function joincheck(){
 		alert("아이디 중복확인을 해주세요!");
 		return;
 	}
-
+	if(emailOk != true){
+		alert("이메일 인증을 해주세요!");
+		return;
+	}
 	
 	
 	
@@ -96,7 +107,6 @@ function joincheck(){
 	
 	inputForm.action="create_account";
 	inputForm.submit();
-	
 }      
 
 
