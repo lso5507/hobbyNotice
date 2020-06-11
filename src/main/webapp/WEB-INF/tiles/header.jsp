@@ -6,7 +6,12 @@
 	let searchType = document.getElementsByName("main_select")[0].value;
 	let keyword =  document.getElementsByName("main_txtContent")[0].value;
 
-	location.href = "listpagesearch?&searchtype="+ searchType +"&keyword="+keyword;
+	if (keyword == ""){
+		alert('검색 내용 입력 오류\n한글자 이상 검색해주세요');
+	}else{
+		location.href = "listpagesearch?&searchtype="+ searchType +"&keyword="+keyword;	
+	}
+	
 };
 </script>
 <!--

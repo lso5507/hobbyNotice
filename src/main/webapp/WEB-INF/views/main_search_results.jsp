@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="sr_main">
 	
@@ -8,7 +7,7 @@
 		<div id="sr_list_esport">
 			<!-- 제목 -->
 			<div class="sr_list_header">
-				<h3>e-스포츠</h3>
+				<h3>E-스포츠</h3>
 			</div> <!-- 제목 끝-->
 			<!-- 게시물 -->
 			<c:forEach var="list" items="${list}" varStatus="status">

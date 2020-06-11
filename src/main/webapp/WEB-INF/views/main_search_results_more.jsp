@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="srm_main">
 	<div id="srm_content">
@@ -27,119 +27,16 @@
 				<span><a href="">더 보기</a></span>
 			</div>
 --%>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
+			<c:forEach var="i" begin="1" end="15">
+				<div class="srm_list_content">
+					<span class="srm_span_title"><a href="">제목<c:out value="${i}" /> </a></span> <!-- 제목 -->
+					<span class="srm_span_content">test<c:out value="${i}" /> </span> <!-- 내용 -->
+					<div class="srm_list_content_">
+						<span><a href="">경로</a></span>
+						<span>작성일자</span>
+					</div>
 				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			<div class="srm_list_content">
-				<span class="srm_span_title"><a href="">제목1 </a></span> <!-- 제목 -->
-				<span class="srm_span_content">test </span> <!-- 내용 -->
-				<div class="srm_list_content_">
-					<span><a href="">경로</a></span>
-					<span>작성일자</span>
-				</div>
-			</div>
-			
+			</c:forEach>
 			
 		</div> <!-- 더보기 영역 끝 -->
 			<!-- 페이징 영역 -->

@@ -39,8 +39,11 @@ public class MainController {
 		model.addAttribute("list", listPageSearch);
 
 		return "main_search_results";
-
-
 	}
 
+	// 다른 페이지 올라오는지 확인용 -승채
+	@RequestMapping("/search_more")
+	public String search(Model model) {
+		return "main_search_results_more"; 
+	}
 }
