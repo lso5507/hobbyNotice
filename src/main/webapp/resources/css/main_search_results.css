@@ -88,7 +88,11 @@
 	white-space: nowrap; 
 	overflow: hidden;
 	text-overflow: ellipsis;
+	/* 제목 스타일 */
+	text-decoration: underline;
+	color: blue;
 }
+
 .sr_list_content > span.sr_span_content {
 	/* 두줄, ...표시 */
 	white-space: normal; 

@@ -3,7 +3,7 @@
 /* 헤더영역 전체 크기 설정(로고라인 및 메뉴바) */
 #header {
 	width: 1092px;
-	height: 200px;
+	height: 210px;
 	margin-bottom: 5px;
 }
 
@@ -21,8 +21,6 @@
 	line-height: 150px;
 	text-align: center;
 	float: left;
-	border: 1px solid;
-	box-sizing: border-box;
 }
 
 /* 헤더-로고 이미지 크기 설정 */
@@ -76,83 +74,170 @@
 }
 
 /* 메뉴바 영역 크기 설정 */
-#header-navigation {
+#header-nav {
 	width: 1092px;
 	height: 45px;
-	border: 1px solid;
-	box-sizing: border-box;
 }
 
-/* 메인메뉴 ul 스타일 설정 */
-#header-navigation-main {
+/* 메인메뉴 ul 영역 설정 */
+#header-nav-main {
 	width: 100%	;
-	height: 45px;
-	line-height: 45px;
+	height: 40px;
 	list-style-type: none; /* 도형 스타일 없애기 */
 }
 
-/* 메인메뉴 ul > li 스타일 설정 */
-#header-navigation-main > li {
+/* 메인메뉴 ul > li 영역 설정 */
+#header-nav-main > li {
 	position: relative; /* 서브 메뉴때문에 위치를 상대적으로 변경  */
 	float: left; /* 정렬을 left로 해서 가로로 보이도록  */
-	width: 25%;
-	height: 45px;
+	width: 273px;
+	height: 40px;
+	border-right: 1px solid #bae4fe;
+	box-sizing:border-box;
 	text-align: center;
-	border-right: 1px solid;
-	box-sizing: border-box;
 }
 
-/* 메인메뉴 ul > 마지막 li 스타일 설정 */
-#header-navigation-main > li:last-child {
+#header-nav-main > li:last-child { border-right: 0px; }
+
+/* 제목스타일 정하기 */
+.hader-nav-main-title {
+	display: block;
+  	width: 273px;
+  	height: 40px;
+  	padding-top: 2px;
+  	border-right: 1px solid #bae4fe;
+  	box-sizing:border-box;
+  	background: #0284cf;
+  	color: #fff;
+  	font-size: 24px;
+  	font-weight: bold;
+  	transition: 0.3s background-color;
+}
+.hader-nav-main-title.title_last {
 	border-right: 0px;
-	box-sizing: border-box;
 }
 
-/* 메인메뉴 링크 범위 설정 */
-#header-navigation-main > li > a {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;	
+/* 제목스타일 앞에 나타나는 부분(사실상 뒤에 나타남) */
+.hader-nav-main-title:before {
+  	content: "";
+  	display: block;
+  	height: 0;
+  	border-top: 5px solid #0284cf;
+  	border-left: 136.5px solid transparent;
+  	border-right: 136.5px solid transparent;
+  	position: absolute;
+  	top: 100%;
+  	left: 0;
+  	z-index: 101;
+  	transition:	0.2s 0.2s border-top ease-out, 0.3s border-top-color;
 }
 
-/* 각 메인메뉴 위에 마우스를 올려두면 서브메뉴 보이게 설정 */
-#header-navigation-main > li:hover .header-navigation-sub {
-	opacity: 1; /* 불투명하게 재설정  */
-	visibility: visible; /* 다시 보이도록 재설정 */
+/* 메인메뉴 위에 있을때 색상 변경 */
+.hader-nav-main-title:hover { background: #026dae; }
+.hader-nav-main-title:hover:before { border-top-color: #026dae; }
+
+/* 메인메뉴가 눌렀을 경우 제목 스타일 변경  */
+#header-nav-main li:hover .hader-nav-main-title:before {
+  	border-top-width: 0;
+  	transition: 0.2s border-top-width ease-in, 0.3s border-top-color;
 }
 
-/* 서브메뉴 ul 설정(기본적으로 안보임) */
-.header-navigation-sub {
-	list-style-type: none; /* 도형 스타일 없애기 */
-	opacity: 0; /* 완전투명 */
-	visibility: hidden; /* 자리는 차지하나 보이지 않도록 */
-	border: 1px solid;
-	box-sizing: border-box;
+/* 제목스타일 뒤에 나타나는 부분 */
+.hader-nav-main-title:after {
+  	content: "";
+  	display: block;
+  	height: 0;
+  	border-left: 136.5px solid transparent;
+  	border-right: 136.5px solid transparent;
+  	border-bottom: 0px solid #bae4fe;
+  	position: absolute;
+  	bottom:0;
+  	left: 0;
+  	z-index: 101;
+  	transition: 0.2s border-bottom ease-in;
+}	
+
+/* 메뉴 위에 마우스가 있을시 카테고리별 모션 및 색상 변경 */
+#header-nav-main li:hover .hader-nav-main-title:after {
+  	border-bottom: 5px solid #bae4fe;
+  	transition: 0.2s 0.2s border-bottom-width ease-out;
+}
 	
-	/* 색상 */
-	background-color: white;
+/* 서브메뉴 영역 */
+.header-nav-sub {
+  	min-width: 100%;
+  	padding: 15px 0 15px 0;
+  	position: absolute;
+  	box-sizing:border-box;
+  	background: #bae4fe;
+  	list-style-type:none;
+  	z-index: 100;
+  	font-size: 18px;
+  	font-weight: bold;
+  	transition: 0.5s padding, 0.5s background;
 }
 
-/* 서브메뉴 ul li 설정  */
-.header-navigation-sub > li {
-	float: none;
-	border-bottom: 1px solid;
-	box-sizing: border-box;
-	text-align: center;
+/* 서브메뉴 뒤에 나오는 스타일 */
+.header-nav-sub:after {
+	content: "";
+  	display: block;
+  	height: 0;
+  	border-top: 5px solid #bae4fe;
+  	border-left: 136.5px solid transparent;
+  	border-right: 136.5px solid transparent;
+  	position: absolute;
+  	top: 100%;
+  	left: 0;
+  	z-index: 101;
+  	transition: 0.5s border-top;
 }
 
-.header-navigation-sub > li:last-child {
-	border-bottom: 0px ;
-
+/* 서브메뉴를 클릭하지 않았을때 높이, 기본색상 지정 */
+#header-nav-main > li:not(:hover) > .header-nav-sub {
+  	padding: 4px 0;
+  	box-sizing: border-box;
+  	z-index: 99;
 }
 
-/* 서브메뉴 링크 범위 설정 */
-.header-navigation-sub > li > a {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
+/* 메뉴위에 마우스를 올려두지 않을경우 서브메뉴 뒤 스타일 지정 */
+#header-nav-main > li:not(:hover) > .header-nav-sub:after {	border-top-color: #bae4fe; }
+
+/* 서브메뉴 li 설정 */
+.header-nav-sub > li {
+	overflow: hidden;
+  	height: 30px;
+  	padding: 5px 10px;
+  	box-sizing:border-box;
+  	background: rgba(0,0,0,0);
+  	white-space: nowrap;
+  	transition: 
+  	  0.5s height cubic-bezier(.73,.32,.34,1.5),
+  	  0.5s padding cubic-bezier(.73,.32,.34,1.5),
+  	  0.5s margin cubic-bezier(.73,.32,.34,1.5),
+  	  0.5s 0.2s color,
+  	  0.2s background-color;
+}
+
+/* 서브메뉴 위에 올렸을시 색상 */
+.header-nav-sub > li:hover {
+	background: rgba(0,0,0,0.1);
+}
+
+/* 서브메뉴 기본적으로 숨김, 메인메뉴 위에 올리면 자동 내려옴 */
+#header-nav-main > li:not(:hover) > .header-nav-sub > li {
+	visibility: hidden;
+ 	height: 0;
+ 	padding-top: 0;
+ 	padding-bottom: 0;
+ 	margin: 0;
+ 	color: rgba(25,25,25,0);
+	transition: 
+ 	  0.5s 0.1s height,
+ 	  0.5s 0.1s padding,
+ 	  0.5s 0.1s margin,
+ 	  0.3s color,
+ 	  0.6s visibility;
+	z-index: 99;
 }
 
 /* form태그 각 타입 설정 */
@@ -162,9 +247,9 @@
 	top: 55px;
 	width: 50px;
 	height: 40px;
+	line-height:40px;
 	background-color: #fff;
 	border: 1px solid #e3e3e3;
-	padding: 10px 10px;
 	font-size: 15px;
 }
 .input_text {

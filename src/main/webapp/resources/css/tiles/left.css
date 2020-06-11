@@ -4,15 +4,14 @@
 #aside {
 	width: 235px;
 	float: left;
-	border: 1px solid black;
-	box-sizing: border-box;
 }
 
 /* 사이드바 로그인 영역 */
-#aside-login {
+#aside-login { /* 총크기 140 */
 	width: 235px;
-	height: 80px;
-	border-bottom: 1px solid black;
+	height: 140px;
+	padding-top: 25px;
+	background-color: white;
 	box-sizing: border-box;
 }
 
@@ -20,26 +19,36 @@
 #aside-login_buttom {
 	width: 235px;
 	height: 50px;
-	line-height: 50px;
+	line-height:50px;
+	box-sizing:border-box; 
 	text-align: center;
 }
 
 /* 로그인버튼 클릭영역 */
 #aside-login_buttom > a {
 	border: 1px solid;
-	padding: 7px 50px;
+	border-radius: 30px;
+	padding: 7px 70px;
 	box-sizing: border-box;
+	font-size: 20px;
+	font-weight: bold;
 }
+
+/* 로그인버튼 마우스 위에 있을 시 */
+#aside-login_buttom > a:hover {
+	background: #0284cf; 
+	color: #fff;
+	border: 0;
+} 
 
 /* 회원가입, id.pw찾기 영역 설정  */
 #aside-login_member {
 	width: 235px;
 	height: 20px;
+	margin-top:10px;
 	line-height: 20px;
-	margin-top: 5px;
 	text-align: center;
 	font-size: 15px;
-	
 }
 #aside-login_member > a {
 	display: inline-block;
@@ -49,6 +58,11 @@
 	box-sizing: border-box;
 	text-align:center;
 }
+
+#aside-login_member > a:hover {
+	color: #0284cf;
+}
+
 #aside-login_member > a:last-child {
 	border-right: 0px; /* 마지막 글자의 border는 안나오게 표시  */
 }
@@ -56,31 +70,25 @@
 /* 사이드바 공지사항 바로가기 영역 */
 #aside-notice {
 	width: 235px;
-	height: 72px;
-	border-bottom: 1px solid black;
-	box-sizing: border-box;
+	height: 70px;
 }
 
 /* 사이드바 e-스포츠 바로가기 영역 */
 #aside-esport {
 	width: 235px;
-	height: 162px;
-	border-bottom: 1px solid black;
-	box-sizing: border-box;
+	height: 160px;
 }
 
 /* 사이드바 스포츠 바로가기 영역 */
 #aside-sport {
 	width: 235px;
-	height: 162px;
-	border-bottom: 1px solid black;
-	box-sizing: border-box;
+	height: 160px;
 }
 
 /* 사이드바 문화생활 바로가기 영역 */
 #aside-culture {
 	width: 235px;
-	height: 162px;
+	height: 160px;
 }
 
 /* 사이드바 바로가기 제목 스타일 */
@@ -92,6 +100,8 @@
 	font-weight: bold;
 	padding-left: 5px;
 	box-sizing: border-box;
+	background: #8c8c8c;
+	color:#fff;
 }
 
 /* 사이드바 바로가기 메뉴 스타일 */
@@ -105,5 +115,5 @@
 
 /* 사이드바 바로가기 메뉴에 마우스를 올렸을 때 설정 */
 .aside-link_menu:hover {
-	background-color: #ccc;
+	color: #0284cf;
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hobby.mappers.board">
+
+
+	<!--검색 기능 by 김정태-->
+	<!-- 제목 검색 게시물 총 갯수 (0605 추가) -->
+	<select id="searchCount" parameterType="String" resultType="int">
+		select count(bdCno) from board
+			WHERE bdTitle LIKE CONCAT ('%', #{keyword}, '%');
+	</select>
+	
+	<!--통합 게시물 제목 검색 -->
+	<select id="listPageSearch" parameterType="String" resultType="com.daelim.hobby.Vo.VOBoard">
+		select
+			bdCno, bdTitle, bdContent, bdName, bdDate, bdCategory
+		from board
+			WHERE bdTitle LIKE concat('%', #{keyword}, '%')
+			order by bdCno desc
+			limit 0,3
+	</select>
+	
+</mapper>

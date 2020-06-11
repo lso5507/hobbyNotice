@@ -12,13 +12,13 @@
 /* 더보기 영역 (나중에 검색 넣을 수도 있어서 포함)*/
 #srm_content {
 	width: 100%;
-	height: 1785px;
+	height: 1885px;
 }
 
 /* 선택 카테고리 더보기 영역 */
 #srm_list_more {
 	width: 100%;
-	height: 1735px;
+	height: 1835px;
 }
 
 /* 카테고리 제목 영역 */

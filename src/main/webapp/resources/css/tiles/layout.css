@@ -8,8 +8,15 @@
 	4. #abc > ul 같은 경우 id가 'abc'의 자식 ul태그를 지정 하는것
 */
 
+@font-face {
+	font-family: "Binggrae";
+/* 	src:url("/hobby/resources/font/Binggrae-Bold.ttf") format("truetype"); */
+	src:url("/hobby/resources/font/Binggrae-Bold.otf") format("opentype");
+}
+
 /* 전체적 기본 초기화 */
 * {
+	font-family: Binggrae;
 	margin: 0;
 	padding: 0;
 }
@@ -35,7 +42,7 @@ a {
 }
 
 /* 중간 영역 */
-#content{
+#content {
 	width: 1092px;
 	height: 1885px;
 	margin-bottom: 5px;
@@ -51,9 +58,14 @@ a {
 /* 배너광고 각 이미지 영역 */
 .banner_size {
 	width: 300px;
-	height: 200px;
+	height: 700px;
 	margin-bottom: 10px;
 	/* 영역 확인용 */
 	border: 1px solid;
 	box-sizing: border-box;
+}
+
+.banner_size > img {
+	max-width: 300px;
+	max-height: 700px;
 }

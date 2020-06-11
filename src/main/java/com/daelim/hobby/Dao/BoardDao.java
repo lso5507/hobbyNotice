@@ -10,15 +10,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Locale.Category;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
 
 import com.daelim.hobby.Vo.VOBoard;
 import com.daelim.hobby.Vo.VOComment;
@@ -42,7 +45,12 @@ public class BoardDao {
             put(9, "Notice");
         }
     };
-	
+    //-------------------김정태 추가----------------
+    @Inject
+	private SqlSession sqlSession;
+
+	private static String namespace = "com.hobby.mappers.board";
+	//------------------------------------------
 	private JdbcTemplate template;
 	public BoardDao() {  //ComboPool�쓣 �씠�슜�븯�뿬 DB�젒洹� 
 
@@ -317,6 +325,28 @@ public class BoardDao {
 		int result=0;
 		final String sql = "UPDATE board SET bdHit = bdHit+1 WHERE bdCno = ?";
 		result = template.update(sql,cnt);
+		
+	}
+	//-----------------------김정태 추가-----------------------------------------
+	
+	// 게시물 검색
+	public List<VOBoard> listPageSearch(String keyword)
+			throws Exception {
+		
+		
+		String data = new String();
+		  
+		data = keyword;
+		  
+		return sqlSession.selectList(namespace + ".listPageSearch", data);
+	}
+	//검색된 게시물 총 갯수(0605추가)
+	
+	public int searchCount(String keyword) throws Exception {
+		int test=sqlSession.selectOne(namespace + ".searchCount", keyword);
+		
+		System.out.println("test:"+test);
+		return sqlSession.selectOne(namespace + ".searchCount", keyword);
 		
 	}
 	

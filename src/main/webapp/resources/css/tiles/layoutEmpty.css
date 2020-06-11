@@ -1,6 +1,14 @@
 @charset "UTF-8";
 
+@font-face {
+	font-family: "Binggrae";
+/* 	src:url("/hobby/resources/font/Binggrae-Bold.ttf") format("truetype"); */
+	src:url("/hobby/resources/font/Binggrae-Bold.otf") format("opentype");
+}
+
+/* 전체적 기본 초기화 */
 * {
+	font-family: Binggrae;
 	margin: 0;
 	padding: 0;
 }
@@ -14,5 +22,10 @@ a {
 	width: 1092px;
 	height:1000px;
 	margin: 0 auto;
-	background-color: pink;
+}
+
+#emptyLayout-content {
+	width: 1092px;
+	height: 800px;
+	overflow: hidden;
 }
