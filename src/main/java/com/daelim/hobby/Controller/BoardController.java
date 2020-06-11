@@ -80,14 +80,15 @@ public class BoardController {
 	public String freeboard(Locale locale, Model model,HttpServletRequest request) {
 		String value=request.getParameter("val");  // 게시판 종류
 		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"FreeBoard");
-		model.addAttribute("lists",boards);
+		model.addAttribute("list",boards);
 		return "board/board_list";
 	}
 	@RequestMapping(value = "/board_qa", method = RequestMethod.GET)
 	public String qa(Locale locale, Model model,HttpServletRequest request) {
 		String value=request.getParameter("val");
+		
 		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"QA"); //"QA"는 게시판 카테고
-		model.addAttribute("lists",boards);
+		model.addAttribute("list",boards);
 		return "board/board_list";
 	}
 
