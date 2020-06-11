@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+@font-face {
+   font-family: "Binggrae";
+   src:url("Binggrae-Bold.otf") format("opentype");
+}
+
+*{
+	font-family: "Binggrae";
+}
+
 .mem_create_account_view {
 	width:852px;
 	border:1px solid black;
@@ -25,12 +34,12 @@
 }
 
 #idcheck {
-	width:60px;
+	width:70px;
 	height:30px;
 }
 
 #checkEmail {
-	width:60px;
+	width:90px;
 	height:30px;
 	margin-left: 5px;
 }
@@ -151,6 +160,23 @@
 	height:30px;
 }
 
+.mem_create_email_check {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#checkEmailNumber {
+	width:100px;
+	height:30px;	
+}
+
+#checkEmail2{
+	width:60px;
+	height:30px;
+	margin-left: 5px;
+}
+
 .mem_create_phone {
 	height:30px;
 	font-size:20px;
@@ -187,8 +213,9 @@
 .mem_create_btnjoin {
 	height:30px;
 	font-size:20px;
+	margin-right:10px;
 	margin-bottom:10px;
-	text-align:center;
+	text-align:right;
 }
 
 .mem_create_span {
@@ -199,7 +226,8 @@
 }
 
 #join {
-	width:100px;
-	height:30px;
+	width:150px;
+	height:40px;
 	font-size:20px;
+	margin: 0 10px 10px 0;
 }
