@@ -12,32 +12,14 @@
 			WHERE bdTitle LIKE CONCAT ('%', #{keyword}, '%');
 	</select>
 	
-	
-	<!-- 게시물 검색 -->
-	<select id="listPageSearch" parameterType="hashMap" resultType="com.daelim.hobby.Vo.VOBoard">
+	<!--통합 게시물 제목 검색 -->
+	<select id="listPageSearch" parameterType="String" resultType="com.daelim.hobby.Vo.VOBoard">
 		select
-			bdCno, bdTitle, bdName, bdDate, bdHit
+			bdCno, bdTitle, bdContent, bdName, bdDate, bdCategory
 		from board
-	
-		<if test='searchType.equals("검색항목 제목인 변수명")'>
 			WHERE bdTitle LIKE concat('%', #{keyword}, '%')
-		</if>
-	
-		<if test='searchType.equals("검색항목 내용인 변수명")'>
-			WHERE bdContent LIKE concat('%', #{keyword}, '%')
-		</if>
-	
-		<if test='searchType.equals("검색항목 제목+내용인 변수명")'>
-			WHERE bdTitle LIKE concat('%', #{keyword}, '%')
-			or bdContent LIKE concat('%', #{keyword}, '%')
-		</if>
-	
-		<if test='searchType.equals("검색항목 작성자인 변수명")'>
-			WHERE bdName LIKE concat('%', #{keyword}, '%')
-		</if>
-	
-		order by bdCno desc
-			limit #{displayPost}, #{postNum}
+			order by bdCno desc
+			limit 0,3
 	</select>
 	
 </mapper>

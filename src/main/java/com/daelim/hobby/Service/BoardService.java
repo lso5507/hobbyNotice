@@ -100,9 +100,8 @@ public class BoardService {
 	//---------------------------김정태 추가 --------------------
 	// 게시물 목록 + 페이징 + 검색
 	
-	public List<VOBoard> listPageSearch(
-	  int displayPost, int postNum, String searchType, String keyword) throws Exception {
-	 return  dao.listPageSearch(displayPost, postNum, searchType, keyword);
+	public List<VOBoard> listPageSearch(String keyword) throws Exception {
+	 return dao.listPageSearch(keyword);
 	}
 	
 	//검색게시물 총 갯수(0605 추가)

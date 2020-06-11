@@ -61,16 +61,6 @@
 			</ul>
 		</div><!-- 헤더 로그인 영역 끝-->
 
-		<!-- 검색 스크립트 -->
-		<script>
-			document.getElementById("searchBtn").onclick = function () {
-
-				let searchType = document.getElementsByName("main_select")[0].value;
-				let keyword =  document.getElementsByName("main_txtContent")[0].value;
-
-				location.href = "/hobby/listPageSearch?num=1" + "&searchType=" + searchType + "&keyword=" +keyword;
-			};
-		</script>
 	</div><!-- 헤더 로고, 검색, 로그인 영역 끝-->
 
 	<!-- 메뉴바 영역 -->
