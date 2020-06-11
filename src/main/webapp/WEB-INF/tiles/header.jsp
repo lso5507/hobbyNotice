@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-
+<script>
+ function search() {
+   
+	let searchType = document.getElementsByName("main_select")[0].value;
+	let keyword =  document.getElementsByName("main_txtContent")[0].value;
+  
+	location.href = "listpagesearch?&searchtype="+ searchType +"&keyword="+keyword;
+};
+</script>		
 <!-- 
 	기본적으로 메인메뉴가 보이는 header 페이지입니다.
 	
@@ -24,7 +32,7 @@
 		<div id="header-search">
 		
 			<!-- form 태그 사용 -->
-			<form action="/hobby/listPageSearch" method="GET"> <!-- 변경 필요, 컨트롤러와 같은 경로 및 post or get 방식 --> 
+			<form action="/hobby/listPageSearch" method="POST"> <!-- 변경 필요, 컨트롤러와 같은 경로 및 post or get 방식 --> 
 				<select class="input_select" name="main_select">
 					<option value="title"> 제목 </option>
 					<option value="content"> 내용 </option>
@@ -32,18 +40,10 @@
 					<option value="title_content"> 제목+내용 </option>
 				</select>
 				<input type="text" class="input_text" maxlength="50" name="main_txtContent">
-				<input type="submit" id="searchBtn" class="input_button" value="검색">
+				<input type="button" id="searchBtn" class="input_button" value="검색" onclick="search()">
 			</form><!-- form 태그 끝 -->
 		</div><!-- 검색 영역 끝-->
-		<script>
-		document.getElementById("searchBtn").onclick = function () {
-	    
-			let searchType = document.getElementsByName("main_select")[0].value;
-			let keyword =  document.getElementsByName("main_txtContent")[0].value;
-		  
-			location.href = "/hobby/listPageSearch?num=1" + "&searchType=" + searchType + "&keyword=" +keyword;
-		};
-		</script>		
+
 		<!-- 헤더 로그인 영역 -->
 		<div id="header-login">
 			<ul>

@@ -12,6 +12,7 @@
 			WHERE bdTitle LIKE CONCAT ('%', #{keyword}, '%');
 	</select>
 	
+	
 	<!-- 게시물 검색 -->
 	<select id="listPageSearch" parameterType="hashMap" resultType="com.daelim.hobby.Vo.VOBoard">
 		select

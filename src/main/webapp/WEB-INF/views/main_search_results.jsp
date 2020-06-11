@@ -57,13 +57,6 @@
 			</div><!-- 더 보기 -->
 			
 		</div> <!-- e-스포츠 끝-->
-		<div>
-		 <c:forEach begin="1" end="${pageNum}" var="num">
-		    <span>
-		     <a href="/board/listPage?num=${num}">${num}</a>
-		  </span>
-		 </c:forEach>
-		</div>
 		
 		
 		
