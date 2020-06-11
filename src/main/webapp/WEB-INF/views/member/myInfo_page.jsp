@@ -5,9 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="myInfo_page.css" rel="stylesheet" />
-
-<title>내정보</title>
 </head>
 <body>
 

@@ -1,22 +1,16 @@
-@font-face {
-   font-family: "Binggrae";
-   src:url("Binggrae-Bold.otf") format("opentype");
-}
-
-*{
-	font-family: "Binggrae";
-}
+@charset "UTF-8";
 
 .mem_myPw_modify {
-	width:852px;
+	width:1092px;
 	border:1px solid black;
+	padding: 20px 200px;
 	box-sizing: border-box;
-	margin-left: 5px;
-	float: left;
-	padding:10px;
+	margin-top: 100px;
 }
 
 .mem_myPw_modify_title {
+	height:50px;
+	margin-bottom:10px;
 	text-align:center;
 }
 
@@ -46,7 +40,7 @@
 
 .mem_myPw_modify_RnewPw {
 	height:50px;
-	margin-bottom:10px;
+	margin-bottom:20px;
 }
 
 #newPw2 {
@@ -59,8 +53,6 @@
 .mem_myPw_modify_btn{
 	height:50px;
 	text-align:right;
-	margin-bottom:10px;
-	margin-right:10px;
 }
 
 #btnChange {

@@ -3,8 +3,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="login_page.css">
-
 <title>로그인</title>
 
 <script type="text/javascript">
@@ -21,9 +19,10 @@ if(message.length != 0){
 </head>
 <body>
 
-<form action="login" method="post">
+<div class="mem_login">
+	<form action="login" method="post">
 
-	<div class="mem_login">
+
 		<div class="mem_login_title">
 			<h1 id="memTitle">Hobby 로그인</h1>
 		</div>
@@ -45,9 +44,8 @@ if(message.length != 0){
 			<span><a href="/hobby/idSearch_page">아이디 찾기</a></span> |
 			<span><a href="/hobby/pwSearch_page">비밀번호 찾기</a></span>
 		</div>
-	</div>
-	
-</form>	
+	</form>
+</div>	
 	
 </body>
 </html>
