@@ -44,9 +44,9 @@
 			<div id="section-category-esport">
 				<ul id="esport_ul">
 					<li data-tab="tab1" class="current"><a href="board/board_team?val=0"> 팀원모집 </a></li> 
-					<li data-tab="tab2" ><a href="board_tip?val=0""> 팁과 노하우 </a></li>
-					<li data-tab="tab3" ><a href="board_qa?val=0""> 질문과 답변 </a></li>
-					<li data-tab="tab4" ><a href="board_free?val=0""> 자유게시판 </a></li>
+					<li data-tab="tab2" ><a href="board_tip?val=0"> 팁과 노하우 </a></li>
+					<li data-tab="tab3" ><a href="board_qa?val=0"> 질문과 답변 </a></li>
+					<li data-tab="tab4" ><a href="board_free?val=0"> 자유게시판 </a></li>
 				</ul>
 				<!-- 탭 메뉴에 해당하는 인기 및 최신 게시글 영역 -->
 				<!-- 팀원모집 -->
