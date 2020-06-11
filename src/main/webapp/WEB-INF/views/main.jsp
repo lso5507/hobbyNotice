@@ -38,8 +38,7 @@
 		<!-- e-스포츠 영역 -->
 		<div id="section-esport">
 			<!-- e-스포츠 본문 제목 -->
-			<h1 class="section-title">e-스포츠</h1>
-			<hr>
+			<h1 class="section-title">E-스포츠</h1>
 			<!-- e-스포츠 탭 메뉴 구현 -->
 			<div class="section-category-tab">
 				<ul id="esport_ul">
@@ -236,7 +235,6 @@
 		<div id="section-sport">
 			<!-- 스포츠 본문 제목 -->
 			<h1 class="section-title">스포츠</h1>
-			<hr>
 			<!-- 스포츠 탭 메뉴 구현 -->
 			<div class="section-category-tab">
 				<ul id="sport_ul">
@@ -432,7 +430,6 @@
 		<div id="section-culture">
 			<!-- 문화생활 본문 제목 -->
 			<h1 class="section-title">문화생활</h1>
-			<hr>
 			<!-- 문화생활 탭 메뉴 구현 -->
 			<div class="section-category-tab">
 				<ul id="culture_ul">

@@ -77,9 +77,9 @@
 				</ul> <!-- 서브메뉴 끝 -->
 			</li> 
 			<li>
-				<a href="/hobby/"><h2 class="hader-nav-main-title title2">E-스포츠</h2></a>
+				<a href="/hobby/"><h2 class="hader-nav-main-title">E-스포츠</h2></a>
 				<!-- 서브메뉴 영역(메인 메뉴위에 마우스가 올라오면 보여지는 메뉴) -->
-				<ul class="header-nav-sub nav-sub2">
+				<ul class="header-nav-sub">
 					<li><a href="/hobby/">팀원모집</a></li>    <!--  e-스포츠 팀원모집 페이지 이동 -->
 					<li><a href="/hobby/">팁과 노하우</a></li> <!--  e-스포츠 팁과노하우 페이지 이동 -->
 					<li><a href="/hobby/">질문과 답변</a></li> <!--  e-스포츠 질문과답변 페이지 이동 -->
@@ -87,9 +87,9 @@
 				</ul> <!-- 서브메뉴 끝 -->
 			</li>
 			<li>
-				<a href="/hobby/"><h2 class="hader-nav-main-title title3">스포츠</h2></a>
+				<a href="/hobby/"><h2 class="hader-nav-main-title">스포츠</h2></a>
 				<!-- 서브메뉴 영역(메인 메뉴위에 마우스가 올라오면 보여지는 메뉴) -->
-				<ul class="header-nav-sub nav-sub3">
+				<ul class="header-nav-sub">
 					<li><a href="/hobby/">팀원모집</a></li>    <!--  e-스포츠 팀원모집 페이지 이동 -->
 					<li><a href="/hobby/">팁과 노하우</a></li> <!--  e-스포츠 팁과노하우 페이지 이동 -->
 					<li><a href="/hobby/">질문과 답변</a></li> <!--  e-스포츠 질문과답변 페이지 이동 -->
@@ -97,9 +97,9 @@
 				</ul> <!-- 서브메뉴 끝 -->
 			</li>
 			<li>
-				<a href="/hobby/"><h2 class="hader-nav-main-title title4">문화생활</h2></a>
+				<a href="/hobby/"><h2 class="hader-nav-main-title title_last">문화생활</h2></a>
 				<!-- 서브메뉴 영역(메인 메뉴위에 마우스가 올라오면 보여지는 메뉴) -->
-				<ul class="header-nav-sub nav-sub4">
+				<ul class="header-nav-sub">
 					<li><a href="/hobby/">팀원모집</a></li>    <!--  e-스포츠 팀원모집 페이지 이동 -->
 					<li><a href="/hobby/">팁과 노하우</a></li> <!--  e-스포츠 팁과노하우 페이지 이동 -->
 					<li><a href="/hobby/">질문과 답변</a></li> <!--  e-스포츠 질문과답변 페이지 이동 -->
