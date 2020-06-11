@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
 .mem_login {
-	width:852px;
+	width:1092px;
 	border:1px solid black;
 	box-sizing: border-box;
-	margin-left: 5px;
-	float: left;
+	margin-top: 100px;
 }
 
 .mem_login_title {

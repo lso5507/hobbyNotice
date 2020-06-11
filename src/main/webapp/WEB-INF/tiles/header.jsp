@@ -74,7 +74,7 @@
 		<ul id="header-nav-main">
 			<!-- 공지사항 게시판 페이지 이동 -->
 			<li>
-				<a href="board_notice?val=9""><h2 class="hader-nav-main-title">공지사항</h2></a>
+				<a href="board_notice?val=9"><h2 class="hader-nav-main-title">공지사항</h2></a>
 				<!-- 서브메뉴 -->
 				<ul class="header-nav-sub">
 				</ul> <!-- 서브메뉴 끝 -->

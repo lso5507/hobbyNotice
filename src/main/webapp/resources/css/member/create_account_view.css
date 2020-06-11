@@ -1,23 +1,15 @@
 @charset "UTF-8";
 
-@font-face {
-   font-family: "Binggrae";
-   src:url("Binggrae-Bold.otf") format("opentype");
-}
-
-*{
-	font-family: "Binggrae";
-}
-
 .mem_create_account_view {
-	width:852px;
+	width:1092px;
 	border:1px solid black;
+	padding: 20px 150px;
 	box-sizing: border-box;
-	margin-left: 5px;
-	float: left;
+	margin-top: 100px;
 }
 
 #mem_create_title {
+	font-size:50px;
 	margin:10px 0;
 	text-align: center;
 }
@@ -211,10 +203,8 @@
 }
 
 .mem_create_btnjoin {
-	height:30px;
+	height:40px;
 	font-size:20px;
-	margin-right:10px;
-	margin-bottom:10px;
 	text-align:right;
 }
 
@@ -229,5 +219,4 @@
 	width:150px;
 	height:40px;
 	font-size:20px;
-	margin: 0 10px 10px 0;
 }

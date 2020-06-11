@@ -1,22 +1,16 @@
-@font-face {
-   font-family: "Binggrae";
-   src:url("Binggrae-Bold.otf") format("opentype");
-}
+@charset "UTF-8";
 
-*{
-	font-family: "Binggrae";
-}
 .mem_idSearch {
-	width:852px;
+	width:1092px;
 	border:1px solid black;
+	padding: 20px 200px;
 	box-sizing: border-box;
-	margin-left: 5px;
-	float: left;
-	padding:10px;
+	margin-top: 100px;
 }
 
 .mem_idSearch_title {
 	text-align:center;
+	margin-bottom: 10px;	
 }
 #idSearch_title{
 	font-size:50px;
@@ -34,6 +28,7 @@
 
 .mem_idSearch_email {
 	height:50px;
+	margin-bottom: 10px;
 }
 
 #email1 {

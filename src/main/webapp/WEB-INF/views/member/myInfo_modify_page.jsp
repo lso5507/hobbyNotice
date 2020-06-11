@@ -5,9 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="myInfo_modify_page.css" rel="stylesheet" />
-
-<title>회원정보 수정</title>
 
 <script type="text/javascript">
 
@@ -30,13 +27,12 @@ function change(){
 	changeForm.submit();
 }
 
-
 </script>
 
 </head>
 <body>
 <div class="mem_myInfo_modify">
-<h1 id ="mem_myInfo_modify_title">회원정보 수정</h1>
+	<h1 id ="mem_myInfo_modify_title">회원정보 수정</h1>
 
 	<form name="changeForm" action="member_modify" class="member_modify" method="post">
 		<div class="mem_myInfo_modify_name">
