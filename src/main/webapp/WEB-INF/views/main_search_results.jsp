@@ -44,12 +44,12 @@
 							<span class="sr_span_title"><%-- <a href="<c:out value="${list.link}"/>"> 제목 링크--%><c:out value="${list.bdTitle}"/></span>
 							<span class="sr_span_content"><c:out value="${list.bdContent}"/></span>
 							<div class="sr_list_content_">
-								<span><%-- <a href="<c:out value="${list.?}"/>"> <c:out value="${list.?}"/> </a>--%></span>경로 링크
+								<span><%-- <a href="<c:out value="${list.?}"/>"> <c:out value="${list.?}"/> </a>--%></span><!-- 경로 링크 -->
 								<span><c:out value="${list.bdDate}"/></span>
 							</div>
 						</div>
 					</c:when>
-				</c:choose>>
+				</c:choose>
 			</c:forEach>
 			<div class="sr_list_more">
 				<span><a href="">더 보기</a></span>
@@ -71,15 +71,15 @@
 							<span class="sr_span_title"><%-- <a href="<c:out value="${list.link}"/>"> 제목 링크--%><c:out value="${list.bdTitle}"/></span>
 							<span class="sr_span_content"><c:out value="${list.bdContent}"/></span>
 							<div class="sr_list_content_">
-							<span><%-- <a href="<c:out value="${list.?}"/>"> <c:out value="${list.?}"/> </a>--%></span>경로 링크
+							<span><%-- <a href="<c:out value="${list.?}"/>"> <c:out value="${list.?}"/> </a>--%></span><!-- 경로 링크 -->
 							<span><c:out value="${list.bdDate}"/></span>
 							</div>
 						</div>
 					</c:when>
 					<c:otherwise>
 					</c:otherwise>
-				</c:choose>>
-			</c:forEach>>
+				</c:choose>
+			</c:forEach>
 			<div class="sr_list_more">
 				<span><a href="">더 보기</a></span>
 			</div>

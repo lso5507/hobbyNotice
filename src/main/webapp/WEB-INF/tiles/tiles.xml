@@ -7,6 +7,7 @@
     <!-- 메뉴 미표시  -->
     <definition name="baseEmpty" template="/WEB-INF/tiles/layoutEmpty.jsp">
         <put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
     	<put-attribute name="body" value="" />
     	<put-attribute name="static" />
     </definition>

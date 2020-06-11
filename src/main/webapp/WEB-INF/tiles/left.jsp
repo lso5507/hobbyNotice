@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!--
 	기본적으로 중간영역 좌측에 바로가기 메뉴가 보이는 left 페이지입니다.
 
@@ -10,19 +10,38 @@
 
 <!-- 바로가기 영역 -->
 <div id="aside">
-	<!-- 로그인 영역 -->
-	<div id="aside-login">
-		<div id="aside-login_buttom">
-			<a href="login_page">로그인</a> <!-- 로그인 페이지 이동 -->
-		</div>
-		
-		<div id="aside-login_member">
-			<a href="create_account_view">회원가입 </a> <!-- 회원가입 페이지 이동 -->
-			<a href="idSearch_page">ID찾기</a> <!-- ID찾기 페이지 이동 -->
-			<a href="pwSearch_page">PW찾기</a> <!-- PW찾기 페이지 이동 -->
-		</div>
-	</div><!-- 로그인 영역 끝 -->
 
+	<!-- 로그인 영역 -->
+	<c:choose>
+		<c:when test="${mVo != null}"> <!-- 로그인 세션값이 존재하면 실행 -->
+			<div id="aside-myinfo">
+				<div class="aside-myinfo_infoblock">
+					<span class="aside-myinfo-name"><c:out value="${mVo.memName}"/></span> 
+					<span class="aside-myinfo-content">님 안녕하세요!</span>
+				</div>
+				<div class="aside-myinfo_btnblock">
+					<!-- 화면상 표시는 역순으로 나타남 -->
+					<input type="button"  onclick="location.href='logout'" value="로그아웃" class="aside-btnmyinfo">
+					<input type="button"  onclick="location.href='myInfo_page'" value="내 정보" class="aside-btnmyinfo">
+				</div>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<div id="aside-login">
+				<div id="aside-login_buttom">
+					<a href="login_page">로그인</a> <!-- 로그인 페이지 이동 -->
+				</div>
+				
+				<div id="aside-login_member">
+					<a href="create_account_view">회원가입 </a> <!-- 회원가입 페이지 이동 -->
+					<a href="idSearch_page">ID찾기</a> <!-- ID찾기 페이지 이동 -->
+					<a href="pwSearch_page">PW찾기</a> <!-- PW찾기 페이지 이동 -->
+				</div>
+			</div>
+		</c:otherwise>
+	</c:choose>
+	<!-- 로그인 영역 끝 -->
+	
 	<!-- 공지사항 영역 -->
 	<div id="aside-notice">
 		<!-- 제목 -->

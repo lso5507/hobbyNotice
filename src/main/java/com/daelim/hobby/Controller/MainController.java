@@ -17,7 +17,7 @@ import com.daelim.hobby.Dao.BoardDao;
 import com.daelim.hobby.Service.BoardService;
 import com.daelim.hobby.Vo.VOBoard;
 import com.daelim.hobby.Vo.VOPaging;
-//--------------------------------------硫붿씤�솕硫댁뿉 ���븳 而⑦듃濡ㅻ윭 �엯�땲�떎(寃��깋湲곕뒫 �룷�븿)-------------------------------------
+//--------------------------------------筌롫뗄�뵥占쎌넅筌롫똻肉� 占쏙옙占쎈립 �뚢뫂�뱜嚥▲끇�쑎 占쎌뿯占쎈빍占쎈뼄(野껓옙占쎄퉳疫꿸퀡�뮟 占쎈７占쎈맙)-------------------------------------
 @Controller
 public class MainController {
 
@@ -26,14 +26,14 @@ public class MainController {
 	private BoardService service;
 
 
-	// 검색 게시물 목록
+	// 寃��깋 寃뚯떆臾� 紐⑸줉
 	@RequestMapping(value = "listpagesearch", method = RequestMethod.GET)
 	public String getListPageSearch(Model model, HttpServletRequest request) throws Exception {
-		//String searchType=request.getParameter("searchtype"); // 검색 타입
-		String keyword=request.getParameter("keyword");  // 검색 키워드
+		//String searchType=request.getParameter("searchtype"); // 寃��깋 ���엯
+		String keyword=request.getParameter("keyword");  // 寃��깋 �궎�썙�뱶
 
 
-		List<VOBoard> listPageSearch = null;    //seachPaging = 寃��깋�맂 寃뚯떆臾� 由ъ뒪�듃
+		List<VOBoard> listPageSearch = null;    //seachPaging = 野껓옙占쎄퉳占쎈쭆 野껊슣�뻻�눧占� �뵳�딅뮞占쎈뱜
 		listPageSearch = service.listPageSearch(keyword);
 		for (VOBoard s : listPageSearch ) {
 			System.out.println(s.getValue());
@@ -43,9 +43,10 @@ public class MainController {
 		return "main_search_results";
 	}
 
-	// 다른 페이지 올라오는지 확인용 -승채
+	// �떎瑜� �럹�씠吏� �삱�씪�삤�뒗吏� �솗�씤�슜 -�듅梨�
 	@RequestMapping("/search_more")
 	public String search(Model model) {
+		
 		return "main_search_results_more"; 
 	}
 }

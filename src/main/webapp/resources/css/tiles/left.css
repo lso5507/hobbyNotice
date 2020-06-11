@@ -67,6 +67,64 @@
 	border-right: 0px; /* 마지막 글자의 border는 안나오게 표시  */
 }
 
+/* 로그인 했을시 변경되는 곳 */
+#aside-myinfo {
+	width: 235px;
+	height: 140px;
+	padding: 25px 0 0 10px;
+	background-color: white;
+	box-sizing: border-box;
+}
+
+.aside-myinfo_infoblock {
+	height: 35px;
+	line-height: 35px;
+	margin-bottom: 5px;
+}
+
+.aside-myinfo_btnblock {
+	height: 35px;
+	padding: 5px;
+	box-sizing:border-box;
+	margin-bottom: 5px;
+}
+
+/* 이름 표시 스타일 */
+.aside-myinfo-name {
+	display: inline-block;
+	color: #0284cf;
+	font-size: 25px;
+}
+
+.aside-myinfo-name:before {
+	content: "'";
+	color: #0284cf;
+	font-size: 25px;
+}
+
+.aside-myinfo-name:after {
+	content: "'";
+	color: #0284cf;
+	font-size: 25px;
+}
+
+/* 인사문구 표시 스타일 */
+.aside-myinfo-content {
+	display: inline-block;
+	font-size: 15px;
+}
+
+/* 버튼 스타일 */
+.aside-btnmyinfo {
+	display: inline-block;
+	width: 75px;
+	height: 25px;
+	box-sizing: border-box;
+	float: right;
+	margin-right: 2px;
+}
+
+
 /* 사이드바 공지사항 바로가기 영역 */
 #aside-notice {
 	width: 235px;

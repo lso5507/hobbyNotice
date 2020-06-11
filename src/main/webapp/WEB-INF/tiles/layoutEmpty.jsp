@@ -12,6 +12,7 @@
 	<!-- 기본 레이아웃 css -->	
 	<link href="/hobby/resources/css/tiles/layoutEmpty.css" rel="stylesheet"> 
 	<link href="/hobby/resources/css/tiles/header.css" rel="stylesheet" /> <!-- header css -->
+	<link href="/hobby/resources/css/tiles/footer.css" rel="stylesheet" /> <!-- footer css -->
 	
 	<!-- 
 	변경 레이아웃 css
@@ -26,7 +27,7 @@
     	<div id="emptyLayout-content">
     		<tiles:insertAttribute name="body" />
     	</div>
-    	
+    	<tiles:insertAttribute name="footer" />
     </div>
 </body>
 </html>
