@@ -25,11 +25,15 @@ select {
 	height : 20px;
 }
 
+/* 가장 큰 틀 */
 .board_write {
 	display: block;
 	padding: 0;
-	width : 742px; /* 가로 크기 조절 */
-	margin: 0 280px;
+	width : 847px; /* 가로 크기 조절 */
+	height: 1885px;
+	float: left;
+	padding-left: 6px;
+    box-sizing: border-box;
 }
 
 /* 각 div 크기 조절 */

@@ -13,8 +13,11 @@ a { /* a 태그에 대한 색을 없앰 */
 	display: block;
 	padding: 0;
 	padding-top: 50px;
-	width : 742px; /* 가로 크기 조절 */
-	margin: 0 280px;
+	width : 847px; /* 가로 크기 조절 */
+	height: 1885px;
+	float: left;
+	padding-left: 6px;
+    box-sizing: border-box;
 }
 
 .board_detail .board_detail_title,
