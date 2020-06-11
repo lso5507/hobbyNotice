@@ -105,6 +105,8 @@ public class BoardDao {
 		return boards;
 		
 	}
+	
+	
 	public List<VOBoard> boardRead(int value,String category) {
 		List<VOBoard> boards = null;
 		String sql="";
@@ -183,6 +185,8 @@ public class BoardDao {
 		
 		return result;
 	}
+	
+	
 	public static HttpServletRequest getCurrentRequest() {// 濡쒓렇�씤 �꽭�뀡 �솗�씤�쓣 �쐞�븳 硫붿냼�뱶
 		 
 	       ServletRequestAttributes sra = (ServletRequestAttributes) RequestContextHolder
@@ -226,6 +230,8 @@ public class BoardDao {
 		}
 		return boards.get(0);
 	}
+	
+	
 	public List<VOComment> detailComment(int cnt) {  // 寃뚯떆湲�留덈떎 �뙎湲� 異�
 		List<VOComment> comments = null;
 		incrementHit(cnt);

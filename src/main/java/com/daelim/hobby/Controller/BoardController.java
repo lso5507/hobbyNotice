@@ -49,7 +49,7 @@ public class BoardController {
 		
 		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"Notice");
 		model.addAttribute("list",boards);
-		return "board/board_notice";
+		return "board/board_list";
 	}
 	
 	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET) // 게시판 상세보기 
