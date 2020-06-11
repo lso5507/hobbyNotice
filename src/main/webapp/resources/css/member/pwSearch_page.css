@@ -1,0 +1,88 @@
+@font-face {
+   font-family: "Binggrae";
+   src:url("Binggrae-Bold.otf") format("opentype");
+}
+
+*{
+	font-family: "Binggrae";
+}
+
+.mem_pwSearch {
+	width:852px;
+	border:1px solid black;
+	box-sizing: border-box;
+	margin-left: 5px;
+	float: left;
+	padding:10px;
+}
+
+.mem_pwSearch_title {
+	text-align:center;
+}
+
+#pwSearch_title{
+	font-size:50px;
+}
+
+.mem_pwSearch_id {
+	height:50px;
+	margin-bottom:10px;
+}
+
+#memId {
+	width:300px;
+	height:50px;
+	font-size:25px;
+	margin-left:10px;
+}
+
+.mem_pwSearch_hint {
+	height:50px;
+	margin-bottom:10px;
+}
+
+#memPwHint {
+	width:300px;
+	height:50px;
+	font-size:25px;
+	margin-left:10px;
+}
+
+.mem_pwSearch_anwser {
+	height:50px;
+	margin-bottom:20px;
+}
+
+#memPwAns {
+	width:300px;
+	height:50px;
+	font-size:25px;
+	margin-left:10px;
+}
+
+.mem_pwSearch_btn {
+	height:50px;
+	text-align:right;
+	margin-bottom:10px;
+	margin-right:10px;
+}
+
+#memSearch {
+	width:200px;
+	height:50px;
+	font-size:25px;
+}
+
+#memLogin {
+	width:200px;
+	height:50px;
+	font-size:25px;
+}
+
+.pwSearch_span{
+	display: inline-block;
+	width: 130px;
+	height: 30px;
+	text-align:right;
+	font-size:30px;
+}

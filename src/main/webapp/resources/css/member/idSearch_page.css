@@ -1,0 +1,72 @@
+@font-face {
+   font-family: "Binggrae";
+   src:url("Binggrae-Bold.otf") format("opentype");
+}
+
+*{
+	font-family: "Binggrae";
+}
+.mem_idSearch {
+	width:852px;
+	border:1px solid black;
+	box-sizing: border-box;
+	margin-left: 5px;
+	float: left;
+	padding:10px;
+}
+
+.mem_idSearch_title {
+	text-align:center;
+}
+#idSearch_title{
+	font-size:50px;
+}
+
+.mem_idSearch_name {
+	height:50px;
+}
+
+#memName {
+	width:150px;
+	height:30px;
+	margin-left:10px;
+}
+
+.mem_idSearch_email {
+	height:50px;
+}
+
+#email1 {
+	width:150px;
+	height:30px;
+	margin-left:10px;
+}
+
+#email2 {
+	width:150px;
+	height:30px;
+}
+.mem_idSearch_btn {
+	height:50px;
+	text-align:right;
+}
+
+#btn_idSearch {
+	width:150px;
+	height:50px;
+	font-size:25px;
+}
+
+#btn_login {
+	width:150px;
+	height:50px;
+	font-size:25px;
+}
+
+.mem_idSearch_span{
+	display: inline-block;
+	width: 130px;
+	height: 30px;
+	text-align:right;
+	font-size:30px;
+}
