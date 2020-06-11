@@ -43,7 +43,8 @@
 					
 					<div class="board_btn_writer">
 					<form action="board_writeform" method="GET">
-						<input type="hidden" value=${param.val} name="value"> <!-- hidden 타입으로 val변수 컨트롤러로 보냄 -->
+ 						<input type="hidden" value=${param.val} name="val"> <!-- hidden 타입으로 val변수 컨트롤러로 보냄 -->
+ 						
 						<input type="submit" value="글쓰기" id="btn_writer"/>
 					</form>
 					</div>		

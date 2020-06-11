@@ -27,7 +27,6 @@ import com.daelim.hobby.Vo.VOComment;
 
 //   ----------------------------------게시판에 대한 컨트롤러입니다 --------------------------------------
 @Controller
-@RequestMapping(value="/board/")
 public class BoardController {
 
 	@Autowired 
@@ -100,8 +99,11 @@ public class BoardController {
 		return "board/board_writeform";
 	}
 	@RequestMapping(value = "/board_write", method = RequestMethod.POST) // 사용자가 입력한 값 
-	public String write(VOBoard board, Model model) {
+	public String write(VOBoard board, Model model,HttpServletRequest request) {
 		System.out.println("카테고리 테스트 : "+board.getBdCategory());
+		System.out.println("벨류 테스트 : "+board.getValue());
+		System.out.println("벨류 테스트 : "+request.getParameter("value"));
+		
 		
 		int result=boardService.insert(board);
 		if(result==0) {

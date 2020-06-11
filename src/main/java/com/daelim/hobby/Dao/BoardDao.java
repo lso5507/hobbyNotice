@@ -111,19 +111,19 @@ public class BoardDao {
 		List<VOBoard> boards = null;
 		String sql="";
 		if(category.equals("Team")) {
-			 sql = "SELECT * FROM board WHERE bdCategory=0 AND bdValue=0";  // bdValue=0�씠硫� e�뒪�룷痢� 寃뚯떆�뙋留� 媛��졇�샂
+			 sql = "SELECT * FROM board WHERE bdCategory=0 AND bdValue="+value;  // bdValue=0�씠硫� e�뒪�룷痢� 寃뚯떆�뙋留� 媛��졇�샂
 		}
 		else if(category.equals("Tip")) {
-			sql = "SELECT * FROM board WHERE bdCategory=1 AND bdValue=0";  
+			sql = "SELECT * FROM board WHERE bdCategory=1 AND bdValue="+value;  
 		}
 		else if(category.equals("FreeBoard")) {
-			sql = "SELECT * FROM board WHERE bdCategory=2 AND bdValue=0";
+			sql = "SELECT * FROM board WHERE bdCategory=2 AND bdValue="+value;
 		}
 		else if(category.equals("QA")) {
-			sql = "SELECT * FROM board WHERE bdCategory=3 AND bdValue=0";
+			sql = "SELECT * FROM board WHERE bdCategory=3 AND bdValue="+value;
 		}
 		else if(category.equals("Notice")) {
-			sql = "SELECT * FROM board WHERE bdCategory=9 AND bdValue=0";
+			sql = "SELECT * FROM board WHERE bdCategory=9 AND bdValue="+value;
 		}
 		else {
 			System.out.println("select�뿉�윭");
@@ -180,7 +180,7 @@ public class BoardDao {
 		// 移댄뀒怨좊━媛� Team�씠硫� 0 Tip�씠硫� 1 FreeBoard硫� 2 吏덈Ц�씠硫� 3 �븘�땲硫� null
 		int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
 			(board.getBdCategory().equals("FreeBoard"))?2:(board.getBdCategory().equals("QA"))?3:(board.getBdCategory().equals("Notice"))?9:null;
-		result = template.update(sql,"testId",board.getBdTitle(),board.getBdContent(),category);
+		result = template.update(sql,"testId",board.getBdTitle(),board.getBdContent(),category,board.getValue());
 		
 		
 		return result;

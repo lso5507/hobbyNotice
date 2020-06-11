@@ -35,27 +35,27 @@
 	<div id="aside-esport">
 		<h2 class="aside-link_title">e-스포츠</h2>
 		<hr>
-		<a href="/hobby/" class="aside-link_menu">┗ 팀원모집</a> 	<!-- e-스포츠 팀원모집 게시판 이동 -->
-		<a href="/hobby/" class="aside-link_menu">┗ 팁과 노하우</a><!-- e-스포츠 팁과노하우 게시판 이동 -->
-		<a href="/hobby/" class="aside-link_menu">┗ 질문과 답변</a><!-- e-스포츠 질문과답변 게시판 이동 -->
-		<a href="/hobby/" class="aside-link_menu">┗ 자유게시판</a>	<!-- e-스포츠 자유게시판 게시판 이동 -->
+		<a href="board_team?val=0" class="aside-link_menu">┗ 팀원모집</a> 	<!-- e-스포츠 팀원모집 게시판 이동 -->
+		<a href="board_tip?val=0" class="aside-link_menu">┗ 팁과 노하우</a><!-- e-스포츠 팁과노하우 게시판 이동 -->
+		<a href="board_qa?val=0" class="aside-link_menu">┗ 질문과 답변</a><!-- e-스포츠 질문과답변 게시판 이동 -->
+		<a href="board_free?val=0" class="aside-link_menu">┗ 자유게시판</a>	<!-- e-스포츠 자유게시판 게시판 이동 -->
 	</div>
 		<!-- 스포츠 영역 -->
 	<div id="aside-sport">
 		<h2 class="aside-link_title">스포츠</h2>
 		<hr>
-		<a href="/hobby/" class="aside-link_menu">┗ 팀원모집</a>	<!-- 스포츠 팀원모집 게시판 이동 --> 
-		<a href="/hobby/" class="aside-link_menu">┗ 팁과 노하우</a><!-- 스포츠 팁과노하우 게시판 이동 -->  
-		<a href="/hobby/" class="aside-link_menu">┗ 질문과 답변</a><!-- 스포츠 질문과답변 게시판 이동 -->  
-		<a href="/hobby/" class="aside-link_menu">┗ 자유게시판</a> <!-- 스포츠 자유게시판 게시판 이동 -->
+		<a href="board_team?val=1" class="aside-link_menu">┗ 팀원모집</a>	<!-- 스포츠 팀원모집 게시판 이동 --> 
+		<a href="board_tip?val=1" class="aside-link_menu">┗ 팁과 노하우</a><!-- 스포츠 팁과노하우 게시판 이동 -->  
+		<a href="board_qa?val=1" class="aside-link_menu">┗ 질문과 답변</a><!-- 스포츠 질문과답변 게시판 이동 -->  
+		<a href="board_free?val=1" class="aside-link_menu">┗ 자유게시판</a> <!-- 스포츠 자유게시판 게시판 이동 -->
 	</div>
 		<!-- 문화생활 영역 -->
 	<div id="aside-culture">
 		<h2 class="aside-link_title">문화생활</h2>
 		<hr>
-		<a href="/hobby/" class="aside-link_menu">┗ 팀원모집</a>	<!-- 문화생활 팀원모집 게시판 이동 --> 
-		<a href="/hobby/" class="aside-link_menu">┗ 팁과 노하우</a><!-- 문화생활 팁과노하우 게시판 이동 -->  
-		<a href="/hobby/" class="aside-link_menu">┗ 질문과 답변</a><!-- 문화생활 질문과답변 게시판 이동 -->  
-		<a href="/hobby/" class="aside-link_menu">┗ 자유게시판</a> <!-- 문화생활 자유게시판 게시판 이동 -->
+		<a href="board_team?val=2" class="aside-link_menu">┗ 팀원모집</a>	<!-- 문화생활 팀원모집 게시판 이동 --> 
+		<a href="board_tip?val=2" class="aside-link_menu">┗ 팁과 노하우</a><!-- 문화생활 팁과노하우 게시판 이동 -->  
+		<a href="board_qa?val=2" class="aside-link_menu">┗ 질문과 답변</a><!-- 문화생활 질문과답변 게시판 이동 -->  
+		<a href="board_free?val=2" class="aside-link_menu">┗ 자유게시판</a> <!-- 문화생활 자유게시판 게시판 이동 -->
 	</div>
 </div><!-- 바로가기 영역 끝 -->

@@ -46,6 +46,7 @@
 			
 				<div class="write_submit">
 					<button type="submit" id="btn_write_submit">작성완료</button>	
+					<input type="hidden" value=${param.val} name="value"> <!-- hidden 타입으로 val변수 컨트롤러로 보냄 -->
 					<button type="button" id="btn_write_cansel" onclick="history.back()">취     소</button>	
 				</div>	
 			</div>
