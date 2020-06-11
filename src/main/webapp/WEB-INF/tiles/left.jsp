@@ -13,12 +13,13 @@
 	<!-- 로그인 영역 -->
 	<div id="aside-login">
 		<div id="aside-login_buttom">
-			<a href="/hobby/">로그인</a> <!-- 로그인 페이지 이동 -->
+			<a href="login_page">로그인</a> <!-- 로그인 페이지 이동 -->
 		</div>
+		
 		<div id="aside-login_member">
-			<a href="/hobby/">회원가입 </a> <!-- 회원가입 페이지 이동 -->
-			<a href="/hobby/">ID찾기</a> <!-- ID찾기 페이지 이동 -->
-			<a href="/hobby/">PW찾기</a> <!-- PW찾기 페이지 이동 -->
+			<a href="create_account_view">회원가입 </a> <!-- 회원가입 페이지 이동 -->
+			<a href="idSearch_page">ID찾기</a> <!-- ID찾기 페이지 이동 -->
+			<a href="pwSearch_page">PW찾기</a> <!-- PW찾기 페이지 이동 -->
 		</div>
 	</div><!-- 로그인 영역 끝 -->
 

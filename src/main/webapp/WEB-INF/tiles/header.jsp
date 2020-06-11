@@ -53,14 +53,14 @@
 		<div id="header-login">
 			<ul>
 				<c:choose>
-					<c:when test="${test eq null}"> <!-- 로그인 세션값이 존재하지 않으면 실행, eq는 같느냐? 물어보는것 -->
-						<!-- 로그인 세션값이 없으면 실행 -->
-				    	<li><a href="/hobby/">로그인</a></li> <!-- 로그인 페이지 이동 -->
-						<li><a href="/hobby/">회원가입</a></li> <!-- 회원가입 페이지 이동 -->
+					<c:when test="${mVo != null}"> <!-- 로그인 세션값이 존재하지 않으면 실행, eq는 같느냐? 물어보는것 -->
+						<!-- 즉, 같으면 실행 --> <!-- 로그인 세션값이 존재하면 실행 -->
+				    	<li><a href="logout">로그아웃</a></li> <!-- 로그아웃 페이지 이동 -->
+						<li><a href="myInfo_page">내 정보</a></li> <!-- 내정보 페이지 이동 -->
 					</c:when>
-					<c:otherwise> <!-- 로그인 세션값이 존재하면 실행 -->
-						<li><a href="/hobby/">로그아웃</a></li> <!-- 로그아웃 페이지 이동 -->
-						<li><a href="/hobby/">내 정보</a></li> <!-- 내정보 페이지 이동 -->
+					<c:otherwise>
+						<li><a href="login_page">로그인</a></li> <!-- 로그인 페이지 이동 -->
+						<li><a href="create_account_view">회원가입</a></li> <!-- 회원가입 페이지 이동 -->
 					</c:otherwise>
 				</c:choose>
 			</ul>

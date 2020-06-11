@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="myPw_modify_page.css" rel="stylesheet" />
+
 <title>회원정보 수정</title>
 
 <script type="text/javascript">
@@ -50,21 +52,35 @@ function change(){
 </head>
 <body>
 
-<h2>비밀번호 변경</h2>
-
 <form name="changeForm" action="memberPw_modify" method="post">
 
-현재 비밀번호 : <input type="password" name="nowPw"><br><br>
+<div class="mem_myPw_modify">
+	<div class="mem_myPw_modify_title">
+		<h1>비밀번호 변경</h1>
+	</div>
 
-새 비밀번호 : <input type="password" name="newPw"><br><br>
+	<div class="mem_myPw_modify_pw">
+		<span class="mem_myPw_modify_span">현재 비밀번호 :</span>
+		<input type="password" name="nowPw" id="nowPw">
+	</div>
 
-새 비밀번호 확인 : <input type="password" name="newPw2"> <br><br> 
-     
-<input type="button" value="비밀번호 변경" onClick="change()">
-<input type="hidden" name="memPw">
+	<div class="mem_myPw_modify_newPw">
+		<span class="mem_myPw_modify_span">새 비밀번호 :</span>
+		<input type="password" name="newPw" id="newPw">
+	</div>
+
+	<div class="mem_myPw_modify_RnewPw">
+		<span class="mem_myPw_modify_span">새 비밀번호 확인 :</span>
+		<input type="password" name="newPw2" id="newPw2"> 
+	</div>
+
+	<div class="mem_myPw_modify_btn">
+		<input type="button" value="비밀번호 변경" id="btnChange" onClick="change()">
+		<input type="hidden" name="memPw">
+	</div>
+</div>
 
 </form>
-
 
 </body>
 </html>

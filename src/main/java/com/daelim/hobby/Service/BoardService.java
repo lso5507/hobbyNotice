@@ -1,4 +1,4 @@
-package com.daelim.hobby.Service;
+package com.daelim.hobby.service;
 
 
 
@@ -22,61 +22,61 @@ import com.daelim.hobby.Vo.VOComment;
 public class BoardService {
 	@Autowired
 	BoardDao dao;
-	
-	
+
+
 	public List<VOBoard> read() {
-		
+
 		List<VOBoard> boards =dao.boardRead();
 		return boards;
-		
+
 	}
 	public List<VOBoard> read(int value, String category) {
-		
+
 		List<VOBoard> boards =dao.boardRead(value,category);
 		return boards;
-		
+
 	}
 	public int insert(VOBoard board) {
 		int result=dao.boardInsert(board);
-		
+
 		return result;
 	}
 	public int update(VOBoard board, int cnt) {
 		System.out.println("업데이트 테스트");
 		int result=dao.boardUpdate(board,cnt);
-		
+
 		return result;
 	}
 	public VOBoard detailView(int cnt) {
 		VOBoard board=dao.detailRead(cnt);
-		
+
 		return board;
-		
+
 	}
 	public List<VOComment> detailComment(int cnt) {
-		
+
 		List<VOComment> comments = dao.detailComment(cnt);
-		
+
 		return comments;
-		
+
 	}
 	public int insertComment(VOComment comment) {
 		int result = dao.insertComment(comment);
-		
+
 		return result;
-		
-		
+
+
 	}
 	public int insertUpload(MultipartFile uploadfile,String path) {
 	    String saveName = getCurrentDate("yyyyMMddHHmm") + "_" + uploadfile.getOriginalFilename();
-	    File saveFile = new File(path,saveName); 
+	    File saveFile = new File(path,saveName);
 	    File filePath = new File(path);
-	    
+
 	    if(!filePath.exists()) {
 	    	filePath.mkdirs();   // 만약에 path 해당하는 경로가 없으면 폴더를 만듬
 	    }
 	    try {
-	    	uploadfile.transferTo(saveFile); // 파일 저장 
+	    	uploadfile.transferTo(saveFile); // 파일 저장
 	    }
 	    catch(Exception e) {
 	    	System.out.println("Error:"+e);
@@ -99,15 +99,15 @@ public class BoardService {
 	}
 	//---------------------------김정태 추가 --------------------
 	// 게시물 목록 + 페이징 + 검색
-	
+
 	public List<VOBoard> listPageSearch(String keyword) throws Exception {
 	 return dao.listPageSearch(keyword);
 	}
-	
+
 	//검색게시물 총 갯수(0605 추가)
-	
+
 	public int searchCount(String keyword) throws Exception{
-		
+
 		return dao.searchCount(keyword);
 	}
 

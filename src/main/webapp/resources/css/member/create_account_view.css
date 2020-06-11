@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+@font-face {
+   font-family: "Binggrae";
+   src:url("Binggrae-Bold.otf") format("opentype");
+}
+
+*{
+	font-family: "Binggrae";
+}
+
+.mem_create_account_view {
+	width:852px;
+	border:1px solid black;
+	box-sizing: border-box;
+	margin-left: 5px;
+	float: left;
+}
+
+#mem_create_title {
+	margin:10px 0;
+	text-align: center;
+}
+.mem_create_id {
+	width: 100%;
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#memId {
+	width:200px;
+	height:30px;
+}
+
+#idcheck {
+	width:70px;
+	height:30px;
+}
+
+#checkEmail {
+	width:90px;
+	height:30px;
+	margin-left: 5px;
+}
+
+.mem_create_pw {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#memPw {
+	width:200px;
+	height:30px;
+}
+
+.memEx {
+	font-size: 12px;
+}
+
+.mem_create_rpw {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#mempwdCheck {
+	width:200px;
+	height:30px;
+}
+
+.mem_create_pwhint {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#memPwHint {
+	width:204px;
+	height:30px;
+}
+
+.mem_create_pwans {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#memPwAns {
+	width:200px;
+	height:30px;
+}
+
+.mem_create_name {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#memName {
+	width:200px;
+	height:30px;
+}
+
+.mem_create_brith_sex {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+.mem_create_brith {
+	height:30px;
+}
+
+#brith1 {
+	width:80px;
+	height:30px;
+}
+
+#brith2 {
+	width:50px;
+	height:30px;
+}
+
+#brith3 {
+	width:50px;
+	height:30px;
+}
+
+.mem_create_city {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#memRegion {
+	width:100px;
+	height:30px;
+}
+
+#memCity {
+	width:100px;
+	height:30px;
+}
+
+.mem_create_email {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#email1 {
+	width:120px;
+	height:30px;
+}
+
+#email2 {
+	width:100px;
+	height:30px;
+}
+
+.mem_create_email_check {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#checkEmailNumber {
+	width:100px;
+	height:30px;	
+}
+
+#checkEmail2{
+	width:60px;
+	height:30px;
+	margin-left: 5px;
+}
+
+.mem_create_phone {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#smartPhone {
+	width:60px;
+	height:30px;
+}
+
+#smartPhone1 {
+	width:60px;
+	height:30px;
+}
+
+#smartPhone2 {
+	width:60px;
+	height:30px;
+}
+
+#checkPhone {
+	width:60px;
+	height:30px;
+	margin-left:5px;
+}
+
+.mem_create_hobby {
+	height:30px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+.mem_create_btnjoin {
+	height:30px;
+	font-size:20px;
+	margin-right:10px;
+	margin-bottom:10px;
+	text-align:right;
+}
+
+.mem_create_span {
+	display: inline-block;
+	width: 130px;
+	height: 30px;
+	text-align:right;
+}
+
+#join {
+	width:150px;
+	height:40px;
+	font-size:20px;
+	margin: 0 10px 10px 0;
+}

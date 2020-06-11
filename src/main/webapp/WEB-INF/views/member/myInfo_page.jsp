@@ -5,27 +5,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link href="myInfo_page.css" rel="stylesheet" />
+
+<title>내정보</title>
 </head>
 <body>
 
-<h1>${mVo.memName } 님의 정보관리</h1>
+<div class="mem_myInfo">
+	<h1 id="mem_myInfo_title">${mVo.memName } 님의 정보관리</h1>
 
-<form name="myInfo">
+	<form name="myInfo" class="mem_myInfo_section">
 
-	<a href="myInfo_modify_page"> <input type="button" value="회원정보 수정"><br><br> </a>
+		<a href="myInfo_modify_page"> <input type="button" value="회원정보 수정" class="mem_myInfo_Button"></a><br>
 	
-	<a href="myPw_modify_page"> <input type="button" value="비밀번호 변경"> </a><br><br>
+		<a href="myPw_modify_page"> <input type="button" value="비밀번호 변경" class="mem_myInfo_Button"></a><br>
 	
-	<a href="mDelete"> <input type="button" value="회원탈퇴"></a> <br><br> 
+		<a href="mDelete"> <input type="button" value="회원탈퇴" class="mem_myInfo_Button"></a><br>
 	
-	<a href="logout"> <input type="button" value="로그아웃"><br> </a>
+		<a href="logout"> <input type="button" value="로그아웃" class="mem_myInfo_Button"></a>
 
-</form>
-
-
-
-
-
+	</form>		
+</div>
 </body>
 </html>
