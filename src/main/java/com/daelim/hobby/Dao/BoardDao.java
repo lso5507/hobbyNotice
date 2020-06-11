@@ -1,4 +1,4 @@
-package com.daelim.hobby.dao;
+package com.daelim.hobby.Dao;
 ////int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
 //(board.getBdCategory().equals("FreeBoard"))?2:null;  移댄뀒怨좊━ DB而щ읆�뿉 ���옣 諛⑹떇.
 import java.beans.PropertyVetoException;

@@ -1,4 +1,4 @@
-package com.daelim.hobby.controller;
+package com.daelim.hobby.Controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.daelim.hobby.service.MailService;
+import com.daelim.hobby.Service.MailService;
 
 @Controller
 @EnableAsync
@@ -24,11 +24,11 @@ public class MailController {
     	response.setContentType("text/html;charset=utf-8");
 
         String memEmail = request.getParameter("memEmail");
-        System.out.println("ÀÌ¸ÞÀÏ: " + memEmail);
+        System.out.println("ï¿½Ì¸ï¿½ï¿½ï¿½: " + memEmail);
         
         int randomNum = (int)(Math.random()*10000);
-        System.out.println("ÀÎÁõ¹øÈ£:" + randomNum);
-        mailService.sendMail(memEmail,"ÀÌ¸ÞÀÏ ÀÎÁõ","ÀÎÁõ¹øÈ£ :" + randomNum);
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£:" + randomNum);
+        mailService.sendMail(memEmail,"ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ :" + randomNum);
         
         request.setAttribute("randomNum", randomNum);
         RequestDispatcher dispatcher = request.getRequestDispatcher("create_account_view");

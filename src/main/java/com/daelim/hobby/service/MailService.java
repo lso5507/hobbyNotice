@@ -1,4 +1,4 @@
-package com.daelim.hobby.service;
+package com.daelim.hobby.Service;
 
 import javax.mail.internet.MimeMessage;
 
@@ -19,7 +19,7 @@ public class MailService {
       try {
 		MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-		messageHelper.setFrom("dbscksgh12345@gmail.com", "Ãë¹ÌÄ¿¹Â´ÏÆ¼");
+		messageHelper.setFrom("dbscksgh12345@gmail.com", "ï¿½ï¿½ï¿½Ä¿ï¿½Â´ï¿½Æ¼");
 		messageHelper.setSubject(subject);
 		messageHelper.setTo(to); 
 		messageHelper.setText(body );

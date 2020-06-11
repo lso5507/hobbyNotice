@@ -1,4 +1,4 @@
-package com.daelim.hobby.vo;
+package com.daelim.hobby.Vo;
 
 import java.sql.Date;
 import java.sql.Timestamp;
