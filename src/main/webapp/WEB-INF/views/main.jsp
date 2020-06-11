@@ -26,9 +26,9 @@
 				    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 				</c:forEach>
 --%>
-				<li><a href="">첫번째 내용</a></li>
-				<li><a href="">두번째 내용</a></li>
-				<li><a href="">세번째 내용</a></li>
+				<c:forEach var="i" begin="1" end="3">
+				    <li><a href=""><c:out value="${i}" />번째 제목</a></li>
+				</c:forEach>
 			</ul>
 		</div><!-- 공지사항 게시글 끝 -->
 	</div><!-- 공지사항 영역 끝 -->
@@ -62,9 +62,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -79,16 +79,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -107,9 +100,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -124,16 +117,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -152,9 +138,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -169,16 +155,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -197,9 +176,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -214,16 +193,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -257,9 +229,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -274,16 +246,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -302,9 +267,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -319,16 +284,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -347,9 +305,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -364,16 +322,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -392,9 +343,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -409,16 +360,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -452,9 +396,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -469,16 +413,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -497,9 +434,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -514,16 +451,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -542,9 +472,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -559,16 +489,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -587,9 +510,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
+								<c:forEach var="i" begin="1" end="3">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -604,16 +527,9 @@
 								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
 								</c:forEach>
 --%>
-								<li><a href="#">· 게시글1</a></li>
-								<li><a href="#">· 게시글2</a></li>
-								<li><a href="#">· 게시글3</a></li>
-								<li><a href="#">· 게시글4</a></li>
-								<li><a href="#">· 게시글5</a></li>
-								<li><a href="#">· 게시글6</a></li>
-								<li><a href="#">· 게시글7</a></li>
-								<li><a href="#">· 게시글8</a></li>
-								<li><a href="#">· 게시글9</a></li>
-								<li><a href="#">· 게시글10</a></li>
+								<c:forEach var="i" begin="1" end="10">
+								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
+								</c:forEach>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->

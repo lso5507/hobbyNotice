@@ -27,7 +27,7 @@ public class MemberController {
 	// 다른 페이지 올라오는지 확인용 -승채
 	@RequestMapping("/search")
 	public String search(Model model) {
-		return "main_search_results.part"; 
+		return "main_search_results"; 
 	}
 	// 회원가입
 	@RequestMapping("/create_account_view")

@@ -25,7 +25,7 @@
 
 		<!-- 로고 영역 -->
 		<div id="header-logo">
-			<a href="/hobby/"><img alt="로고" src=""></a> <!-- 로고는 기본적으로 홈으로 이동 -->
+			<a href="/hobby/"><img alt="로고" src="/hobby/resources/img/logo.png"></a> <!-- 로고는 기본적으로 홈으로 이동 -->
 		</div> <!-- 로고 영역 끝-->
 
 		<!-- 검색 영역 -->

@@ -4,7 +4,7 @@
 #footer {
 	width: 1092px;
 	height: 151px;
-	border: 1px solid black;
+	border-top: 1px solid #c9c9c9;
 	box-sizing: border-box;
 	text-align: center;
 	margin-bottom: 2px;
@@ -15,8 +15,6 @@
 	width: 301px;;
 	height: 150px;
 	line-height:150px;
-	border-right: 1px solid;
-	box-sizing:border-box;
 	float: left;
 } 
 
