@@ -114,7 +114,7 @@
 }
 
 /* 현재 선택된 li(탭메뉴)의 배경색 변경 */
-.section-category-tab > ul > li.current { background : #ccc; } 
+.section-category-tab > ul > li.current { background : #bae4fe; } 
 
 /* 게시물 내용 영역*/
 .section-category-esport-content,
@@ -149,7 +149,7 @@
 
 /* 게시글 제목 여백 설정 */
 .board_content > ul > li {
-	padding: 3px 0 3px 10px;
+	padding: 4px 0 4px 10px;
 	border-bottom: 1px solid #e9e9e9;
 	box-sizing: border-box;
 	
@@ -161,6 +161,7 @@
 
 .board_content > ul > li > a:hover {
 	text-decoration: underline;
+	color:#0284cf;
 }
 
 

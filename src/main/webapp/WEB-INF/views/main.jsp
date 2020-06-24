@@ -2,15 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
- <!--
-	처음 메인 화면, 이 body 구역은 다른 페이지로 전환이 됨.
-	나머지는 고정.
-
-	---- 설명 ----
-	a태그 안의 hraf는 각 페이지가 펼처지는 url을 기입하면됨.
-	예를 들어 login 페이지를 연다고 한다면 <a href="/hobby/logon>와 같이 하면됨
- -->
-
 <!-- 최신 및 인기 게시물 영역 -->
 <div id="section">
 	<!-- 공지사항 영역-->

@@ -3,22 +3,22 @@
 /* 헤더영역 전체 크기 설정(로고라인 및 메뉴바) */
 #header {
 	width: 1092px;
-	height: 210px;
+	height: 160px;
 	margin-bottom: 5px;
 }
 
 /* 헤더-로고라인 크기 설정 */
 #header-top {
 	width: 1092px;
-	height: 150px;
+	height: 100px;
 	margin-bottom: 5px;
 }
 
 /* 헤더-로고 영역 설정 */
 #header-logo {
 	width: 300px;
-	height: 150px;
-	line-height: 150px;
+	height: 100px;
+	line-height: 100px;
 	text-align: center;
 	float: left;
 }
@@ -26,18 +26,17 @@
 /* 헤더-로고 이미지 크기 설정 */
 #header-logo > a > img {
 	width: 300px;
-	height: 150px;
+	height: 100px;
 }
 
 /* 헤더-검색 영역 설정 */
 #header-search {
 	width: 480px;
-	height: 150px;
-	line-height: 150px;
+	height: 100px;
+	line-height: 100px;
 	text-align: center;
 	margin: 0 6px;
 	float: left;
-	border: 1px solid;
 	box-sizing: border-box;
 	position: relative;
 }
@@ -45,10 +44,9 @@
 /* 헤더-로그인 영역 설정 */
 #header-login {
 	width: 300px;
-	height: 150px;
-	line-height: 150px;
+	height: 100px;
+	line-height: 100px;
 	text-align: center;
-	border: 1px solid;
 	float: right;	
 	box-sizing: border-box;
 }
@@ -56,21 +54,30 @@
 /* ul 스타일 설정 */
 #header-login > ul {
 	width: 300px;
-	height:150px;
-	line-height:150px;
+	height:100px;
+	line-height:100px;
 	list-style-type: none;
 }
 
 /* li 가로 정렬 */
-#header-login > ul > li {
-	width:150px;
+.header-logout-state > li {
+	width: 100px;
+	box-sizing: border-box;
+	float: left;
+}
+
+.header-login-state > li {
+	width: 150px;
 	box-sizing: border-box;
 	float: left;
 }
 
 /* 링크 범위 설정 */
-#header-login > ul > li > a {
-	padding: 10px 30px;
+#header-login > ul > li > a:hover {	color:#0284cf }
+
+/* 이름 표시 스타일 */
+.header-login-name {
+	font-size: 20px;
 }
 
 /* 메뉴바 영역 크기 설정 */
@@ -244,7 +251,7 @@
 .input_button {
 	position:absolute;
 	left: 390px;
-	top: 55px;
+	top: 30px;
 	width: 50px;
 	height: 40px;
 	line-height:40px;
@@ -255,7 +262,7 @@
 .input_text {
 	position:absolute;
 	left: 140px;
-	top: 55px;
+	top: 30px;
 	width: 250px;
 	height: 40px;
 	border: 1px solid #e3e3e3;
@@ -266,7 +273,7 @@
 .input_select {
 	position:absolute;
 	left: 40px;
-	top: 55px;
+	top: 30px;
 	width: 100px;
 	height: 40px;
 	border: 1px solid #e3e3e3;

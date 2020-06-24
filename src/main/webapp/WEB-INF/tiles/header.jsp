@@ -14,14 +14,6 @@
 
 };
 </script>
-<!--
-	기본적으로 메인메뉴가 보이는 header 페이지입니다.
-
-	---- 설명 ----
-	a태그 안의 hraf는 각 페이지가 펼처지는 url을 기입하면됨.
-	예를 들어 login 페이지를 연다고 한다면 <a href="/hobby/logon>와 같이 하면됨
-	나중에 백엔드 작업 끝나면 주석 삭제
- -->
 
 <!-- 헤더 영역 -->
 <div id="header">
@@ -30,7 +22,7 @@
 
 		<!-- 로고 영역 -->
 		<div id="header-logo">
-			<a href="/hobby/"><img alt="로고" src="/hobby/resources/img/logo.png"></a> <!-- 로고는 기본적으로 홈으로 이동 -->
+			<a href="/hobby/"><img alt="로고" src="/hobby/resources/img/header_logo.png"></a> <!-- 로고는 기본적으로 홈으로 이동 -->
 		</div> <!-- 로고 영역 끝-->
 
 		<!-- 검색 영역 -->
@@ -51,18 +43,21 @@
 
 		<!-- 헤더 로그인 영역 -->
 		<div id="header-login">
-			<ul>
-				<c:choose>
-					<c:when test="${mVo != null}"> 
+			<c:choose>
+				<c:when test="${mVo != null}">
+					<ul class="header-logout-state">
+						<li class="header-login-name">${mVo.memName}님</li> <!-- 로그아웃 페이지 이동 -->
+						<li><a href="myInfo_page">내 정보</a></li> <!-- 내정보 페이지 이동 --> 
 				    	<li><a href="logout">로그아웃</a></li> <!-- 로그아웃 페이지 이동 -->
-						<li><a href="myInfo_page">내 정보</a></li> <!-- 내정보 페이지 이동 -->
-					</c:when>
-					<c:otherwise>
+			    	</ul>
+				</c:when>
+				<c:otherwise>
+					<ul class="header-login-state">
 						<li><a href="login_page">로그인</a></li> <!-- 로그인 페이지 이동 -->
 						<li><a href="create_account_view">회원가입</a></li> <!-- 회원가입 페이지 이동 -->
-					</c:otherwise>
-				</c:choose>
-			</ul>
+					</ul>
+				</c:otherwise>
+			</c:choose>
 		</div><!-- 헤더 로그인 영역 끝-->
 
 	</div><!-- 헤더 로고, 검색, 로그인 영역 끝-->

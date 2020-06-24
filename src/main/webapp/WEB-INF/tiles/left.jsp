@@ -1,12 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<!--
-	기본적으로 중간영역 좌측에 바로가기 메뉴가 보이는 left 페이지입니다.
-
-	---- 설명 ----
-	a태그 안의 hraf는 각 페이지가 펼처지는 url을 기입하면됨.
-	예를 들어 login 페이지를 연다고 한다면 <a href="/hobby/logon>와 같이 하면됨
- -->
 
 <!-- 바로가기 영역 -->
 <div id="aside">
@@ -52,7 +45,7 @@
 	<!-- 카테고리별 영역 -->
 		<!-- e-스포츠 영역 -->
 	<div id="aside-esport">
-		<h2 class="aside-link_title">e-스포츠</h2>
+		<h2 class="aside-link_title">E-스포츠</h2>
 		<hr>
 		<a href="board_team?val=0" class="aside-link_menu">┗ 팀원모집</a> 	<!-- e-스포츠 팀원모집 게시판 이동 -->
 		<a href="board_tip?val=0" class="aside-link_menu">┗ 팁과 노하우</a><!-- e-스포츠 팁과노하우 게시판 이동 -->
