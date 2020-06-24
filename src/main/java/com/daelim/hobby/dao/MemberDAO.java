@@ -75,8 +75,7 @@ public class MemberDAO {
 		
 		MemberVO mVo = null;
 		String query = "select * from member where memId='" + memId + "' and memPw='" + memPw + "'";
-		System.out.println(query);
-		System.out.println(query);
+
 		try {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
@@ -173,6 +172,37 @@ public class MemberDAO {
 	public ArrayList<MemberVO> list(){
 		String query = "select * from member order by memRegDate desc";
 		return (ArrayList<MemberVO>) template.query(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));
+	}
+
+
+
+	public MemberVO verify_like(MemberVO member) {   //추천 중복확인
+		MemberVO mVo = null;
+		String query = "select memLikey from member where memId='" + member.getMemId() + "'";
+
+		try {
+			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Select Fail");
+			return null;
+		}
+		System.out.println(mVo.getMemLikey());
+		return mVo;
+		
+	}
+
+
+
+	public int memberLikey(MemberVO member) {
+		int result = 0;
+		final String sql = "UPDATE member SET memLikey=? where memId=?";
+		System.out.println(sql);
+		 result = template.update(sql,member.getMemLikey(),member.getMemId());
+		return result;
+
+		
+		
 	}
 	
 	

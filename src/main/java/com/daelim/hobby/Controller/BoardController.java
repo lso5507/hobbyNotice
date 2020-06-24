@@ -13,8 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.daelim.hobby.Service.BoardService;
+import com.daelim.hobby.Service.MemberService;
+import com.daelim.hobby.Vo.MemberVO;
 import com.daelim.hobby.Vo.VOBoard;
 import com.daelim.hobby.Vo.VOComment;
 
@@ -31,6 +35,9 @@ public class BoardController {
 
 	@Autowired
 	BoardService boardService;  // BoardService 鍮�  �벑濡�
+	@Autowired
+	MemberService memberService; 
+	
 
 
 	@RequestMapping(value = "/board_list", method = RequestMethod.GET)  // 寃뚯떆�뙋 �쟾泥대낫湲�
@@ -52,13 +59,16 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/board_detailview", method = RequestMethod.GET) // 게시판 상세보기
-	public String detail(HttpServletResponse response,HttpServletRequest request) {
+	public ModelAndView detail(HttpServletResponse response,HttpServletRequest request) {
 		String cnt = request.getParameter("cnt");
 		VOBoard board = boardService.detailView(Integer.parseInt(cnt)); // 寃뚯떆�뙋 �긽�꽭蹂닿린
 		List<VOComment> comments = boardService.detailComment(Integer.parseInt(cnt));
-		request.setAttribute("board", board); // 게시판 상세 내용 전달
-		request.setAttribute("comments", comments); // 댓글 내용 전달
-		return "board/board_detailview";
+		ModelAndView mav = new ModelAndView( "board/board_detailview");
+		mav.addObject("board",board);
+		mav.addObject("comments",comments);
+		
+
+		return mav;
 	}
 
 	@RequestMapping(value = "/board_team", method = RequestMethod.GET)
@@ -164,31 +174,67 @@ public class BoardController {
 		return "redirect:board_list";
 	}
 	@RequestMapping(value = "/board_comment", method = RequestMethod.GET)
-	public String board_comment(HttpSession session,HttpServletResponse response,VOComment comment,HttpServletRequest request) {
-		PrintWriter outs;
-
-//		VOMember member = (VOMember)session.getAttribute("member");
-		String dno = request.getParameter("dno");
-		try {
-			outs = response.getWriter();
-//			if(member==null) {
-//				outs.println("<script>alert('NotFoundSession');</script>");
-//			}
-//			else {
-			int result=boardService.insertComment(comment);
-			if(result!=0) {
-				outs.println("<script>alert('CommentInsertSuccess');</script>");
-			}
-			else {
-				outs.println("<script>alert('CommentInsertFail');</script>");
-			}
-
-//			}
+	public ModelAndView board_comment(HttpSession session,HttpServletResponse response,VOComment comment,HttpServletRequest request) {
+		
+		int result=boardService.insertComment(comment);
+		MemberVO member = (MemberVO)session.getAttribute("mVo");
+		int dno = Integer.parseInt(request.getParameter("dno"));
+		ModelAndView mav ;
+		if(member==null) {
+			mav= new ModelAndView("redirect");
+			mav.addObject("message", "세션이 만료되었습니다..");
+			mav.addObject("url", "board_detailview?cnt="+dno);
+			return mav;
+			
 		}
-		catch(Exception e) {
-			System.out.println(e);
+		if(result!=0) {
+			mav= new ModelAndView("redirect");
+			mav.addObject("message", "댓글입력 완료.");
+			mav.addObject("url", "board_detailview?cnt="+dno);
+			
 		}
-		return "redirect:board_detailview?cnt="+dno;
+		else {
+			mav= new ModelAndView("redirect");
+			mav.addObject("message", "댓글 입력 실패.");
+			mav.addObject("url", "board_detailview?cnt="+dno);
+			
+		}
+
+		return mav;
 	}
-
+	@RequestMapping(value = "/board_likey", method = RequestMethod.GET)
+	public ModelAndView board_likey(HttpServletRequest request,RedirectAttributes redirect,HttpSession session) {
+		MemberVO member = (MemberVO)session.getAttribute("mVo");
+		
+		int cnt = Integer.parseInt(request.getParameter("cnt"));
+		int board_result=0;
+		
+		int member_result = memberService.verify(cnt,member);
+		redirect.addAttribute("cnt", cnt); //리디렉트시 파라미터 값도 넘겨주기 
+		ModelAndView mav ;
+		if(member==null) {
+			mav= new ModelAndView("redirect");
+			mav.addObject("message", "세션이 만료되었습니다..");
+			mav.addObject("url", "board_detailview?cnt="+cnt);
+			return mav;
+			
+		}
+		if(member_result!=0) {
+			mav= new ModelAndView("redirect");
+			mav.addObject("message", "추천하였습니다.");
+			mav.addObject("url", "board_detailview?cnt="+cnt);
+			board_result = boardService.incrementLikey(cnt); 
+			
+		}
+		else {
+			mav= new ModelAndView("redirect");
+			mav.addObject("message", "추천 취소.");
+			mav.addObject("url", "board_detailview?cnt="+cnt);
+			board_result = boardService.decrementLikey(cnt); 
+		}
+	    
+		return mav;
+	
+	
+	}
 }

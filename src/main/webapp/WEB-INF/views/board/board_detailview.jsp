@@ -20,7 +20,11 @@
 		 }
 	}
 
+
+
+	
 </script>
+
 
 <html>
 	<head>
@@ -48,7 +52,7 @@
 					<div id="detail_null"></div>
 					<div id="declaration"><a href="#">신고</a></div>
 					<div id="goodnum">${board.bdLike}</div>
-					<div id="good"><a href="#">추천</a></div>
+					<div id="good"><a href="board_likey?cnt=${board.bdCno}">추천</a></div>
 				</div>
 			</div>
 			

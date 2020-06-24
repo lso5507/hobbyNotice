@@ -76,7 +76,7 @@ public class MemberController {
 		mVo = mService.mLogin(mVo, request);
 
 		if(mVo == null) { // 寃��깋 �떎�뙣�떆
-			model.addAttribute("msg", "�븘�씠�뵒, 鍮꾨�踰덊샇媛� ��由쎈땲�떎."); // view�뿉 肉뚮젮二쇨린 �쐞�빐 model�뿉 異붽�
+			model.addAttribute("msg", "LoginFail"); // view�뿉 肉뚮젮二쇨린 �쐞�빐 model�뿉 異붽�
 			model.addAttribute("url", "member/login_page.jsp");
 			return "/member/login_page.part";
 		}

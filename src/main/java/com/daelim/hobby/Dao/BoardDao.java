@@ -1,6 +1,6 @@
 package com.daelim.hobby.Dao;
 ////int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
-//(board.getBdCategory().equals("FreeBoard"))?2:null;  燁삳똾�믤�⑥쥓�봺 DB�뚎됱쓥占쎈퓠 占쏙옙占쎌삢 獄쎻뫗�뻼.
+//(board.getBdCategory().equals("FreeBoard"))?2:null;  移댄뀒怨좊━ DB而щ읆�뿉 ���옣 諛⑹떇.
 import java.beans.PropertyVetoException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -45,14 +45,14 @@ public class BoardDao {
             put(9, "Notice");
         }
     };
-    //-------------------源��젙�깭 異붽�----------------
+    //-------------------김정태 추가----------------
     @Inject
 	private SqlSession sqlSession;
 
 	private static String namespace = "com.hobby.mappers.board";
 	//------------------------------------------
 	private JdbcTemplate template;
-	public BoardDao() {  //ComboPool占쎌뱽 占쎌뵠占쎌뒠占쎈릭占쎈연 DB占쎌젔域뱄옙
+	public BoardDao() {  //ComboPool�쓣 �씠�슜�븯�뿬 DB�젒洹�
 
 		dataSource = new ComboPooledDataSource();
 		try {
@@ -83,7 +83,7 @@ public class BoardDao {
 	public List<VOBoard> boardRead() {
 		List<VOBoard> boards = null;
 
-		//揶쏉옙 野껊슣�뻻占쎈솇 筌띾뜄�뼄占쎌벥 占쎈솊疫뀐옙 占쎈땾�몴占� 占쎈７占쎈맙占쎈립 占쎌젟癰귨옙 select
+		//媛� 寃뚯떆�뙋 留덈떎�쓽 �뙎湲� �닔瑜� �룷�븿�븳 �젙蹂� select
 		final String sql = "select m.*,count(c.dno) dnoCount from board as m LEFT join `comment` as c  ON  m.bdCno=c.dno group by m.bdCno";
 		// select * from mainboard
 		//select m.*,count(C.dno) from mainboard as m LEFT join `comment` as c  ON  m.count=c.dno
@@ -118,10 +118,25 @@ public class BoardDao {
 	public List<VOBoard> boardRead(int value,String category) {
 		List<VOBoard> boards = null;
 		String sql="";
-		int cate=(category.equals("Team"))?0:(category.equals("Tip"))?1:
-			(category.equals("FreeBoard"))?2:(category.equals("QA"))?3:(category.equals("Notice"))?9:null;
-		sql = String.format("SELECT * FROM board WHERE bdCategory='%d' AND bdValue=%d",cate,value);  // bdValue=0占쎌뵠筌롳옙 e占쎈뮞占쎈７筌ο옙 野껊슣�뻻占쎈솇筌랃옙 揶쏉옙占쎌죬占쎌긾
-		System.out.println(cate);
+		if(category.equals("Team")) {
+			 sql = "SELECT * FROM board WHERE bdCategory=0 AND bdValue="+value;  // bdValue=0�씠硫� e�뒪�룷痢� 寃뚯떆�뙋留� 媛��졇�샂
+		}
+		else if(category.equals("Tip")) {
+			sql = "SELECT * FROM board WHERE bdCategory=1 AND bdValue="+value;
+		}
+		else if(category.equals("FreeBoard")) {
+			sql = "SELECT * FROM board WHERE bdCategory=2 AND bdValue="+value;
+		}
+		else if(category.equals("QA")) {
+			sql = "SELECT * FROM board WHERE bdCategory=3 AND bdValue="+value;
+		}
+		else if(category.equals("Notice")) {
+			sql = "SELECT * FROM board WHERE bdCategory=9 AND bdValue="+value;
+		}
+		else {
+			System.out.println("select�뿉�윭");
+			return null;
+		}
 
 		boards = template.query(sql, new Object[]{}, new RowMapper<VOBoard>() {
 
@@ -134,7 +149,7 @@ public class BoardDao {
 				board.setBdHit(rs.getInt("bdHit"));
 				board.setBdDate(rs.getTimestamp("bdDate"));
 				board.setBdCno(rs.getInt("bdcno"));
-
+				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 
 				return board;
 			}
@@ -154,14 +169,14 @@ public class BoardDao {
 	public int boardInsert(final VOBoard board) {
 		int result = 0;
 		HttpServletRequest request = getCurrentRequest();
-		HttpSession session = request.getSession();    // 嚥≪뮄�젃占쎌뵥 疫꿸퀡�뮟 �뤃�뗭겱占쎈┷筌롳옙 域밸챶釉� 占쎄텢占쎌뒠
+		HttpSession session = request.getSession();   
 		MemberVO member = (MemberVO) session.getAttribute("mVo");
-		if(member!=null) {  //占쎄쉭占쎈�∽옙�뵠 占쎈씨占쎌몵筌롳옙 嚥≪뮄�젃占쎌뵥 占쎄맒占쎄묶揶쏉옙 占쎈툡占쎈뻷
+		if(member!=null) {  //�꽭�뀡�씠 �뾾�쑝硫� 濡쒓렇�씤 �긽�깭媛� �븘�떂
 			final String sql = "INSERT INTO board (bdName, bdTitle,bdContent,bdCategory,bdValue) values (?,?,?,?,?)";
+			// 移댄뀒怨좊━媛� Team�씠硫� 0 Tip�씠硫� 1 FreeBoard硫� 2 吏덈Ц�씠硫� 3 �븘�땲硫� null
 			int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
 				(board.getBdCategory().equals("FreeBoard"))?2:(board.getBdCategory().equals("QA"))?3:(board.getBdCategory().equals("Notice"))?9:null;
 			result = template.update(sql,member.getMemId(),board.getBdTitle(),board.getBdContent(),category,board.getValue());
-
 
 
 		}
@@ -170,13 +185,12 @@ public class BoardDao {
 			return 0;
 		}
 
-		// 燁삳똾�믤�⑥쥓�봺揶쏉옙 Team占쎌뵠筌롳옙 0 Tip占쎌뵠筌롳옙 1 FreeBoard筌롳옙 2 筌욌뜄揆占쎌뵠筌롳옙 3 占쎈툡占쎈빍筌롳옙 null
 
 		return result;
 	}
 
 
-	public static HttpServletRequest getCurrentRequest() {// 嚥≪뮄�젃占쎌뵥 占쎄쉭占쎈�� 占쎌넇占쎌뵥占쎌뱽 占쎌맄占쎈립 筌롫뗄�꺖占쎈굡
+	public static HttpServletRequest getCurrentRequest() {// 濡쒓렇�씤 �꽭�뀡 �솗�씤�쓣 �쐞�븳 硫붿냼�뱶
 
 	       ServletRequestAttributes sra = (ServletRequestAttributes) RequestContextHolder
 	               .currentRequestAttributes();
@@ -221,7 +235,7 @@ public class BoardDao {
 	}
 
 
-	public List<VOComment> detailComment(int cnt) {  // 野껊슣�뻻疫뀐옙筌띾뜄�뼄 占쎈솊疫뀐옙 �빊占�
+	public List<VOComment> detailComment(int cnt) {  // 寃뚯떆湲�留덈떎 �뙎湲� 異�
 		List<VOComment> comments = null;
 		incrementHit(cnt);
 		final String sql = "SELECT * FROM `comment` where dno=?";
@@ -256,14 +270,13 @@ public class BoardDao {
 	public int insertComment(VOComment comment) {
 
 		int result = 0;
-		HttpServletRequest request = getCurrentRequest(); //占쎌뒄筌ｏ옙揶쏉옙 揶쏉옙占쎌죬占쎌궎疫뀐옙
-		HttpSession session = request.getSession();  // 占쎄쉭占쎈�� �겫�뜄�쑎占쎌궎疫뀐옙
-		MemberVO member = (MemberVO) session.getAttribute("mVo");  // 占쎌깏占쎈뻻 筌뤾퀡�뵬占쎄퐣 占쎄쉭占쎈�� 筌ｋ똾寃� 占쎈립甕곤옙 占쎈쐭
+		HttpServletRequest request = getCurrentRequest(); //�슂泥�媛� 媛��졇�삤湲�
+		HttpSession session = request.getSession();  // �꽭�뀡 遺덈윭�삤湲�
+		MemberVO member = (MemberVO) session.getAttribute("mVo");  // �샊�떆 紐곕씪�꽌 �꽭�뀡 泥댄겕 �븳踰� �뜑
 
-		if(member!=null) {  //占쎄쉭占쎈�∽옙�뵠 占쎈씨占쎌몵筌롳옙 嚥≪뮄�젃占쎌뵥 占쎄맒占쎄묶揶쏉옙 占쎈툡占쎈뻷
-
-			// 燁삳똾�믤�⑥쥓�봺揶쏉옙 Team占쎌뵠筌롳옙 0 Tip占쎌뵠筌롳옙 1 FreeBoard筌롳옙 3 占쎈툡占쎈빍筌롳옙 null
+		if(member!=null) {  //�꽭�뀡�씠 �뾾�쑝硫� 濡쒓렇�씤 �긽�깭媛� �븘�떂
 			final String sql = "INSERT INTO comment (comm_name,comm_content,dno) values (?,?,?)";
+
 			result = template.update(sql,member.getMemId(),comment.getComm_content(),comment.getDno());
 
 		}
@@ -271,10 +284,6 @@ public class BoardDao {
 			System.out.println("Not Found Session");
 			return 0;
 		}
-
-
-
-
 		return result;
 	}
 
@@ -283,7 +292,7 @@ public class BoardDao {
 	public int boardUpdate(VOBoard board,int cnt) {
 		int result=0;
 		int category=(board.getBdCategory().equals("Team"))?0:(board.getBdCategory().equals("Tip"))?1:
-			(board.getBdCategory().equals("FreeBoard"))?2:null; // 燁삳똾�믤�⑥쥓�봺 占쏙옙占쎌삢
+			(board.getBdCategory().equals("FreeBoard"))?2:null; // 移댄뀒怨좊━ ���옣
 		final String sql = "UPDATE board SET bdTitle = ? , bdContent = ? , bdCategory = ? WHERE bdCno = ?";
 		System.out.println(sql);
 		result = template.update(sql,board.getBdTitle(),board.getBdContent(),category,cnt);
@@ -302,15 +311,15 @@ public class BoardDao {
 
 		return result;
 	}
-	public void incrementHit(int cnt) { //鈺곌퀬�돳占쎈땾 筌앹빓占� 筌롫뗄�꺖占쎈굡
+	public void incrementHit(int cnt) { //議고쉶�닔 利앷� 硫붿냼�뱶
 		int result=0;
 		final String sql = "UPDATE board SET bdHit = bdHit+1 WHERE bdCno = ?";
 		result = template.update(sql,cnt);
 
 	}
-	//-----------------------源��젙�깭 異붽�-----------------------------------------
+	//-----------------------김정태 추가-----------------------------------------
 
-	// 寃뚯떆臾� 寃��깋
+	// 게시물 검색
 	public List<VOBoard> listPageSearch(String keyword)
 			throws Exception {
 
@@ -321,7 +330,7 @@ public class BoardDao {
 
 		return sqlSession.selectList(namespace + ".listPageSearch", data);
 	}
-	//寃��깋�맂 寃뚯떆臾� 珥� 媛��닔(0605異붽�)
+	//검색된 게시물 총 갯수(0605추가)
 
 	public int searchCount(String keyword) throws Exception {
 		int test=sqlSession.selectOne(namespace + ".searchCount", keyword);
@@ -329,6 +338,20 @@ public class BoardDao {
 		System.out.println("test:"+test);
 		return sqlSession.selectOne(namespace + ".searchCount", keyword);
 
+	}
+	//게시글 추천수
+	public int boardLikey(int dno, boolean checker) {
+		int result=0;
+		if(checker) {
+			final String sql = "UPDATE board SET bdLike=bdLike+1 WHERE bdcno = ?";
+			result = template.update(sql,dno);
+		}
+		else {
+			final String sql = "UPDATE board SET bdLike=bdLike-1 WHERE bdcno = ?";
+			result = template.update(sql,dno);
+		}
+		
+		return result;
 	}
 
 }

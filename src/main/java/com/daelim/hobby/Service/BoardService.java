@@ -110,5 +110,14 @@ public class BoardService {
 
 		return dao.searchCount(keyword);
 	}
+	public int incrementLikey(int cnt) {
+		int result=  dao.boardLikey(cnt,true);    // true일때 증가
+		return result;
+		
+	}
+	public int decrementLikey(int cnt) {
+		int result=  dao.boardLikey(cnt,false);   // false일때 감소
+		return result;
+	}
 
 }

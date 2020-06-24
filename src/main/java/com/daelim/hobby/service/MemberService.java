@@ -119,6 +119,41 @@ public class MemberService {
 		System.out.println("占쏙옙占쏙옙 占쏙옙占싱듸옙(占쏙옙占쏙옙占쏙옙 占쏙옙占싱듸옙): " + memId);
 		mDao.memberDelete(memId);
 	}
+
+
+	public int verify(int cnt, MemberVO mem) {  // 추천 중복확인 -SWLee-
+		boolean checker = true;
+		int result =0;
+		int likeRst=0;
+		if(mem.getMemLikey()!=null) {
+			String[] like = mem.getMemLikey().split(",");
+			for (String str : like) {
+				System.out.println(str);
+				if(String.valueOf(cnt).equals(str)) {
+					// DB에서 cnt 값 지우기
+					checker = false;
+					mem.setMemLikey(mem.getMemLikey().replace(String.valueOf(cnt)+",",""));
+					result=mDao.memberLikey(mem);
+					
+				}
+				
+			}
+		}
+		if(checker) {  // cnt 값이 db 데이터에 없을때
+			// DB에 cnt 값 넣기 
+			if(mem.getMemLikey()!=null) {
+				mem.setMemLikey(mem.getMemLikey()+cnt+",");
+			}
+			else
+				mem.setMemLikey(cnt+",");
+			result=mDao.memberLikey(mem);
+			likeRst=1;
+		}
+		if(result==0) {
+			System.out.println("Likey Error_memberService");
+		}
+		return likeRst;
+	}
 	
 	
 	// 占쏙옙占� 占쏙옙占쏙옙트

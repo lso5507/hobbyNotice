@@ -17,7 +17,13 @@ public class MemberVO {
 	int memPwHint; // 0.��� ����, 1.���� ģ��ģ�� �̸�
 	String memPwAns; // ��й�ȣ �亯
 	Timestamp memRegDate; // ������
-	
+	String memLikey;
+	public String getMemLikey() {
+		return memLikey;
+	}
+	public void setMemLikey(String memLikey) {
+		this.memLikey = memLikey;
+	}
 	public MemberVO() {}
 	public MemberVO(int mCnt, String memId, String memPw, String memName, String memPhone, String memEmail,   
 			String memRegion, String memCity, int memPwHint, String memPwAns, String memBirth, Timestamp memRegDate) {
