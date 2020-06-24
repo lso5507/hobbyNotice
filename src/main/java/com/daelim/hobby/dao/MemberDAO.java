@@ -176,21 +176,21 @@ public class MemberDAO {
 
 
 
-	public MemberVO verify_like(MemberVO member) {   //추천 중복확인
-		MemberVO mVo = null;
-		String query = "select memLikey from member where memId='" + member.getMemId() + "'";
-
-		try {
-			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
-		}catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("Select Fail");
-			return null;
-		}
-		System.out.println(mVo.getMemLikey());
-		return mVo;
-		
-	}
+//	public MemberVO verify_like(MemberVO member) {   //추천 중복확인
+//		MemberVO mVo = null;
+//		String query = "select memLikey from member where memId='" + member.getMemId() + "'";
+//
+//		try {
+//			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//			System.out.println("Select Fail");
+//			return null;
+//		}
+//		System.out.println(mVo.getMemLikey());
+//		return mVo;
+//		
+//	}
 
 
 

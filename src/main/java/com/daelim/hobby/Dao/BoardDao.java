@@ -99,7 +99,7 @@ public class BoardDao {
 				board.setBdDate(rs.getTimestamp("bdDate"));
 				board.setBdCno(rs.getInt("bdCno"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
-
+				board.setDno(rs.getInt("dnoCount"));
 				return board;
 
 			}
@@ -119,19 +119,19 @@ public class BoardDao {
 		List<VOBoard> boards = null;
 		String sql="";
 		if(category.equals("Team")) {
-			 sql = "SELECT * FROM board WHERE bdCategory=0 AND bdValue="+value;  // bdValue=0�씠硫� e�뒪�룷痢� 寃뚯떆�뙋留� 媛��졇�샂
+			 sql = "select m.*,count(c.dno) dnoCount from board as m LEFT join `comment` as c  ON  m.bdCno=c.dno where bdCategory=0 And bdValue="+value+" group by m.bdCno";  // bdValue=0�씠硫� e�뒪�룷痢� 寃뚯떆�뙋留� 媛��졇�샂
 		}
 		else if(category.equals("Tip")) {
-			sql = "SELECT * FROM board WHERE bdCategory=1 AND bdValue="+value;
+			sql = "select m.*,count(c.dno) dnoCount from board as m LEFT join `comment` as c  ON  m.bdCno=c.dno where bdCategory=1 And bdValue="+value+" group by m.bdCno"; 
 		}
 		else if(category.equals("FreeBoard")) {
-			sql = "SELECT * FROM board WHERE bdCategory=2 AND bdValue="+value;
+			sql = "select m.*,count(c.dno) dnoCount from board as m LEFT join `comment` as c  ON  m.bdCno=c.dno where bdCategory=2 And bdValue="+value+" group by m.bdCno"; 
 		}
 		else if(category.equals("QA")) {
-			sql = "SELECT * FROM board WHERE bdCategory=3 AND bdValue="+value;
+			sql = "select m.*,count(c.dno) dnoCount from board as m LEFT join `comment` as c  ON  m.bdCno=c.dno where bdCategory=3 And bdValue="+value+" group by m.bdCno"; 
 		}
 		else if(category.equals("Notice")) {
-			sql = "SELECT * FROM board WHERE bdCategory=9 AND bdValue="+value;
+			sql = "select m.*,count(c.dno) dnoCount from board as m LEFT join `comment` as c  ON  m.bdCno=c.dno where bdCategory=9 And bdValue="+value+" group by m.bdCno"; 
 		}
 		else {
 			System.out.println("select�뿉�윭");
@@ -150,7 +150,7 @@ public class BoardDao {
 				board.setBdDate(rs.getTimestamp("bdDate"));
 				board.setBdCno(rs.getInt("bdcno"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
-
+				board.setDno(rs.getInt("dnoCount"));
 				return board;
 			}
 
