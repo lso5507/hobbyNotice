@@ -1,6 +1,5 @@
 package com.daelim.hobby.Controller;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,30 +8,30 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.daelim.hobby.Service.MailService;
 
 @Controller
 @EnableAsync
+@ResponseBody
 public class MailController {
     @Autowired
     private MailService mailService;
  
     @RequestMapping(value = "/sendMail.do", method = RequestMethod.GET)
-    public void sendSimpleMail(HttpServletRequest request, HttpServletResponse response) throws Exception{
+    public String sendSimpleMail(HttpServletRequest request, HttpServletResponse response) throws Exception{
     	request.setCharacterEncoding("utf-8");
     	response.setContentType("text/html;charset=utf-8");
 
         String memEmail = request.getParameter("memEmail");
-        System.out.println("ï¿½Ì¸ï¿½ï¿½ï¿½: " + memEmail);
+        System.out.println("ÀÔ·ÂÇÑ ÀÌ¸ÞÀÏ : " + memEmail);
         
         int randomNum = (int)(Math.random()*10000);
-        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£:" + randomNum);
-        mailService.sendMail(memEmail,"ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ :" + randomNum);
+        System.out.println("ÀÎÁõ¹øÈ£ :" + randomNum);
+        mailService.sendMail(memEmail,"Email ÀÎÁõ","ÀÎÁõ¹øÈ£ :" + randomNum);
         
-        request.setAttribute("randomNum", randomNum);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("create_account_view");
-        dispatcher.forward(request, response);
+        return randomNum+"";
     }
 }
 

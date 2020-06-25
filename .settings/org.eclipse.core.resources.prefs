@@ -3,5 +3,6 @@ encoding//src/main/java/com/daelim/hobby/Controller/BoardController.java=UTF-8
 encoding//src/main/java/com/daelim/hobby/Controller/MainController.java=UTF-8
 encoding//src/main/java/com/daelim/hobby/Controller/MemberController.java=UTF-8
 encoding//src/main/java/com/daelim/hobby/Dao/BoardDao.java=UTF-8
+encoding//src/main/java/com/daelim/hobby/Dao/MemberDAO.java=UTF-8
 encoding//src/main/java/com/daelim/hobby/Service/MemberService.java=UTF-8
 encoding//src/main/java/com/daelim/hobby/controller/MemberController.java=UTF-8

@@ -18,13 +18,13 @@ public class MemberDAO {
 	
 	JdbcTemplate template;
 	@Autowired
-	public void setTemplate(JdbcTemplate template) { // JdbcTemplate �� ����ϱ� ���� ����
+	public void setTemplate(JdbcTemplate template) { // JdbcTemplate 사용하기 위한 설정
 		this.template = template;
 	}
 	
 
 	
-	// ȸ������
+	// 회원가입
 	public void createAccount(final String memId, final String memPw, final String memName, final String memPhone, final String memEmail, 
 			final String memRegion, final String memCity, final String memBirth, final int memPwHint, final String memPwAns) {
 
@@ -49,10 +49,10 @@ public class MemberDAO {
 	}
 		
 	
-	// ���̵� �ߺ� Ȯ��
+	// 아이디 중복확인
 	public MemberVO checkId(String memId) {
 		MemberVO mVo = null;
-		System.out.println("���̵�: " + memId);
+		System.out.println("입력한 아이디 : " + memId);
 		String query = "select * from member where memId='" + memId + "'";
 		System.out.println(query);
 		
@@ -70,17 +70,16 @@ public class MemberDAO {
 	}
 	
 	
-	// �α���
+	// 로그인
 	public MemberVO login(String memId, String memPw) {
-		
 		MemberVO mVo = null;
 		String query = "select * from member where memId='" + memId + "' and memPw='" + memPw + "'";
-
+		System.out.println(query);
 		try {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("�α��� ����");
+			System.out.println("로그인 실패");
 			return null;
 		}
 		return mVo;
@@ -88,7 +87,7 @@ public class MemberDAO {
 	
 	
 	
-	// ���̵� ã�� (�̸�, �̸��Ϸ� ã��)
+	// 아이디 검색
 	public MemberVO searchId(String memName, String memEmail) {
 		MemberVO mVo = null;
 		String query = "select * from member where memName='"+ memName +"' and memEmail='"+ memEmail +"'";
@@ -97,7 +96,7 @@ public class MemberDAO {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("�˻��� ���̵� �����ϴ�.");
+			System.out.println("검색된 내용이 없습니다.");
 			return null;
 		}
 		
@@ -106,7 +105,7 @@ public class MemberDAO {
 	
 	
 	
-	// ��й�ȣ ã��
+	// 비밀번호 검색
 	public MemberVO searchPw(String memId, int memPwHint, String memPwAns) {
 		MemberVO mVo = null;
 		String query = "select * from member where memId='"+ memId +"' and memPwHint="+ memPwHint +" and memPwAns='"+ memPwAns +"'";
@@ -115,7 +114,7 @@ public class MemberDAO {
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));	
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("��й�ȣ�� �����ϴ�.");
+			System.out.println("검색된 내용이 없습니다.");
 			return null;
 		}
 		
@@ -124,7 +123,7 @@ public class MemberDAO {
 	
 	
 	
-	// ȸ�� ���� ����
+	// 회원정보 수정(휴대폰, 이메일, 주소, 생일)
 	public void memberModify(final String memId, final String memPhone, final String memEmail, final String memRegion, final String memCity, final String memBirth) {
 		String query = "update member set memPhone=?, memEmail=?, memRegion=?, memCity=?, memBirth=? where memId=?";
 		template.update(query, new PreparedStatementSetter() {
@@ -141,7 +140,7 @@ public class MemberDAO {
 	}
 	
 	
-	// ��й�ȣ ����
+	// 비밀번호 변경
 	public void memberPwModify(final String memId, final String memPw) {
 		String query = "update member set memPw=? where memId=?";
 		template.update(query, new PreparedStatementSetter() {
@@ -156,7 +155,7 @@ public class MemberDAO {
 	
 	
 	
-	// ȸ�� Ż��
+	// 회원 탈퇴
 	public void memberDelete(final String memId) {
 		String query = "delete from member where memId=?";
 		template.update(query, new PreparedStatementSetter() {
@@ -168,7 +167,7 @@ public class MemberDAO {
 	}
 	
 	
-	// ����Ʈ
+	// 멤버 리스트
 	public ArrayList<MemberVO> list(){
 		String query = "select * from member order by memRegDate desc";
 		return (ArrayList<MemberVO>) template.query(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));
@@ -176,7 +175,7 @@ public class MemberDAO {
 
 
 
-//	public MemberVO verify_like(MemberVO member) {   //추천 중복확인
+//	public MemberVO verify_like(MemberVO member) {   //異붿쿇 以묐났�솗�씤
 //		MemberVO mVo = null;
 //		String query = "select memLikey from member where memId='" + member.getMemId() + "'";
 //

@@ -18,7 +18,6 @@ if(message.length != 0){
 
 </head>
 <body>
-
 <div class="mem_login">
 	<form action="login" method="post">
 

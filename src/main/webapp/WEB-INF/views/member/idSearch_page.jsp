@@ -5,19 +5,31 @@
 <head>
 <meta charset="UTF-8">
 
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 
 function idSearch(){
 	var memEmail = document.idSearchForm.email.value + "@" + document.idSearchForm.emadress.value
-	document.idSearchForm.memEmail.value = memEmail;
-	document.idSearchForm.action="idSearch";
-	document.idSearchForm.submit();
-}
-
-var memId = '${mVo.memId}';
-if(memId.length != 0){
-	alert('아이디 : ' + memId);	
+	var memName = document.idSearchForm.memName.value;
+	
+	$.ajax({
+		type:"get",
+		dataType:"text",
+		async:false,
+		url:"http://localhost:8090/hobby/idSearch",
+		data:{memEmail:memEmail, memName:memName},
+		success:function(data){
+			if(data.length != 0){
+				alert('아이디 : ' + data);	
+			}else{
+				alert("검색된 아이디가 없습니다");
+			}
+		},
+		error:function(){
+			alert("에러");
+		}
+	});
+	
 }
 
 </script>
@@ -26,7 +38,7 @@ if(memId.length != 0){
 <body>
 
 <div class="mem_idSearch">
-	<form name="idSearchForm" method="post" action="idSearch">
+	<form name="idSearchForm">
 		<div class="mem_idSearch_title">
 			<h1 id="idSearch_title">회원계정 찾기</h1>
 		</div>
@@ -44,7 +56,6 @@ if(memId.length != 0){
 		            <option value="daum.net">daum.net</option>
 		            <option value="gmail.com">gmail.com</option>
 		        </select>
-				<input type="hidden" name="memEmail" value="">
 		</div>
 		
 		<div class="mem_idSearch_btn">

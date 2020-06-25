@@ -19,7 +19,7 @@ public class MailService {
       try {
 		MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-		messageHelper.setFrom("dbscksgh12345@gmail.com", "���Ŀ�´�Ƽ");
+		messageHelper.setFrom("dbscksgh12345@gmail.com", "Daelim-Hobby");
 		messageHelper.setSubject(subject);
 		messageHelper.setTo(to); 
 		messageHelper.setText(body );

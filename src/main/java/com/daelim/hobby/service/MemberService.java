@@ -17,43 +17,41 @@ public class MemberService {
 	public MemberVO mVo;
 	
 	
-	// 회占쏙옙占쏙옙占쏙옙
-	public void mCreateAccount(MemberVO mVo) { // 占싸깍옙占쏙옙 view占쏙옙占쏙옙 占쌉뤄옙占쏙옙 占쏙옙占쏙옙 MemberVo 占쏙옙체占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙磯占�
+	// 회원가입
+	public void mCreateAccount(MemberVO mVo) { 
 		mDao.createAccount(mVo.getMemId(), mVo.getMemPw(), mVo.getMemName(), mVo.getMemPhone(), mVo.getMemEmail(),  
 				mVo.getMemRegion(), mVo.getMemCity(), mVo.getMemBirth(), mVo.getMemPwHint(), mVo.getMemPwAns());
 	}
 	
 	
-	// 占쏙옙占싱듸옙 占쌩븝옙占싯삼옙
+	// 아이디 중복확인
 	public MemberVO mIdCheck(HttpServletRequest request) {
-		String memId = request.getParameter("memId"); // memId : 회占쏙옙占쏙옙占쏙옙 창占쏙옙占쏙옙 占쌉뤄옙占쏙옙 占쏙옙占싱듸옙
+		String memId = request.getParameter("memId"); 
 		mVo = mDao.checkId(memId);
 		return mVo;
 	}
 	
 	
-	
-	// 占싸깍옙占쏙옙
+	// 로그인
 	public MemberVO mLogin(MemberVO mVo, HttpServletRequest request) {
 		mVo = mDao.login(mVo.getMemId(), mVo.getMemPw());
 		
-		if(mVo != null) { // 占싯삼옙 占쏙옙占쏙옙 占쏙옙
-			HttpSession session = request.getSession(); // 占싸깍옙占쏙옙 -> 占쏙옙占쏙옙 占쏙옙占쏙옙			
-			session.setAttribute("mVo", mVo); // 占쏙옙占실울옙 mVo 占쌩곤옙
+		if(mVo != null) { // 검색 성공 시
+			HttpSession session = request.getSession(); // 세션 만듬			
+			session.setAttribute("mVo", mVo); // 세션에 mVo 추가
 			
-			session.setAttribute("memId", mVo.getMemId()); // 占쏙옙占실울옙 占쏙옙占싱듸옙 占쌩곤옙
-			session.setAttribute("memPw", mVo.getMemPw()); // 占쏙옙占실울옙 占쏙옙橘占싫� 占쌩곤옙
-			System.out.println("占쏙옙占쏙옙 占쏙옙占싱듸옙: " + (String) session.getAttribute("memId"));
-			System.out.println("占쏙옙占쏙옙 占쏙옙橘占싫�: " + (String) session.getAttribute("memPw"));
+			session.setAttribute("memId", mVo.getMemId()); // 세션에 아이디 추가 (회원정보 수정, 비밀번호 변경 -> 로그인한 사용자의 아이디를 가져오기 위해 세션에 바인딩)
+			session.setAttribute("memPw", mVo.getMemPw()); // 세션에 비밀번호 추가 (회원정보 수정, 비밀번호 변경 -> 로그인한 사용자의 비밀번호를 가져오기 위해 세션에 바인딩)
+			System.out.println("세션 아이디 : " + (String) session.getAttribute("memId"));
+			System.out.println("세션 비밀번호 : " + (String) session.getAttribute("memPw"));
 			
 			return mVo;
 		}
-		
 		return null;
 	}
 	
 	
-	// 占쏙옙占싱듸옙 찾占쏙옙 (占싱몌옙, 占싱몌옙占쏙옙)
+	// 아이디 검색
 	public MemberVO mIdSearch(MemberVO mVo) {
 		String memName = mVo.getMemName();
 		String memEmail = mVo.getMemEmail();
@@ -63,7 +61,7 @@ public class MemberService {
 	}
 	
 	
-	// 占쏙옙橘占싫� 찾占쏙옙
+	// 비밀번호 검색
 	public MemberVO mPwSearch(MemberVO mVo) {
 		String memId = mVo.getMemId();
 		int memPwHint = mVo.getMemPwHint();
@@ -74,7 +72,7 @@ public class MemberService {
 	}
 	
 	
-	// 회占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+	// 회원 정보 수정
 	public void mMemberModify(MemberVO mVo, HttpSession session) {
 		String memPhone = mVo.getMemPhone();
 		String memEmail = mVo.getMemEmail();
@@ -82,41 +80,36 @@ public class MemberService {
 		String memCity = mVo.getMemCity();
 		String memBirth = mVo.getMemBirth();
 		
-		// 占싸깍옙占쏙옙占쌀띰옙  占쏙옙占실울옙 mId占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙. getAttribute占쏙옙 占쌔쇽옙 mId占쏙옙 占쏙옙占쏙옙占승댐옙\
+		// 로그인할 때 만들어진 세션에서 아이디를 가져옴
 		String memId = (String) session.getAttribute("memId");
-		System.out.println("session.getAttribute mId : " + memId);
+		String memPw = (String) session.getAttribute("memPw");
 		
 		mDao.memberModify(memId, memPhone, memEmail, memRegion, memCity, memBirth);
 		
-		// 占쏙옙占쏙옙占쏙옙 mVo占쏙옙 占쌕쏙옙 占쏙옙占실울옙 占쏙옙占쏙옙
-		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
-		session.setAttribute("mVo", mVo); // 占쏙옙占실울옙 mVo 占쌩곤옙
+		// 뷰에서는 수정되기 전 mVo를 가지고 있으므로 업데이트된 mVo를 다시 세션에 바인딩 시킨다 
+		mVo = mDao.login(memId, memPw); // 수정된 mVo를 가져온다
+		session.setAttribute("mVo", mVo); // 수정된 mVo를 다시 세션에 등록
 	}
 	
 	
-	// 占쏙옙橘占싫� 占쏙옙占쏙옙
+	// 비밀번호 변경
 	public void mMemberPwModify(MemberVO mVo, HttpSession session) {
 		String memId = (String) session.getAttribute("memId");
-		System.out.println("session.getAttribute mId : " + memId);
-		
-		String memPw = mVo.getMemPw();
-		System.out.println("占쏙옙占쏙옙 占쏙옙橘占싫�: " + memPw);
+		String memPw = mVo.getMemPw(); // 변경할 비밀번호
+		System.out.println("변경 비밀번호: " + memPw);
 		
 		mDao.memberPwModify(memId, memPw);
 		
-		// 占쏙옙占쏙옙占쏙옙 mVo占쏙옙 占쌕쏙옙 占쏙옙占실울옙 占쏙옙占쏙옙
-		session.setAttribute("memPw", mVo.getMemPw()); // 占쏙옙占실울옙 占쏙옙占쏙옙占� 占쏙옙橘占싫� 占쏙옙占쏙옙
-		mVo = mDao.login((String)session.getAttribute("memId"), (String)session.getAttribute("memPw"));
-		session.setAttribute("mVo", mVo); // 占쏙옙占실울옙 mVo 占쌩곤옙
+		session.setAttribute("memPw", mVo.getMemPw()); // 변경된 비밀번호를 세션에 등록
+		mVo = mDao.login(memId, memPw);
+		session.setAttribute("mVo", mVo); // 수정된 mVo를 다시 세션에 등록
 	}
 	
 	
-	
-	
-	// 회占쏙옙 탈占쏙옙
+	// 회원 탈퇴
 	public void mMemberDelete(HttpSession session) {
 		String memId = (String)session.getAttribute("memId");
-		System.out.println("占쏙옙占쏙옙 占쏙옙占싱듸옙(占쏙옙占쏙옙占쏙옙 占쏙옙占싱듸옙): " + memId);
+		System.out.println("세션 아이디(삭제할 아이디) : " + memId);
 		mDao.memberDelete(memId);
 	}
 
@@ -156,7 +149,7 @@ public class MemberService {
 	}
 	
 	
-	// 占쏙옙占� 占쏙옙占쏙옙트
+	// 멤버리스트
 //	public void mList(Model model) {
 //		ArrayList<MemberVO> dtos = mDao.list();
 //		model.addAttribute("list", dtos);
