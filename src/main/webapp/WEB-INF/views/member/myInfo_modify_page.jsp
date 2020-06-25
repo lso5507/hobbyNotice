@@ -8,6 +8,14 @@
 
 <script type="text/javascript">
 
+window.onload = function(){
+	var pw = prompt('비밀번호 입력 : ');
+	if(pw != ${mVo.memPw}){
+		alert("비밀번호가 틀립니다.");	
+		window.history.back();
+	}
+}
+
 function change(){
 	var changeForm = document.changeForm;
 	

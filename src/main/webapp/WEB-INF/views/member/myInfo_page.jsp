@@ -9,9 +9,15 @@
 <script type="text/javascript">
 
 function memDelete(){
-	var result = confirm('정말 탈퇴하시겠습니까?');
-	if(result == true){
-		document.location.href = "mDelete";
+	var pw = prompt('비밀번호 입력 : ');
+	if(pw != ${mVo.memPw}){
+		alert("비밀번호가 틀립니다.");	
+		window.history.back();
+	}else{
+		var result = confirm('정말 탈퇴하시겠습니까?');
+		if(result == true){
+			document.location.href = "mDelete";
+		}	
 	}
 }
 	
