@@ -12,7 +12,6 @@
 /* 최신 및 인기 게시물 - 공지사항 게시판 영역 */
 #section-notice {
 	height: 150px;
-	border: 1px solid;
 	padding: 5px 5px 0 5px;
 	margin-bottom: 5px;
 	box-sizing: border-box;
@@ -49,7 +48,6 @@
 /* 최신 및 인기 게시물 - e스포츠 게시판 영역 */
 #section-esport {
 	height: 570px;
-	border: 1px solid; 
 	padding: 5px 5px 0 5px;
 	box-sizing: border-box;
 	margin-bottom: 5px;
@@ -58,7 +56,6 @@
 /* 최신 및 인기 게시물 - 스포츠 게시판 영역 */
 #section-sport {
 	height: 570px;
-	border: 1px solid; 
 	padding: 5px 5px 0 5px;
 	box-sizing: border-box;
 	margin-bottom: 5px;
@@ -67,7 +64,6 @@
 /* 최신 및 인기 게시물 - 문화생활 게시판 영역 */
 #section-culture {
 	height: 570px;
-	border: 1px solid; 
 	padding: 5px 5px 0 5px;
 	box-sizing: border-box;
 }
@@ -84,7 +80,6 @@
 	height: 40px;
 	list-style-type: none;
 	overflow: hidden;
-	border: 1px solid #c9c9c9;
 	box-sizing: border-box;
 	text-align: center;
 }
@@ -94,12 +89,6 @@
 	float: left; 
 	width: 25%;
 	height: 40px;
-	border-right: 1px solid #c9c9c9;
-	box-sizing: border-box;
-}
-
-.section-category-tab > ul > li:last-child {
-	border-right: 0px;
 }
 
 /* 탭메뉴 문자 스타일  */
@@ -172,6 +161,7 @@
 	line-height: 50px;
 	font-size: 40px;
 	font-weight: bold;
+	border-bottom: 2px solid #0284cf;
 	box-sizing: border-box;
 }
 

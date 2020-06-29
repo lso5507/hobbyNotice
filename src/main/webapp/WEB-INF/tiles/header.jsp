@@ -11,7 +11,6 @@
 	}else{
 		location.href = "listpagesearch?&searchtype="+ searchType +"&keyword="+keyword;
 	}
-
 };
 </script>
 
@@ -27,9 +26,7 @@
 
 		<!-- 검색 영역 -->
 		<div id="header-search">
-
-			<!-- form 태그 사용 -->
-			<form action="/hobby/listPageSearch" method="POST"> <!-- 변경 필요, 컨트롤러와 같은 경로 및 post or get 방식 -->
+			<form action="/hobby/listPageSearch" method="POST"> 
 				<select class="input_select" name="main_select">
 					<option value="title"> 제목 </option>
 					<option value="content"> 내용 </option>
@@ -59,7 +56,6 @@
 				</c:otherwise>
 			</c:choose>
 		</div><!-- 헤더 로그인 영역 끝-->
-
 	</div><!-- 헤더 로고, 검색, 로그인 영역 끝-->
 
 	<!-- 메뉴바 영역 -->

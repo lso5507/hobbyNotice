@@ -39,7 +39,7 @@
 			</c:forEach>
 			
 		</div> <!-- 더보기 영역 끝 -->
-			<!-- 페이징 영역 -->
+		<!-- 페이징 영역 -->
 		<div id="srm_list_paging">
 			<a href="">1</a>
 			<a href="">2</a>
@@ -47,7 +47,5 @@
 			<a href="">4</a>
 			<a href="">5</a>
 		</div><!-- 더 보기 -->
-			
-
 	</div>
 </div>

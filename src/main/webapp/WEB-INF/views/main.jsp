@@ -8,7 +8,6 @@
 	<div id="section-notice">
 		<!-- 본문 제목 -->
 		<h1 class="section-title">공지사항</h1>
-		<hr>
 		<!-- 공지사항 게시글 -->
 		<div id="section-notice-content">
 			<ul>

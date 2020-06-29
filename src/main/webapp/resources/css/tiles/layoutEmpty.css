@@ -1,29 +1,32 @@
 @charset "UTF-8";
 
+/* 글꼴 설정 */
 @font-face {
 	font-family: "Binggrae";
-/* 	src:url("/hobby/resources/font/Binggrae-Bold.ttf") format("truetype"); */
 	src:url("/hobby/resources/font/Binggrae-Bold.otf") format("opentype");
 }
 
-/* 전체적 기본 초기화 */
+/* 전체적 글꼴, 여백 초기화 */
 * {
 	font-family: Binggrae;
 	margin: 0;
 	padding: 0;
 }
 
+/* 전체적 a태그 스타일 초기화 */
 a {
 	text-decoration: none;
 	color: black;
 }
 
+/* 레이아웃 영역 */
 #emptyLayout {
 	width: 1092px;
 	height:1170px;
 	margin: 0 auto;
 }
 
+/* 중간 영역 */
 #emptyLayout-content {
 	width: 1092px;
 	height: 800px;

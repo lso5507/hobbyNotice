@@ -1,47 +1,40 @@
 @charset "UTF-8";
 
-/* 
-설명 
-	1. # 은 id 선택자로서 1개만 적용하는데 사용
-	2. . 은 class 선택자로서 여러개를 동시 적용하는데 사용
-	3. class 선택자는 하나의 태크에 여러개를 적용 가능( jsp에서는 띄어쓰기로 구분, css에서는 붙어야함)
-	4. #abc > ul 같은 경우 id가 'abc'의 자식 ul태그를 지정 하는것
-*/
-
+/* 글꼴 설정 */
 @font-face {
 	font-family: "Binggrae";
-/* 	src:url("/hobby/resources/font/Binggrae-Bold.ttf") format("truetype"); */
 	src:url("/hobby/resources/font/Binggrae-Bold.otf") format("opentype");
 }
 
-/* 전체적 기본 초기화 */
-* {
+/* 전체적 글꼴, 여백 초기화 */
+* { 
 	font-family: Binggrae;
 	margin: 0;
 	padding: 0;
 }
-
+ 
+/* 전체적 a태그 스타일 초기화 */
 a {
 	text-decoration: none;
 	color: black;
 }
 
-/* 메인화면 큰틀 설정 */
+/* 레이아웃 영역 */
 #mainLayout {
-	width: 1397px; /* 넓이 설정 */
+	width: 1397px; 
 	height: auto;
-	margin: 0 auto; /* 가운데 설정 */
+	margin: 0 auto; 
 }
 
 /* 메인화면 영역설정(배너광고 제외) */
 #main {
 	width: 1092px; 
-	float: left; /* 배너광고때문에 위치 왼쪽 설정 */
-	margin-right: 5px; /* 배너광고와 여백 거리 설정 */
+	float: left; 
+	margin-right: 5px;
 	overflow: hidden;
 }
 
-/* 중간 영역 */
+/* 메인화면 중간영역 */
 #content {
 	width: 1092px;
 	height: 1885px;
@@ -53,6 +46,7 @@ a {
 	width: 300px;
 	height: auto;
 	float: right;
+	margin-top: 105px;
 } 
 
 /* 배너광고 각 이미지 영역 */
@@ -60,12 +54,10 @@ a {
 	width: 300px;
 	height: 700px;
 	margin-bottom: 10px;
-	/* 영역 확인용 */
+	/* 영역 확인용 */ 
 	border: 1px solid;
 	box-sizing: border-box;
 }
 
-.banner_size > img {
-	max-width: 300px;
-	max-height: 700px;
-}
+/* 배너광고 이미지 크기 설정 */
+.banner_size > img { max-width: 300px; max-height: 700px; }

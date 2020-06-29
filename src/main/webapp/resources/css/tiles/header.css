@@ -1,20 +1,20 @@
 @charset "UTF-8";
 
-/* 헤더영역 전체 크기 설정(로고라인 및 메뉴바) */
+/* 헤더 영역 설정(로고라인 및 메뉴바) */
 #header {
 	width: 1092px;
 	height: 160px;
 	margin-bottom: 5px;
 }
 
-/* 헤더-로고라인 크기 설정 */
+/* 로고라인 영역 설정 */
 #header-top {
 	width: 1092px;
 	height: 100px;
 	margin-bottom: 5px;
 }
 
-/* 헤더-로고 영역 설정 */
+/* 로고 영역 설정 */
 #header-logo {
 	width: 300px;
 	height: 100px;
@@ -23,7 +23,7 @@
 	float: left;
 }
 
-/* 헤더-로고 이미지 크기 설정 */
+/* 로고 이미지 크기 설정 */
 #header-logo > a > img {
 	width: 300px;
 	height: 100px;
@@ -41,7 +41,42 @@
 	position: relative;
 }
 
-/* 헤더-로그인 영역 설정 */
+/* form태그 각 타입 설정 */
+.input_button {
+	position:absolute;
+	left: 390px;
+	top: 30px;
+	width: 50px;
+	height: 40px;
+	line-height:40px;
+	background-color: #fff;
+	border: 1px solid #e3e3e3;
+	font-size: 15px;
+}
+.input_text {
+	position:absolute;
+	left: 140px;
+	top: 30px;
+	width: 250px;
+	height: 40px;
+	border: 1px solid #e3e3e3;
+	padding: 5px;
+	box-sizing: border-box;
+	font-size: 15px;
+}
+.input_select {
+	position:absolute;
+	left: 40px;
+	top: 30px;
+	width: 100px;
+	height: 40px;
+	border: 1px solid #e3e3e3;
+	padding: 10px 5px;
+	box-sizing: border-box;
+	font-size: 15px;
+}
+
+/* 로그인 영역 설정 */
 #header-login {
 	width: 300px;
 	height: 100px;
@@ -51,7 +86,7 @@
 	box-sizing: border-box;
 }
 
-/* ul 스타일 설정 */
+/* 로그인 ul 스타일 설정 */
 #header-login > ul {
 	width: 300px;
 	height:100px;
@@ -59,20 +94,19 @@
 	list-style-type: none;
 }
 
-/* li 가로 정렬 */
+/* 로그인 li 가로 정렬 */
 .header-logout-state > li {
 	width: 100px;
 	box-sizing: border-box;
 	float: left;
 }
-
 .header-login-state > li {
 	width: 150px;
 	box-sizing: border-box;
 	float: left;
 }
 
-/* 링크 범위 설정 */
+/* 로그인 클릭 영역 스타일 설정 */
 #header-login > ul > li > a:hover {	color:#0284cf }
 
 /* 이름 표시 스타일 */
@@ -104,9 +138,10 @@
 	text-align: center;
 }
 
+/* 메인메뉴 마지막 li 스타일 설정 */
 #header-nav-main > li:last-child { border-right: 0px; }
 
-/* 제목스타일 정하기 */
+/* 메인메뉴 제목스타일 정하기 */
 .hader-nav-main-title {
 	display: block;
   	width: 273px;
@@ -245,39 +280,4 @@
  	  0.3s color,
  	  0.6s visibility;
 	z-index: 99;
-}
-
-/* form태그 각 타입 설정 */
-.input_button {
-	position:absolute;
-	left: 390px;
-	top: 30px;
-	width: 50px;
-	height: 40px;
-	line-height:40px;
-	background-color: #fff;
-	border: 1px solid #e3e3e3;
-	font-size: 15px;
-}
-.input_text {
-	position:absolute;
-	left: 140px;
-	top: 30px;
-	width: 250px;
-	height: 40px;
-	border: 1px solid #e3e3e3;
-	padding: 5px;
-	box-sizing: border-box;
-	font-size: 15px;
-}
-.input_select {
-	position:absolute;
-	left: 40px;
-	top: 30px;
-	width: 100px;
-	height: 40px;
-	border: 1px solid #e3e3e3;
-	padding: 10px 5px;
-	box-sizing: border-box;
-	font-size: 15px;
 }

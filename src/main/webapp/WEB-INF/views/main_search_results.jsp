@@ -36,7 +36,6 @@
 				<h3>스포츠</h3>
 			</div> <!-- 제목 끝-->
 			<!-- 게시물 -->
-		
 			<c:forEach var="list" items="${list}" varStatus="status">
 				<c:choose>
 					<c:when test= "${1 eq list.value}">
@@ -54,7 +53,6 @@
 			<div class="sr_list_more">
 				<span><a href="">더 보기</a></span>
 			</div>
-
 		</div> <!-- 스포츠 끝-->
 		
 		<!-- 문화생활 영역 -->
