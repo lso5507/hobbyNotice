@@ -23,10 +23,10 @@
 	float: left;
 }
 
-/* 로고 이미지 크기 설정 */
+/* 로고 이미지 최대크기 설정 */
 #header-logo > a > img {
-	width: 300px;
-	height: 100px;
+	max-width: 300px;
+	max-height: 100px;
 }
 
 /* 헤더-검색 영역 설정 */

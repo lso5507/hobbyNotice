@@ -18,10 +18,10 @@
 	float: left;
 } 
 
-/* 로고 이미지 크기 조정 */
+/* 로고 이미지 최대크기 조정 */
 #footer-logo > a > img {
-	width: 300px;
-	height: 150px;
+	max-width: 300px;
+	max-height: 150px;
 }
 
 /* 제작자 정보 영역 */

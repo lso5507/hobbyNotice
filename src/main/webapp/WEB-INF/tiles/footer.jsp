@@ -5,7 +5,7 @@
 
 	<!-- 로고 영역 -->
 	<div id="footer-logo">
-		<a href="/hobby/"><img alt="로고" src="/hobby/resources/img/footer_logo.png"></a>
+		<a href="/hobby/"><img alt="로고" src="/hobby/resources/img/Footer_Logo.png"></a>
 	</div><!-- 로고 영역 끝-->
 	
 	<!-- 제작자 정보 영역 -->

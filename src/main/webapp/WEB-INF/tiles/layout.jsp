@@ -33,7 +33,7 @@
 		<!------------- 배너광고 영역 ------------->
 		<div id="banner">
 			<div class="banner_size">
-				<a href=""><img alt="광고1" src=""></a>
+				<a href="/hobby/"><img alt="광고1" src="/hobby/resources/img/Banner_Hobby.png"></a>
 			</div>
 			<div class="banner_size">
 				<a href=""><img alt="광고2" src=""></a>
