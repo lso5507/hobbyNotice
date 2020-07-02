@@ -1,23 +1,14 @@
 @charset "UTF-8";
 
 /* 글꼴 설정 */
-@font-face {
+@font-face { 
 	font-family: "Binggrae";
 	src:url("/hobby/resources/font/Binggrae-Bold.otf") format("opentype");
 }
 
-/* 전체적 글꼴, 여백 초기화 */
-* { 
-	font-family: Binggrae;
-	margin: 0;
-	padding: 0;
-}
- 
-/* 전체적 a태그 스타일 초기화 */
-a {
-	text-decoration: none;
-	color: black;
-}
+/* 기본 설정 */
+* { font-family: Binggrae; margin: 0; padding: 0; }
+a {	text-decoration: none; color: black; }
 
 /* 레이아웃 영역 */
 #mainLayout {
@@ -50,11 +41,8 @@ a {
 } 
 
 /* 배너광고 각 이미지 영역 */
-.banner_size {
-	width: 300px;
-	height: 500px;
-	margin-bottom: 10px;
-}
+.banner1 { width: 300px; height: 400px; margin-bottom: 10px; }
+.banner2 { width: 200px; height: 300px; margin-bottom: 10px; }
 
 /* 배너광고 이미지 최대크기 설정 */
 .banner_size > img { max-width: 300px; max-height: 500px; }

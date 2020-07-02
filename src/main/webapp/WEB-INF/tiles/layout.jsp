@@ -32,11 +32,11 @@
     	</div>
 		<!------------- 배너광고 영역 ------------->
 		<div id="banner">
-			<div class="banner_size">
+			<div class="banner1 banner_size">
 				<a href="/hobby/"><img alt="광고1" src="/hobby/resources/img/Banner_Hobby.png"></a>
 			</div>
-			<div class="banner_size">
-				<a href=""><img alt="광고2" src=""></a>
+			<div class="banner2 banner_size">
+				<a href="/hobby/"><img alt="광고2" src="/hobby/resources/img/Banner_Hobby2.png"></a>
 			</div>
 		</div>
 		<!------------- 배너광고 영역 ------------->
