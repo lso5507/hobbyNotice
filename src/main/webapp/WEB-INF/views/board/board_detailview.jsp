@@ -45,7 +45,7 @@
 		<script src="//code.jquery.com/jquery.min.js"></script>
 	</head>
 	<body>
-	
+		
 		<div class="board_detail">
 			<div class="board_detail_title">
 				<div id="title"><h2>${board.bdTitle}</h2></div>
@@ -75,10 +75,10 @@
 				
 				<div class="board_table_tail">
 					<div class="board_detail_tail">
-						<c:if test="${board.bdName != member.getMemId()}"> <!-- board.bdName == member.getMemId() -->
+						<c:if test="${board.bdName != memId}"> <!-- board.bdName == member.getMemId() -->
 							<div id="detail_null">&nbsp;</div>
 						</c:if>
-						<c:if test="${board.bdName == member.getMemId()}"> <!-- board.bdName == member.getMemId() -->
+						<c:if test="${board.bdName == memId}"> <!-- board.bdName == member.getMemId() -->
 							<a href="board_modiform?cnt=${board.bdCno}">수정</a>  
 							<a href="#" onclick="del_content()">삭제</a>
 						</c:if>
@@ -96,11 +96,11 @@
 				</c:forEach>
 				
 				<form action="board_comment" class="commit_comment" name="comment_form">
-					<c:if test="${!member.getMemId()}"> <!-- board.bdName == member.getMemId() -->
+					<c:if test="${memId == null}"> <!-- board.bdName == member.getMemId() -->
 						<div>로그인 해주세요</div>
 					</c:if>
-					<c:if test="${member.getMemId()}"> <!-- board.bdName == member.getMemId() -->
-						<div>${member.getMemId()}</div>
+					<c:if test="${memId != null}"> <!-- board.bdName == member.getMemId() -->
+						<div>${memId}</div>
 					</c:if>
 					<div>
 						<div class="board_comment_textarea"><textarea rows="1"placeholder="댓글입력" name="comm_content" id="com_input"></textarea></div>

@@ -202,15 +202,15 @@ public class BoardController {
 
 		return mav;
 	}
+	
 	@RequestMapping(value = "/board_likey", method = RequestMethod.GET)
 	public ModelAndView board_likey(HttpServletRequest request,RedirectAttributes redirect,HttpSession session) {
 		MemberVO member = (MemberVO)session.getAttribute("mVo");
 		
 		int cnt = Integer.parseInt(request.getParameter("cnt"));
+		
 		int board_result=0;
 		
-		int member_result = memberService.verify(cnt,member);
-		redirect.addAttribute("cnt", cnt); //리디렉트시 파라미터 값도 넘겨주기 
 		ModelAndView mav ;
 		if(member==null) {
 			mav= new ModelAndView("redirect");
@@ -219,6 +219,10 @@ public class BoardController {
 			return mav;
 			
 		}
+
+		
+		int member_result = memberService.verify(cnt,member);
+		redirect.addAttribute("cnt", cnt); //리디렉트시 파라미터 값도 넘겨주기 
 		if(member_result!=0) {
 			mav= new ModelAndView("redirect");
 			mav.addObject("message", "추천하였습니다.");
