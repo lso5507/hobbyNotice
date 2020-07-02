@@ -98,6 +98,7 @@ public class BoardDao {
 				board.setBdHit(rs.getInt("bdHit"));
 				board.setBdDate(rs.getTimestamp("bdDate"));
 				board.setBdCno(rs.getInt("bdCno"));
+				board.setBdLike(rs.getInt("bdLike"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 				board.setDno(rs.getInt("dnoCount"));
 				return board;
@@ -149,6 +150,7 @@ public class BoardDao {
 				board.setBdHit(rs.getInt("bdHit"));
 				board.setBdDate(rs.getTimestamp("bdDate"));
 				board.setBdCno(rs.getInt("bdcno"));
+				board.setBdLike(rs.getInt("bdLike"));
 				board.setBdCategory(categorys.get(rs.getInt("bdCategory")));
 				board.setDno(rs.getInt("dnoCount"));
 				return board;

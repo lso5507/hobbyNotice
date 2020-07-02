@@ -1,7 +1,6 @@
 * { /* 전체 마진,패딩 0 */
 	margin: 0;
 	padding: 0;
-	font-size: 12;
 }
 
 a { /* a 태그에 대한 색을 없앰 */
@@ -9,15 +8,29 @@ a { /* a 태그에 대한 색을 없앰 */
 	color:inherit;
 }
 
+textarea {
+	width: 702px;
+	resize : none;
+	max-height: 500px;
+	border-color: #ccc;
+	border-style: none;
+}
+
+/* 가장 큰 틀 */
 .board_detail {
 	display: block;
-	padding: 0;
-	padding-top: 50px;
-	width : 847px; /* 가로 크기 조절 */
+	padding-top: 20px;
+	width : 800px; /* 가로 크기 조절 */
 	height: 1885px;
 	float: left;
-	padding-left: 6px;
+	padding-left: 30px;
+	margin-left: 30px;
     box-sizing: border-box;
+    border: 1px;
+	border-color: #ccc;
+	border-style: solid;
+	align-content: center;
+	border-radius: 6px;
 }
 
 .board_detail .board_detail_title,
@@ -27,77 +40,114 @@ a { /* a 태그에 대한 색을 없앰 */
 	width : 742px; /* 가로 크기 조절 */
 }
 
-.board_detail_title #title {
-	width: 60px;
-}
-.board_detail_name #name {
-	width: 60px;
+.board_detail .board_detail_title #title {
+	width: 100%;
 }
 
-/* 각 div 크기 조절 */
-.board_detail_head #date {
-	width: 100px;
-	padding: 0;
-}
+.board_detail_head #date,
 .board_detail_head #view {
-	width: 80px;
+	font-size:7px;
+	width: auto;
 	padding: 0;
 }
 
 .board_detail_head #declaration,
 .board_detail_head #good,
 .board_detail_head #goodnum  {
-	width: 43px;
+	width: 5%;
 	padding: 0;
 	float : right;
 	text-align: center;
 }
 
-.board_detail_head #detail_null {
-	width: 54%;
-	padding: 0;
-	height: 26px;
+.board_detail_title > div,
+.board_detail_head .item > div{
+	display: inline-block;
+	padding-bottom: 12px;
 }
 
-.board_detail_title > div,
-.board_detail_head .item > div,
 .board_detail_name > div {
 	display: inline-block;
-	padding-bottom: 5px;
 }
 
 .board_detail_content .board_table_content {
 	display: inline-block;
 	width :742px;
-	border: 2px;
-	border-color: #ccc;
-	border-style: solid;
+	margin-bottom: 10px;
+	padding-bottom: 200px;
 }
-.board_detail_content .board_table_content .board_detail_tail > div {
+
+.board_detail_content .board_table_tail{
+	border-bottom: 1px;
+	border-color: #ccc;
+	border-bottom-style: solid;
 	display: inline-block;
 	width :742px;
 }
 
-.board_detail_content .board_table_content .board_detail_tail{
+.board_detail_content .board_table_tail .board_detail_tail > div {
+	display: inline-block;
+	width :742px;
+}
+
+.board_detail_content .board_table_tail .board_detail_tail{
 	text-align:right;
 }
 
 .board_detail .comment_view {
 	width :742px;
 	margin-top : 10px;
-	border: 2px;
-	border-color: #ccc;
-	border-style: solid;
+
 }
 
 #content_text {
 	padding: 10px;
 }
 
+.comment_view #comment_text {
+	border-bottom: 1px;
+	border-color: #ccc;
+	border-bottom-style: solid;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
 
+.board_detail_head {
+	border-bottom: 1px;
+	border-color: #ccc;
+	border-bottom-style: solid;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
 
+.commit_comment {
+	border: 1px;
+	border-color: #ccc;
+	border-style: solid;
+	border-radius: 6px;
+	padding: 20px;
+}
 
+#comment_submit {
+	float: right;
+}
 
+.comment_view {
+	font-size: 16px;
+}
+
+.comment_view #text_size_date {
+	font-size: 10px;
+}
+
+.comment_view #text_size_cont {
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+.comment_view #comment_submit{
+	font-size: 12px;
+}
 
 
 
