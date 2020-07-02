@@ -74,13 +74,10 @@ textarea {
 	display: inline-block;
 	width :742px;
 	margin-bottom: 10px;
-	padding-bottom: 200px;
+	min-height: 300px;
 }
 
 .board_detail_content .board_table_tail{
-	border-bottom: 1px;
-	border-color: #ccc;
-	border-bottom-style: solid;
 	display: inline-block;
 	width :742px;
 }
@@ -105,11 +102,12 @@ textarea {
 }
 
 .comment_view #comment_text {
-	border-bottom: 1px;
+	border-top: 1px;
 	border-color: #ccc;
-	border-bottom-style: solid;
+	border-top-style: solid;
+	margin-top: 5px;
+	padding-top: 5px;
 	margin-bottom: 5px;
-	padding-bottom: 5px;
 }
 
 .board_detail_head {
