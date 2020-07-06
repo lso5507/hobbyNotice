@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 
@@ -36,9 +31,6 @@ function pwSearch(){
 
 </script>
 
-</head>
-<body>
-
 <div class="mem_pwSearch">
 	<form name="pwSearchForm">
 		<div class="mem_pwSearch_title">
@@ -69,5 +61,3 @@ function pwSearch(){
 		</div>
 	</form>
 </div>
-</body>
-</html>

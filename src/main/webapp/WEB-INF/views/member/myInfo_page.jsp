@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
 
 <script type="text/javascript">
 
@@ -21,11 +17,7 @@ function memDelete(){
 	}
 }
 	
-
 </script>
-
-</head>
-<body>
 
 <div class="mem_myInfo">
 	<h1 id="mem_myInfo_title">${mVo.memName } 님의 정보관리</h1>
@@ -44,5 +36,3 @@ function memDelete(){
 
 	</form>		
 </div>
-</body>
-</html>

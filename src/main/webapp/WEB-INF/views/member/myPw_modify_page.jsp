@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link href="myPw_modify_page.css" rel="stylesheet" />
-
-<title>회원정보 수정</title>
 
 <script type="text/javascript">
 
@@ -57,9 +50,6 @@ function change(){
 
 </script>
 
-</head>
-<body>
-
 <form name="changeForm" action="memberPw_modify" method="post">
 
 <div class="mem_myPw_modify">
@@ -89,6 +79,3 @@ function change(){
 </div>
 
 </form>
-
-</body>
-</html>
