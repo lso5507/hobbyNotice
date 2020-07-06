@@ -1,9 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>로그인</title>
 
 <script type="text/javascript">
 
@@ -16,22 +11,19 @@ if(message.length != 0){
 
 </script>
 
-</head>
-<body>
 <div class="mem_login">
-	<form action="login" method="post">
-
+	<form action="login" method="post" id="memLoginForm">
 
 		<div class="mem_login_title">
 			<h1 id="memTitle">Hobby 로그인</h1>
 		</div>
 		
 		<div class="mem_login_id">
-			<input type="text" placeholder="ID" name="memId" id="memId" required>
+			<input type="text" placeholder="아이디" name="memId" id="memId" required>
 		</div>
 		
 		<div class="mem_login_pw">
-			<input type="password" placeholder="Password" name="memPw" id="memPw" required>
+			<input type="password" placeholder="비밀번호" name="memPw" id="memPw" required>
 		</div>
 		
 		<div class="mem_login_submit">
@@ -45,6 +37,3 @@ if(message.length != 0){
 		</div>
 	</form>
 </div>	
-	
-</body>
-</html>

@@ -2,23 +2,24 @@
 
 .mem_myInfo {
 	width:1092px;
-	border:1px solid black;
-	padding: 20px 0;
+	height:800px;
+	padding-top: 180px ;
 	box-sizing: border-box;
-	margin-top: 100px;
 }
 
 #mem_myInfo_title {
 	text-align:center;
+	font-size:70px;
 }
 
 .mem_myInfo_section {
 	text-align:center;
+	margin-top:20px;
 }
 
 .mem_myInfo_Button {
-	width:200px;
-	height:50px;
+	width: 350px;
+	height:60px;
 	font-size:25px;
-	margin-bottom:10px;
+	margin-bottom: 15px;
 }

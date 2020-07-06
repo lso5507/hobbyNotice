@@ -85,7 +85,7 @@ public class MemberController {
 		return "/member/idSearch_page.part";
 	}
 	
-	@RequestMapping(value="/idSearch", method=RequestMethod.GET)
+	@RequestMapping(value="/idSearch", method=RequestMethod.GET, produces ="application/text; charset=utf-8")
 	@ResponseBody
 	public String idSearch(MemberVO mVo, Model model) {
 		System.out.println("idSearch()");

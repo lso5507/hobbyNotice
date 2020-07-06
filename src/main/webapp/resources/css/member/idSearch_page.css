@@ -2,66 +2,81 @@
 
 .mem_idSearch {
 	width:1092px;
-	border:1px solid black;
-	padding: 20px 200px;
+	height:800px;
+	padding-top: 230px;
 	box-sizing: border-box;
-	margin-top: 100px;
 }
 
 .mem_idSearch_title {
 	text-align:center;
-	margin-bottom: 10px;	
+	margin-bottom:50px;
 }
+
 #idSearch_title{
-	font-size:50px;
+	font-size:70px;
 }
 
 .mem_idSearch_name {
 	height:50px;
+	padding-left:270px;
+	margin-bottom: 10px;
 }
 
 #memName {
-	width:150px;
-	height:30px;
+	width:298px;
+	height:50px;
+	box-sizing: border-box;
 	margin-left:10px;
+	font-size:15px;
 }
 
 .mem_idSearch_email {
 	height:50px;
-	margin-bottom: 10px;
+	padding-left:270px;
+	margin-bottom: 20px;
 }
 
 #email1 {
 	width:150px;
-	height:30px;
+	height:50px;
+	box-sizing: border-box;
 	margin-left:10px;
+	font-size:15px;
 }
 
 #email2 {
-	width:150px;
-	height:30px;
-}
-.mem_idSearch_btn {
+	width:122px;
 	height:50px;
-	text-align:right;
+	box-sizing: border-box;
+	font-size:15px;
+}
+
+.mem_idSearch_btn {
+	height: 50px;
+	padding-right: 100px;
+	box-sizing: border-box;
+	text-align: right;
 }
 
 #btn_idSearch {
-	width:150px;
+	width:200px;
 	height:50px;
+	box-sizing: border-box;
 	font-size:25px;
 }
 
 #btn_login {
-	width:150px;
+	width:200px;
 	height:50px;
+	box-sizing: border-box;
 	font-size:25px;
 }
 
 .mem_idSearch_span{
 	display: inline-block;
 	width: 130px;
-	height: 30px;
+	height: 40px;
+	line-height: 40px;
 	text-align:right;
-	font-size:30px;
+	font-size:25px;
 }

@@ -2,221 +2,240 @@
 
 .mem_create_account_view {
 	width:1092px;
-	border:1px solid black;
-	padding: 20px 150px;
-	box-sizing: border-box;
-	margin-top: 100px;
+	height:800px;
+}
+ 
+#mem_create_title {
+	font-size:70px;
+	margin-bottom:20px;
+	text-align:center;
 }
 
-#mem_create_title {
-	font-size:50px;
-	margin:10px 0;
-	text-align: center;
-}
 .mem_create_id {
-	width: 100%;
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #memId {
-	width:200px;
-	height:30px;
+	width:250px;
+	height:40px;
+	font-size:15px;
+	box-sizing: border-box;
 }
 
 #idcheck {
-	width:70px;
-	height:30px;
-}
-
-#checkEmail {
-	width:90px;
-	height:30px;
-	margin-left: 5px;
+	width:80px;
+	height:40px;
+	margin-left:5px;
 }
 
 .mem_create_pw {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #memPw {
-	width:200px;
-	height:30px;
+	width:250px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 .memEx {
-	font-size: 12px;
+	font-size: 13px;
 }
 
 .mem_create_rpw {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #mempwdCheck {
-	width:200px;
-	height:30px;
+	width:250px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 .mem_create_pwhint {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #memPwHint {
-	width:204px;
-	height:30px;
+	width:254px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 .mem_create_pwans {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #memPwAns {
-	width:200px;
-	height:30px;
+	width:250px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 .mem_create_name {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #memName {
-	width:200px;
-	height:30px;
+	width:250px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 .mem_create_brith_sex {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
-}
-
-.mem_create_brith {
-	height:30px;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #brith1 {
-	width:80px;
-	height:30px;
+	width:90px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 #brith2 {
 	width:50px;
-	height:30px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 #brith3 {
 	width:50px;
-	height:30px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 .mem_create_city {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #memRegion {
 	width:100px;
-	height:30px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 #memCity {
-	width:100px;
-	height:30px;
+	width:145px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 .mem_create_email {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #email1 {
-	width:120px;
-	height:30px;
+	width:110px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 #email2 {
-	width:100px;
-	height:30px;
+	width:108px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
-.mem_create_email_check {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+#checkEmail {
+	width:100px;
+	height:40px;
+	box-sizing: border-box;
+	margin-left:5px;
+}
+
+.mem_email_cer {
+	height:40px;
+	margin-bottom:15px;
 }
 
 #checkEmailNumber {
-	width:100px;
-	height:30px;	
+	width:250px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;	
 }
 
-#checkEmail2{
+#checkEmail2 {
 	width:60px;
-	height:30px;
-	margin-left: 5px;
+	height:40px;
+	margin-left:5px;
 }
 
 .mem_create_phone {
-	height:30px;
-	font-size:20px;
-	margin:10px 0;
+	height:40px;
+	margin-bottom:15px;
 }
 
 #smartPhone {
-	width:60px;
-	height:30px;
+	width:57px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 #smartPhone1 {
-	width:60px;
-	height:30px;
+	width:70px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 #smartPhone2 {
-	width:60px;
-	height:30px;
+	width:70px;
+	height:40px;
+	box-sizing: border-box;
+	font-size:15px;
 }
 
 #checkPhone {
 	width:60px;
-	height:30px;
+	height:40px;
 	margin-left:5px;
 }
 
 .mem_create_hobby {
-	height:30px;
+	height:45px;
+	margin-bottom:10px;
 	font-size:20px;
-	margin:10px 0;
 }
 
 .mem_create_btnjoin {
-	height:40px;
-	font-size:20px;
-	text-align:right;
+	height:50px;
+	text-align:center;
 }
 
 .mem_create_span {
 	display: inline-block;
-	width: 130px;
-	height: 30px;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	font-size:25px;
 	text-align:right;
 }
 
 #join {
-	width:150px;
-	height:40px;
-	font-size:20px;
+	width:200px;
+	height:50px;
+	font-size:25px;
 }

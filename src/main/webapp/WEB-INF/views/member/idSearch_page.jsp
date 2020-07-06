@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 
@@ -16,7 +11,7 @@ function idSearch(){
 		type:"get",
 		dataType:"text",
 		async:false,
-		url:"http://localhost:8090/hobby/idSearch",
+		url:"/hobby/idSearch",
 		data:{memEmail:memEmail, memName:memName},
 		success:function(data){
 			if(data.length != 0){
@@ -33,9 +28,6 @@ function idSearch(){
 }
 
 </script>
-
-</head>
-<body>
 
 <div class="mem_idSearch">
 	<form name="idSearchForm">
@@ -64,5 +56,3 @@ function idSearch(){
 		</div>
 	</form>
 </div>
-</body>
-</html>

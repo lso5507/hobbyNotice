@@ -2,15 +2,15 @@
 
 .mem_myInfo_modify {
 	width:1092px;
-	border:1px solid black;
-	padding: 20px 150px;
+	height:800px;
+	padding-top: 150px ;
 	box-sizing: border-box;
-	margin-top: 100px;
 }
 
 #mem_myInfo_modify_title {
 	text-align:center;
-	font-size:50px;
+	font-size:70px;
+	margin-bottom:20px;
 }
 
 .member_modify{
@@ -19,7 +19,7 @@
 
 .mem_myInfo_modify_name{
 	height:50px;
-	line-height: 50px;
+	line-height: 40px;
 	margin-bottom:20px;
 }
 
@@ -30,8 +30,9 @@
 
 #memPhone {
 	width:300px;
-	height:40px;
-	font-size:25px;
+	height:50px;
+	box-sizing:border-box;
+	font-size:20px;
 	margin-left:10px;	
 }
 
@@ -42,8 +43,9 @@
 
 #memEmail {
 	width:300px;
-	height:40px;
-	font-size:25px;
+	height:50px;
+	box-sizing:border-box;
+	font-size:20px;
 	margin-left:10px;	
 }
 
@@ -53,16 +55,18 @@
 }
 
 #memRegion {
-	width:150px;
-	height:40px;
-	font-size:25px;
+	width:130px;
+	height:50px;
+	box-sizing:border-box;
+	font-size:20px;
 	margin-left:10px;
 }
 
 #memCity {
 	width:150px;
-	height:40px;
-	font-size:25px;
+	height:50px;
+	box-sizing:border-box;
+	font-size:20px;
 	margin-left:10px;
 }
 
@@ -73,16 +77,17 @@
 
 #memBirth {
 	width:300px;
-	height:40px;
-	font-size:25px;
+	height:50px;
+	box-sizing:border-box;
+	font-size:20px;
 	margin-left:10px;
 }
 
 .mem_myInfo_modify_btn{
 	height:50px;
 	text-align:right;
-	margin-bottom:10px;
-	margin-right:10px;
+	padding-right: 150px;
+	box-sizing: border-box;
 }
 
 #memChange {
@@ -92,10 +97,12 @@
 }
 .mem_myInfo_modify_span{
 	display: inline-block;
-	width: 200px;
-	height: 30px;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	margin-left:170px;
 	text-align:right;
-	font-size:30px;
+	font-size:25px;
 }
 
 #memSpan {

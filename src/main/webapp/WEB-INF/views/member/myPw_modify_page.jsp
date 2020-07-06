@@ -64,21 +64,21 @@ function change(){
 
 <div class="mem_myPw_modify">
 	<div class="mem_myPw_modify_title">
-		<h1>비밀번호 변경</h1>
+		비밀번호 변경
 	</div>
 
 	<div class="mem_myPw_modify_pw">
-		<span class="mem_myPw_modify_span">현재 비밀번호 :</span>
+		<span class="mem_myPw_modify_span">현재 비밀번호</span>
 		<input type="password" name="nowPw" id="nowPw">
 	</div>
 
 	<div class="mem_myPw_modify_newPw">
-		<span class="mem_myPw_modify_span">새 비밀번호 :</span>
+		<span class="mem_myPw_modify_span">새 비밀번호</span>
 		<input type="password" name="newPw" id="newPw">
 	</div>
 
 	<div class="mem_myPw_modify_RnewPw">
-		<span class="mem_myPw_modify_span">새 비밀번호 확인 :</span>
+		<span class="mem_myPw_modify_span">새 비밀번호 확인</span>
 		<input type="password" name="newPw2" id="newPw2"> 
 	</div>
 

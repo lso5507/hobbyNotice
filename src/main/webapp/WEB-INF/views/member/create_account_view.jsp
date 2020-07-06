@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 
@@ -136,8 +133,6 @@ function joincheck(){
 }      
 </script>
 
-</head>
-<body>
 <div class="mem_create_account_view">
 	<form method="post" name="inputForm" >
 		<div>
@@ -186,7 +181,7 @@ function joincheck(){
 	            var today = new Date();
 	            var toyear = parseInt(today.getFullYear ());
 	            var start = toyear;
-	            var end = toyear - 50;
+	            var end = toyear - 80;
 	            document.write("<select name=birth1 id=brith1> ");
 	            document.write("<option value='----' selected>");
 	            for (i=start;i>=end;i--) document.write("<option>"+i);
@@ -238,13 +233,13 @@ function joincheck(){
 				<option value="naver.com">naver.com</option>
 	            <option value="daum.net">daum.net</option>
 	        </select>
-	        <input type="button"  value="이메일 인증" onClick="checkEmail()"> <br>
-	                  
+	        <input type="button"  value="이메일 인증" onClick="checkEmail()" id="checkEmail">
 	    </div>
 	
-	    <div>
-	    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 인증번호 : <input type="text" name="checkEmailNumber"> 
-			<input type="button" value="확인" onClick="checkEmail2()"><br>
+	    <div class="mem_email_cer">
+	    	<span class="mem_create_span">인증번호</span>
+	    	<input type="text" name="checkEmailNumber" id="checkEmailNumber"> 
+			<input type="button" value="확인" onClick="checkEmail2()" id="checkEmail2">
 	    </div>
 	    
 		<div class="mem_create_phone">	
@@ -277,6 +272,3 @@ function joincheck(){
 	    </div>
 	</form>
 </div>
-
-</body>
-</html>
