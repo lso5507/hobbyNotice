@@ -22,4 +22,22 @@
 			limit 0,3
 	</select>
 	
+	<!-- 메인 화면 인기 게시물 표시 201006추가-->
+	<select id="hitList" resultType="com.daelim.hobby.Vo.VOBoard">
+	 	select
+	  		bdCno, bdTitle, bdContent, bdName, bdDate, bdCategory, bdHit, bdLike, bdValue as value
+	 	from board
+	 	order by bdLike desc
+	 	limit 0,2
+	</select>
+	
+	
+	<!-- 메인 화면 최근 게시물 표시 201006추가-->
+	<select id="recentList" resultType="com.daelim.hobby.Vo.VOBoard">
+	 	select
+	  		bdCno, bdTitle, bdContent, bdName, bdDate, bdCategory, bdHit, bdLike, bdValue as value
+	 	from board
+	 	order by bdDate desc
+	 	limit 0,9
+	</select>
 </mapper>

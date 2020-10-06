@@ -341,6 +341,17 @@ public class BoardDao {
 		return sqlSession.selectOne(namespace + ".searchCount", keyword);
 
 	}
+	
+	// 메인 화면 인기 게시물(201006 추가)
+	public List<VOBoard> hitList() throws Exception{
+
+		return sqlSession.selectList(namespace + ".hitList");
+	}	
+	// 메인 화면 최근 게시물
+	public List<VOBoard> recentList() {
+		
+		return sqlSession.selectList(namespace + ".recentList");
+	}
 	//게시글 추천수
 	public int boardLikey(int dno, boolean checker) {
 		int result=0;
@@ -355,5 +366,9 @@ public class BoardDao {
 		
 		return result;
 	}
+
+
+
+	
 
 }
