@@ -33,7 +33,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Repository
 public class BoardDao {
 	private String driver = "com.mysql.cj.jdbc.Driver";
-	private String url = "jdbc:mysql://61.84.24.210:3306/hobby33?useSSL=false&serverTimezone=UTC";
+	private String url = "jdbc:mysql://61.84.24.210:3306/link_project?useSSL=false&serverTimezone=UTC";
 	private String userid = "hobby33";
 	private String userpw = "hobby33!!";
 	private ComboPooledDataSource dataSource;

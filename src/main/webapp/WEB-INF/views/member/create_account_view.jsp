@@ -9,7 +9,7 @@ var randomNum = ''; // 이메일 인증 번호
 var emailOk = false; // 이메일 인증 완료 했는가?
 
 //아이디 중복확인
-function idCkeck(){	
+function idCheck(){	
 	var inputForm = document.inputForm;
 	var memId = inputForm.memId.value;
 	if(memId.length == 0){
@@ -40,7 +40,7 @@ function idCkeck(){
 }
 
 //이메일 인증번호 전송 (이메일 인증 버튼 클릭)
-function checkEmail(){
+function CheckEmail(){
 	var inputForm = document.inputForm;
 	if(inputForm.email1.value.length == 0){
 		alert("이메일을 입력해 주세요!");
@@ -69,7 +69,7 @@ function checkEmail(){
 }
 
 // 이메일 인증번호 확인 (확인 버튼 클릭))
-function checkEmail2(){
+function CheckEmail2(){
 	var inputForm = document.inputForm;
 	if(inputForm.checkEmailNumber.value.length == 0){
 		alert("인증번호를 입력해 주세요!");
@@ -77,7 +77,8 @@ function checkEmail2(){
 	}
 	
 	if(inputForm.checkEmailNumber.value != randomNum){
-		alert("이메일 인증번호가 틀립니다!\n인증번호:" + randomNum);
+		alert("인증번호가 틀립니다!");
+		//alert("이메일 인증번호가 틀립니다!\n인증번호:" + randomNum);
 		emailOk = false;
 	}else{
 		alert("이메일 인증 완료!");
@@ -142,7 +143,7 @@ function joincheck(){
 		<div class="mem_create_id">
 			<span class="mem_create_span">아이디</span>
 	        <input type="text" name="memId" id="memId" placeholder="영문 소문자/숫자 조합 최대 20자">
-	        <input type="button" value="중복확인" id="idcheck" onClick="idCkeck()">
+	        <input type="button" value="중복확인" id="idcheck" onClick="idCheck()">
 			<span class="memEx"></span>
 		</div>
 		
@@ -233,13 +234,13 @@ function joincheck(){
 				<option value="naver.com">naver.com</option>
 	            <option value="daum.net">daum.net</option>
 	        </select>
-	        <input type="button"  value="이메일 인증" onClick="checkEmail()" id="checkEmail">
+	        <input type="button"  value="이메일 인증" onClick="CheckEmail()" id="checkEmail">
 	    </div>
-	
+		
 	    <div class="mem_email_cer">
 	    	<span class="mem_create_span">인증번호</span>
 	    	<input type="text" name="checkEmailNumber" id="checkEmailNumber"> 
-			<input type="button" value="확인" onClick="checkEmail2()" id="checkEmail2">
+			<input type="button" value="확인" onClick="CheckEmail2()" id="checkEmail2">
 	    </div>
 	    
 		<div class="mem_create_phone">	
