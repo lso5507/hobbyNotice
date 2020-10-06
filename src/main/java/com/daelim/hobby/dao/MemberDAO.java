@@ -59,6 +59,7 @@ public class MemberDAO {
 		try {
 			
 			mVo = template.queryForObject(query, new BeanPropertyRowMapper<MemberVO>(MemberVO.class));
+			System.out.println(mVo);
 			
 		}catch(Exception e) {
 			e.printStackTrace();

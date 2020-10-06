@@ -90,6 +90,7 @@ public class BoardController {
 	public String freeboard(Locale locale, Model model,HttpServletRequest request) {
 		String value=request.getParameter("val");  // 게시판 종류
 		List<VOBoard> boards = boardService.read(Integer.parseInt(value),"FreeBoard");
+		
 		model.addAttribute("list",boards);
 		return "board/board_list";
 	}
@@ -114,8 +115,22 @@ public class BoardController {
 		System.out.println("카테고리 테스트 : "+board.getBdCategory());
 		System.out.println("벨류 테스트 : "+board.getValue());
 		System.out.println("벨류 테스트 : "+request.getParameter("value"));
+		String url = "home";
+		if(board.getBdCategory().equals("Team")) {
+			url="/board_team?val="+board.getValue();
+			System.out.println(url);
+		}
 
-
+		else if(board.getBdCategory().equals("Tip")) {
+			url="/board_tip?val="+board.getValue();
+		}
+		else if(board.getBdCategory().equals("QA")) {
+			url="/board_qa?val="+board.getValue();
+		}
+		else if(board.getBdCategory().equals("FreeBoard")) {
+			url="/board_free?val="+board.getValue();
+		}
+		
 		int result=boardService.insert(board);
 		if(result==0) {
 			System.out.println("Insert Error");
@@ -123,8 +138,8 @@ public class BoardController {
 		else {
 			System.out.println("Insert Success");
 		}
-
-		return "redirect:board_list";
+		System.out.println(url);
+		return "redirect:"+url;
 	}
 	@RequestMapping(value = "/board_modiform", method = RequestMethod.GET) // �궗�슜�옄媛� �엯�젰�븳 媛�
 	public String modifyForm(VOBoard board, Model model,HttpServletRequest request) {

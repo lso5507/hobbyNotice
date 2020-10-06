@@ -21,6 +21,7 @@
 							<option>게시판 선택</option>
 							<option value="Team"  selected="selected">팀원모집</option>
 							<option value="Tip">팁과 노하우</option>
+							<option value="QA">질문과 답변</option>
 							<option value="FreeBoard">자유게시판</option>
 						</select>
 					</div>
