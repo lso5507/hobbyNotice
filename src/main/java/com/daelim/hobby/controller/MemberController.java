@@ -1,5 +1,7 @@
 package com.daelim.hobby.Controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,12 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.daelim.hobby.Service.BoardService;
 import com.daelim.hobby.Service.MemberService;
 import com.daelim.hobby.Vo.MemberVO;
+import com.daelim.hobby.Vo.VOBoard;
 
 
 @Controller
 public class MemberController {
+	
+	@Autowired
+	public BoardService boardService;
 
 	@Autowired
 	public MemberService mService;
@@ -23,8 +30,22 @@ public class MemberController {
 	
 	// 메인 페이지
 	@RequestMapping("/")
-	public String home(Model model) {
+	public String home(Model model) throws Exception {
+		
+		List<VOBoard> hitList = null;
+		hitList = boardService.hitList();
+		
+		model.addAttribute("hitList", hitList);
+		System.out.println(hitList.get(0).getBdTitle());
+		
+		List<VOBoard> recentList = null;
+		recentList = boardService.recentList();
+		
+		model.addAttribute("recentList", recentList);
+		System.out.println(recentList.get(0).getBdTitle());
+		
 		return "main";
+		
 	}
 	
 	@RequestMapping("/search")

@@ -321,14 +321,15 @@ public class BoardDao {
 	}
 	//-----------------------김정태 추가-----------------------------------------
 
-	// 게시물 검색
-	public List<VOBoard> listPageSearch(String keyword)
+	// 통합 게시물 검색
+	public List<VOBoard> listPageSearch(String searchType, String keyword)
 			throws Exception {
 
 
-		String data = new String();
-
-		data = keyword;
+		HashMap<String, String> data = new HashMap<String, String>();
+		
+		data.put("searchType", searchType);
+		data.put("keyword", keyword);
 
 		return sqlSession.selectList(namespace + ".listPageSearch", data);
 	}
@@ -340,6 +341,17 @@ public class BoardDao {
 		System.out.println("test:"+test);
 		return sqlSession.selectOne(namespace + ".searchCount", keyword);
 
+	}
+	
+	// 메인 화면 인기 게시물(201006 추가)
+	public List<VOBoard> hitList() throws Exception{
+
+		return sqlSession.selectList(namespace + ".hitList");
+	}	
+	// 메인 화면 최근 게시물
+	public List<VOBoard> recentList() {
+		
+		return sqlSession.selectList(namespace + ".recentList");
 	}
 	//게시글 추천수
 	public int boardLikey(int dno, boolean checker) {
@@ -355,5 +367,9 @@ public class BoardDao {
 		
 		return result;
 	}
+
+
+
+	
 
 }

@@ -100,8 +100,19 @@ public class BoardService {
 	//---------------------------김정태 추가 --------------------
 	// 게시물 목록 + 페이징 + 검색
 
-	public List<VOBoard> listPageSearch(String keyword) throws Exception {
-	 return dao.listPageSearch(keyword);
+	public List<VOBoard> listPageSearch(String searchType, String keyword) throws Exception {
+		return dao.listPageSearch(searchType, keyword);
+	}
+	
+	// 메인 화면 인기 게시물(201006 추가)
+	public List<VOBoard> hitList() throws Exception {
+
+		return dao.hitList();
+	}
+	// 메인 화면 최근 게시물(201006 추가)
+	public List<VOBoard> recentList() throws Exception {
+		
+		return dao.recentList();
 	}
 
 	//검색게시물 총 갯수(0605 추가)
@@ -110,6 +121,8 @@ public class BoardService {
 
 		return dao.searchCount(keyword);
 	}
+	
+	//----------------------김정태 종료------------------
 	public int incrementLikey(int cnt) {
 		int result=  dao.boardLikey(cnt,true);    // true일때 증가
 		return result;
@@ -119,5 +132,6 @@ public class BoardService {
 		int result=  dao.boardLikey(cnt,false);   // false일때 감소
 		return result;
 	}
+	
 
 }

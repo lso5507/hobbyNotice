@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 import com.daelim.hobby.Dao.BoardDao;
 import com.daelim.hobby.Service.BoardService;
 import com.daelim.hobby.Vo.VOBoard;
@@ -23,18 +22,19 @@ public class MainController {
 
 
 	@Inject
-	private BoardService service;
+	public BoardService service;
+	
 
 
-	// 寃��깋 寃뚯떆臾� 紐⑸줉
+	// 통합 게시물 검색
 	@RequestMapping(value = "listpagesearch", method = RequestMethod.GET)
 	public String getListPageSearch(Model model, HttpServletRequest request) throws Exception {
-		//String searchType=request.getParameter("searchtype"); // 寃��깋 ���엯
-		String keyword=request.getParameter("keyword");  // 寃��깋 �궎�썙�뱶
+		String searchType=request.getParameter("searchtype"); // 검색 타입
+		String keyword=request.getParameter("keyword");  // 검색 키워드
 
 
 		List<VOBoard> listPageSearch = null;    //seachPaging = 野껓옙占쎄퉳占쎈쭆 野껊슣�뻻�눧占� �뵳�딅뮞占쎈뱜
-		listPageSearch = service.listPageSearch(keyword);
+		listPageSearch = service.listPageSearch(searchType, keyword);
 		for (VOBoard s : listPageSearch ) {
 			System.out.println(s.getValue());
 		}
