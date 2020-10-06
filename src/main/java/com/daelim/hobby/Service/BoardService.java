@@ -100,8 +100,8 @@ public class BoardService {
 	//---------------------------김정태 추가 --------------------
 	// 게시물 목록 + 페이징 + 검색
 
-	public List<VOBoard> listPageSearch(String keyword) throws Exception {
-		return dao.listPageSearch(keyword);
+	public List<VOBoard> listPageSearch(String searchType, String keyword) throws Exception {
+		return dao.listPageSearch(searchType, keyword);
 	}
 	
 	// 메인 화면 인기 게시물(201006 추가)

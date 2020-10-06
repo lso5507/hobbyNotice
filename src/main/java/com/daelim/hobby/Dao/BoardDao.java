@@ -321,14 +321,15 @@ public class BoardDao {
 	}
 	//-----------------------김정태 추가-----------------------------------------
 
-	// 게시물 검색
-	public List<VOBoard> listPageSearch(String keyword)
+	// 통합 게시물 검색
+	public List<VOBoard> listPageSearch(String searchType, String keyword)
 			throws Exception {
 
 
-		String data = new String();
-
-		data = keyword;
+		HashMap<String, String> data = new HashMap<String, String>();
+		
+		data.put("searchType", searchType);
+		data.put("keyword", keyword);
 
 		return sqlSession.selectList(namespace + ".listPageSearch", data);
 	}

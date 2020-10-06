@@ -22,7 +22,7 @@ function idCheck(){
 		type:"get",
 		dataType:"text",
 		async:false,
-		url:"http://localhost:8090/hobby/idCheck",
+		url:"http://localhost:8080/hobby/idCheck",
 		data:{memId:memId},
 		success:function(data){
 			if(data == '1'){
