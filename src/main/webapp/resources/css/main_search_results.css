@@ -88,6 +88,9 @@
 	white-space: nowrap; 
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.sr_list_content > span.sr_span_title > a {
 	/* 제목 스타일 */
 	text-decoration: underline;
 	color: blue;
@@ -124,6 +127,9 @@
 	box-sizing:border-box;
 	font-size: 13px;
 }
+
+.sr_list_content_ > span > a:first-child { font-size: 8px; }
+
 
 /* 해당 카테고리 더보기 영역 */
 .sr_list_more {

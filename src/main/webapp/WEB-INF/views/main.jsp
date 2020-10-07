@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 <!-- 최신 및 인기 게시물 영역 -->
@@ -11,13 +10,8 @@
 		<!-- 공지사항 게시글 -->
 		<div id="section-notice-content">
 			<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-				<c:forEach var="list" items="${noticeList}" varStatus="status">
-				    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
-				</c:forEach>
---%>
-				<c:forEach var="i" begin="1" end="3">
-				    <li><a href=""><c:out value="${i}" />번째 제목</a></li>
+				<c:forEach var="i" begin="1" end="1">
+				    <li>해당 게시글이 존재하지 않습니다.</li>
 				</c:forEach>
 			</ul>
 		</div><!-- 공지사항 게시글 끝 -->
@@ -47,14 +41,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 0 and hlist.bdCategory eq 0 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -64,14 +60,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 0 and rlist.bdCategory eq 0 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -85,14 +83,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 0 and hlist.bdCategory eq 1 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -102,14 +102,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 0 and rlist.bdCategory eq 1 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -123,15 +125,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 0 and hlist.bdCategory eq 3 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
-							</ul>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
 					<!-- 최근 게시물 -->
@@ -140,14 +143,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 0 and rlist.bdCategory eq 3 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -161,14 +166,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 0 and hlist.bdCategory eq 2 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -178,14 +185,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 0 and rlist.bdCategory eq 2 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -214,14 +223,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 1 and hlist.bdCategory eq 0 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -231,14 +242,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 1 and rlist.bdCategory eq 0 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -252,14 +265,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 1 and hlist.bdCategory eq 1 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -269,14 +284,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 1 and rlist.bdCategory eq 1 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -290,14 +307,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 1 and hlist.bdCategory eq 3 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -307,14 +326,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 1 and rlist.bdCategory eq 3 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -328,14 +349,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 1 and hlist.bdCategory eq 2 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -345,14 +368,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 1 and rlist.bdCategory eq 2 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -381,14 +406,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 2 and hlist.bdCategory eq 0 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -398,14 +425,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 2 and rlist.bdCategory eq 0 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -419,14 +448,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 2 and hlist.bdCategory eq 1 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -436,14 +467,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 2 and rlist.bdCategory eq 1 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -457,14 +490,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 2 and hlist.bdCategory eq 3 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -474,14 +509,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 2 and rlist.bdCategory eq 3 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->
@@ -495,14 +532,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 3개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="hlist" items="${hitList}">
+									<c:if test="${hlist.value eq 2 and hlist.bdCategory eq 2 and listCount <= 2 and hlist.bdLike ne 0}">
+										<li><a href="board_detailview?cnt=<c:out value="${hlist.bdCno}"/>">· <c:out value="${hlist.bdTitle}"/></a></li>
+										<c:set var="listCount" value="${listCount+1}"></c:set>
+									</c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="3">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 현재 인기글이 없습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 인기 게시물 끝 -->
@@ -512,14 +551,16 @@
 						<!-- 게시글 -->
 						<div class="board_content">
 							<ul>
-<%--			게시글의 제목과 링크 경로를 가져와 데이터를 집어 넣는다. 최대 10개만 가져오도록 설정해야함
-								<c:forEach var="list" items="${noticeList}" varStatus="status">
-								    <li><a href="<c:out value="${list.link}"/>"> <c:out value="${list.title}"/></a></li>
+								<c:set var="listCount" value="0"></c:set>
+								<c:forEach var="rlist" items="${recentList}">
+									<c:if test="${rlist.value eq 2 and rlist.bdCategory eq 2 and listCount <= 10}">
+								    	<li><a href="board_detailview?cnt=<c:out value="${rlist.bdCno}"/>">· <c:out value="${rlist.bdTitle}"/></a></li>
+								    	<c:set var="listCount" value="${listCount+1}"></c:set>
+								    </c:if>
 								</c:forEach>
---%>
-								<c:forEach var="i" begin="1" end="10">
-								    <li><a href="#">· 게시글<c:out value="${i}" /></a></li>
-								</c:forEach>
+								<c:if test="${listCount eq 0}">
+									<li>· 해당 게시글이 존재하지 않습니다.</li>
+								</c:if>
 							</ul>
 						</div><!-- 게시글 끝 -->
 					</div><!-- 최근 게시물 끝 -->

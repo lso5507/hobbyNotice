@@ -33,7 +33,7 @@
 			<if test='searchType.equals("writer")'> <!--작성자 검색 -->
 			 WHERE bdName LIKE CONCAT('%', #{keyword}, '%')
 			</if>
-		limit 0, 2
+		limit 0, 3
 	</select>
 	
 	<!-- 메인 화면 인기 게시물 표시 201006추가-->
@@ -42,7 +42,6 @@
 	  		bdCno, bdTitle, bdContent, bdName, bdDate, bdCategory, bdHit, bdLike, bdValue as value
 	 	from board
 	 	order by bdLike desc
-	 	limit 0,2
 	</select>
 	
 	
@@ -52,6 +51,5 @@
 	  		bdCno, bdTitle, bdContent, bdName, bdDate, bdCategory, bdHit, bdLike, bdValue as value
 	 	from board
 	 	order by bdDate desc
-	 	limit 0,9
 	</select>
 </mapper>
