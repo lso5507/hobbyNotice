@@ -22,7 +22,7 @@ function idCheck(){
 		type:"get",
 		dataType:"text",
 		async:false,
-		url:"http://localhost:8080/hobby/idCheck",
+		url:"http://localhost:8090/hobby/idCheck",
 		data:{memId:memId},
 		success:function(data){
 			if(data == '1'){
@@ -142,7 +142,7 @@ function joincheck(){
 		
 		<div class="mem_create_id">
 			<span class="mem_create_span">아이디</span>
-	        <input type="text" name="memId" id="memId" placeholder="영문 소문자/숫자 조합 최대 20자">
+	        <input type="text" name="memId" id="memId" placeholder="최대 20자" maxlength="20">
 	        <input type="button" value="중복확인" id="idcheck" onClick="idCheck()">
 			<span class="memEx"></span>
 		</div>

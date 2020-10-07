@@ -62,7 +62,7 @@
 						<div></div>
 					</c:if>
 					
-					<c:forEach var="i" begin="0" end="4">
+					<c:forEach var="i" begin="0" end="0">
 						<c:if test="${startNum+i <= lastNum}">
 							<div><a href="?p=${startNum+i}">${startNum+i}</a></div>
 						</c:if>
@@ -70,7 +70,7 @@
 					</c:forEach>
 					
 					<c:if test="${startNum+5<=lastNum}">
-						<div><a href="?p=${startNum+5}">다음</a></div>
+						<div><a href="?p=${startNum+5}"><!-- 다음 --></a></div>
 					</c:if>
 					
 					<c:if test="${startNum+5>lastNum}">
